@@ -24,7 +24,6 @@ namespace_imports = [
     'hardware/mediatek',
     'hardware/mediatek/libmtkperf_client',
     'hardware/mediatek/libaedv',
-    'hardware/millennium',
 ]
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
@@ -111,6 +110,8 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_lock')
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
+    'vendor/lib64/mt6789/libTranPortraitConvertor.so': blob_fixup()
+        .remove_needed('libzip.so'),
     'vendor/lib64/mt6789/libtranssion_bodybeauty.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_createFromHandle')

@@ -6,7 +6,6 @@
 
 DEVICE_PATH := device/tecno/CM6
 KERNEL_PATH := $(DEVICE_PATH)-kernel
-COMMON_GKI_PATH := device/millennium/common-kernel
 CONFIGS_PATH := $(DEVICE_PATH)/configs
 
 # AAPT
@@ -33,7 +32,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.millennium
+    android.hardware.vibrator-service.mediatek
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
@@ -274,7 +273,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.millennium
+    android.hardware.light-service.lineage
 
 # Linker
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
@@ -489,8 +488,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek/libmtkperf_client \
     hardware/mediatek/libaedv \
     hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/millennium
+    hardware/google/pixel
 
 # Speed profile services and wifi-service to reduce RAM and storage.
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile

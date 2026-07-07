@@ -147,20 +147,22 @@ vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/mt6789/libaal_cust_func.so
 vendor/lib/mt6789/libaalservice.so
 vendor/lib/mt6789/libaiselector.so
+vendor/lib/mt6789/libcameracustom.so
 vendor/lib/mt6789/libdpframework.so
 vendor/lib/mt6789/libgpudataproducer.so
 vendor/lib/mt6789/libmtkcam_debugutils.so
 vendor/lib/mt6789/libmtkcam_metadata.so
 vendor/lib/mt6789/libmtkcam_modulehelper.so
 vendor/lib/mt6789/libmtkcam_stdutils.so
-# Removed: vendor/lib/mt6789/libmtkcam_tuning_utils.so -- depends on mtkcam_sysutils 32-bit (removed, cascades to unresolvable cameracustom 32-bit deps)
+vendor/lib/mt6789/libmtkcam_sysutils.so
+vendor/lib/mt6789/libmtkcam_tuning_utils.so
 vendor/lib/mt6789/libmtkcam_ulog.so
 vendor/lib/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so
 vendor/lib/mt6789/libneuron_adapter_mgvi.so
 vendor/lib/mt6789/libnir_neon_driver.so
 vendor/lib/mt6789/libpq_cust_base.so
 vendor/lib/mt6789/libpq_prot.so
-# Removed: vendor/lib/mt6789/libpqparamparser.so (needs pq@2.15 32-bit -> cascades to 15 pq HALs)
+vendor/lib/mt6789/libpqparamparser.so
 vendor/lib64/TranCaptureFilter.so
 vendor/lib64/libStarburstEngine_gl.so
 vendor/lib64/libTranArcPDC.so
@@ -194,7 +196,7 @@ vendor/lib64/libmorpho_MotionSensor.so
 vendor/lib64/libmtkcam_3rdparty.thread.so
 vendor/lib64/libmtkcam_tranjpegr.so
 vendor/lib64/libpowerhalwrap_vendor.so
-# Removed: vendor/lib64/libprotobuf-cpp-lite-3.9.1.so (collides with protobuf_vendorcompat prebuilt)
+vendor/lib64/libprotobuf-cpp-lite-3.9.1.so
 vendor/lib64/librilutils.so
 vendor/lib64/libssmobile_moment.so
 vendor/lib64/libtneclient.so
@@ -1624,33 +1626,3 @@ vendor/etc/init/init.wlan_drv.rc
 vendor/etc/init/wlan_assistant.rc
 vendor/etc/wfd_source_capability.csv
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
-
-# Auto-added by fix-missing-blobs.py at Tue Jul  7 23:07:14 2026
-vendor/lib/vendor.mediatek.hardware.neuropilot.agent@1.0.so
-vendor/lib/vendor.mediatek.hardware.neuropilot.agent@1.1.so
-vendor/lib/vendor.mediatek.hardware.neuropilot.agent@1.2.so
-
-# Auto-added by fix-missing-blobs.py at Tue Jul  7 23:07:34 2026
-vendor/lib/vendor.transsion.hardware.trancam.trancamserver@1.0.so
-
-# Auto-added by fix-missing-blobs.py at Tue Jul  7 23:07:54 2026
-vendor/lib/libalsautils.so:vendor/lib/libalsautils-v32.so
-vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v32.so
-
-# Manual: codec deps
-vendor/lib/libadpcmdec_mtk.so
-vendor/lib64/libadpcmdec_mtk.so
-vendor/lib/libmp3dec_mtk.so
-vendor/lib64/libmp3dec_mtk.so
-
-# Manual: 32-bit deps for libdpframework
-vendor/lib/vendor.mediatek.hardware.mmagent@1.0.so
-vendor/lib/vendor.mediatek.hardware.pq@2.0.so
-
-# Manual: 32-bit mms HALs for libgpu_aux
-vendor/lib/vendor.mediatek.hardware.mms@1.0.so
-vendor/lib/vendor.mediatek.hardware.mms@1.1.so
-vendor/lib/vendor.mediatek.hardware.mms@1.2.so
-vendor/lib/vendor.mediatek.hardware.mms@1.3.so
-vendor/lib/vendor.mediatek.hardware.mms@1.4.so
-vendor/lib/vendor.mediatek.hardware.mms@1.5.so
