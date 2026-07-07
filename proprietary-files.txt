@@ -1,0 +1,1373 @@
+
+# AAL
+vendor/lib64/libaal_cust.so
+# Audio
+# DROPPED (missing): vendor/lib/hw/awinic.audio.effect.so;FIX_SONAME
+# Audio Configs
+vendor/etc/AudioLog_dynamic.xml
+vendor/etc/audio_param/AudioParamOptions_mgvi.xml
+vendor/etc/audio_param/AudioParamOptions_vext.xml
+vendor/etc/audio_param/BtInfo_AudioParam.xml
+vendor/etc/audio_param/BtInfo_ParamUnitDesc.xml
+vendor/etc/audio_param/CRSVolUI_AudioParam.xml
+vendor/etc/audio_param/CRSVolUI_ParamUnitDesc.xml
+vendor/etc/audio_param/CRSVol_AudioParam.xml
+vendor/etc/audio_param/CRSVol_ParamUnitDesc.xml
+vendor/etc/audio_param/HpImpedance_AudioParam.xml
+vendor/etc/audio_param/HpImpedance_ParamUnitDesc.xml
+vendor/etc/audio_param/MicInfo_AudioParam.xml
+vendor/etc/audio_param/MicInfo_ParamUnitDesc.xml
+vendor/etc/audio_param/PlaybackACF_AudioParam.xml
+vendor/etc/audio_param/PlaybackACF_ParamUnitDesc.xml
+vendor/etc/audio_param/PlaybackDRC_AudioParam.xml
+vendor/etc/audio_param/PlaybackDRC_ParamUnitDesc.xml
+vendor/etc/audio_param/PlaybackHCF_AudioParam.xml
+vendor/etc/audio_param/PlaybackHCF_ParamUnitDesc.xml
+vendor/etc/audio_param/PlaybackVolAna_AudioParam.xml
+vendor/etc/audio_param/PlaybackVolAna_ParamUnitDesc.xml
+vendor/etc/audio_param/PlaybackVolDigi_AudioParam.xml
+vendor/etc/audio_param/PlaybackVolDigi_ParamUnitDesc.xml
+vendor/etc/audio_param/PlaybackVolUI_AudioParam.xml
+vendor/etc/audio_param/PlaybackVolUI_ParamUnitDesc.xml
+vendor/etc/audio_param/Playback_AudioParam.xml
+vendor/etc/audio_param/Playback_ParamTreeView.xml
+vendor/etc/audio_param/Playback_ParamUnitDesc.xml
+vendor/etc/audio_param/RecordDMNR_AudioParam.xml
+vendor/etc/audio_param/RecordDMNR_ParamUnitDesc.xml
+vendor/etc/audio_param/RecordFIR_AudioParam.xml
+vendor/etc/audio_param/RecordFIR_ParamUnitDesc.xml
+vendor/etc/audio_param/RecordUI_AudioParam.xml
+vendor/etc/audio_param/RecordUI_ParamUnitDesc.xml
+vendor/etc/audio_param/RecordVolUI_AudioParam.xml
+vendor/etc/audio_param/RecordVolUI_ParamUnitDesc.xml
+vendor/etc/audio_param/RecordVol_AudioParam.xml
+vendor/etc/audio_param/RecordVol_ParamUnitDesc.xml
+vendor/etc/audio_param/Record_AudioParam.xml
+vendor/etc/audio_param/Record_ParamTreeView.xml
+vendor/etc/audio_param/Record_ParamUnitDesc.xml
+vendor/etc/audio_param/RingbackVolUI_AudioParam.xml
+vendor/etc/audio_param/RingbackVolUI_ParamUnitDesc.xml
+vendor/etc/audio_param/RingbackVol_AudioParam.xml
+vendor/etc/audio_param/RingbackVol_ParamUnitDesc.xml
+vendor/etc/audio_param/SmartPa_AudioParam.xml
+vendor/etc/audio_param/SmartPa_ParamUnitDesc.xml
+vendor/etc/audio_param/SoundEnhancement_AudioParam.xml
+vendor/etc/audio_param/SoundEnhancement_ParamUnitDesc.xml
+vendor/etc/audio_param/SpeechDMNR_AudioParam.xml
+vendor/etc/audio_param/SpeechDMNR_ParamUnitDesc.xml
+vendor/etc/audio_param/SpeechEchoRef_AudioParam.xml
+vendor/etc/audio_param/SpeechEchoRef_ParamUnitDesc.xml
+vendor/etc/audio_param/SpeechGeneral_AudioParam.xml
+vendor/etc/audio_param/SpeechGeneral_ParamUnitDesc.xml
+vendor/etc/audio_param/SpeechMagiClarity_AudioParam.xml
+vendor/etc/audio_param/SpeechMagiClarity_ParamUnitDesc.xml
+vendor/etc/audio_param/SpeechNetwork_AudioParam.xml
+vendor/etc/audio_param/SpeechNetwork_ParamUnitDesc.xml
+vendor/etc/audio_param/SpeechUI_AudioParam.xml
+vendor/etc/audio_param/SpeechUI_ParamUnitDesc.xml
+vendor/etc/audio_param/SpeechVolUI_AudioParam.xml
+vendor/etc/audio_param/SpeechVolUI_ParamUnitDesc.xml
+vendor/etc/audio_param/SpeechVol_AudioParam.xml
+vendor/etc/audio_param/SpeechVol_ParamUnitDesc.xml
+vendor/etc/audio_param/Speech_AudioParam.xml
+vendor/etc/audio_param/Speech_ParamTreeView.xml
+vendor/etc/audio_param/Speech_ParamUnitDesc.xml
+vendor/etc/audio_param/USBCall_AudioParam.xml
+vendor/etc/audio_param/USBCall_ParamUnitDesc.xml
+vendor/etc/audio_param/USBDevice_AudioParam.xml
+vendor/etc/audio_param/USBDevice_ParamUnitDesc.xml
+vendor/etc/audio_param/Ultrasound_AudioParam.xml
+vendor/etc/audio_param/Ultrasound_ParamUnitDesc.xml
+vendor/etc/audio_param/UplinkConfiguration_AudioParam.xml
+vendor/etc/audio_param/UplinkConfiguration_ParamUnitDesc.xml
+vendor/etc/audio_param/VoIPDMNR_AudioParam.xml
+vendor/etc/audio_param/VoIPDMNR_ParamUnitDesc.xml
+vendor/etc/audio_param/VoIPGeneral_AudioParam.xml
+vendor/etc/audio_param/VoIPGeneral_ParamUnitDesc.xml
+vendor/etc/audio_param/VoIPUI_AudioParam.xml
+vendor/etc/audio_param/VoIPUI_ParamUnitDesc.xml
+vendor/etc/audio_param/VoIPVolUI_AudioParam.xml
+vendor/etc/audio_param/VoIPVolUI_ParamUnitDesc.xml
+vendor/etc/audio_param/VoIPVol_AudioParam.xml
+vendor/etc/audio_param/VoIPVol_ParamUnitDesc.xml
+vendor/etc/audio_param/VoIP_AudioParam.xml
+vendor/etc/audio_param/VoIP_ParamTreeView.xml
+vendor/etc/audio_param/VoIP_ParamUnitDesc.xml
+vendor/etc/audio_param/VoIPv2DMNR_AudioParam.xml
+vendor/etc/audio_param/VoIPv2DMNR_ParamUnitDesc.xml
+vendor/etc/audio_param/VoIPv2General_AudioParam.xml
+vendor/etc/audio_param/VoIPv2General_ParamUnitDesc.xml
+vendor/etc/audio_param/VoIPv2UI_AudioParam.xml
+vendor/etc/audio_param/VoIPv2UI_ParamUnitDesc.xml
+vendor/etc/audio_param/VoIPv2_AudioParam.xml
+vendor/etc/audio_param/VoIPv2_ParamTreeView.xml
+vendor/etc/audio_param/VoIPv2_ParamUnitDesc.xml
+vendor/etc/audio_param/VoWDspAec_AudioParam.xml
+vendor/etc/audio_param/VoWDspAec_ParamUnitDesc.xml
+vendor/etc/audio_param/VoWEngineFeature_AudioParam.xml
+vendor/etc/audio_param/VoWEngineFeature_ParamUnitDesc.xml
+vendor/etc/audio_param/VoWHwVad_AudioParam.xml
+vendor/etc/audio_param/VoWHwVad_ParamUnitDesc.xml
+vendor/etc/audio_param/VoWMicSetting_AudioParam.xml
+vendor/etc/audio_param/VoWMicSetting_ParamUnitDesc.xml
+vendor/etc/audio_param/VoWVoiceCommand_AudioParam.xml
+vendor/etc/audio_param/VoWVoiceCommand_ParamUnitDesc.xml
+vendor/etc/audio_param/VolumeGainMapUL_AudioParam.xml
+vendor/etc/audio_param/VolumeGainMapUL_ParamUnitDesc.xml
+vendor/etc/audio_param/VolumeGainMap_AudioParam.xml
+vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
+vendor/etc/audio_param/Volume_AudioParam.xml
+vendor/etc/audio_param/Volume_ParamUnitDesc.xml
+# Firmware
+# DROPPED (missing): vendor/firmware/aw87xxx_acf.bin
+# DROPPED (missing): vendor/firmware/aw8622x_haptic.bin
+# DROPPED (missing): vendor/firmware/aw8622x_osc_rtp_12K_10s.bin
+# DROPPED (missing): vendor/firmware/aw8622x_rtp.bin
+# DROPPED (missing): vendor/firmware/aw8624_haptic.bin
+# DROPPED (missing): vendor/firmware/aw8624_osc_rtp_24K_5s.bin
+# DROPPED (missing): vendor/firmware/aw8624_rtp_lighthouse.bin
+# DROPPED (missing): vendor/firmware/aw8624_rtp_silk.bin
+# DROPPED (missing): vendor/firmware/aw8624_rtp.bin
+# DROPPED (missing): vendor/firmware/awinic_params.bin
+vendor/firmware/BT_FW.cfg
+vendor/firmware/Conf_MultipleTest.ini
+vendor/firmware/fm_cust.cfg
+# DROPPED (missing): vendor/firmware/focaltech_ts_fw_0.bin
+vendor/firmware/gt9886_cfg_90hz6785.bin
+vendor/firmware/gt9886_cfg_90hz6877.bin
+vendor/firmware/gt9886_cfg_90hz6885.bin
+vendor/firmware/gt9886_cfg_6781v01.bin
+vendor/firmware/gt9886_cfg_6785v96.bin
+vendor/firmware/gt9886_cfg_6785v99.bin
+vendor/firmware/gt9886_cfg_6853v01.bin
+vendor/firmware/gt9886_cfg_6873v01.bin
+vendor/firmware/gt9886_cfg_6877v01.bin
+vendor/firmware/gt9886_cfg_6885v01.bin
+vendor/firmware/gt9886_cfg_6885v1.bin
+vendor/firmware/gt9886_cfg_6885v9c.bin
+vendor/firmware/gt9886_cfg_6893v01.bin
+vendor/firmware/gt9886_cfg_gt9885v1.bin
+vendor/firmware/gt9886_firmware_6781v01.bin
+vendor/firmware/gt9886_firmware_6785a4.bin
+vendor/firmware/gt9886_firmware_6785ae.bin
+vendor/firmware/gt9886_firmware_6853v01.bin
+vendor/firmware/gt9886_firmware_6873v01.bin
+vendor/firmware/gt9886_firmware_6877af.bin
+vendor/firmware/gt9886_firmware_6877v01.bin
+vendor/firmware/gt9886_firmware_6885a1.bin
+vendor/firmware/gt9886_firmware_6885af.bin
+vendor/firmware/gt9886_firmware_6885b0.bin
+vendor/firmware/gt9886_firmware_6885b1.bin
+vendor/firmware/gt9886_firmware_6885v01.bin
+vendor/firmware/gt9886_firmware_6893v01.bin
+vendor/firmware/gt9896s_cfg_6781v01_1080x2280.bin
+vendor/firmware/gt9896s_cfg_6781v01_1080x2300.bin
+vendor/firmware/gt9896s_cfg_6789v01.bin
+vendor/firmware/gt9896s_cfg_6833v01.bin
+vendor/firmware/gt9896s_cfg_6853v01.bin
+vendor/firmware/gt9896s_cfg_6855v01.bin
+vendor/firmware/gt9896s_cfg_6873v01.bin
+vendor/firmware/gt9896s_cfg_6877v01_1080x2280.bin
+vendor/firmware/gt9896s_cfg_6877v01_1080x2300.bin
+vendor/firmware/gt9896s_cfg_6879v01.bin
+vendor/firmware/gt9896s_cfg_6893v01.bin
+vendor/firmware/gt9896s_cfg_6893v02.bin
+vendor/firmware/gt9896s_cfg_6893v03.bin
+vendor/firmware/gt9896s_cfg_6893v04.bin
+vendor/firmware/gt9896s_cfg_6893v05.bin
+vendor/firmware/gt9896s_cfg_6895v01.bin
+vendor/firmware/gt9896s_cfg_6983v01.bin
+vendor/firmware/gt9896s_firmware_6781v01_1080x2280.bin
+vendor/firmware/gt9896s_firmware_6781v01_1080x2300.bin
+vendor/firmware/gt9896s_firmware_6789v01.bin
+vendor/firmware/gt9896s_firmware_6833v01.bin
+vendor/firmware/gt9896s_firmware_6853v01.bin
+vendor/firmware/gt9896s_firmware_6855v01.bin
+vendor/firmware/gt9896s_firmware_6873v00.bin
+vendor/firmware/gt9896s_firmware_6877v01_1080x2280.bin
+vendor/firmware/gt9896s_firmware_6877v01_1080x2300.bin
+vendor/firmware/gt9896s_firmware_6879v01.bin
+vendor/firmware/gt9896s_firmware_6893v01.bin
+vendor/firmware/gt9896s_firmware_6893v02.bin
+vendor/firmware/gt9896s_firmware_6893v03.bin
+vendor/firmware/gt9896s_firmware_6893v04.bin
+vendor/firmware/gt9896s_firmware_6893v05.bin
+vendor/firmware/gt9896s_firmware_6895v01.bin
+vendor/firmware/gt9896s_firmware_6983v01.bin
+vendor/firmware/lib3a.ccu
+vendor/firmware/mt6627_fm_v1_coeff.bin
+vendor/firmware/mt6627_fm_v1_patch.bin
+vendor/firmware/mt6630_fm_v1_coeff.bin
+vendor/firmware/mt6630_fm_v1_patch.bin
+vendor/firmware/mt6630_fm_v2_coeff_tx.bin
+vendor/firmware/mt6630_fm_v2_coeff.bin
+vendor/firmware/mt6630_fm_v2_patch_tx.bin
+vendor/firmware/mt6630_fm_v2_patch.bin
+vendor/firmware/mt6631_fm_v1_coeff.bin
+vendor/firmware/mt6631_fm_v1_patch.bin
+vendor/firmware/mt6632_fm_v1_coeff.bin
+vendor/firmware/mt6632_fm_v1_patch.bin
+vendor/firmware/mt6635_fm_v1_coeff.bin
+vendor/firmware/mt6635_fm_v1_patch.bin
+vendor/firmware/novatek_ts_fw_144.bin
+vendor/firmware/novatek_ts_fw_jdi.bin
+vendor/firmware/novatek_ts_fw_tm.bin
+vendor/firmware/novatek_ts_fw.bin
+vendor/firmware/remoteproc_scp
+vendor/firmware/soc_fm_v1_coeff.bin
+vendor/firmware/soc_fm_v1_patch.bin
+vendor/firmware/soc2_2_ram_bt_1d_1_hdr.bin
+vendor/firmware/soc2_2_ram_bt_1e_1_hdr.bin
+vendor/firmware/soc2_2_ram_mcu_1d_1_hdr.bin
+vendor/firmware/soc2_2_ram_mcu_1e_1_hdr.bin
+vendor/firmware/soc2_2_ram_wifi_1d_1_hdr.bin
+vendor/firmware/soc2_2_ram_wifi_1e_1_hdr.bin
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1d_1.bin
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1e_1.bin
+vendor/firmware/wifi.cfg
+vendor/firmware/WMT_SOC.cfg
+# Fingerprint
+# DROPPED (missing): vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+# DROPPED (missing): vendor/bin/hw/vendor.fptool.fingerprint@2.0-service
+# DROPPED (missing): vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
+# DROPPED (missing): vendor/etc/init/vendor.fptool.fingerprint@2.0-service.rc
+# DROPPED (missing): vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml
+# DROPPED (missing): vendor/etc/fsfp-config.xml
+# DROPPED (missing): vendor/lib64/hw/fsfingerprint.default.so;FIX_SONAME
+# DROPPED (missing): vendor/lib64/hw/vendor.fptool.fingerprint@2.0-impl.so
+# DROPPED (missing): vendor/lib64/vendor.fptool.fingerprint@2.0-adapter-helper.so
+# DROPPED (missing): vendor/lib64/vendor.fptool.fingerprint@2.0.so
+# mcRegistry
+vendor/app/mcRegistry/020f0000000000000000000000000000.drbin
+vendor/app/mcRegistry/020f0000000000000000000000000000.tlbin
+# DROPPED (missing): vendor/app/mcRegistry/030c0000000000000000000000000000.drbin
+# DROPPED (missing): vendor/app/mcRegistry/030c0000000000000000000000000000.tlbin
+vendor/app/mcRegistry/40188311faf343488db888ad39496f9a.drbin
+vendor/app/mcRegistry/40188311faf343488db888ad39496f9a.tlbin
+vendor/app/mcRegistry/5020170115e016302017012521300000.drbin
+vendor/app/mcRegistry/5020170115e016302017012521300000.tlbin
+vendor/app/mcRegistry/0706000000000000000000000000004d.tlbin
+# DROPPED (missing): vendor/app/mcRegistry/04010000000000000000000000000000.tabin
+vendor/app/mcRegistry/05120000000000000000000000000001.drbin
+vendor/app/mcRegistry/05120000000000000000000000000001.tlbin
+vendor/app/mcRegistry/06090000000000000000000000000000.drbin
+vendor/app/mcRegistry/06090000000000000000000000000000.tlbin
+vendor/app/mcRegistry/07061000000000000000000000000000.tlbin
+# DROPPED (missing): vendor/app/mcRegistry/07090000000000000000000000000000.drbin
+vendor/app/mcRegistry/07170000000000000000000000000000.drbin
+vendor/app/mcRegistry/07170000000000000000000000000000.tlbin
+vendor/app/mcRegistry/08030000000000000000000000000000.tabin
+vendor/app/mcRegistry/08040000000000000000000000003419.tabin
+vendor/app/mcRegistry/08050000000000000000000000003419.drbin
+vendor/app/mcRegistry/08050000000000000000000000003419.tlbin
+vendor/app/mcRegistry/08110000000000000000000000000000.tabin
+vendor/app/mcRegistry/abcd270ea5c44c58bcd3384a2fa2539e.tabin
+vendor/app/mcRegistry/ce4550edbcb1662566b006ebcb303050.tabin
+vendor/app/mcRegistry/df1edda8627911e980ae507b9d9a7e7d.tabin
+vendor/app/mcRegistry/e97c270ea5c44c58bcd3384a2fa2539e.tabin
+# NFC Configs
+vendor/etc/libnfc-nci.conf
+vendor/etc/libnfc-nxp.conf
+# DROPPED (missing): vendor/etc/libnfc-slm.conf
+vendor/libnfc-nxp_RF.conf
+# APU
+vendor/etc/vintf/manifest/manifest_apuware_apusys.xml
+vendor/etc/vintf/manifest/manifest_apuware_hmp.xml
+vendor/etc/vintf/manifest/manifest_apuware_utils.xml
+vendor/lib64/APUWareApusysServer.so
+vendor/lib64/APUWareHmpServer.so
+vendor/lib64/APUWareUtilsServer.so
+vendor/lib64/libapu_mdw.so
+vendor/lib64/libapu_mdw_batch.so
+vendor/lib64/libapusys.so
+vendor/lib64/libapusys_edma.so
+vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.1.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.mediatek.hardware.apuware.hmp@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so;MODULE_SUFFIX=_vendor
+vendor/lib/libbwc.so
+vendor/lib64/hw/audio.primary.mediatek.so;SYMLINK=vendor/lib64/hw/audio.primary.mt6789.so
+vendor/lib64/libMtkSpeechEnh.so
+vendor/lib64/lib_iir.so
+vendor/lib64/lib_speech_enh.so
+vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v32.so;FIX_SONAME
+vendor/lib64/libaudio_param_parser-vnd.so
+vendor/lib64/libaudiocompensationfilter_vendor.so
+vendor/lib64/libaudiocompensationfilterc.so
+vendor/lib64/libaudiocomponentengine_vendor.so
+vendor/lib64/libaudiocomponentenginec.so
+vendor/lib64/libaudiocustparam_vendor.so
+vendor/lib64/libaudiodcrflt_vendor.so
+vendor/lib64/libaudiofmtconv.so
+vendor/lib64/libaudioloudc.so
+vendor/lib64/libaudioprimarydevicehalifclient.so
+vendor/lib64/libaudiosmartpamtk.so
+vendor/lib64/libaudiotoolkit_vendor.so
+vendor/lib64/libaurisysdemo.so
+vendor/lib64/libbessound_hd_mtk_vendor.so
+vendor/lib64/libblisrc32_vendor.so
+vendor/lib64/libbwc.so
+vendor/lib64/libcvsd_mtk.so
+vendor/lib64/libmsbc_mtk.so
+vendor/lib64/libmtklimiter_vendor.so
+vendor/lib64/libmtkshifter_vendor.so
+vendor/lib64/libnxp_extamp_intf.so
+vendor/lib64/librt_extamp_intf.so
+vendor/lib64/libspeech_enh_lib.so
+vendor/lib64/libspeechparser_vendor.so
+vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
+# Bluetooth
+vendor/etc/init/init.bt_drv.rc
+vendor/lib64/libbluetooth_mtk.so
+vendor/lib64/libbluetooth_mtk_pure.so
+vendor/lib64/libbt-vendor.so
+# Camera (bin)
+vendor/bin/hw/mt6789/camerahalserver;SYMLINK=vendor/bin/hw/camerahalserver
+vendor/etc/init/camerahalserver.rc
+vendor/etc/vintf/manifest/manifest_cameraprovider.xml
+# Camera (lib64)
+vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
+vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.atms@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
+vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
+vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.ccap@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.ccap@1.0-impl.so
+vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal@1.0-impl.so
+vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal@1.1-impl.so
+vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.lomoeffect@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.lomoeffect@1.0-impl.so
+# DROPPED (missing): vendor/lib64/mt6789/fake_serial_yuv_IdxMgr.so;SYMLINK=vendor/lib64/fake_serial_yuv_IdxMgr.so
+# DROPPED (missing): vendor/lib64/mt6789/fake_serial_yuv_tuning.so;SYMLINK=vendor/lib64/fake_serial_yuv_tuning.so
+# DROPPED (missing): vendor/lib64/mt6789/gc08a3_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc08a3_mipi_raw_IdxMgr.so
+# DROPPED (missing): vendor/lib64/mt6789/gc08a3_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc08a3_mipi_raw_tuning.so
+vendor/lib64/mt6789/lib3a.ae.core.so;SYMLINK=vendor/lib64/lib3a.ae.core.so
+vendor/lib64/mt6789/lib3a.ae.so;SYMLINK=vendor/lib64/lib3a.ae.so
+vendor/lib64/mt6789/lib3a.ae.stat.so;SYMLINK=vendor/lib64/lib3a.ae.stat.so
+vendor/lib64/mt6789/lib3a.af.assist.so;SYMLINK=vendor/lib64/lib3a.af.assist.so
+vendor/lib64/mt6789/lib3a.af.assist.utils.so;SYMLINK=vendor/lib64/lib3a.af.assist.utils.so
+vendor/lib64/mt6789/lib3a.af.core.so;SYMLINK=vendor/lib64/lib3a.af.core.so
+vendor/lib64/mt6789/lib3a.af.so;SYMLINK=vendor/lib64/lib3a.af.so
+vendor/lib64/mt6789/lib3a.alsflicker.so;SYMLINK=vendor/lib64/lib3a.alsflicker.so
+vendor/lib64/mt6789/lib3a.awb.core.so;SYMLINK=vendor/lib64/lib3a.awb.core.so
+vendor/lib64/mt6789/lib3a.ccudrv.so;SYMLINK=vendor/lib64/lib3a.ccudrv.so
+vendor/lib64/mt6789/lib3a.ccuif.so;SYMLINK=vendor/lib64/lib3a.ccuif.so
+vendor/lib64/mt6789/lib3a.custom.ae.so;SYMLINK=vendor/lib64/lib3a.custom.ae.so
+vendor/lib64/mt6789/lib3a.dce.so;SYMLINK=vendor/lib64/lib3a.dce.so
+vendor/lib64/mt6789/lib3a.flash.so;SYMLINK=vendor/lib64/lib3a.flash.so
+vendor/lib64/mt6789/lib3a.flicker.so;SYMLINK=vendor/lib64/lib3a.flicker.so
+vendor/lib64/mt6789/lib3a.gma.so;SYMLINK=vendor/lib64/lib3a.gma.so
+vendor/lib64/mt6789/lib3a.lce.so;SYMLINK=vendor/lib64/lib3a.lce.so
+vendor/lib64/mt6789/lib3a.log.so;SYMLINK=vendor/lib64/lib3a.log.so
+vendor/lib64/mt6789/lib3a.n3d3a.so;SYMLINK=vendor/lib64/lib3a.n3d3a.so
+vendor/lib64/mt6789/lib3a.sensors.color.so;SYMLINK=vendor/lib64/lib3a.sensors.color.so
+vendor/lib64/mt6789/lib3a.sensors.flicker.so;SYMLINK=vendor/lib64/lib3a.sensors.flicker.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_E2EHDR_Preview.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_E2EHDR_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_E2EHDR_Video.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_E2EHDR_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_Face_Capture.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_Face_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_Flash_Capture.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_Flash_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_HDR_Capture.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_HDR_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_HDR_Preview.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_HDR_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_HDR_Reconfig_Preview.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_HDR_Reconfig_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_HDR_Reconfig_Video.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_HDR_Reconfig_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_HDR_Video.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_HDR_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_N3D_Capture.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_N3D_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_N3D_Preview.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_N3D_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_N3D_Video.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_N3D_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_P1_YUV.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_P1_YUV.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_Scene_Capture.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_Scene_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_Scene_Capture_4cell.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_Scene_Capture_4cell.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_Scene_Preview.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_Scene_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_Scene_Preview_4k.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_Scene_Preview_4k.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_Scene_Preview_ZSD_Flash.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_Scene_Preview_ZSD_Flash.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_Video_1080.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_Video_1080.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_fakeserialyuv_Video_4k.so;SYMLINK=vendor/lib64/libCamera_fakeserialyuv_Video_4k.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_E2EHDR_Preview.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_E2EHDR_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_E2EHDR_Video.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_E2EHDR_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Face_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_Face_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Flash_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_Flash_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_HDR_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_HDR_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_HDR_Preview.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_HDR_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_HDR_Reconfig_Preview.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_HDR_Reconfig_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_HDR_Reconfig_Video.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_HDR_Reconfig_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_HDR_Video.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_HDR_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_N3D_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_N3D_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_N3D_Preview.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_N3D_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_N3D_Video.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_N3D_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_P1_YUV.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_P1_YUV.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_Scene_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Capture_4cell.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_Scene_Capture_4cell.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Preview.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_Scene_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Scene_Preview_ZSD_Flash.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_Scene_Preview_ZSD_Flash.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Video_1080.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_Video_1080.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Video_4k.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_Video_4k.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_gc08a3mipiraw_Zoom_Capture.so;SYMLINK=vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_E2EHDR_Preview.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_E2EHDR_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_E2EHDR_Video.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_E2EHDR_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_Face_Capture.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_Face_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_Flash_Capture.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_Flash_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_HDR_Capture.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_HDR_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_HDR_Preview.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_HDR_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_HDR_Reconfig_Preview.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_HDR_Reconfig_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_HDR_Reconfig_Video.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_HDR_Reconfig_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_HDR_Video.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_HDR_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_N3D_Capture.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_N3D_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_N3D_Preview.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_N3D_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_N3D_Video.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_N3D_Video.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_P1_YUV.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_P1_YUV.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_Scene_Capture.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_Scene_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_Scene_Capture_4cell.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_Scene_Capture_4cell.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_Scene_Preview.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_Scene_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_Scene_Preview_ZSD_Flash.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_Scene_Preview_ZSD_Flash.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_Video_1080.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_Video_1080.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_Video_4k.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_Video_4k.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcgc08a3mipiraw_Zoom_Capture.so;SYMLINK=vendor/lib64/libCamera_pblcgc08a3mipiraw_Zoom_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcs5kjn1mipiraw_Face_Capture.so;SYMLINK=vendor/lib64/libCamera_pblcs5kjn1mipiraw_Face_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcs5kjn1mipiraw_Flash_Capture.so;SYMLINK=vendor/lib64/libCamera_pblcs5kjn1mipiraw_Flash_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcs5kjn1mipiraw_Scene_Capture.so;SYMLINK=vendor/lib64/libCamera_pblcs5kjn1mipiraw_Scene_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcs5kjn1mipiraw_Scene_Capture_4cell.so;SYMLINK=vendor/lib64/libCamera_pblcs5kjn1mipiraw_Scene_Capture_4cell.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pblcs5kjn1mipiraw_Scene_Preview.so;SYMLINK=vendor/lib64/libCamera_pblcs5kjn1mipiraw_Scene_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pbrogc08a3mipiraw_Flash_Capture.so;SYMLINK=vendor/lib64/libCamera_pbrogc08a3mipiraw_Flash_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pbrogc08a3mipiraw_Scene_Capture.so;SYMLINK=vendor/lib64/libCamera_pbrogc08a3mipiraw_Scene_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pbrogc08a3mipiraw_Scene_Capture_4cell.so;SYMLINK=vendor/lib64/libCamera_pbrogc08a3mipiraw_Scene_Capture_4cell.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pbrogc08a3mipiraw_Scene_Preview.so;SYMLINK=vendor/lib64/libCamera_pbrogc08a3mipiraw_Scene_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pbrogc08a3mipiraw_Video_1080.so;SYMLINK=vendor/lib64/libCamera_pbrogc08a3mipiraw_Video_1080.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pbros5kjn1mipiraw_Flash_Capture.so;SYMLINK=vendor/lib64/libCamera_pbros5kjn1mipiraw_Flash_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pbros5kjn1mipiraw_Scene_Capture.so;SYMLINK=vendor/lib64/libCamera_pbros5kjn1mipiraw_Scene_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pbros5kjn1mipiraw_Scene_Capture_4cell.so;SYMLINK=vendor/lib64/libCamera_pbros5kjn1mipiraw_Scene_Capture_4cell.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_pbros5kjn1mipiraw_Scene_Preview.so;SYMLINK=vendor/lib64/libCamera_pbros5kjn1mipiraw_Scene_Preview.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_s5kjn1mipiraw_Face_Capture.so;SYMLINK=vendor/lib64/libCamera_s5kjn1mipiraw_Face_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_s5kjn1mipiraw_Flash_Capture.so;SYMLINK=vendor/lib64/libCamera_s5kjn1mipiraw_Flash_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_s5kjn1mipiraw_Scene_Capture.so;SYMLINK=vendor/lib64/libCamera_s5kjn1mipiraw_Scene_Capture.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_s5kjn1mipiraw_Scene_Capture_4cell.so;SYMLINK=vendor/lib64/libCamera_s5kjn1mipiraw_Scene_Capture_4cell.so
+# DROPPED (missing): vendor/lib64/mt6789/libCamera_s5kjn1mipiraw_Scene_Preview.so;SYMLINK=vendor/lib64/libCamera_s5kjn1mipiraw_Scene_Preview.so
+vendor/lib64/mt6789/libSonyIMX230PdafLibrary.so;SYMLINK=vendor/lib64/libSonyIMX230PdafLibrary.so
+vendor/lib64/mt6789/libSonyIMX230PdafLibraryWrapper.so;SYMLINK=vendor/lib64/libSonyIMX230PdafLibraryWrapper.so
+vendor/lib64/mt6789/libSonyIMX338PdafLibrary.so;SYMLINK=vendor/lib64/libSonyIMX338PdafLibrary.so
+vendor/lib64/mt6789/libSonyIMX338PdafLibraryWrapper.so;SYMLINK=vendor/lib64/libSonyIMX338PdafLibraryWrapper.so
+vendor/lib64/mt6789/libSonyIMX386PdafLibrary.so;SYMLINK=vendor/lib64/libSonyIMX386PdafLibrary.so
+vendor/lib64/mt6789/libSonyIMX386PdafLibraryWrapper.so;SYMLINK=vendor/lib64/libSonyIMX386PdafLibraryWrapper.so
+vendor/lib64/mt6789/libSonyIMX519PdafLibrary.so;SYMLINK=vendor/lib64/libSonyIMX519PdafLibrary.so
+vendor/lib64/mt6789/libSonyIMX519PdafLibraryWrapper.so;SYMLINK=vendor/lib64/libSonyIMX519PdafLibraryWrapper.so
+vendor/lib64/mt6789/libaiawb_moon.so;SYMLINK=vendor/lib64/libaiawb_moon.so
+vendor/lib64/mt6789/libaiawb_p1ggm.so;SYMLINK=vendor/lib64/libaiawb_p1ggm.so
+vendor/lib64/mt6789/libaiawb_sun.so;SYMLINK=vendor/lib64/libaiawb_sun.so
+vendor/lib64/mt6789/libaibc_tuning.so;SYMLINK=vendor/lib64/libaibc_tuning.so
+vendor/lib64/mt6789/libaibc_tuning_p2.so;SYMLINK=vendor/lib64/libaibc_tuning_p2.so
+vendor/lib64/mt6789/libaibc_tuning_p3.so;SYMLINK=vendor/lib64/libaibc_tuning_p3.so
+vendor/lib64/mt6789/libaibc_tuning_p4.so;SYMLINK=vendor/lib64/libaibc_tuning_p4.so
+vendor/lib64/mt6789/libaidepth_tuning.so;SYMLINK=vendor/lib64/libaidepth_tuning.so
+# DROPPED (missing): vendor/lib64/mt6789/libarcsoft_beautyshot.so;SYMLINK=vendor/lib64/libarcsoft_beautyshot.so
+# DROPPED (missing): vendor/lib64/mt6789/libarcsoft_high_dynamic_range.so;SYMLINK=vendor/lib64/libarcsoft_high_dynamic_range.so
+# DROPPED (missing): vendor/lib64/mt6789/libarcsoft_low_light_hdr.so;SYMLINK=vendor/lib64/libarcsoft_low_light_hdr.so
+vendor/lib64/mt6789/libarcsoft_low_light_shot.so;SYMLINK=vendor/lib64/libarcsoft_low_light_shot.so
+# DROPPED (missing): vendor/lib64/mt6789/libarcsoft_night_hawk.so;SYMLINK=vendor/lib64/libarcsoft_night_hawk.so
+# DROPPED (missing): vendor/lib64/mt6789/libarcsoft_torch_portrait_night.so;SYMLINK=vendor/lib64/libarcsoft_torch_portrait_night.so
+vendor/lib64/mt6789/libcalculatesharpness.so;SYMLINK=vendor/lib64/libcalculatesharpness.so
+vendor/lib64/mt6789/libcam.afhal.so;SYMLINK=vendor/lib64/libcam.afhal.so
+vendor/lib64/mt6789/libcam.chdr.so;SYMLINK=vendor/lib64/libcam.chdr.so
+vendor/lib64/mt6789/libcam.feature_utils.so;SYMLINK=vendor/lib64/libcam.feature_utils.so
+vendor/lib64/mt6789/libcam.hal3a.cctsvr.so;SYMLINK=vendor/lib64/libcam.hal3a.cctsvr.so
+vendor/lib64/mt6789/libcam.hal3a.log.so;SYMLINK=vendor/lib64/libcam.hal3a.log.so
+vendor/lib64/mt6789/libcam.hal3a.v3.ae.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.ae.so
+vendor/lib64/mt6789/libcam.hal3a.v3.ai3a.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.ai3a.so
+vendor/lib64/mt6789/libcam.hal3a.v3.awb.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.awb.so
+vendor/lib64/mt6789/libcam.hal3a.v3.dng.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.dng.so
+vendor/lib64/mt6789/libcam.hal3a.v3.fsmgr.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.fsmgr.so
+vendor/lib64/mt6789/libcam.hal3a.v3.lscMgr.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.lscMgr.so
+vendor/lib64/mt6789/libcam.hal3a.v3.lsctbl.50.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.lsctbl.50.so
+vendor/lib64/mt6789/libcam.hal3a.v3.nvram.50.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.nvram.50.so
+vendor/lib64/mt6789/libcam.hal3a.v3.platform.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.platform.so
+vendor/lib64/mt6789/libcam.hal3a.v3.resultpool.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.resultpool.so
+vendor/lib64/mt6789/libcam.hal3a.v3.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.so
+vendor/lib64/mt6789/libcam.halisp.buf.so;SYMLINK=vendor/lib64/libcam.halisp.buf.so
+vendor/lib64/mt6789/libcam.halisp.common.so;SYMLINK=vendor/lib64/libcam.halisp.common.so
+vendor/lib64/mt6789/libcam.halisp.so;SYMLINK=vendor/lib64/libcam.halisp.so
+vendor/lib64/mt6789/libcam.halsensor.hwintegration.so;SYMLINK=vendor/lib64/libcam.halsensor.hwintegration.so
+vendor/lib64/mt6789/libcam.halsensor.so;SYMLINK=vendor/lib64/libcam.halsensor.so
+vendor/lib64/mt6789/libcam.iopipe.so;SYMLINK=vendor/lib64/libcam.iopipe.so
+vendor/lib64/mt6789/libcam.isptuning.so;SYMLINK=vendor/lib64/libcam.isptuning.so
+vendor/lib64/mt6789/libcam.pdtblgen.so;SYMLINK=vendor/lib64/libcam.pdtblgen.so
+vendor/lib64/mt6789/libcam.tuning.cache.so;SYMLINK=vendor/lib64/libcam.tuning.cache.so
+vendor/lib64/mt6789/libcam.utils.sensorprovider.so;SYMLINK=vendor/lib64/libcam.utils.sensorprovider.so
+vendor/lib64/mt6789/libcam.vhdr.so;SYMLINK=vendor/lib64/libcam.vhdr.so
+vendor/lib64/mt6789/libcam3atms_profiles.so;SYMLINK=vendor/lib64/libcam3atms_profiles.so
+vendor/lib64/mt6789/libcamalgo.ispfeature.so;SYMLINK=vendor/lib64/libcamalgo.ispfeature.so
+vendor/lib64/mt6789/libcamalgo.lsc.so;SYMLINK=vendor/lib64/libcamalgo.lsc.so
+vendor/lib64/mt6789/libcamalgo.platform2.so;SYMLINK=vendor/lib64/libcamalgo.platform2.so
+vendor/lib64/mt6789/libcamalgo.rotate.so;SYMLINK=vendor/lib64/libcamalgo.rotate.so
+vendor/lib64/mt6789/libcamalgo.vsf.so;SYMLINK=vendor/lib64/libcamalgo.vsf.so
+vendor/lib64/mt6789/libcamdrv_isp.so;SYMLINK=vendor/lib64/libcamdrv_isp.so
+vendor/lib64/mt6789/libcamdrv_tuning_mgr.so;SYMLINK=vendor/lib64/libcamdrv_tuning_mgr.so
+vendor/lib64/mt6789/libcamdrv_twin.so;SYMLINK=vendor/lib64/libcamdrv_twin.so
+vendor/lib64/mt6789/libcamera.custom.pd_buf_mgr.so;SYMLINK=vendor/lib64/libcamera.custom.pd_buf_mgr.so
+vendor/lib64/mt6789/libcamera.customae.so;SYMLINK=vendor/lib64/libcamera.customae.so
+vendor/lib64/mt6789/libcamera.customaf.so;SYMLINK=vendor/lib64/libcamera.customaf.so
+vendor/lib64/mt6789/libcamera.customawb.so;SYMLINK=vendor/lib64/libcamera.customawb.so
+vendor/lib64/mt6789/libcamera.customflk.so;SYMLINK=vendor/lib64/libcamera.customflk.so
+vendor/lib64/mt6789/libcameracustom.camera.3a.so;SYMLINK=vendor/lib64/libcameracustom.camera.3a.so
+vendor/lib64/mt6789/libcameracustom.camera.isp.so;SYMLINK=vendor/lib64/libcameracustom.camera.isp.so
+vendor/lib64/mt6789/libcameracustom.camera.sensors.so;SYMLINK=vendor/lib64/libcameracustom.camera.sensors.so
+vendor/lib64/mt6789/libcameracustom.camera_exif.so;SYMLINK=vendor/lib64/libcameracustom.camera_exif.so
+# DROPPED (missing): vendor/lib64/mt6789/libcameracustom.eis.so;SYMLINK=vendor/lib64/libcameracustom.eis.so
+vendor/lib64/mt6789/libcameracustom.flashlight.so;SYMLINK=vendor/lib64/libcameracustom.flashlight.so
+vendor/lib64/mt6789/libcameracustom.lens.so;SYMLINK=vendor/lib64/libcameracustom.lens.so
+vendor/lib64/mt6789/libcameracustom.plugin.so;SYMLINK=vendor/lib64/libcameracustom.plugin.so
+vendor/lib64/mt6789/libcameracustom.so;SYMLINK=vendor/lib64/libcameracustom.so
+vendor/lib64/mt6789/libdenoise.so;SYMLINK=vendor/lib64/libdenoise.so
+vendor/lib64/mt6789/libmtkcam.atmseventmgr.so;SYMLINK=vendor/lib64/libmtkcam.atmseventmgr.so
+vendor/lib64/mt6789/libmtkcam.eventcallback.so;SYMLINK=vendor/lib64/libmtkcam.eventcallback.so
+vendor/lib64/mt6789/libmtkcam.featurepipe.capture.so;SYMLINK=vendor/lib64/libmtkcam.featurepipe.capture.so
+vendor/lib64/mt6789/libmtkcam.featurepipe.depthmap.so;SYMLINK=vendor/lib64/libmtkcam.featurepipe.depthmap.so
+vendor/lib64/mt6789/libmtkcam.featurepipe.streaming.so;SYMLINK=vendor/lib64/libmtkcam.featurepipe.streaming.so
+vendor/lib64/mt6789/libmtkcam.featurepipe.vsdof_util.so;SYMLINK=vendor/lib64/libmtkcam.featurepipe.vsdof_util.so
+vendor/lib64/mt6789/libmtkcam.logicalmodule.so;SYMLINK=vendor/lib64/libmtkcam.logicalmodule.so
+vendor/lib64/mt6789/libmtkcam_3rdparty.core.so;SYMLINK=vendor/lib64/libmtkcam_3rdparty.core.so
+vendor/lib64/mt6789/libmtkcam_3rdparty.customer.so;SYMLINK=vendor/lib64/libmtkcam_3rdparty.customer.so|28879baf99542a619612a5a2653d806863b0755d
+vendor/lib64/mt6789/libmtkcam_3rdparty.mtk.so;SYMLINK=vendor/lib64/libmtkcam_3rdparty.mtk.so
+vendor/lib64/mt6789/libmtkcam_3rdparty.so;SYMLINK=vendor/lib64/libmtkcam_3rdparty.so
+vendor/lib64/mt6789/libmtkcam_calibration_convertor.so;SYMLINK=vendor/lib64/libmtkcam_calibration_convertor.so
+vendor/lib64/mt6789/libmtkcam_calibration_provider.so;SYMLINK=vendor/lib64/libmtkcam_calibration_provider.so
+vendor/lib64/mt6789/libmtkcam_debugutils.so;SYMLINK=vendor/lib64/libmtkcam_debugutils.so
+vendor/lib64/mt6789/libmtkcam_device3_app.so;SYMLINK=vendor/lib64/libmtkcam_device3_app.so
+vendor/lib64/mt6789/libmtkcam_device3_hal.so;SYMLINK=vendor/lib64/libmtkcam_device3_hal.so
+vendor/lib64/mt6789/libmtkcam_device3_hidl.so;SYMLINK=vendor/lib64/libmtkcam_device3_hidl.so
+vendor/lib64/mt6789/libmtkcam_device3_hidlutils.so;SYMLINK=vendor/lib64/libmtkcam_device3_hidlutils.so
+vendor/lib64/mt6789/libmtkcam_device3_utils.so;SYMLINK=vendor/lib64/libmtkcam_device3_utils.so
+vendor/lib64/mt6789/libmtkcam_devicesessionpolicy.so;SYMLINK=vendor/lib64/libmtkcam_devicesessionpolicy.so
+vendor/lib64/mt6789/libmtkcam_diputils.so;SYMLINK=vendor/lib64/libmtkcam_diputils.so
+vendor/lib64/mt6789/libmtkcam_exif.so;SYMLINK=vendor/lib64/libmtkcam_exif.so
+vendor/lib64/mt6789/libmtkcam_fdvt.so;SYMLINK=vendor/lib64/libmtkcam_fdvt.so
+vendor/lib64/mt6789/libmtkcam_featurepolicy.so;SYMLINK=vendor/lib64/libmtkcam_featurepolicy.so
+vendor/lib64/mt6789/libmtkcam_featureutils.so;SYMLINK=vendor/lib64/libmtkcam_featureutils.so
+vendor/lib64/mt6789/libmtkcam_fwkutils.so;SYMLINK=vendor/lib64/libmtkcam_fwkutils.so
+vendor/lib64/mt6789/libmtkcam_grallocutils.so;SYMLINK=vendor/lib64/libmtkcam_grallocutils.so
+vendor/lib64/mt6789/libmtkcam_hwnode.so;SYMLINK=vendor/lib64/libmtkcam_hwnode.so
+vendor/lib64/mt6789/libmtkcam_hwutils.so;SYMLINK=vendor/lib64/libmtkcam_hwutils.so
+vendor/lib64/mt6789/libmtkcam_imem.so;SYMLINK=vendor/lib64/libmtkcam_imem.so
+vendor/lib64/mt6789/libmtkcam_imgbuf.so;SYMLINK=vendor/lib64/libmtkcam_imgbuf.so
+vendor/lib64/mt6789/libmtkcam_mapping_mgr.so;SYMLINK=vendor/lib64/libmtkcam_mapping_mgr.so
+vendor/lib64/mt6789/libmtkcam_metadata.so;SYMLINK=vendor/lib64/libmtkcam_metadata.so
+vendor/lib64/mt6789/libmtkcam_metastore.so;SYMLINK=vendor/lib64/libmtkcam_metastore.so|9ace3359da8f79fa742a58f186d9ca0b1562083e
+vendor/lib64/mt6789/libmtkcam_mfb.so;SYMLINK=vendor/lib64/libmtkcam_mfb.so
+vendor/lib64/mt6789/libmtkcam_modulefactory_aaa.so;SYMLINK=vendor/lib64/libmtkcam_modulefactory_aaa.so
+vendor/lib64/mt6789/libmtkcam_modulefactory_custom.so;SYMLINK=vendor/lib64/libmtkcam_modulefactory_custom.so
+vendor/lib64/mt6789/libmtkcam_modulefactory_drv.so;SYMLINK=vendor/lib64/libmtkcam_modulefactory_drv.so
+vendor/lib64/mt6789/libmtkcam_modulefactory_utils.so;SYMLINK=vendor/lib64/libmtkcam_modulefactory_utils.so
+vendor/lib64/mt6789/libmtkcam_modulehelper.so;SYMLINK=vendor/lib64/libmtkcam_modulehelper.so
+vendor/lib64/mt6789/libmtkcam_owe.so;SYMLINK=vendor/lib64/libmtkcam_owe.so
+vendor/lib64/mt6789/libmtkcam_pipeline.so;SYMLINK=vendor/lib64/libmtkcam_pipeline.so
+vendor/lib64/mt6789/libmtkcam_pipeline_fbm.so;SYMLINK=vendor/lib64/libmtkcam_pipeline_fbm.so
+vendor/lib64/mt6789/libmtkcam_pipelinemodel.so;SYMLINK=vendor/lib64/libmtkcam_pipelinemodel.so
+vendor/lib64/mt6789/libmtkcam_pipelinemodel_adapter.so;SYMLINK=vendor/lib64/libmtkcam_pipelinemodel_adapter.so
+vendor/lib64/mt6789/libmtkcam_pipelinemodel_capture.so;SYMLINK=vendor/lib64/libmtkcam_pipelinemodel_capture.so
+vendor/lib64/mt6789/libmtkcam_pipelinemodel_isp.so;SYMLINK=vendor/lib64/libmtkcam_pipelinemodel_isp.so
+vendor/lib64/mt6789/libmtkcam_pipelinemodel_session.so;SYMLINK=vendor/lib64/libmtkcam_pipelinemodel_session.so
+vendor/lib64/mt6789/libmtkcam_pipelinemodel_utils.so;SYMLINK=vendor/lib64/libmtkcam_pipelinemodel_utils.so
+vendor/lib64/mt6789/libmtkcam_pipelinemodel_zsl.so;SYMLINK=vendor/lib64/libmtkcam_pipelinemodel_zsl.so
+vendor/lib64/mt6789/libmtkcam_pipelinepolicy-security.so;SYMLINK=vendor/lib64/libmtkcam_pipelinepolicy-security.so
+vendor/lib64/mt6789/libmtkcam_pipelinepolicy-smvr.so;SYMLINK=vendor/lib64/libmtkcam_pipelinepolicy-smvr.so
+vendor/lib64/mt6789/libmtkcam_pipelinepolicy.so;SYMLINK=vendor/lib64/libmtkcam_pipelinepolicy.so
+vendor/lib64/mt6789/libmtkcam_pipelinepolicy_factory.so;SYMLINK=vendor/lib64/libmtkcam_pipelinepolicy_factory.so
+vendor/lib64/mt6789/libmtkcam_prerelease.so;SYMLINK=vendor/lib64/libmtkcam_prerelease.so
+vendor/lib64/mt6789/libmtkcam_rsc.so;SYMLINK=vendor/lib64/libmtkcam_rsc.so
+vendor/lib64/mt6789/libmtkcam_scenariorecorder.so;SYMLINK=vendor/lib64/libmtkcam_scenariorecorder.so
+vendor/lib64/mt6789/libmtkcam_stdutils.so;SYMLINK=vendor/lib64/libmtkcam_stdutils.so
+vendor/lib64/mt6789/libmtkcam_streamutils.so;SYMLINK=vendor/lib64/libmtkcam_streamutils.so
+vendor/lib64/mt6789/libmtkcam_synchelper.so;SYMLINK=vendor/lib64/libmtkcam_synchelper.so
+vendor/lib64/mt6789/libmtkcam_sysutils.so;SYMLINK=vendor/lib64/libmtkcam_sysutils.so
+vendor/lib64/mt6789/libmtkcam_tuning_utils.so;SYMLINK=vendor/lib64/libmtkcam_tuning_utils.so
+vendor/lib64/mt6789/libmtkcam_ulog.so;SYMLINK=vendor/lib64/libmtkcam_ulog.so
+# DROPPED (missing): vendor/lib64/mt6789/pblcgc08a3_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/pblcgc08a3_mipi_raw_IdxMgr.so
+# DROPPED (missing): vendor/lib64/mt6789/pblcgc08a3_mipi_raw_tuning.so;SYMLINK=vendor/lib64/pblcgc08a3_mipi_raw_tuning.so
+# DROPPED (missing): vendor/lib64/mt6789/pblcs5kjn1_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/pblcs5kjn1_mipi_raw_IdxMgr.so
+# DROPPED (missing): vendor/lib64/mt6789/pblcs5kjn1_mipi_raw_tuning.so;SYMLINK=vendor/lib64/pblcs5kjn1_mipi_raw_tuning.so
+# DROPPED (missing): vendor/lib64/mt6789/pbrogc08a3_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/pbrogc08a3_mipi_raw_IdxMgr.so
+# DROPPED (missing): vendor/lib64/mt6789/pbrogc08a3_mipi_raw_tuning.so;SYMLINK=vendor/lib64/pbrogc08a3_mipi_raw_tuning.so
+# DROPPED (missing): vendor/lib64/mt6789/pbros5kjn1_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/pbros5kjn1_mipi_raw_IdxMgr.so
+# DROPPED (missing): vendor/lib64/mt6789/pbros5kjn1_mipi_raw_tuning.so;SYMLINK=vendor/lib64/pbros5kjn1_mipi_raw_tuning.so
+# DROPPED (missing): vendor/lib64/mt6789/s5kjn1_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/s5kjn1_mipi_raw_IdxMgr.so
+# DROPPED (missing): vendor/lib64/mt6789/s5kjn1_mipi_raw_tuning.so;SYMLINK=vendor/lib64/s5kjn1_mipi_raw_tuning.so
+vendor/lib64/mtkcam/mt6789/libmtkcam_streaminfo_plugin-p1stt.so;SYMLINK=vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_Default_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_Default_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_Default_Video.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_Face_Beauty.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_Face_Beauty_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_Face_Beauty_mfll.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_LLHDR_0EV.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_NHDR_0EV.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_Panorama.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_Portrait.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_Portrait_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_ThirdAPP_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_ThirdAPP_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_Video_720.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_Zoom_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_gc08a3mipiraw_short_video.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_Default_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_Default_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_Default_Video.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_Face_Beauty.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_Face_Beauty_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_Face_Beauty_mfll.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_LLHDR_0EV.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_NHDR_0EV.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_Panorama.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_Portrait.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_Portrait_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_ThirdAPP_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_ThirdAPP_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_Video_720.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_Zoom_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcgc08a3mipiraw_short_video.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Boken_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Capture_Zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Capture_Zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Default_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Default_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Default_Video.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Documents_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_FaceBeauty.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_FaceBeauty_mfll.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_HDR_MINUS_EV.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_LLHDR_0EV.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_NHDR_0EV.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Panorama.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Preview_Zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Preview_Zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Pro_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Pro_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Resolution.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Resolution_FaceCapture.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Resolution_Hiso_zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Resolution_Hiso_zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Resolution_SceneCapture.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Resolution_preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Resolution_zoom.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Scene_Capture_4cell_zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Scene_Capture_4cell_zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_ShortVideo.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_SuperNight.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_ThirdAPP_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_ThirdAPP_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Video_1080P.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Video_120fps.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Video_240fps.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Video_2K.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Video_60fps.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Video_720P.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Video_EIS.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Video_Zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_pblcs5kjn1mipiraw_Video_Zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_360HDR.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_3rd_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_3rd_Capture_FD.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_3rd_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_3rd_Preview_FD.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_Boken_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_Capture_Zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_Capture_Zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_FaceBeauty.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_HDR_MINUS_EV.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_NHDR_0EV.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_Preview_Zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_Preview_Zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_Resolution.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_Resolution_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_Resolution_zoom.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_Scene_EIS_Video.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_ShortVideo.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_SuperNight.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_Video_2k.so
+# DROPPED (missing): vendor/lib64/libCamera_pbrogc08a3mipiraw_Video_720.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_360HDR.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_3rd_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_3rd_Capture_FD.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_3rd_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_3rd_Preview_FD.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Boken_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Capture_Zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Capture_Zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_NHDR_0EV.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Preview_Zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Preview_Zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Pro_scene.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Resolution.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Resolution_zoom.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Scene_Capture_Remosaic.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Scene_PreFlash_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_SuperNight.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Video.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Video_1080p.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Video_120fps.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Video_240fps.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Video_2k.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Video_EIS.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Video_Zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_pbros5kjn1mipiraw_Video_Zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Boken_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Capture_Zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Capture_Zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Default_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Default_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Default_Video.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Documents_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_FaceBeauty.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_FaceBeauty_mfll.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_HDR_MINUS_EV.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_LLHDR_0EV.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_NHDR_0EV.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Panorama.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Preview_Zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Preview_Zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Pro_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Pro_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Resolution.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Resolution_FaceCapture.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Resolution_Hiso_zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Resolution_Hiso_zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Resolution_SceneCapture.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Resolution_preview.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Resolution_zoom.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Scene_Capture_4cell_zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Scene_Capture_4cell_zoom2.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_ShortVideo.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_SuperNight.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_ThirdAPP_Capture.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_ThirdAPP_Preview.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Video_1080P.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Video_120fps.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Video_240fps.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Video_2K.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Video_60fps.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Video_720P.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Video_EIS.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Video_Zoom1.so
+# DROPPED (missing): vendor/lib64/libCamera_s5kjn1mipiraw_Video_Zoom2.so
+vendor/lib64/libcam.seninfn3d.so
+vendor/lib64/libcam3_tranelapsedtime.so
+vendor/lib64/libcam3_tranpriorityctrl.so
+vendor/lib64/libcam3_transerverengine.so
+vendor/lib64/libcamalgo.3dnr.so
+# DROPPED (missing): vendor/lib64/libcamalgo.WarpMapResizer.so
+vendor/lib64/libcamalgo.dngop.so
+vendor/lib64/libcamalgo.eis.so
+vendor/lib64/libcamalgo.fdft.so
+vendor/lib64/libcamalgo.fsc.so
+vendor/lib64/libcamalgo.gyro.so
+# DROPPED (missing): vendor/lib64/libcamalgo.hdr10p.so
+vendor/lib64/libcamalgo.lmv.so
+# DROPPED (missing): vendor/lib64/libcamalgo.mcnr.so
+vendor/lib64/libcamalgo.n3d.so
+vendor/lib64/libcamalgo.nr.so
+vendor/lib64/libcamalgo.platform.so
+vendor/lib64/libcamalgo.utility.so
+# DROPPED (missing): vendor/lib64/libcamalgo.vsdofUtil.so
+vendor/lib64/libcamalgo.warp.so
+# DROPPED (missing): vendor/lib64/libmtkcam_fdWarpConvert.so
+vendor/lib64/libmtkcam_pipelinepolicy-aov.so
+vendor/lib64/vendor.mediatek.hardware.camera.atms@1.0.so
+vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.0.so
+vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.1.so
+vendor/lib64/vendor.mediatek.hardware.camera.ccap@1.0.so
+vendor/lib64/vendor.mediatek.hardware.camera.frhandler@1.0.so
+vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.0.so
+vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.1.so
+vendor/lib64/vendor.mediatek.hardware.camera.lomoeffect@1.0.so
+vendor/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so
+vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
+# Camera (Hard Dependencies)
+vendor/bin/mt6789/dumpfaultd.mt6789;SYMLINK=vendor/bin/dumpfaultd.mt6789
+vendor/bin/mt6789/jpegtool;SYMLINK=vendor/bin/jpegtool
+vendor/lib64/mt6789/libImageEval.so;SYMLINK=vendor/lib64/libImageEval.so
+vendor/lib64/mt6789/libTranASD.so;SYMLINK=vendor/lib64/libTranASD.so
+# DROPPED (missing): vendor/lib64/mt6789/libTranArcFilter.so;SYMLINK=vendor/lib64/libTranArcFilter.so
+# DROPPED (missing): vendor/lib64/mt6789/libTranArcFlashNew.so;SYMLINK=vendor/lib64/libTranArcFlashNew.so
+# DROPPED (missing): vendor/lib64/mt6789/libTranArcHDR.so;SYMLINK=vendor/lib64/libTranArcHDR.so
+# DROPPED (missing): vendor/lib64/mt6789/libTranArcLLHDR.so;SYMLINK=vendor/lib64/libTranArcLLHDR.so
+vendor/lib64/mt6789/libTranArcLowLight.so;SYMLINK=vendor/lib64/libTranArcLowLight.so
+# DROPPED (missing): vendor/lib64/mt6789/libTranArcNightHawk.so;SYMLINK=vendor/lib64/libTranArcNightHawk.so
+vendor/lib64/mt6789/libTranBefMakeup.so;SYMLINK=vendor/lib64/libTranBefMakeup.so
+vendor/lib64/mt6789/libTranDenoise.so;SYMLINK=vendor/lib64/libTranDenoise.so
+vendor/lib64/mt6789/libTranExtImgProc.so;SYMLINK=vendor/lib64/libTranExtImgProc.so
+vendor/lib64/mt6789/libTranEyeDetect.so;SYMLINK=vendor/lib64/libTranEyeDetect.so
+# DROPPED (missing): vendor/lib64/mt6789/libTranFaceBeauty.so;SYMLINK=vendor/lib64/libTranFaceBeauty.so
+vendor/lib64/mt6789/libTranGenderDetect.so;SYMLINK=vendor/lib64/libTranGenderDetect.so
+vendor/lib64/mt6789/libTranHumanLight.so;SYMLINK=vendor/lib64/libTranHumanLight.so
+# DROPPED (missing): vendor/lib64/mt6789/libTranMegHumanEffect.so;SYMLINK=vendor/lib64/libTranMegHumanEffect.so
+vendor/lib64/mt6789/libTranPlatHW.so;SYMLINK=vendor/lib64/libTranPlatHW.so
+vendor/lib64/mt6789/libTranSTPRRepair.so;SYMLINK=vendor/lib64/libTranSTPRRepair.so
+# DROPPED (missing): vendor/lib64/mt6789/libTranSTSingleBlur.so;SYMLINK=vendor/lib64/libTranSTSingleBlur.so
+vendor/lib64/mt6789/libTranSlimBody.so;SYMLINK=vendor/lib64/libTranSlimBody.so
+vendor/lib64/mt6789/libTranSmartDetection.so;SYMLINK=vendor/lib64/libTranSmartDetection.so
+# DROPPED (missing): vendor/lib64/mt6789/libTranStSuperResolution.so;SYMLINK=vendor/lib64/libTranStSuperResolution.so
+vendor/lib64/mt6789/libTran_Log.so;SYMLINK=vendor/lib64/libTran_Log.so
+vendor/lib64/mt6789/libTran_mtkPowerAPI.so;SYMLINK=vendor/lib64/libTran_mtkPowerAPI.so
+vendor/lib64/mt6789/libWaterMarkProc.so;SYMLINK=vendor/lib64/libWaterMarkProc.so
+# DROPPED (missing): vendor/lib64/mt6789/lib_sr_indep_ocl.so;SYMLINK=vendor/lib64/lib_sr_indep_ocl.so
+vendor/lib64/mt6789/libaaa_ltm.so;SYMLINK=vendor/lib64/libaaa_ltm.so
+vendor/lib64/mt6789/libaaa_ltmx.so;SYMLINK=vendor/lib64/libaaa_ltmx.so
+vendor/lib64/mt6789/libacdk.so;SYMLINK=vendor/lib64/libacdk.so
+vendor/lib64/mt6789/libamipengine.so;SYMLINK=vendor/lib64/libamipengine.so
+vendor/lib64/mt6789/libdip_drv.so;SYMLINK=vendor/lib64/libdip_drv.so
+vendor/lib64/mt6789/libdip_postproc.so;SYMLINK=vendor/lib64/libdip_postproc.so
+vendor/lib64/mt6789/libeffect_hal.so;SYMLINK=vendor/lib64/libeffect_hal.so
+vendor/lib64/mt6789/libeffecthal.base.so;SYMLINK=vendor/lib64/libeffecthal.base.so
+vendor/lib64/mt6789/libeyedetector.so;SYMLINK=vendor/lib64/libeyedetector.so
+vendor/lib64/mt6789/libfacesattribute.so;SYMLINK=vendor/lib64/libfacesattribute.so
+vendor/lib64/mt6789/libfeature.face.so;SYMLINK=vendor/lib64/libfeature.face.so
+vendor/lib64/mt6789/libfeature.stereo.provider.so;SYMLINK=vendor/lib64/libfeature.stereo.provider.so
+vendor/lib64/mt6789/libfeature.vsdof.hal.so;SYMLINK=vendor/lib64/libfeature.vsdof.hal.so
+vendor/lib64/mt6789/libfeature_3dnr.so;SYMLINK=vendor/lib64/libfeature_3dnr.so
+# DROPPED (missing): vendor/lib64/mt6789/libfeature_eis.so;SYMLINK=vendor/lib64/libfeature_eis.so
+vendor/lib64/mt6789/libfeature_fsc.so;SYMLINK=vendor/lib64/libfeature_fsc.so
+vendor/lib64/mt6789/libfeature_lmv.so;SYMLINK=vendor/lib64/libfeature_lmv.so
+vendor/lib64/mt6789/libfeature_rss.so;SYMLINK=vendor/lib64/libfeature_rss.so
+vendor/lib64/mt6789/libfeatureiodrv_mem.so;SYMLINK=vendor/lib64/libfeatureiodrv_mem.so
+vendor/lib64/mt6789/libimageio.so;SYMLINK=vendor/lib64/libimageio.so
+vendor/lib64/mt6789/libimageio_plat_drv.so;SYMLINK=vendor/lib64/libimageio_plat_drv.so
+vendor/lib64/mt6789/libimageio_plat_pipe.so;SYMLINK=vendor/lib64/libimageio_plat_pipe.so
+vendor/lib64/mt6789/liblpcnr.so;SYMLINK=vendor/lib64/liblpcnr.so
+vendor/lib64/mt6789/libmpbase.so;SYMLINK=vendor/lib64/libmpbase.so
+vendor/lib64/mt6789/libmsnr.so;SYMLINK=vendor/lib64/libmsnr.so
+# DROPPED (missing): vendor/lib64/mt6789/libportrait_repair_ocl.so;SYMLINK=vendor/lib64/libportrait_repair_ocl.so
+vendor/lib64/mt6789/librmsclib1.so;SYMLINK=vendor/lib64/librmsclib1.so
+vendor/lib64/mt6789/libremosaic_wrapper.so;SYMLINK=vendor/lib64/libremosaic_wrapper.so
+vendor/lib64/mt6789/libremosaiclib.so;SYMLINK=vendor/lib64/libremosaiclib.so
+# DROPPED (missing): vendor/lib64/mt6789/libsdk_sr.so;SYMLINK=vendor/lib64/libsdk_sr.so
+vendor/lib64/mt6789/libsegmention.so;SYMLINK=vendor/lib64/libsegmention.so;DISABLE_CHECKELF
+vendor/lib64/mt6789/libsegmentionPre.so;SYMLINK=vendor/lib64/libsegmentionPre.so
+vendor/lib64/mt6789/libsmartdetector.so;SYMLINK=vendor/lib64/libsmartdetector.so
+vendor/lib64/mt6789/libst_mobile.so;SYMLINK=vendor/lib64/libst_mobile.so
+# DROPPED (missing): vendor/lib64/mt6789/libst_sr_models.so;SYMLINK=vendor/lib64/libst_sr_models.so
+# DROPPED (missing): vendor/lib64/mt6789/libstblur_capture_api.so;SYMLINK=vendor/lib64/libstblur_capture_api.so
+vendor/lib64/mt6789/libstereoinfoaccessor_vsdof.so;SYMLINK=vendor/lib64/libstereoinfoaccessor_vsdof.so
+# DROPPED (missing): vendor/lib64/mt6789/libtf_asd_lib.so;SYMLINK=vendor/lib64/libtf_asd_lib.so
+vendor/lib64/mt6789/libtflite_native_gainference.so;SYMLINK=vendor/lib64/libtflite_native_gainference.so
+# DROPPED (missing): vendor/lib64/mt6789/libtflite_native_inference.so;SYMLINK=vendor/lib64/libtflite_native_inference.so
+vendor/lib64/mt6789/libtflite_native_seginference.so;SYMLINK=vendor/lib64/libtflite_native_seginference.so
+# DROPPED (missing): vendor/lib64/mt6789/libtranssion_beauty.so;SYMLINK=vendor/lib64/libtranssion_beauty.so
+vendor/lib64/mt6789/libtranssion_bodybeauty.so;SYMLINK=vendor/lib64/libtranssion_bodybeauty.so
+vendor/lib64/mt6789/libvainr_model.so;SYMLINK=vendor/lib64/libvainr_model.so
+# DROPPED (missing): vendor/lib64/lib3a.ae.pipe.so
+# DROPPED (missing): vendor/lib64/libBasicModule.so
+# DROPPED (missing): vendor/lib64/libMegviiHum.so
+vendor/lib64/libSQLiteModule_VER_ALL.so
+vendor/lib64/libanc_hdr.so
+# DROPPED (missing): vendor/lib64/libanc_hdr_adapter_s5kjn1_17201715_back_g97.so
+vendor/lib64/libancbase.so
+vendor/lib64/libancbase_848.so
+vendor/lib64/libc++_shared.so
+vendor/lib64/libdre.so
+vendor/lib64/libdynamiclog.so
+# DROPPED (missing): vendor/lib64/libfeaturepolicy.so
+# DROPPED (missing): vendor/lib64/libhdrvideo.so
+vendor/lib64/libimagebuffer_wrapper.so
+vendor/lib64/libimgsensorca.so
+vendor/lib64/libispcameraca.so
+# DROPPED (missing): vendor/lib64/libmegface.so
+vendor/lib64/libmtkisp_metadata.so
+# DROPPED (missing): vendor/lib64/libmtkisp_metadata_v2.so
+# DROPPED (missing): vendor/lib64/libnnp.so
+vendor/lib64/libpixelflinger.so
+# DROPPED (missing): vendor/lib64/libvidhance.so
+# DROPPED (missing): vendor/lib64/libvidhance_active_ois.so
+# DROPPED (missing): vendor/lib64/libvidhance_stabilizer.so
+# Camera (TranCam Dependencies)
+vendor/bin/hw/vendor.transsion.hardware.trancam.trancamserver@1.0-service
+vendor/etc/init/vendor.transsion.hardware.trancam.trancamserver@1.0-service.rc
+vendor/etc/vintf/manifest/vendor.transsion.hardware.trancam.trancamserver@1.0.xml
+vendor/lib64/vendor.transsion.hardware.trancam.trancamserver@1.0.so
+# Camera Configuration files
+vendor/data/camera/vidhance/vidhance_calibration
+# DROPPED (missing): vendor/etc/anc_siq/cache_s5kjn1_17201715_back_g97
+# DROPPED (missing): vendor/etc/anc_siq/dgain_mask_s5kjn1_17201715_back_g97.bin
+# DROPPED (missing): vendor/etc/anc_siq/siq_ocl_cache_s5kjn1_17201715_back_g97
+# DROPPED (missing): vendor/etc/anc_siq/siq_params_s5kjn1_17201715_back_g97.bin
+# DROPPED (missing): vendor/etc/anc_siq/superiq_model_s5kjn1_17201715_back_g97
+vendor/etc/cam3atms_profiles.xml
+vendor/etc/tran_camprofiles.xml
+# Connectivity
+vendor/bin/wmt_launcher
+vendor/bin/wmt_loader
+vendor/etc/init/init.wmt_drv.rc
+# Display
+vendor/bin/hw/mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789
+vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
+vendor/etc/vintf/manifest/manifest_hwcomposer.xml
+vendor/etc/AbnormalDisplayLog_dynamic.xml
+vendor/etc/VideoLog_dynamic.xml
+vendor/lib/egl/egl.cfg
+vendor/lib/mt6789/arm.graphics-V1-ndk_platform.so;SYMLINK=vendor/lib/arm.graphics-V1-ndk_platform.so
+vendor/lib64/hw/mt6789/android.hardware.graphics.allocator@4.0-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+vendor/lib64/hw/mt6789/android.hardware.graphics.mapper@4.0-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+vendor/lib64/hw/mt6789/gralloc.common.so;SYMLINK=vendor/lib64/hw/gralloc.common.so
+vendor/lib64/hw/hwcomposer.mtk_common.so
+vendor/lib64/mt6789/libaiselector.so;SYMLINK=vendor/lib64/libaiselector.so
+vendor/lib64/mt6789/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so
+vendor/lib64/mt6789/libgpudataproducer.so;SYMLINK=vendor/lib64/libgpudataproducer.so
+vendor/lib64/mt6789/libnir_neon_driver.so;SYMLINK=vendor/lib64/libnir_neon_driver.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/libcomposer_ext.so
+vendor/lib64/libged.so
+vendor/lib64/libgpu_aux.so
+vendor/lib64/libgpud.so
+vendor/lib64/libgralloc_extra.so
+vendor/lib64/libgralloc_metadata.so
+vendor/lib64/libgralloctypes_mtk.so
+vendor/lib64/libion_mtk.so
+vendor/lib64/libion_ulit.so
+vendor/lib64/libmml.so
+vendor/lib64/libmmprofile.so
+vendor/lib64/libudf.so
+vendor/lib64/libVkLayer_mtk_rt_sdk.so
+vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
+# DROPPED (missing): vendor/priv-app/GpuGameDriver.mt6789/GpuGameDriver.mt6789.apk
+# Display (Mali)
+vendor/lib64/mt6789/arm.graphics-V1-ndk_platform.so;SYMLINK=vendor/lib64/arm.graphics-V1-ndk_platform.so
+# Display (Mali) - from XT2513-1_KANSAS_OPENLA_15_V1VK35.22-125_subsidy-DEFAULT_regulatory-DEFAULT_cid50_CFC
+vendor/lib64/egl/mt6835/libGLES_mali.so:vendor/lib64/egl/mt6789/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so|0d7ee65504a0bedc798b900cbb96f41b6b88b038
+vendor/lib64/hw/mt6835/vulkan.mali.so:vendor/lib64/hw/mt6789/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so|a85b914d28400ecf0e9532840e57e844cc13739a
+# DROPPED (missing): vendor/etc/gralloc/cam.xml|f6cb02f33dd9f1aadb0a829281ad488729ea2106
+# DROPPED (missing): vendor/etc/gralloc/dpu.xml|5be2bc6cd7c0ca4de485db54f0e06ccb9f57ab0c
+# DROPPED (missing): vendor/etc/gralloc/dpu_aeu.xml|94355caa28c4d7609a53db8ed9ba179370c991b5
+# DROPPED (missing): vendor/etc/gralloc/gpu.xml|0f6cc052e256cbf18caa0972a88766f4a14a0cd6
+# DROPPED (missing): vendor/etc/gralloc/vpu.xml|df22091da7830747f2eeba1a00faf0b87bcb0402
+# DROPPED (missing): vendor/etc/mali_platform.config|94ff34a831e05876d8af800f09847c5f2a336bcd
+# Display (Mali) - from Nothing Phone (2a) (Pacman-B4.0-260225-1817).
+# DROPPED (missing): vendor/lib64/mt6886/arm.graphics-V3-ndk.so:vendor/lib64/mt6789/arm.graphics-V3-ndk.so;SYMLINK=vendor/lib64/arm.graphics-V3-ndk.so|34a267b511f2ac56573c2ea66deee9cb739eac37
+# DROPPED (missing): vendor/lib64/libarm_egl_properties_sysprop.so|a5b4216f63c4539a1a95379a38aee8c94bd39548
+# DROPPED (missing): vendor/lib64/libarm_gralloc_properties_sysprop.so|76e7e5f8d879afc15e17902c87acfb33fed9bef6
+# DROPPED (missing): vendor/lib64/liblibarm_mali_config_sysprops.so|eca4cde8c0b75288a8af6a63a2edb2b47f58b163
+# Display (AAL)
+vendor/lib64/mt6789/libaal_cust_func.so;SYMLINK=vendor/lib64/libaal_cust_func.so
+vendor/lib64/mt6789/libaalservice.so;SYMLINK=vendor/lib64/libaalservice.so
+vendor/lib64/libaal_key.so
+vendor/lib64/libaal_mtk.so
+# Display (PQ)
+vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
+vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
+vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.pq@2.15-impl.so
+vendor/lib64/mt6789/libpq_cust_base.so;SYMLINK=vendor/lib64/libpq_cust_base.so
+vendor/lib64/mt6789/libpq_prot.so;SYMLINK=vendor/lib64/libpq_prot.so
+vendor/lib64/mt6789/libpqparamparser.so;SYMLINK=vendor/lib64/libpqparamparser.so
+vendor/lib64/libpqframework.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.0.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.1.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.10.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.11.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.12.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.13.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.14.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.15.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.2.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.3.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.4.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.5.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.6.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.7.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
+# DRM
+vendor/bin/hw/android.hardware.drm@1.4-service.widevine
+vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
+vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
+vendor/lib64/mediadrm/libwvdrmengine.so
+vendor/lib64/liboemcrypto.so
+vendor/lib64/libtlcWidevineModularDrm.so
+vendor/lib64/liburee_meta_drmkeyinstall.so
+vendor/lib64/libwvhidl.so
+# DRVB
+vendor/lib/mt6789/libmtk_drvb.so;SYMLINK=vendor/lib/libmtk_drvb.so
+vendor/lib64/mt6789/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
+# Fuelgauge
+vendor/bin/fuelgauged
+vendor/bin/fuelgauged_nvram
+vendor/etc/init/fuelgauged_init.rc
+vendor/etc/init/fuelgauged_nvram_init.rc
+vendor/lib64/libfgauge_gm30.so
+# Gatekeeper
+vendor/lib64/hw/libMcGatekeeper.so;SYMLINK=vendor/lib64/hw/gatekeeper.trustonic.so
+vendor/lib64/hw/libSoftGatekeeper.so;SYMLINK=vendor/lib64/hw/gatekeeper.default.so
+vendor/lib64/libMcClient.so
+# GNSS
+vendor/bin/hw/android.hardware.gnss-service.mediatek
+vendor/bin/bip
+vendor/bin/bip_ap
+vendor/bin/ipsec_mon
+vendor/bin/lbs_hidl_service
+vendor/bin/mnld
+vendor/bin/mtk_agpsd
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Claro_Peru.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Entel_Peru.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_KDDI.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SK_Telecom.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SoftBank.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Sprint.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_T-Mobile_US.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
+vendor/etc/gnss/agps_profiles_conf2.xml
+vendor/etc/init/android.hardware.gnss-service.mediatek.rc
+vendor/etc/init/init.bip.rc
+vendor/etc/init/init.bip_ap.rc
+vendor/etc/init/init.gps_drv.rc
+vendor/etc/init/init.gps_pwr.rc
+vendor/etc/init/ipsec_mon.rc
+vendor/etc/init/lbs_hidl_service.rc
+vendor/etc/init/mtk_agpsd_p.rc
+vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
+vendor/etc/vintf/manifest/gnss-default.xml:vendor/etc/vintf/manifest/gnss-mtk.xml
+vendor/etc/vintf/manifest/gnss@2.1-service.xml
+vendor/etc/slp_conf
+vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
+vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
+vendor/lib64/hw/gps.default.so
+vendor/lib64/mt6789/libDR.so;SYMLINK=vendor/lib64/libDR.so
+vendor/lib64/mt6789/libmnl.so;SYMLINK=vendor/lib64/libmnl.so
+vendor/lib64/lbs_hidl_service-impl.so
+vendor/lib64/librpc.so
+vendor/lib64/libviagpsrpc.so
+vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
+# Keymaster
+vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
+vendor/bin/kmsetkey_ca.trustonic
+vendor/etc/init/trustonic.mc_kmsetkey_ca.rc
+vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
+vendor/lib/libthha.so;DISABLE_CHECKELF
+vendor/lib64/hw/kmsetkey.trustonic.so;SYMLINK=vendor/lib64/hw/kmsetkey.default.so
+vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
+vendor/lib64/libdecrypt.so
+vendor/lib64/libkmsetkey.so
+vendor/lib64/libthha.so
+vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
+vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
+# Keymint
+vendor/bin/hw/android.hardware.security.keymint-service.trustonic
+vendor/etc/init/android.hardware.security.keymint-service.trustonic.rc
+vendor/etc/vintf/manifest/android.hardware.security.keymint-service.trustonic.xml
+vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.trustonic.xml
+vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.trustonic.xml
+# libladder
+vendor/lib/libladder.so
+vendor/lib64/libladder.so
+# Media
+vendor/bin/mt6789/v3avpud.mt6789;SYMLINK=vendor/bin/v3avpud
+vendor/etc/init/v3avpud.rc
+vendor/lib/mt6789/libvcodec_utility.so;SYMLINK=vendor/lib/libvcodec_utility.so
+vendor/lib/mt6789/libvcodec_utility_v3a.so;SYMLINK=vendor/lib/libvcodec_utility_v3a.so
+vendor/lib/mt6789/libvcodecdrv.so;SYMLINK=vendor/lib/libvcodecdrv.so
+vendor/lib/mt6789/libvcodecdrv_v3a.so;SYMLINK=vendor/lib/libvcodecdrv_v3a.so
+vendor/lib/mt6789/libvpudv3a_vcodec.so;SYMLINK=vendor/lib/libvpudv3a_vcodec.so
+vendor/lib/libvcodecdrv_header_stub.so
+vendor/lib/libvcodec_oal.so;DISABLE_CHECKELF
+vendor/lib/libvcodec_utility_plat.mt6789.so
+vendor/lib64/libvpu.so
+# Media (C2)
+vendor/lib64/libcodec2_mtk_c2store.so
+vendor/lib64/libcodec2_mtk_vdec.so
+vendor/lib64/libcodec2_mtk_venc.so
+vendor/lib64/libcodec2_vpp_qt_plugin.so
+vendor/lib64/libcodec2_vpp_rs_plugin.so
+vendor/lib64/libformatter.so
+# Media (Common)
+# DROPPED (missing): vendor/lib/AVCSecureVdecCA.so
+# DROPPED (missing): vendor/lib/HEVCSecureVdecCA.so
+# DROPPED (missing): vendor/lib/VP9SecureVdecCA.so
+# DROPPED (missing): vendor/lib/libAVCSecureVencCA.so
+vendor/lib/libHEVCdec_sa.ca7.android.so;DISABLE_CHECKELF
+vendor/lib/libh264dec_customize.so
+vendor/lib/libh264dec_sa.ca7.so;DISABLE_CHECKELF
+vendor/lib/libh264dec_sd.ca7.so;DISABLE_CHECKELF
+vendor/lib/libh264dec_se.ca7.so;DISABLE_CHECKELF
+# DROPPED (missing): vendor/lib/libh264enc_sa.ca7.so;DISABLE_CHECKELF
+vendor/lib/libhevce_sb.ca7.android.so;DISABLE_CHECKELF
+vendor/lib/libion_mtk.so
+vendor/lib/libion_ulit.so
+vendor/lib/libmp4enc_sa.ca7.so;DISABLE_CHECKELF
+# DROPPED (missing): vendor/lib/libmp4enc_xa.ca7.so;DISABLE_CHECKELF
+vendor/lib/libvp8dec_sa.ca7.so;DISABLE_CHECKELF
+vendor/lib/libvp8enc_sa.ca7.so;DISABLE_CHECKELF
+vendor/lib/libvp9dec_sa.ca7.so;DISABLE_CHECKELF
+# DROPPED (missing): vendor/lib64/AVCSecureVdecCA.so
+# DROPPED (missing): vendor/lib64/HEVCSecureVdecCA.so
+# DROPPED (missing): vendor/lib64/VP9SecureVdecCA.so
+# DROPPED (missing): vendor/lib64/libAVCSecureVencCA.so
+vendor/lib64/libJpgEncPipe.so
+vendor/lib64/libjpeg-alpha-oal_vendor.so
+vendor/lib64/libjpeg-alpha_vendor.so
+vendor/lib64/libhevce_sb.ca7.android.so
+vendor/lib64/libheichal.so
+vendor/lib64/libvcodec_oal.so
+vendor/lib64/libvcodecdrv_header_stub.so
+# MediaTek Vision Processing Unit (System)
+# DROPPED (system): system_ext/lib64/libmvpu_cic_ci_compiler.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpu_clc_mvpu_debuginfo.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpu_clc_mvpu_elf.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpu_clc_mvpu_utility.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpu_config.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpu_engine.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpu_engine_pub.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpu_pattern.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpu_pattern_pub.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpu_runtime.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpu_runtime_pub.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpuop_mtk_cv.mtk.so
+# DROPPED (system): system_ext/lib64/libmvpuop_mtk_nn.mtk.so
+# MediaTek Vision Processing Unit (Vendor)
+vendor/lib64/libmvpu_cic_ci_compiler.so
+vendor/lib64/libmvpu_clc_cl_compiler.so
+vendor/lib64/libmvpu_clc_mvpu_debuginfo.so
+vendor/lib64/libmvpu_clc_mvpu_elf.so
+vendor/lib64/libmvpu_clc_mvpu_utility.so
+vendor/lib64/libmvpu_clc_vpu_isa.so
+vendor/lib64/libmvpu_config.so
+vendor/lib64/libmvpu_engine.so
+vendor/lib64/libmvpu_engine_pub.so
+vendor/lib64/libmvpu_pattern.so
+vendor/lib64/libmvpu_pattern_pub.so
+vendor/lib64/libmvpu_runtime.so
+vendor/lib64/libmvpu_runtime_pub.so
+vendor/lib64/libmvpuop_mtk_cv.so
+vendor/lib64/libmvpuop_mtk_nn.so
+vendor/lib64/libvpu5.so
+# Misc
+vendor/etc/init/init.otg.rc
+vendor/lib64/libminiui.so
+# MMAGENT
+vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
+vendor/etc/init/vendor.mediatek.hardware.mmagent@1.1-service.rc
+vendor/lib64/libmmagent.so
+vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
+vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
+# MMS
+vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
+vendor/etc/init/vendor.mediatek.hardware.mms@1.6-service.rc
+vendor/lib64/hw/vendor.mediatek.hardware.mms@1.6-impl.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.0.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.1.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.2.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.3.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
+# Neural networks (System)
+# DROPPED (system): system/etc/public.libraries-mtk.txt
+# DROPPED (system): system_ext/lib64/libapuwareapusys.mtk.so
+# DROPPED (system): system_ext/lib64/libapuwareapusys_v2.mtk.so
+# DROPPED (system): system_ext/lib64/libapuwarehmp.mtk.so
+# DROPPED (system): system_ext/lib64/libapuwareutils.mtk.so
+# DROPPED (system): system_ext/lib64/libapuwareutils_v2.mtk.so
+# DROPPED (system): system_ext/lib64/libapuwarexrp.mtk.so
+# DROPPED (system): system_ext/lib64/libapuwarexrp_v2.mtk.so
+# DROPPED (system): system_ext/lib64/libarmnn_ndk.mtk.so
+# DROPPED (system): system_ext/lib64/libcmdl_ndk.mtk.so
+# DROPPED (system): system_ext/lib64/libneuron_graph_delegate.mtk.so
+# DROPPED (system): system_ext/lib64/libneuronusdk_adapter.mtk.so;FIX_SONAME
+# DROPPED (system): system_ext/lib64/libnir_neon_driver_ndk.mtk.so
+# DROPPED (system): system_ext/lib64/libtflite_mtk.mtk.so
+# DROPPED (system): system/lib64/libtflite_mtk.so:system_ext/lib64/libtflite_mtk.so
+# DROPPED (system): system_ext/lib64/vendor.mediatek.hardware.apuware.apusys@1.0.so
+# DROPPED (system): system_ext/lib64/vendor.mediatek.hardware.apuware.apusys@2.0.so
+# DROPPED (system): system_ext/lib64/vendor.mediatek.hardware.apuware.apusys@2.1.so
+# DROPPED (system): system_ext/lib64/vendor.mediatek.hardware.apuware.hmp@1.0.so
+# DROPPED (system): system_ext/lib64/vendor.mediatek.hardware.apuware.utils@1.0.so
+# DROPPED (system): system_ext/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
+# DROPPED (system): system_ext/lib64/vendor.mediatek.hardware.apuware.xrp@1.0.so
+# DROPPED (system): system_ext/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
+# Neural Networks (Vendor)
+vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk
+vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml
+vendor/etc/armnn_app.config
+vendor/etc/nnapi_powerhal.json
+vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so;SYMLINK=vendor/lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so
+vendor/lib64/mt6789/libneuron_adapter_mgvi.so;SYMLINK=vendor/lib64/libneuron_adapter_mgvi.so
+vendor/lib64/mt6789/libneuron_runtime.5.so;SYMLINK=vendor/lib64/libneuron_runtime.5.so
+vendor/lib64/libarmnn.so
+vendor/lib64/libarmnn_ndk.mtk.vndk.so
+vendor/lib64/libcmdl.so
+vendor/lib64/libcmdl_ndk.mtk.vndk.so
+vendor/lib64/libneuron_graph_delegate.mtk.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so
+vendor/lib64/libnpagent.so
+vendor/lib64/libnpagent_server.so
+vendor/lib64/libtflite_mtk.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.0.so
+vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.1.so
+vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
+# NFC
+vendor/etc/init/init.nxp.nfc.rc
+# DROPPED (missing): vendor/lib64/libpn557_fw.so|cb8575ba128089742f73ec0963b09cde18b1afe5
+# NVRAM
+vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
+vendor/bin/nvram_daemon
+vendor/etc/init/nvram_daemon.rc
+vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
+vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
+vendor/lib64/libconnfem.so
+vendor/lib64/libcustom_nvram.so
+vendor/lib64/libfile_op.so
+vendor/lib64/libnvram.so
+vendor/lib64/libnvram_sec.so
+vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
+vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
+# Power
+vendor/lib64/libpower_timer.so
+vendor/lib64/vendor.mediatek.hardware.power@1.1.so
+vendor/lib64/vendor.mediatek.hardware.power@2.0.so
+# Radio
+vendor/bin/hw/mtkfusionrild
+vendor/bin/ccci_mdinit
+vendor/bin/ccci_rpcd
+# DROPPED (missing): vendor/etc/apdb/APDB_MT6789___W2227
+# DROPPED (missing): vendor/etc/apdb/APDB_MT6789___W2227_ENUM
+vendor/etc/init/gsm0710muxd.rc
+vendor/etc/init/init.cccimdinit.rc
+vendor/etc/init/init.cccirpcd.rc
+vendor/etc/init/init.connfem.rc
+vendor/etc/init/mtkrild.rc
+vendor/etc/ecc_list.xml
+vendor/etc/ecc_list_OP01.xml
+vendor/etc/ecc_list_OP02.xml
+vendor/etc/ecc_list_OP09.xml
+vendor/etc/ecc_list_OP12.xml
+vendor/etc/ecc_list_OP17.xml
+vendor/etc/ecc_list_OP18.xml
+vendor/etc/ecc_list_OP20.xml
+vendor/etc/ecc_list_OP236.xml
+vendor/etc/ecc_list_preference.xml
+vendor/etc/special_pws_channel.xml
+vendor/etc/vendor-apns-conf.xml
+vendor/etc/virtual-spn-conf-by-efgid1.xml
+vendor/etc/virtual-spn-conf-by-efpnn.xml
+vendor/etc/virtual-spn-conf-by-efspn.xml
+vendor/etc/virtual-spn-conf-by-imsi.xml
+vendor/lib64/libcares_naptr.so
+vendor/lib64/libcarrierconfig.so
+vendor/lib64/libccci_util.so
+vendor/lib64/libgwsd-ril.so
+vendor/lib64/libgwsdv2-ril.so
+vendor/lib64/libgwsdv3-ril.so
+vendor/lib64/libmipc.so
+vendor/lib64/libmnetlink_v104.so
+vendor/lib64/libmtk-ril.so
+vendor/lib64/libmtkares.so
+vendor/lib64/libmtkconfig.so
+vendor/lib64/libmtkconfigutils.so
+vendor/lib64/libmtkcutils.so
+vendor/lib64/libmtk-fusion-ril-prop-vsim.so
+vendor/lib64/libmtkhardware_legacy.so
+vendor/lib64/libmtkmipc-ril.so
+vendor/lib64/libmtknetcap.so
+vendor/lib64/libmtknetutils.so
+vendor/lib64/libmtkproperty.so
+vendor/lib64/libmtkrillog.so
+vendor/lib64/libmtkrilutils.so
+vendor/lib64/libmtksysutils.so
+vendor/lib64/libmtktinyxml.so
+vendor/lib64/libmtkutils.so
+vendor/lib64/libratconfig.so
+vendor/lib64/librilfusion.so
+vendor/lib64/libstorage_otp.so
+vendor/lib64/libsysenv.so
+vendor/lib64/libtrm.so
+vendor/lib64/libvia-ril.so
+vendor/lib64/libviamipc-ril.so
+vendor/lib64/libwpfa.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
+# Radio (gsm0710muxd) - from rodin-user-15-AP3A.240905.015.A2-OS2.0.5.0.VOJCNXM-release-keys
+# DROPPED (missing): vendor/bin/gsm0710muxd|70e638c98c51a70d6b3f797d37ad8528275eefbf
+# Radio (IMS)
+vendor/bin/hw/vtservice_hidl
+vendor/bin/rcs_volte_stack
+vendor/bin/volte_clientapi_ua
+vendor/bin/volte_imcb
+vendor/bin/volte_imsm_93
+vendor/bin/volte_md_status
+vendor/bin/volte_rcs_ua
+vendor/bin/volte_stack
+vendor/bin/volte_ua
+vendor/etc/init/init.volte_imcb.rc
+vendor/etc/init/init.volte_imsm_93.rc
+vendor/etc/init/init.volte_md_status.rc
+vendor/etc/init/init.volte_stack.rc
+vendor/etc/init/init.volte_ua.rc
+vendor/etc/init/init.vtservice_hidl.rc
+vendor/etc/init/init.wod.rc
+vendor/etc/init/volte_clientapi_ua.rc
+vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
+vendor/lib/libipsec_ims_shr.so
+vendor/lib/librcs_interface.so
+vendor/lib/librcs_volte_core.so
+vendor/lib/libverno.so
+vendor/lib/libvolte_core_shr.so
+vendor/lib/libvolte_xdmc_shr.so
+vendor/lib/libwo.so
+vendor/lib/vendor.mediatek.hardware.rcs@2.0.so
+vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
+vendor/lib64/libipsec_ims_shr.so
+vendor/lib64/libverno.so
+vendor/lib64/libwo.so
+vendor/lib64/vendor.mediatek.hardware.clientapi@1.0.so
+vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so;MODULE_SUFFIX=_vendor
+# Secure Element
+vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
+vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
+# Sensors
+vendor/lib64/hw/sensors.mediatek.V2.0.so;SYMLINK=vendor/lib64/hw/sensors.mt6789.so
+vendor/lib64/libhfmanager.so
+vendor/lib64/libhfmanagerwrapper.so
+vendor/lib64/libhwm.so
+vendor/lib64/libksensor.so
+vendor/lib64/librgbwlightsensor.so
+# Soundtrigger
+vendor/lib64/hw/sound_trigger.primary.default.so:vendor/lib64/hw/sound_trigger.primary.mt6789.so
+vendor/lib64/libvow_ap_test_aa.so
+vendor/lib64/libvow_ap_test_dd.so
+vendor/lib64/libvow_ap_test_ha.so
+vendor/lib64/libvow_ap_test_hh.so
+vendor/lib64/libvow_ap_test_nn.so
+# TEE
+vendor/bin/hw/vendor.trustonic.tee@1.1-service
+vendor/bin/mcDriverDaemon
+vendor/etc/init/tee.rc
+vendor/etc/init/trustonic.rc
+vendor/etc/init/vendor.trustonic.tee@1.1-service.rc
+vendor/lib/libgz_gp_client.so
+vendor/lib/libgz_uree.so
+vendor/lib64/libTEECommon.so
+vendor/lib64/libgz_gp_client.so
+vendor/lib64/libgz_uree.so
+vendor/lib64/libimsg_log.so
+vendor/lib64/vendor.trustonic.tee.tui@1.0.so
+vendor/lib64/vendor.trustonic.tee@1.0.so
+vendor/lib64/vendor.trustonic.tee@1.1.so
+# Thermal
+vendor/bin/thermal_core
+vendor/etc/init/init.thermal_core.rc
+vendor/etc/thermal/disable_skin_control.conf
+vendor/etc/thermal/disable_thermal.conf
+vendor/etc/thermal/disable_thermal_temp.conf
+vendor/etc/thermal/disable_throttling.conf
+vendor/etc/thermal/thermal.conf
+vendor/etc/thermal/thermal_mtbf.conf
+vendor/etc/thermal/thermal_policy_00.conf
+vendor/etc/thermal/thermal_policy_02.conf
+vendor/etc/thermal/thermal_policy_08.conf
+# Tether Offload
+vendor/bin/hw/tetheroffloadservice
+vendor/bin/netdagent
+vendor/etc/init/netdagent.rc
+vendor/etc/init/tetheroffloadservice.rc
+vendor/lib64/libforkexecwrap.so
+vendor/lib64/libifcutils_mtk.so
+vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
+# Wi-Fi
+vendor/bin/wlan_assistant
+vendor/etc/init/init.wlan_drv.rc
+vendor/etc/init/wlan_assistant.rc
+vendor/etc/wfd_source_capability.csv
+vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so

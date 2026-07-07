@@ -1,0 +1,413 @@
+# MTK platform .rc configure
+
+import /vendor/etc/init/hw/init.connectivity.rc
+import /vendor/etc/init/hw/init.mt6789.usb.rc
+import /vendor/etc/init/hw/init.project.rc
+import /vendor/etc/init/hw/init.sensor_2_0.rc
+import /vendor/etc/init/hw/init.mt6789.power.rc
+
+# init.modem.rc must be the LAST rc file because vold.post_fs_data_done is set in it
+import /vendor/etc/init/hw/init.modem.rc
+# *** DO NOT import the new rc file after this line ***
+
+on init
+    # if primary storage is physical, set ro.vold.primary_physical to 1
+    # setprop ro.vold.primary_physical 1
+
+# increase sysctl_rmem_max and sysctl_wmem_max values to 2M
+    write /proc/sys/net/core/wmem_max 8388608
+    write /proc/sys/net/core/rmem_max 8388608
+
+   # Setup runtime blkio
+    write /dev/blkio/blkio.weight 1000
+    write /dev/blkio/background/blkio.weight 200
+    write /dev/blkio/blkio.group_idle 2000
+    write /dev/blkio/background/blkio.group_idle 0
+
+# mount different fs start
+
+on property:init.svc.vendor.charger=running
+    chmod 0666 /dev/kmsg
+    chmod 0775 /mnt/vendor
+    mkdir /mnt/vendor/nvcfg
+    mount ext4 /dev/block/by-name/nvcfg /mnt/vendor/nvcfg rw wait
+    chown system system /mnt/vendor/nvcfg
+    chmod 0771 /mnt/vendor/nvcfg
+    restorecon_recursive /mnt/vendor/nvcfg
+    # Permissions for System Server and daemons.
+    chown system system /sys/power/state
+    chown system system /sys/power/wakeup_count
+    chown radio wakelock /sys/power/wake_lock
+    chown radio wakelock /sys/power/wake_unlock
+    chmod 0660 /sys/power/state
+    chmod 0660 /sys/power/wake_lock
+    chmod 0660 /sys/power/wake_unlock
+    chmod 0660 /sys/power/wakeup_count
+    write /sys/power/pm_freeze_timeout 2000
+
+    start fuelgauged
+    start fuelgauged_nvram
+
+# initialize powerHAL when boot is completed
+on property:sys.boot_completed=1
+    setprop vendor.mediatek.powerhal.init 1
+
+on fs
+    # mount fstab
+    mount_all --early
+    exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/by-name/userdata
+
+on late-fs
+    mount_all --late
+
+on post-fs
+# change owner
+    chown system system /mnt/vendor/protect_f
+    chmod 0770 /mnt/vendor/protect_f
+
+    chown system system /mnt/vendor/protect_s
+    chmod 0770 /mnt/vendor/protect_s
+    chown root log /proc/ccci_sib
+
+    # allow ccci_mdinit access ccci_dump
+    chown root system /proc/ccci_dump
+
+on post-fs-data
+    wait_for_prop vendor.all.modules.ready 1
+
+    chown system system /mnt/vendor/nvcfg
+    chmod 0771 /mnt/vendor/nvcfg
+    restorecon_recursive /mnt/vendor/nvcfg
+    chown system system /mnt/vendor/nvcfg/fg
+    chown system system /mnt/vendor/nvcfg/fg/old_fg_data
+    chown system system /mnt/vendor/nvcfg/fg/car_tune_value
+
+    # create basic filesystem structure
+    # We chown/chmod /mnt/vendor/nvdata again so because mount is run as root + defaults
+    chown root system /mnt/vendor/nvdata
+    chmod 0771 /mnt/vendor/nvdata
+    mkdir /mnt/vendor/nvdata/media 0771 media audio
+
+    # Audio dump
+    mkdir /data/vendor/audiohal 0771 system audio
+    mkdir /data/vendor/audiohal/audio_param 0771 system audio
+
+    #Create cct mount point
+    mkdir /mnt/vendor/cct
+    chown root system /mnt/vendor/cct
+    chmod 0771 /mnt/vendor/cct
+
+    #Create flash folder
+    mkdir /data/vendor/flash
+    chown root system /data/vendor/flash
+    chmod 0771 /data/vendor/flash
+
+    #Create shading mount point
+    mkdir /data/vendor/shading
+    chown root system /data/vendor/shading
+    chmod 0771 /data/vendor/shading
+
+    #Create shading_otp mount point
+    mkdir /data/vendor/shading_otp
+    chown root system /data/vendor/shading_otp
+    chmod 0771 /data/vendor/shading_otp
+
+    #Create NDD mount point
+    mkdir /data/vendor/camera_dump
+    chown root system /data/vendor/camera_dump
+    chmod 0771 /data/vendor/camera_dump
+
+    #Create Camera Dip Debug Folder
+    mkdir /data/vendor/dipdebug
+    chown root system /data/vendor/dipdebug
+    chmod 0771 /data/vendor/dipdebug
+
+    #Create flicker mount point
+    mkdir /data/vendor/flicker
+    chown root system /data/vendor/flicker
+    chmod 0771 /data/vendor/flicker
+
+#ITD:modify for cam SN bind by huihang.zhou 20230302 start
+#CAM OTP SN
+    chown root root /sys/class/sensordrv/tran_imgsensor/tran_imgsensor_sn
+    chmod 0666 /sys/class/sensordrv/tran_imgsensor/tran_imgsensor_sn
+#ITD:modify for cam SN bind by huihang.zhou 20230302 end
+
+    # Set SELinux security contexts on upgrade or policy update.
+    restorecon_recursive /mnt/vendor/nvdata
+
+    #give system access to rfkill device node
+    chmod 0660 /dev/rfkill
+
+    # create for muxd pts device node , to operate without root
+    mkdir /dev/radio 0770 radio radio
+
+    # GPS
+    chmod 0666 /dev/gps_emi
+
+# -----------------------
+# Add by MTK
+    # SCP log
+    chmod 0660 /sys/class/misc/scp/scp_mobile_log
+    chown root system /sys/class/misc/scp/scp_mobile_log
+    chmod 0440 /dev/scp
+    chown root system /dev/scp
+
+    # SSPM log
+    chmod 0620 /sys/class/misc/sspm/sspm_mobile_log
+    chown root system /sys/class/misc/sspm/sspm_mobile_log
+    chmod 0440 /dev/sspm
+    chown root system /dev/sspm
+
+    # set ptmx group to non-root
+    chown root radio /dev/ptmx
+
+    # CMDQ
+    chmod 0640 /dev/mtk_mdp
+    chown system system /dev/mtk_mdp
+
+    # MDP SYNC
+    chmod 0644 /dev/mdp_sync
+    chown system system /dev/mdp_sync
+
+    # MML PQ
+    chmod 0640 /dev/mml_pq
+    chown system system /dev/mml_pq
+
+    #OPEN DSP
+    chmod 0640 /dev/audio_ipi
+    chown media media /dev/audio_ipi
+
+    #Fingerprint
+    chmod 0666 /dev/goodix_fp
+
+    #v4l2 codec
+    chmod 0660 /dev/vcu
+    chown media system /dev/vcu
+    chmod 0666 /dev/video0
+    chown mediacodec system /dev/video0
+    chmod 0666 /dev/video1
+    chown mediacodec system /dev/video1
+    mkdir /data/vendor/vcodec 0777 media system
+    mkdir /data/vendor/vcodec/log 0770 media system
+    mkdir /data/vendor/vcodec/in 0770 media system
+    mkdir /data/vendor/vcodec/out 0770 media system
+
+    # Display
+    chmod 0660 /dev/graphics/fb0
+    chown system graphics /dev/graphics/fb0
+
+    chmod 0660 /dev/mtk_disp_mgr
+    chown system graphics /dev/mtk_disp_mgr
+
+    chmod 0660 /dev/mtkfb_vsync
+    chown system graphics /dev/mtkfb_vsync
+
+    chmod 0660 /dev/sw_sync
+    chown system graphics /dev/sw_sync
+
+    # Android SEC related device nodes
+    chmod 0660 /dev/sec
+    chown root system /dev/sec
+
+    # FM Radio device node
+    chmod 0660 /dev/fm
+    chown media media /dev/fm
+
+    # bluetooth
+    #Use uinput's default permission
+    chown system net_bt_admin /dev/uinput
+
+    # FM
+    chown system system /sys/class/fm/fm/lan_enable
+    chmod 0660 /sys/class/fm/fm/lan_enable
+
+    # gz device
+    chmod 0660 /dev/gz_kree
+    chown system system /dev/gz_kree
+
+    #Camera
+    chmod 0660 /dev/camera-isp
+    chmod 0660 /dev/camera-mem
+    chmod 0660 /dev/camera-dip
+    chmod 0660 /dev/camera-rsc
+    chmod 0660 /dev/camera-fdvt
+    chmod 0660 /dev/kd_camera_hw
+    chmod 0660 /dev/seninf
+    chmod 0660 /dev/seninf_n3d
+    chmod 0660 /dev/flashlight
+    chmod 0660 /dev/MAINAF
+
+#ITD: Modify Camera By Yingji.Wang 220426 Start
+    #DualCam
+    mkdir /data/vendor/arcsoft 0777 system system
+    #tranDualCam
+    mkdir /data/vendor/multicam  0777 system system
+    mkdir /data/vendor/multicam/dualcam  0777 system system
+    #tranSAT
+    mkdir /data/vendor/multicam/sat 0777 system system
+#ITD: Modify Camera By Yingji.Wang 220426 end
+
+#ITD:modify by camera driver junfeng.qin5 20220501 start
+    #MEG-fullHDR
+    mkdir /data/vendor/meg_working_dir 0777 system system
+    mkdir /data/vendor/meg_working_dir/anc_fullhdr 0777 system system
+    #MEG-HUMANEFFECT
+    mkdir /data/vendor/meghumaneffect 0777 system system
+    #watermark 2.0
+    mkdir /data/vendor/camera_watermark 0777 system system
+#ITD:modify by camera driver junfeng.qin5 20220501 end
+
+    chown system camera /dev/camera-isp
+    chown system camera /dev/camera-mem
+    chown system camera /dev/camera-dip
+    chown system camera /dev/camera-rsc
+    chown system camera /dev/camera-fdvt
+    chown system camera /dev/kd_camera_hw
+    chown system camera /dev/seninf
+    chown system camera /dev/seninf_n3d
+    chown system camera /dev/flashlight
+    chown system camera /dev/MAINAF
+#fake dual camera
+    chown root root /sys/class/main2_light/main2_light/main2_light
+    chmod 0666 /sys/class/main2_light/main2_light/main2_light
+    chown system camera /sys/kernel/debug/mtk_cam_dbg/0/ctrl
+    chown system camera /sys/kernel/debug/mtk_cam_dbg/1/ctrl
+    chown system camera /sys/kernel/debug/mtk_cam_dbg/2/ctrl
+
+    #VOW
+    chmod 0640 /dev/vow
+    chown media media /dev/vow
+
+    # MMQoS
+    chmod 0660 /sys/devices/platform/soc/soc:interconnect/mmqos_hrt/camera_max_bw
+    chown media media /sys/devices/platform/soc/soc:interconnect/mmqos_hrt/camera_max_bw
+
+    #usip
+    chmod 0660 /dev/usip
+    chown media media /dev/usip
+
+  	#Thermal
+	  mkdir /data/vendor/.tp/ 0775 system system
+	  mkdir /data/vendor/thermal/ 0775 system system
+
+    #MCUPM log
+    chmod 0440 /dev/mcupm
+    chown root system /dev/mcupm
+
+    #EM of MT6360
+    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_pmu.5-0034/data
+    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_pmic.5-001a/data
+    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_ldo.5-0064/data
+    chmod 0664 sys/kernel/debug/rt-regmap/mt6360-4e/data
+    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_pmu.5-0034/reg_addr
+    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_pmic.5-001a/reg_addr
+    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_ldo.5-0064/reg_addr
+    chmod 0664 sys/kernel/debug/rt-regmap/mt6360-4e/reg_addr
+
+	#widevine driver node
+	chmod 0660 /dev/drm_wv
+	chown media system /dev/drm_wv
+	
+# End of adding by MTK drivers
+# -----------------------
+on boot
+    # start EAS+
+    write /sys/devices/system/cpu/eas/enable 1
+    
+    chmod 0664 /sys/class/leds/lcd-backlight/brightness
+    chown system system /sys/class/leds/lcd-backlight/brightness
+
+    #BSP:add for charger&led midtest by lei.shi5 20220505 start
+    chmod 0666 /dev/MT_pmic_adc_cali
+    chmod 0666 /sys/class/leds/red/brightness
+    chmod 0666 /sys/class/leds/blue/brightness
+    chmod 0666 /sys/class/leds/green/brightness
+    chmod 0666 /sys/devices/platform/odm/odm:tran_battery/tran_bat_temp
+    chmod 0666 /sys/devices/platform/odm/odm:tran_battery/CHG_CAPACITY_TEST
+    chmod 0666 /sys/devices/platform/odm/odm:tran_battery/tran_set_current
+    chmod 0666 /sys/devices/platform/charger/Charger_Type
+    #BSP:add for charger&led midtest by lei.shi5 20220505 end
+
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+    chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+    chown root   system /sys/kernel/debug/binder/transaction_log_enable
+    chown root   system /sys/kernel/debug/binder/perf_evalue
+
+    chown system system /sys/class/leds/lcd-backlight/trigger
+
+#ITD:add flashlight by isp team 20220412 start
+    chmod 0666 /sys/devices/virtual/torch/torch/torch_level
+    chmod 0666 /sys/devices/virtual/sub_torch/sub_torch/sub_torch_level
+#ITD:add flashlight by isp team 20220412 end
+    # gauge symbolic
+    symlink /sys/devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt6358-gauge /dev/gauge
+
+    # Permission for hibernation
+    chown radio system /sys/power/tuxonice
+    chown radio system /sys/power/tuxonice/do_hibernate
+    chmod 0770 /sys/power/tuxonice
+    chmod 0220 /sys/power/tuxonice/do_hibernate
+
+##Netlog tool
+   #change permissions about terminal
+    chown root radio /proc/net/ip6_tables_matches
+    chown root radio /proc/net/ip6_tables_names
+    chown root radio /proc/net/ip6_tables_targets
+    chown root radio /proc/net/arp_tables_targets
+    chown root radio /proc/net/arp_tables_matches
+    chown root radio /proc/net/arp_tables_names
+    chown root radio /proc/net/ip_tables_targets
+    chown root radio /proc/net/ip_tables_matches
+    chown root radio /proc/net/ip_tables_names
+    chown root radio /proc/net/netfilter/nfnetlink_log
+    chown root radio /proc/net/netfilter/nfnetlink_queue
+
+# WMT proc
+    chown shell system /proc/driver/wmt_aee
+
+# define device for EMCSMDLOGGER
+    chown system radio /dev/ttyGS3
+    chmod 0660 /dev/ttyGS3
+
+#Define device for ATCID
+    chmod 660 /dev/ttyGS0
+    chown system radio /dev/ttyGS0
+    chmod 660 /dev/ttyGS1
+    chown system radio /dev/ttyGS1
+#Power Manager
+    write /sys/power/pm_freeze_timeout 2000
+
+# end boot time fs tune
+on property:sys.boot_completed=1
+    # Back to default VM settings
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+
+on property:sys.boot_completed=1
+
+# reset mdmode when modem crash happens in ATM
+on property:vendor.mtk.md1.status=reset
+    setprop persist.vendor.atm.mdmode normal
+
+on property:sys.boot_completed=1
+    restart android-hardware-media-c2-hal-1-2
+
+on property:sys.boot_completed=1
+# Setup cpu.shares to throttle background groups (bg ~ 5% sysbg ~ 10%)
+    write /dev/cpuctl/background/cpu.shares 1024
+    write /dev/cpuctl/system-background/cpu.shares 2048
+    write /dev/cpuctl/system/cpu.shares 20480
+    # We only have system and background groups holding tasks and the groups below are empty
+    write /dev/cpuctl/camera-daemon/cpu.shares 20480
+    write /dev/cpuctl/foreground/cpu.shares 20480
+    write /dev/cpuctl/nnapi-hal/cpu.shares 20480
+    write /dev/cpuctl/rt/cpu.shares 20480
+    write /dev/cpuctl/top-app/cpu.shares 20480
+
+# Report max frequency to unity and miHoYo (HoYoverse) games tasks
+    write /proc/sys/kernel/sched_lib_name "com.miHoYo.,com.HoYoverse.,UnityMain,libunity.so"
+    write /proc/sys/kernel/sched_lib_mask_force 255
+
+# OTG
+on property:sys.boot_completed=1
+    write /sys/devices/platform/odm/odm:tran_battery/OTG_CTL 1

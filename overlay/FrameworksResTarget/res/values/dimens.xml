@@ -1,0 +1,8 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <dimen name="rounded_corner_radius">26.0dip</dimen>
+    <dimen name="rounded_corner_radius_top">0.0dip</dimen>
+    <dimen name="rounded_corner_radius_bottom">0.0dip</dimen>
+    <dimen name="status_bar_height">@dimen/status_bar_height_portrait</dimen>
+    <dimen name="status_bar_height_portrait">36.0dip</dimen>
+    <dimen name="status_bar_height_landscape">26.0dip</dimen>
+</resources>
