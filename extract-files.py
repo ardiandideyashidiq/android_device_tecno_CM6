@@ -73,6 +73,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so')
         .binary_regex_replace(b'A2dpsuspendonly', b'A2dpSuspended\x00\x00')
         .binary_regex_replace(b'BTAudiosuspend', b'A2dpSuspended\x00'),
+    'vendor/lib/libalsautils-v32.so': blob_fixup()
+        .fix_soname(),
+    'vendor/lib64/libalsautils-v32.so': blob_fixup()
+        .fix_soname(),
     (
         'vendor/lib64/hw/sensors.mediatek.V2.0.so',
         'vendor/lib64/libcodec2_mtk_c2store.so',
@@ -89,7 +93,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
     'vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc': blob_fixup()
         .regex_replace('start', 'enable'),
-    ('vendor/lib64/libspeech_enh_lib.so', 'vendor/lib64/libalsautils-v32.so', 'vendor/lib64/libwifi-hal-mtk.so', 'vendor/lib64/hw/sound_trigger.primary.mt6789.so', 'vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so'): blob_fixup()
+    ('vendor/lib64/libspeech_enh_lib.so', 'vendor/lib/libspeech_enh_lib.so', 'vendor/lib64/libalsautils-v32.so', 'vendor/lib64/libwifi-hal-mtk.so', 'vendor/lib64/hw/sound_trigger.primary.mt6789.so', 'vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so', 'vendor/lib64/libtrancrypto.so', 'vendor/lib/libtrancrypto.so'): blob_fixup()
         .fix_soname(),
     'vendor/etc/init/init.thermal_core.rc': blob_fixup()
         .regex_replace('ro.vendor.mtk_thermal_2_0', 'vendor.thermal.link_ready'),
@@ -102,12 +106,13 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('liblog.so'),
     'vendor/lib64/mt6789/libmnl.so': blob_fixup()
         .add_needed('libcutils.so'),
-    ('vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so', 'vendor/lib64/mt6789/libeffect_hal.so', 'vendor/lib64/libMegviiHum.so'): blob_fixup()
+    ('vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so', 'vendor/lib64/mt6789/libeffect_hal.so', 'vendor/lib64/libMegviiHum.so', 'vendor/lib64/libanc_single_rt_bokeh.so', 'vendor/lib64/libvideofilmeffect.so'): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_createFromHandle')
         .clear_symbol_version('AHardwareBuffer_describe')
         .clear_symbol_version('AHardwareBuffer_getNativeHandle')
         .clear_symbol_version('AHardwareBuffer_lock')
+        .clear_symbol_version('AHardwareBuffer_lockPlanes')
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
     'vendor/lib64/mt6789/libTranPortraitConvertor.so': blob_fixup()
@@ -121,6 +126,8 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_lockPlanes')
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
+    'vendor/lib64/mt6789/libmorpho_video_stabilizer.so': blob_fixup()
+        .add_needed('libutils.so'),
     'vendor/bin/hw/mt6789/camerahalserver': blob_fixup()
         .replace_needed('libutils.so', 'libutils-v32.so')
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so')
