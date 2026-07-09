@@ -155,6 +155,34 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.mediatek.hardware.biometrics.fingerprint</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>ITranBiometricsFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>com.anc.fingerprint.extension</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IFingerprintExtension</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IFingerprintExtension/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.biometrics.fingerprint</name>
+	    <transport>hwbinder</transport>
+	    <version>2.1</version>
+	    <interface>
+	        <name>IBiometricsFingerprint</name>
+	        <instance>default</instance>
+	    </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.mediatek.hardware.aee</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
@@ -372,5 +400,46 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::ITui/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.neuropilot.agent</name>
+        <transport>hwbinder</transport>
+        <version>1.2</version>
+        <interface>
+            <name>IAgent</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.2::IAgent/default</fqname>
+    </hal>
+
+    <hal format="hidl">
+        <name>android.hardware.nfc</name>
+        <transport>hwbinder</transport>
+        <version>1.2</version>
+        <interface>
+            <name>INfc</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.2::INfc/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.bluetooth</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IBluetoothHci</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.1::IBluetoothHci/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.bluetooth.audio</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>IBluetoothAudioProvidersFactory</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.1::IBluetoothAudioProvidersFactory/default</fqname>
     </hal>
 </manifest>

@@ -110,7 +110,7 @@ ro.surface_flinger.set_touch_timer_ms=500
 debug.sf.region_sampling_duration_ns=11111111
 debug.sf.region_sampling_period_ns=99999984
 debug.sf.region_sampling_timer_timeout_ns=99999984
-ro.surface_flinger.game_default_frame_rate_override=90
+ro.surface_flinger.game_default_frame_rate_override=60
 
 # Enable virtual A/B compression
 ro.virtual_ab.compression.threads=true

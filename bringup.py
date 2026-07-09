@@ -9,6 +9,8 @@ Usage:
   ./bringup.py --trim --base proprietary-files.txt --target x6812b.txt --output test.txt
   ./bringup.py --resolve --list test-t812.txt --dump /path/to/dump
   ./bringup.py --resolve --list test-t812.txt --dump /path/to/dump --apply
+  ./bringup.py --strip-32bit --list proprietary-files.txt --dump /path/to/dump
+  ./bringup.py --strip-32bit --list proprietary-files.txt --dump /path/to/dump --apply
   ./bringup.py --clean test.txt
 """
 
@@ -968,6 +970,262 @@ def resolve_mode(args) -> None:
                      payload["provided_by_source"], payload["unresolved"], payload.get("unresolved_chain", {})))
 
 
+# ── Strip 32-bit functions ──────────────────────────────────────────
+
+
+ELF_BITNESS_RE = re.compile(r':\s+ELF (3[26]|64)-bit')
+
+
+def _elf_bitness(file_path: Path) -> str | None:
+    try:
+        out = subprocess.run(["file", str(file_path)], capture_output=True, text=True, check=False, timeout=10)
+        m = ELF_BITNESS_RE.search(out.stdout)
+        if m:
+            return m.group(1)
+    except OSError:
+        pass
+    return None
+
+
+def _collect_dump_elfs(dump_path: Path) -> tuple[list[str], list[str]]:
+    lib_paths = []
+    for sub in ("vendor/lib", "vendor/lib64"):
+        d = dump_path / sub
+        if d.is_dir():
+            for f in sorted(d.rglob("*")):
+                if f.suffix == ".so" and f.is_file():
+                    lib_paths.append(str(f.relative_to(dump_path)))
+    bin_paths = []
+    bin_d = dump_path / "vendor/bin"
+    if bin_d.is_dir():
+        for f in sorted(bin_d.rglob("*")):
+            if f.is_file() and not f.name.startswith("."):
+                bin_paths.append(str(f.relative_to(dump_path)))
+    return lib_paths, bin_paths
+
+
+def _scan_bitness(dump_path: Path, rel_paths: list[str], jobs: int) -> dict[str, str]:
+    result: dict[str, str] = {}
+    total = len(rel_paths)
+    completed = 0
+    log_interval = max(1, min(500, total // 10))
+    with ThreadPoolExecutor(max_workers=max(1, jobs)) as ex:
+        fut_map = {ex.submit(_elf_bitness, dump_path / p): p for p in rel_paths}
+        for future in as_completed(fut_map):
+            p = fut_map[future]
+            bits = future.result()
+            completed += 1
+            if bits:
+                result[p] = bits
+            if completed == 1 or completed == total or completed % log_interval == 0:
+                logger.info("[bitness %d/%d] %d ELFs", completed, total, len(result))
+    return result
+
+
+def _basename_has_64bit(bn: str, basename_map: dict[str, list[tuple[str, str]]]) -> bool:
+    providers = basename_map.get(bn, [])
+    return any(bits == "64" for _, bits in providers)
+
+
+def _entry_basename_set(entry: dict) -> set[str]:
+    names = set()
+    names.add(Path(entry["dest"]).name)
+    if entry["source"]:
+        names.add(Path(entry["source"]).name)
+    for alias in entry["aliases"]:
+        names.add(Path(alias).name)
+    return names
+
+
+def _check_dlopen_for_libs(dump_path: Path, lib_basenames: set[str],
+                            search_paths: list[str], jobs: int) -> set[str]:
+    referenced: set[str] = set()
+    total = len(search_paths)
+    completed = 0
+    log_interval = max(1, min(500, total // 10))
+    with ThreadPoolExecutor(max_workers=max(1, jobs)) as ex:
+        fut_map = {}
+        for rel_path in search_paths:
+            fp = dump_path / rel_path
+            if fp.is_file():
+                fut_map[ex.submit(_scan_one_strings, fp)] = rel_path
+        for future in as_completed(fut_map):
+            rel_path = fut_map[future]
+            libs = future.result()
+            completed += 1
+            for lib in libs:
+                if lib in lib_basenames:
+                    referenced.add(lib)
+            if completed == 1 or completed == total or completed % log_interval == 0:
+                logger.info("[dlopen-check %d/%d] referenced %d/%d",
+                            completed, total, len(referenced), len(lib_basenames))
+    return referenced
+
+
+def strip_32bit_entries(list_path: Path, dump_path: Path, apply: bool = False,
+                        output_path: str | None = None, jobs: int | None = None) -> dict:
+    jobs = jobs or (os.cpu_count() or 4)
+    if not dump_path.is_dir():
+        raise ValueError(f"dump root not found: {dump_path}")
+    if not list_path.is_file():
+        raise ValueError(f"list file not found: {list_path}")
+
+    entries = load_parsed_entries(list_path)
+    logger.info("Loaded %d proprietary entries", len(entries))
+
+    logger.info("Scanning dump ELF files for bitness...")
+    lib_paths, bin_paths = _collect_dump_elfs(dump_path)
+    all_elfs = lib_paths + bin_paths
+    bitness_map = _scan_bitness(dump_path, all_elfs, jobs)
+    logger.info("Bitness scan complete: %d ELFs", len(bitness_map))
+
+    basename_map: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    for p, bits in bitness_map.items():
+        basename_map[Path(p).name].append((p, bits))
+    bin_bitness = {p: bits for p, bits in bitness_map.items() if p.startswith("vendor/bin/")}
+
+    has_64bit: list[dict] = []
+    lib32_only: list[dict] = []
+    bin32: list[dict] = []
+    already_64: list[dict] = []
+    skipped: list[dict] = []
+
+    for entry in entries:
+        dest = entry["dest"]
+
+        if not dest.endswith(".so") and not dest.startswith("vendor/bin/"):
+            skipped.append(entry)
+            continue
+
+        if "/lib64/" in dest:
+            already_64.append(entry)
+            continue
+
+        if dest.startswith("vendor/bin/"):
+            bits = bin_bitness.get(dest)
+            if bits == "32":
+                bin32.append(entry)
+            else:
+                already_64.append(entry)
+            continue
+
+        basenames = _entry_basename_set(entry)
+        if any(_basename_has_64bit(bn, basename_map) for bn in basenames):
+            has_64bit.append(entry)
+        else:
+            lib32_only.append(entry)
+
+    logger.info("Classification: has_64bit=%d lib32_only=%d bin32=%d already_64=%d skipped=%d",
+                len(has_64bit), len(lib32_only), len(bin32), len(already_64), len(skipped))
+
+    lib32_only_unref = list(lib32_only)
+    lib32_only_refed: list[dict] = []
+
+    if lib32_only:
+        lib32_basenames: set[str] = set()
+        for e in lib32_only:
+            lib32_basenames.update(_entry_basename_set(e))
+        logger.info("Checking %d 32-bit-only libs for dlopen in 64-bit binaries...", len(lib32_basenames))
+        search_paths = [p for p, bits in bin_bitness.items() if bits == "64"]
+        search_paths.extend(p for p in lib_paths if bitness_map.get(p) == "64")
+        referenced = _check_dlopen_for_libs(dump_path, lib32_basenames, search_paths, jobs)
+
+        if referenced:
+            lib32_only_refed = [e for e in lib32_only if _entry_basename_set(e) & referenced]
+            lib32_only_unref = [e for e in lib32_only if not (_entry_basename_set(e) & referenced)]
+            logger.info("dlopen: %d referenced, %d unreferenced", len(lib32_only_refed), len(lib32_only_unref))
+        else:
+            logger.info("dlopen: none referenced")
+
+    to_remove = has_64bit + lib32_only_unref + bin32
+    to_remove_raw = {e["raw_line"].strip() for e in to_remove}
+
+    report = {
+        "has_64bit_counterpart": [e["raw_line"] for e in has_64bit],
+        "lib32_only_unreferenced": [e["raw_line"] for e in lib32_only_unref],
+        "lib32_only_referenced": [e["raw_line"] for e in lib32_only_refed],
+        "bin32": [e["raw_line"] for e in bin32],
+        "already_64bit": [e["raw_line"] for e in already_64],
+        "skipped": [e["raw_line"] for e in skipped],
+        "summary": {
+            "total_entries": len(entries),
+            "has_64bit_counterpart": len(has_64bit),
+            "lib32_only_unreferenced": len(lib32_only_unref),
+            "lib32_only_referenced": len(lib32_only_refed),
+            "bin32": len(bin32),
+            "already_64bit": len(already_64),
+            "to_remove": len(to_remove),
+            "skipped": len(skipped),
+        },
+        "applied": 0,
+    }
+
+    if apply and to_remove_raw:
+        with list_path.open("r", encoding="utf-8") as fh:
+            orig_lines = fh.readlines()
+        new_lines = []
+        removed_count = 0
+        for line in orig_lines:
+            stripped = line.strip()
+            if stripped and not stripped.startswith("#") and stripped in to_remove_raw:
+                removed_count += 1
+            else:
+                new_lines.append(line)
+        with list_path.open("w", encoding="utf-8") as fh:
+            fh.writelines(new_lines)
+        report["applied"] = removed_count
+        logger.info("Applied: removed %d lines from %s", removed_count, list_path)
+
+    return report
+
+
+def strip_32bit_mode(args) -> None:
+    try:
+        report = strip_32bit_entries(
+            list_path=Path(args.list).resolve(),
+            dump_path=Path(args.dump).resolve(),
+            apply=args.apply,
+            output_path=args.output,
+            jobs=args.jobs,
+        )
+    except ValueError as e:
+        logger.error("%s", e)
+        sys.exit(1)
+
+    summary = report["summary"]
+    lines = [
+        "─" * 60,
+        "32-bit Strip Analysis",
+        "─" * 60,
+        f"Total entries:         {summary['total_entries']}",
+        f"Already 64-bit:        {summary['already_64bit']}",
+        f"Has 64-bit counterpart: {summary['has_64bit_counterpart']}",
+        f"32-bit lib unreferenced: {summary['lib32_only_unreferenced']}",
+        f"32-bit lib (KEPT, dlopen): {summary['lib32_only_referenced']}",
+        f"32-bit binaries:        {summary['bin32']}",
+        f"Skipped (non-ELF):      {summary['skipped']}",
+        "─" * 60,
+        f"TO REMOVE:              {summary['to_remove']}",
+    ]
+    if report["applied"]:
+        lines.append(f"APPLIED: removed {report['applied']} lines from list file")
+
+    if report["lib32_only_referenced"]:
+        lines.append("")
+        lines.append("The following 32-bit-only libs are referenced by 64-bit binaries (dlopen):")
+        for line in report["lib32_only_referenced"]:
+            lines.append(f"  KEPT: {line[:80]}")
+
+    result = "\n".join(lines)
+
+    if args.output:
+        with open(args.output, "w") as fh:
+            fh.write(result + "\n")
+        logger.info("Wrote report to %s", args.output)
+
+    print(result)
+
+
 # ── Main ──────────────────────────────────────────────────────────────
 
 
@@ -975,14 +1233,16 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Android device tree bring-up utility")
     parser.add_argument("--trim", action="store_true", help="Trim proprietary blobs against a target file list")
     parser.add_argument("--resolve", action="store_true", help="Resolve missing ELF dependencies from a stock ROM dump")
+    parser.add_argument("--strip-32bit", action="store_true", help="Remove 32-bit blobs for 64-bit-only builds")
     parser.add_argument("--clean", help="Clean DROPPED comments from a prior output")
     parser.add_argument("--base", help="Donor proprietary-files.txt")
     parser.add_argument("--target", help="Stock ROM file listing (one path per line)")
     parser.add_argument("--extract-device", help="Override device codename in companion script")
-    parser.add_argument("--list", help="Proprietary-files list to resolve")
+    parser.add_argument("--list", help="Proprietary-files list to resolve or strip")
     parser.add_argument("--dump", help="Stock ROM dump root (must contain vendor/ etc.)")
-    parser.add_argument("--apply", action="store_true", help="Apply additions to list file")
+    parser.add_argument("--apply", action="store_true", help="Apply additions or removals to list file")
     parser.add_argument("--output", help="Output file path")
+    parser.add_argument("--jobs", type=int, default=0, help="Parallel workers (default: CPU count)")
 
     if len(sys.argv) == 1:
         parser.print_help()
@@ -995,6 +1255,12 @@ def main() -> None:
         if not args.list or not args.dump:
             parser.error("--list and --dump are required in resolve mode")
         resolve_mode(args)
+        return
+
+    if args.strip_32bit:
+        if not args.list or not args.dump:
+            parser.error("--list and --dump are required in strip-32bit mode")
+        strip_32bit_mode(args)
         return
 
     if args.clean:

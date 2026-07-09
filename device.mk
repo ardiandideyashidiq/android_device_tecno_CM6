@@ -23,8 +23,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
-# Shipping API level
-PRODUCT_SHIPPING_API_LEVEL := 35
+# Shipping API level (use 31 to include hwservicemanager for legacy HIDL blobs)
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
