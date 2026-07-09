@@ -57,7 +57,66 @@
             <kctl name="Tran_MidTest_LoopBack_Switch" value="Off" />
         </path>
         <!--BSP: add audio bring up XLQLHAEE-6 by jiaqiong.zhang 20220410 end-->
-       <!-- 2-in-1 speaker output-->
+        <!--USD: modify audio bring up CM5H8918-1 by jiaqiong.zhang 20241210 start-->
+        <path name="audiotest_speaker_output" value="turnon">
+            <kctl name="Lineout Volume" value="10" />
+            <kctl name="ADDA_DL_CH1 DL1_CH1" value="1" />
+            <kctl name="ADDA_DL_CH2 DL1_CH2" value="1" />
+            <kctl name="DAC In Mux" value="Normal Path" />
+            <kctl name="RCV Mux" value="Open" />
+            <kctl name="LOL Mux" value="Playback" />
+            <kctl name="Ext_Speaker_Amp Switch" value="1" />
+            <kctl name="FSM_Scene" value="13" />
+        </path>
+        <path name="audiotest_speaker_output" value="turnoff">
+            <kctl name="ADDA_DL_CH1 DL1_CH1" value="0" />
+            <kctl name="ADDA_DL_CH2 DL1_CH2" value="0" />
+            <kctl name="DAC In Mux" value="Normal Path" />
+            <kctl name="RCV Mux" value="Open" />
+            <kctl name="LOL Mux" value="Open" />
+            <kctl name="Ext_Speaker_Amp Switch" value="0" />
+            <kctl name="FSM_Scene" value="0" />
+        </path>
+        <path name="audiotest_speaker2_output" value="turnon">
+            <kctl name="Handset Volume" value="10" />
+            <kctl name="ADDA_DL_CH1 DL1_CH1" value="1" />
+            <kctl name="ADDA_DL_CH2 DL1_CH2" value="1" />
+            <kctl name="DAC In Mux" value="Normal Path" />
+            <kctl name="RCV Mux" value="Voice Playback" />
+            <kctl name="LOL Mux" value="Open" />
+            <kctl name="Ext_Speaker_Amp Switch" value="1" />
+            <kctl name="FSM_Scene" value="7" />
+        </path>
+        <path name="audiotest_speaker2_output" value="turnoff">
+            <kctl name="ADDA_DL_CH1 DL1_CH1" value="0" />
+            <kctl name="ADDA_DL_CH2 DL1_CH2" value="0" />
+            <kctl name="DAC In Mux" value="Normal Path" />
+            <kctl name="RCV Mux" value="Open" />
+            <kctl name="LOL Mux" value="Open" />
+            <kctl name="Ext_Speaker_Amp Switch" value="0" />
+            <kctl name="FSM_Scene" value="0" />
+        </path>
+        <path name="audiotest_handset_output" value="turnon">
+            <kctl name="Handset Volume" value="10" />
+            <kctl name="ADDA_DL_CH1 DL1_CH1" value="1" />
+            <kctl name="ADDA_DL_CH2 DL1_CH2" value="1" />
+            <kctl name="DAC In Mux" value="Normal Path" />
+            <kctl name="RCV Mux" value="Voice Playback" />
+            <kctl name="LOL Mux" value="Open" />
+            <kctl name="Ext_Speaker_Amp Switch" value="1" />
+            <kctl name="FSM_Scene" value="15" />
+        </path>
+        <path name="audiotest_handset_output" value="turnoff">
+            <kctl name="ADDA_DL_CH1 DL1_CH1" value="0" />
+            <kctl name="ADDA_DL_CH2 DL1_CH2" value="0" />
+            <kctl name="DAC In Mux" value="Normal Path" />
+            <kctl name="RCV Mux" value="Open" />
+            <kctl name="LOL Mux" value="Open" />
+            <kctl name="Ext_Speaker_Amp Switch" value="0" />
+            <kctl name="FSM_Scene" value="0" />
+        </path>
+        <!--USD: modify audio bring up CM5H8918-1 by jiaqiong.zhang 20241210 end-->
+        <!-- 2-in-1 speaker output-->
         <path name="two_in_one_speaker_output" value="turnon">
         </path>
         <path name="two_in_one_speaker_output" value="turnoff">
@@ -68,9 +127,6 @@
             <kctl name="DAC In Mux" value="Normal Path" />
             <kctl name="LOL Mux" value="Playback" />
             <kctl name="RCV Mux" value="Dual Voice Playback" />
-            <kctl name="Lineout Volume" value="6" />
-            <kctl name="Handset Volume" value="18" />
-            <kctl name="ADDA_DL_GAIN" value="32543" />
         </path>
         <!--BSP: modify inversed spk1 XLQLHAEE-6 by jiaqiong.zhang 20220613 end-->
         <path name="dual_speaker_output" value="turnoff">
@@ -81,9 +137,6 @@
         <path name="speaker_output" value="turnon">
             <kctl name="DAC In Mux" value="Normal Path" />
             <kctl name="LOL Mux" value="Playback" />
-            <kctl name="Lineout Volume" value="6" />
-            <kctl name="Handset Volume" value="18" />
-            <kctl name="ADDA_DL_GAIN" value="32543" />
         </path>
         <path name="speaker_output" value="turnoff">
             <kctl name="LOL Mux" value="Open" />
@@ -187,6 +240,8 @@
             <kctl name="ADC R Mux" value="Idle" />
             <kctl name="PGA L Mux" value="None" />
             <kctl name="PGA R Mux" value="None" />
+            <kctl name="PGA1 Volume" value="2" />
+            <kctl name="PGA2 Volume" value="2" />
         </path>
         <path name="builtin_Mic_DualMic_Inverse" value="turnon">
             <kctl name="ADC L Mux" value="Left Preamplifier" />
@@ -211,6 +266,8 @@
             <kctl name="ADC R Mux" value="Idle" />
             <kctl name="PGA L Mux" value="None" />
             <kctl name="PGA R Mux" value="None" />
+            <kctl name="PGA1 Volume" value="2" />
+            <kctl name="PGA2 Volume" value="2" />
         </path>
         <path name="builtin_Mic_BackMic_Inverse" value="turnon">
             <kctl name="ADC L Mux" value="Left Preamplifier" />
@@ -274,9 +331,13 @@
         </path>
         <!-- BSP: add audio bring up XLBEYH-4 by jiaqiong.zhang 20220513 end -->
         <path name="sidetone_switch" value="turnon">
+            <kctl name="STF_CH1 ADDA_UL_CH1" value="1" />
+            <kctl name="STF_CH2 ADDA_UL_CH2" value="1" />
             <kctl name="Sidetone Filter Switch" value="1" />
         </path>
         <path name="sidetone_switch" value="turnoff">
+            <kctl name="STF_CH1 ADDA_UL_CH1" value="0" />
+            <kctl name="STF_CH2 ADDA_UL_CH2" value="0" />
             <kctl name="Sidetone Filter Switch" value="0" />
         </path>
         <!-- i2s hd control -->
@@ -1049,6 +1110,7 @@
             <kctl name="UL2_CH1 SRC_1_OUT_CH1" value="0" />
             <kctl name="UL2_CH2 SRC_1_OUT_CH2" value="0" />
         </path>
+<!-- BSP: resolve ke problem for CKNHHW2S-86 by denghang.quan 20230315 start -->
         <path name="reset_device_setting" value="setting">
             <kctl name="deep_buffer_scenario" value="0" />
             <kctl name="record_xrun_assert" value="0" />
@@ -1064,7 +1126,9 @@
             <kctl name="ADC R Mux" value="Idle" />
             <kctl name="PGA L Mux" value="None" />
             <kctl name="PGA R Mux" value="None" />
+            <kctl name="usb_call_echo_ref" value="0" />
         </path>
+<!-- BSP: resolve ke problem for CKNHHW2S-86 by denghang.quan 20230315 end -->
         <path name="MD1_TO_CAPTURE2" value="turnon">
             <kctl name="UL2_CH1 PCM_2_CAP_CH1" value="1" />
             <kctl name="UL2_CH2 PCM_2_CAP_CH1" value="1" />
@@ -1275,13 +1339,33 @@
             <kctl name="UL5_CH1 ADDA_UL_CH1" value="0" />
             <kctl name="UL5_CH2 ADDA_UL_CH2" value="0" />
         </path>
+        <!--USD：add ultrasound mode for CM6H8918-6 by denghang.quan 20240920 start-->
         <path name="ultrasound-proximity" value="turnon">
+            <kctl name="Ultrasound Custom Setting 4" value="1" />
+            <kctl name="Ultrasound Mode" value="2688" />
         </path>
         <path name="ultrasound-proximity" value="turnoff">
+            <kctl name="Ultrasound Mode" value="0"  />
         </path>
         <path name="ultrasound-proximity-speaker" value="turnon">
+            <kctl name="Ultrasound Custom Setting 4" value="1" />
+            <kctl name="Ultrasound Mode" value="2690" />
+            <kctl name="Ultrasound Log Level" value="7" />
         </path>
         <path name="ultrasound-proximity-speaker" value="turnoff">
+            <kctl name="Ultrasound Mode" value="0"  />
+            <kctl name="Ultrasound Log Level" value="7" />
         </path>
+        <path name="ultrasound-proximity-imu" value="turnon">
+            <kctl name="Ultrasound Mode" value="2691" />
+            <kctl name="Ultrasound Log Level" value="7" />
+        </path>
+        <path name="ultrasound-proximity-imu" value="turnoff">
+            <kctl name="Ultrasound Mode" value="0"  />
+        </path>
+        <!--USD：add ultrasound mode for CM6H8918-6 by denghang.quan 20240920 end-->
     </mixercontrol>
+    <!--USD: add audio bring up CM5H8918-1 by jiaqiong.zhang 20241125 start-->
+    <outputdevice name="AUDIO_TYPEC_TEST" path="1" />
+    <!--USD: add audio bring up CM5H8918-1 by jiaqiong.zhang 20241125 end-->
 </root>

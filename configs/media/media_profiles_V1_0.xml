@@ -175,7 +175,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -197,7 +197,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -427,7 +427,7 @@
         </EncoderProfile>
 <!-- #[ITD]add 2k video for front camera by jian.hu 20220502 end-->
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -451,7 +451,7 @@
         </EncoderProfile>
 <!-- #[ITD]add 2k video for front camera by jian.hu 20220502 end-->
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -546,17 +546,19 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
+<!-- #[ITD]add slow motion config for front camera by jian.hu 20220606 start-->
         <EncoderProfile quality="high" fileFormat="mp4" duration="30">
             <Video codec="h264"
-                   bitRate="20000000"
-                   width="1920"
-                   height="1080"
+                   bitRate="50000000"
+                   width="2560"
+                   height="1440"
                    frameRate="30" />
             <Audio codec="aac"
                    bitRate="256000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
+<!-- #[ITD]add slow motion config for front camera by jian.hu 20220606 end-->
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="192000"
@@ -623,8 +625,21 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-        <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
+<!-- #[ITD]add slow motion config for front camera by jian.hu 20220606 start-->
+        <EncoderProfile quality="qhd" fileFormat="mp4" duration="30">
             <Video codec="h264"
+                   bitRate="50000000"
+                   width="2560"
+                   height="1440"
+                   frameRate="30" />
+            <Audio codec="aac"
+                   bitRate="256000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+<!-- #[ITD]add slow motion config for front camera by jian.hu 20220606 end-->
+        <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -646,7 +661,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -722,23 +737,22 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-        <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="50000000"
-                   width="2560"
-                   height="1440"
-                   frameRate="30" />
-            <Audio codec="aac"
-                   bitRate="256000"
-                   sampleRate="48000"
-                   channels="2" />
-        </EncoderProfile>
-<!-- #[ITD]add slow motion config for front camera by jian.hu 20220606 start-->
         <EncoderProfile quality="highspeedlow" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="3000000"
                    width="640"
                    height="480"
+                   frameRate="120" />
+            <Audio codec="aac"
+                   bitRate="256000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+        <EncoderProfile quality="highspeedhigh" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+                   bitRate="9000000"
+                   width="1280"
+                   height="720"
                    frameRate="120" />
             <Audio codec="aac"
                    bitRate="256000"
@@ -757,17 +771,6 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="highspeed720p" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="9000000"
-                   width="1280"
-                   height="720"
-                   frameRate="120" />
-            <Audio codec="aac"
-                   bitRate="256000"
-                   sampleRate="48000"
-                   channels="2" />
-        </EncoderProfile>
-        <EncoderProfile quality="highspeedhigh" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="9000000"
                    width="1280"
@@ -874,7 +877,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -896,7 +899,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -1034,7 +1037,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -1056,7 +1059,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -1205,7 +1208,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -1227,7 +1230,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -1387,7 +1390,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -1409,7 +1412,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -1569,7 +1572,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -1591,7 +1594,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="1000000"
                    width="176"
                    height="144"

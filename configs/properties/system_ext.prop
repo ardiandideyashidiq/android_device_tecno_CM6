@@ -1,0 +1,4 @@
+# Miscellaneous
+ro.config.isolated_compilation_enabled=true
+ro.custom.camera.front.setting=50M
+ro.custom.camera.rear.setting=50M OIS+8M

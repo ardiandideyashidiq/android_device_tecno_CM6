@@ -165,6 +165,7 @@
         "650000",
         "500000"
       ],
+      "DefaultIndex": 23,
       "ResetOnInit": true
     },
     {
@@ -212,6 +213,7 @@
         "800000",
         "725000"
       ],
+      "DefaultIndex": 15,
       "ResetOnInit": true
     },
     {
@@ -222,6 +224,7 @@
         "1"
       ],
       "DefaultIndex": 0,
+      "AllowFailure": true,
       "ResetOnInit": true
     },
     {
@@ -266,7 +269,10 @@
         "50"
       ],
       "DefaultIndex": 0,
-      "ResetOnInit": true
+      "ResetOnInit": true,
+      "Comments": [
+        "Write-only node. Values are consumed by GED DVFS driver; read-back shows computed internal state."
+      ]
     },
     {
       "Name": "GpuDvfsLoadingStep",

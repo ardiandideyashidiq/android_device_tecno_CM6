@@ -102,11 +102,13 @@
                              samplingRates="8000 16000 32000 44100 48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
                 </mixPort>
+				<!--USD: add AUDIO_CHANNEL_IN_STEREO for TOS1501-3768 by mengxia.li 20240927 start-->
                 <mixPort name="voice tx" role="sink" maxOpenCount="1" maxActiveCount="1">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000 16000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO"/>
+                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
                 </mixPort>
+				<!--USD: add AUDIO_CHANNEL_IN_STEREO for TOS1501-3768 by mengxia.li 20240927 end-->
                 <mixPort name="FM Tuner input" role="sink" maxOpenCount="1" maxActiveCount="1">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000 16000 32000 44100 48000"
@@ -300,6 +302,9 @@
 
         <!-- BT Audio HAL -->
         <xi:include href="bluetooth_audio_policy_configuration.xml"/>
+
+        <!-- A2dp Input Audio HAL -->
+        <xi:include href="a2dp_in_audio_policy_configuration.xml"/>
 
         <!-- Usb Audio HAL -->
         <xi:include href="usb_audio_accessory_only_policy_configuration.xml"/>
