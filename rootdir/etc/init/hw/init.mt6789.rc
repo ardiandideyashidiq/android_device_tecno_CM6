@@ -227,18 +227,41 @@ on post-fs-data
     chown system system /dev/gz_kree
 
     #Camera
+    chmod 0660 /dev/camera-sysram
     chmod 0660 /dev/camera-isp
     chmod 0660 /dev/camera-mem
+    chmod 0660 /dev/camera-postalgo-mem
     chmod 0660 /dev/camera-dip
+    chmod 0660 /dev/camera-tsf
+    chmod 0660 /dev/camera-dpe
+    chmod 0660 /dev/camera-mfb
     chmod 0660 /dev/camera-rsc
+    chmod 0660 /dev/camera-owe
     chmod 0660 /dev/camera-fdvt
+    chmod 0660 /dev/camera-wpe
+    chmod 0660 /dev/camera-pipemgr
     chmod 0660 /dev/kd_camera_hw
     chmod 0660 /dev/seninf
     chmod 0660 /dev/seninf_n3d
     chmod 0660 /dev/flashlight
+    chmod 0660 /dev/kd_camera_hw_bus2
+    chmod 0660 /dev/FM50AF
+    chmod 0660 /dev/CAM_CAL_DRV
     chmod 0660 /dev/MAINAF
+    chmod 0660 /dev/MAIN2AF
+    chmod 0660 /dev/MAIN3AF
+    chmod 0660 /dev/SUBAF
+    chmod 0660 /dev/vpu
+    chmod 0660 /dev/apusys
+    chmod 0660 /dev/mtk_ccd
 
 #ITD: Modify Camera By Yingji.Wang 220426 Start
+    #OIS
+    chmod 0660 /dev/dw9781_ois
+    #OIS
+    chown system camera /dev/dw9781_ois
+    #Portrait Architecture
+    mkdir /data/vendor/camera_portrait 0777 system system
     #DualCam
     mkdir /data/vendor/arcsoft 0777 system system
     #tranDualCam
@@ -258,16 +281,41 @@ on post-fs-data
     mkdir /data/vendor/camera_watermark 0777 system system
 #ITD:modify by camera driver junfeng.qin5 20220501 end
 
+    chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
     chown system camera /dev/camera-mem
+    chown system camera /dev/camera-postalgo-mem
     chown system camera /dev/camera-dip
+    chown system camera /dev/camera-dpe
+    chown system camera /dev/camera-mfb
     chown system camera /dev/camera-rsc
+    chown system camera /dev/camera-owe
+    chown system camera /dev/camera-tsf
     chown system camera /dev/camera-fdvt
+    chown system camera /dev/camera-wpe
+    chown system camera /dev/camera-pipemgr
     chown system camera /dev/kd_camera_hw
     chown system camera /dev/seninf
     chown system camera /dev/seninf_n3d
     chown system camera /dev/flashlight
+    chown system camera /dev/kd_camera_hw_bus2
+    chown system camera /dev/FM50AF
+    chown system camera /dev/CAM_CAL_DRV
     chown system camera /dev/MAINAF
+    chown system camera /dev/MAIN2AF
+    chown system camera /dev/MAIN3AF
+    chown system camera /dev/SUBAF
+    chown system camera /dev/vpu
+    chown system camera /dev/apusys
+    chown system camera /dev/mtk_ccd
+
+    #CCU
+    chmod 0660 /dev/ccu
+    chown system camera /dev/ccu
+
+#OTP Cloud
+    chown root root /sys/class/sensordrv/tran_imgsensor/tran_imgsensor_chipid
+    chmod 0666 /sys/class/sensordrv/tran_imgsensor/tran_imgsensor_chipid
 #fake dual camera
     chown root root /sys/class/main2_light/main2_light/main2_light
     chmod 0666 /sys/class/main2_light/main2_light/main2_light
