@@ -1014,7 +1014,10 @@ vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
 
 # DROPPED (missing): vendor/lib64/libpn557_fw.so
 # NFC
+vendor/bin/hw/android.hardware.nfc_snxxx@1.2-service
+vendor/etc/init/android.hardware.nfc_snxxx@1.2-service.rc
 vendor/etc/init/init.nxp.nfc.rc
+vendor/lib64/nfc_nci_nxp_snxxx.so;DISABLE_CHECKELF
 
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
