@@ -72,7 +72,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # Partitions
 SSI_PARTITIONS := product system system_ext
-TREBLE_PARTITIONS := odm_dlkm vendor vendor_dlkm
+TREBLE_PARTITIONS := odm_dlkm vendor
 ALL_PARTITIONS := $(SSI_PARTITIONS) $(TREBLE_PARTITIONS)
 
 BOARD_FLASH_BLOCK_SIZE := 262144 # BOARD_KERNEL_PAGESIZE * 64
@@ -89,11 +89,24 @@ BOARD_MTK_DYNAMIC_PARTITIONS_SIZE := 13318066176 # [4 MiB = 4 × 1024 × 1024 = 
 BOARD_EROFS_PCLUSTER_SIZE := 262144
 BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_ODM_DLKIMAGE := true
-BOARD_USES_VENDOR_DLKMIMAGE := true
 
-$(foreach p, $(call to-upper, $(ALL_PARTITIONS)), \
+ifneq ($(WITH_GMS),true)
+$(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
+    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4) \
+    $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
+
+$(foreach p, $(call to-upper, $(TREBLE_PARTITIONS)), \
+    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4) \
+    $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
+else
+$(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
     $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs) \
     $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
+
+$(foreach p, $(call to-upper, $(TREBLE_PARTITIONS)), \
+    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4) \
+    $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
+endif
 
 BOARD_EROFS_COMPRESS_HINTS := $(CONFIGS_PATH)/erofs_compress_hints.txt
 
