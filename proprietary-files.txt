@@ -1240,8 +1240,8 @@ vendor/lib64/vendor.mediatek.hardware.power@1.1.so
 vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 
 # Radio
-# DROPPED (missing): vendor/etc/apdb/APDB_MT6789___W2227
-# DROPPED (missing): vendor/etc/apdb/APDB_MT6789___W2227_ENUM
+vendor/etc/apdb/APDB_MT6789___W2452
+vendor/etc/apdb/APDB_MT6789___W2452_ENUM
 vendor/bin/ccci_mdinit
 vendor/bin/gsm0710muxd
 vendor/bin/ccci_rpcd
@@ -1407,7 +1407,7 @@ vendor/bin/volte_ua
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-mediatek.rc
 vendor/lib64/com.anc.fingerprint.extension@1.0.so
 vendor/lib64/hw/anc.hal.so;SYMLINK=vendor/lib64/anc.hal.so
-vendor/lib64/hw/jiiov.fingerprint.default.so:vendor/lib64/hw/fpsensor_fingerprint.default.so;FIX_SONAME
+vendor/lib64/hw/fpsensor_fingerprint.default.so;SYMLINK=vendor/lib64/hw/jiiov.fingerprint.default.so
 vendor/lib64/hw/libanc_extension_service.so;SYMLINK=vendor/lib64/libanc_extension_service.so
 vendor/lib64/libCamera_gc08a8widemipiraw_360VideoHDR_1080P.so
 vendor/lib64/libCamera_gc08a8widemipiraw_360VideoHDR_720P.so

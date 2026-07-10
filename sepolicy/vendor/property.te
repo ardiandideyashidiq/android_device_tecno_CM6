@@ -6,3 +6,6 @@ vendor_internal_prop(vendor_dynamic_sensor_prop);
 
 # NFC
 vendor_internal_prop(vendor_nfc_prop);
+
+# Transsion Voice
+vendor_internal_prop(vendor_tran_voice_prop);

@@ -18,7 +18,7 @@
 
 # Fingerprint
 /dev/fortsense_fp                                                                               u:object_r:fingerprint_device:s0
-/(system\/vendor|vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service   u:object_r:hal_fingerprint_default_exec:s0
+/(system\/vendor|vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service(-mediatek)?   u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.fptool\.fingerprint@2\.0-service      u:object_r:hal_fingerprint_default_exec:s0
 /sys/kernel/tran_fp(/.*)?                                                                       u:object_r:sysfs_fp_name_path:s0
 /data/vendor/goodix/gf_data(/.*)?                                                               u:object_r:vendor_gf_data_file:s0
@@ -30,6 +30,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.millennium             u:object_r:hal_light_default_exec:s0
 
 # NFC
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.nfc_snxxx@1\.2-service   u:object_r:hal_nfc_default_exec:s0
 /dev/pn553                                                                                  u:object_r:nfc_device:s0
 
 # Power

@@ -24,6 +24,10 @@ on init
     write /dev/blkio/blkio.group_idle 2000
     write /dev/blkio/background/blkio.group_idle 0
 
+    # fingerprint device permissions
+    chmod 0660 /dev/jiiov_fp
+    chown system system /dev/jiiov_fp
+
 # mount different fs start
 
 on property:init.svc.vendor.charger=running
@@ -87,6 +91,11 @@ on post-fs-data
     chown root system /mnt/vendor/nvdata
     chmod 0771 /mnt/vendor/nvdata
     mkdir /mnt/vendor/nvdata/media 0771 media audio
+    mkdir /mnt/vendor/nvdata/md  0770 root system
+    mkdir /mnt/vendor/nvdata/md3  0770 root system
+    mkdir /data/vendor/md3  0770 root system
+    mkdir /data/vendor/mdlpm 0770 system radio
+    mkdir /data/vendor_de/md 0770 system radio
 
     # Audio dump
     mkdir /data/vendor/audiohal 0771 system audio
@@ -135,6 +144,9 @@ on post-fs-data
 
     # Set SELinux security contexts on upgrade or policy update.
     restorecon_recursive /mnt/vendor/nvdata
+    restorecon /data/vendor/mdlpm
+    restorecon /data/vendor/md3
+    restorecon /data/vendor_de/md
 
     #give system access to rfkill device node
     chmod 0660 /dev/rfkill
