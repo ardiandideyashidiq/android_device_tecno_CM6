@@ -18,8 +18,8 @@ on property:init.svc.vendor.charger=running
     write /sys/devices/system/cpu/cpu7/online 0
 
 on property:vendor.all.modules.ready=1
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "reflex"
-    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "reflex"
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "sugov_ext"
+    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "sugov_ext"
 
     # Mali GPU DVFS: switch from dummy to simple_ondemand
     write /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/governor "simple_ondemand"
