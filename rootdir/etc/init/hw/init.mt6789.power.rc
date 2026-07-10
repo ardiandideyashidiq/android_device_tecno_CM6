@@ -21,6 +21,10 @@ on property:vendor.all.modules.ready=1
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "reflex"
     write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "reflex"
 
+    # Mali GPU DVFS: switch from dummy to simple_ondemand
+    write /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/governor "simple_ondemand"
+    write /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/polling_interval 100
+
 on init
     write /sys/devices/platform/soc/11270000.ufshci/clkgate_enable 0
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
