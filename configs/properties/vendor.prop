@@ -47,7 +47,7 @@ persist.vendor.camera3.pipeline.bufnum.min.low_ram.imgo=6
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.lcso=6
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.rrzo=6
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.rsso=6
-ro.vendor.camera.isp.support.colorspace=0
+ro.vendor.camera.isp.support.colorspace=1
 ro.vendor.camera3.zsl.default=260
 ro.vendor.camera_tran_fake_stereo_support=1
 ro.vendor.camera_tran_hal_server_support=1
@@ -297,6 +297,7 @@ ro.vendor.pq.mtk_ultra_resolution_support=0
 ro.vendor.pq.mtk_video_transition=0
 
 # Radio
+ro.vendor.mtk_mipc_support=1
 persist.radio.multisim.config=dsds
 persist.vendor.md_c2k_cap_dep_check=0
 persist.vendor.mdrsra_v2_support=1
