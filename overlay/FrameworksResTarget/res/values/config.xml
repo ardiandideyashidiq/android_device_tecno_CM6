@@ -28,6 +28,11 @@
     </integer-array>
     <bool name="config_turbulenceNoise">false</bool>
     <integer name="config_num_physical_slots">2</integer>
+    <integer-array name="config_udfps_sensor_props" translatable="false">
+        <item>540</item>
+        <item>2200</item>
+        <item>120</item>
+    </integer-array>
     <bool name="config_dozePickupGestureEnabled">false</bool>
     <bool name="config_enableHapticTextHandle">true</bool>
     <integer name="config_pinnerHomePinBytes">6291456</integer>
@@ -69,4 +74,5 @@
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
     <integer name="config_screenBrightnessDoze">5</integer>
     <bool name="config_dozeAfterScreenOff">true</bool>
+    <bool name="config_displayWhiteBalanceEnabled">false</bool>
 </resources>
