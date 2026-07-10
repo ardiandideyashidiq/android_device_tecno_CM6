@@ -412,6 +412,11 @@ vendor/etc/audio_param/VoWMicSetting_AudioParam.xml
 vendor/etc/audio_param/VoWMicSetting_ParamUnitDesc.xml
 vendor/etc/audio_param/VoWVoiceCommand_AudioParam.xml
 vendor/etc/audio_param/VoWVoiceCommand_ParamUnitDesc.xml
+vendor/etc/audio_param/preset_voip.bin
+vendor/etc/audio_param/preset_music.bin
+vendor/etc/audio_param/preset_voice.bin
+vendor/etc/audio_param/preset_default.bin
+vendor/etc/audio_param/preset_ringtone.bin
 vendor/etc/AudioLog_dynamic.xml
 vendor/lib64/libaal_cust.so
 
