@@ -1,5 +1,9 @@
 # Camera
 type hal_trancamserver_hwservice, hwservice_manager_type;
 
+# Fingerprint extension
+type fp_ext_svc2_hwservice, hwservice_manager_type;
+type anc_extension_hwservice, hwservice_manager_type;
+
 # NXP NFC
 type nxpnfc_hwservice, hwservice_manager_type;
