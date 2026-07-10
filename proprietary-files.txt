@@ -1,5 +1,6 @@
 
-# All vendor/lib/ (32-bit) entries removed — 64-bit-only buildvendor/lib64/lib_lvacfs.so
+# All vendor/lib/ (32-bit) entries removed — 64-bit-only build
+vendor/lib64/lib_lvacfs.so
 vendor/lib64/libaedv.so
 vendor/lib64/libaibld.so
 vendor/lib64/libanc_hdr_check.so
@@ -1187,6 +1188,7 @@ vendor/lib64/libmp3dec_mtk.so
 vendor/lib64/libreference-ril.so
 vendor/lib64/libril.so
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
+
 
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-mediatek
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-mediatek.rc
