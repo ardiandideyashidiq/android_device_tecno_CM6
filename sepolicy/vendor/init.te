@@ -4,3 +4,12 @@ allow init trustonic_kmsetkey_ca_exec:file execute;
 
 get_prop(init, vendor_mtk_service_nvram_restore_prop)
 get_prop(init, vts_status_prop)
+
+allow init ccci_ccb_device:chr_file { read write open ioctl map };
+allow init ccci_mdl_device:chr_file { read write open ioctl map getattr };
+allow init ccci_device:chr_file { read write open };
+allow init sysfs_ccci:file { read open };
+allow init sysfs_soc_ccb_gear:file { read open };
+allow init sysfs_boot_info:file { read open };
+allow init mdlog_data_file:file { append };
+allow init tranfs_block_device:lnk_file relabelto;

@@ -1,1 +1,4 @@
 dontaudit vendor_init system_mtk_fd_prop:property_service set;
+dontaudit vendor_init arm64_memtag_prop:property_service set;
+dontaudit vendor_init default_prop:property_service set;
+dontaudit vendor_init remote_prov_prop:property_service set;

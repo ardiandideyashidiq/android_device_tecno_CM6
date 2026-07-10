@@ -1,3 +1,13 @@
 dontaudit {
-  hal_camera_default
+  audioserver
+  surfaceflinger
+  rild
+  hal_audio_default
+  mtk_hal_camera
 } default_prop:file r_file_perms;
+
+dontaudit {
+  audioserver
+  surfaceflinger
+  rild
+} vendor_default_prop:file r_file_perms;

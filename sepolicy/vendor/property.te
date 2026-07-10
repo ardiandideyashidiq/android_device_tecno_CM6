@@ -9,3 +9,9 @@ vendor_internal_prop(vendor_nfc_prop);
 
 # Transsion Voice
 vendor_internal_prop(vendor_tran_voice_prop);
+
+# Transsion NFC
+vendor_internal_prop(vendor_tran_nfc_chip_prop);
+
+# Transsion VPNR Audio
+vendor_internal_prop(vendor_tran_vpnr_audio_prop);

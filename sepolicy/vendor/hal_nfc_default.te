@@ -4,6 +4,8 @@ allow hal_nfc_default nxpnfc_hwservice:hwservice_manager { add find };
 
 set_prop(hal_nfc, vendor_nfc_prop)
 
+set_prop(hal_nfc_default, vendor_tran_nfc_chip_prop)
+
 allow hal_nfc_default nfc_device:chr_file { read write };
 allow hal_nfc_default nfc_data_file:file getattr;
 allow hal_nfc_default nfc_data_vendor_file:dir search;

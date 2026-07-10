@@ -8,6 +8,8 @@ vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemonHbd      
 vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemonFido         u:object_r:hal_fingerprint_hwservice:s0
 vendor.mediatek.hardware.biometrics.fingerprint::ITranBiometricsFingerprint         u:object_r:hal_fingerprint_hwservice:s0
 vendor.fptool.fingerprint::IFptoolFingerprint                                   u:object_r:hal_fingerprint_hwservice:s0
+vendor.fpsensor.hardware.fpsensorhidlsvc::IFpsensorHidlSvc                     u:object_r:fp_ext_svc2_hwservice:s0
+com.anc.fingerprint.extension::IFingerprintExtension                           u:object_r:anc_extension_hwservice:s0
 
 # NXP NFC
 vendor.nxp.nxpnfc::INxpNfc                                                               u:object_r:nxpnfc_hwservice:s0
