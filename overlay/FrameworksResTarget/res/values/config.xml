@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Biometric sensors: ID:Modality:Strength -->
-    <string-array name="config_biometric_sensors">
-        <item>0:2:15</item>
-    </string-array>
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
