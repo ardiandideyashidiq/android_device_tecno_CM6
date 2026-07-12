@@ -17,8 +17,11 @@ TARGET_SCREEN_HEIGHT := 2436
 TARGET_SCREEN_WIDTH := 1080
 
 # Fingerprint
+$(call soong_config_set,JIIVO_BIOMETRICS_FINGERPRINT,IMPL_VER,V1)
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1.vendor:64
+    android.hardware.biometrics.fingerprint@2.1.vendor:64 \
+    android.hardware.biometrics.fingerprint-service.jiivo \
+    libudfpshandler
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -487,7 +490,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek/libmtkperf_client \
     hardware/mediatek/libaedv \
     hardware/google/interfaces \
-    hardware/google/pixel
+    hardware/google/pixel \
+    hardware/transsion
 
 # Speed profile services and wifi-service to reduce RAM and storage.
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile

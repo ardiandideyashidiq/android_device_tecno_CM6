@@ -24,10 +24,6 @@ on init
     write /dev/blkio/blkio.group_idle 2000
     write /dev/blkio/background/blkio.group_idle 0
 
-    # fingerprint device permissions
-    chmod 0660 /dev/jiiov_fp
-    chown system system /dev/jiiov_fp
-
 # mount different fs start
 
 on property:init.svc.vendor.charger=running
@@ -191,7 +187,13 @@ on post-fs-data
     chown media media /dev/audio_ipi
 
     #Fingerprint
+    chmod 0660 /dev/jiiov_fp
+    chown system system /dev/jiiov_fp
     chmod 0666 /dev/goodix_fp
+    chmod 0666 /sys/devices/platform/soc/14013000.dsi/lcm_hbm_state
+    chmod 0666 /sys/kernel/tran_display/lcm_name
+    chmod 0666 /sys/kernel/tran_display/lcm_hbm_state
+    chmod 0666 /sys/kernel/tran_display/lcm_dimming_state
 
     #v4l2 codec
     chmod 0660 /dev/vcu

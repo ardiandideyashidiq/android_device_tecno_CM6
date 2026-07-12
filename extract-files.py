@@ -136,6 +136,13 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libutils-v32.so'),
     'vendor/lib64/librt_extamp_intf.so': blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    'vendor/lib64/hw/anc.hal.so': blob_fixup()
+        # Fix touch event code: match BTN_TOUCH (0x14a) instead of 0xc3
+        .binary_regex_replace(b'\x1f\x0d\x03\x71', b'\x1f\x29\x05\x71')
+        # Skip HBM wait in WaitHbm: return 0 immediately
+        .binary_regex_replace(
+            b'\xfd\x7b\xbd\xa9\xf5\x0b\x00\xf9\xf4\x4f\x02\xa9\xfd\x03\x00\x91\xf3\x03\x00\xaa\x08\x00\x40\xf9',
+            b'\x00\x00\x80\x52\xc0\x03\x5f\xd6\xf4\x4f\x02\xa9\xfd\x03\x00\x91\xf3\x03\x00\xaa\x08\x00\x40\xf9'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

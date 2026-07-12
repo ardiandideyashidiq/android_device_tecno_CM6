@@ -1,3 +1,10 @@
+# Fingerprint
+ro.fingerprint_support=1
+ro.optical_fingerprint_support=1
+ro.tranos_fingerprint_support=1
+ro.fingerprint_wakeup_performance_opt=1
+ro.os_fingerprint_take_photo_support=1
+
 # Bluetooth
 bluetooth.device_id.vendor_id=0x0046
 bluetooth.device.class_of_device=90,2,12
