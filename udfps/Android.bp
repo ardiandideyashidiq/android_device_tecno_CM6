@@ -1,0 +1,24 @@
+//
+// Copyright (C) 2025 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library {
+    name: "libudfpshandler",
+    vendor: true,
+    srcs: ["UdfpsHandler.cpp"],
+    compile_multilib: "64",
+    cppflags: ["-DIMPL_V1"],
+    shared_libs: [
+        "libbase",
+        "libcutils",
+        "liblog",
+    ],
+    static_libs: [
+        "android.hardware.biometrics.fingerprint-V4-ndk",
+    ],
+    header_libs: [
+        "//hardware/transsion/fingerprint:transsionfingerprint_headers",
+    ],
+}

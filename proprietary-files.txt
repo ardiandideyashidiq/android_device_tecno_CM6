@@ -1401,7 +1401,7 @@ vendor/lib64/libril.so
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
 
 
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-mediatek
+# vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-mediatek
 vendor/bin/mt6789/v3avpud.mt6789;SYMLINK=vendor/bin/v3avpud
 vendor/bin/rcs_volte_stack
 vendor/bin/volte_imcb
@@ -1410,10 +1410,12 @@ vendor/bin/volte_md_status
 vendor/bin/volte_rcs_ua
 vendor/bin/volte_stack
 vendor/bin/volte_ua
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-mediatek.rc
+# vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-mediatek.rc
+vendor/etc/init/vendor.anc.rc
 vendor/lib64/com.anc.fingerprint.extension@1.0.so
 vendor/lib64/hw/anc.hal.so;SYMLINK=vendor/lib64/anc.hal.so
-vendor/lib64/hw/jiiov.fingerprint.default.so;SYMLINK=vendor/lib64/hw/fpsensor_fingerprint.default.so
+#vendor/lib64/hw/jiiov.fingerprint.default.so;SYMLINK=vendor/lib64/hw/fpsensor_fingerprint.default.so
+vendor/lib64/hw/jiiov.fingerprint.default.so;SYMLINK=vendor/lib64/hw/fingerprint.jiiov.so
 vendor/lib64/hw/libanc_extension_service.so;SYMLINK=vendor/lib64/libanc_extension_service.so
 vendor/lib64/libCamera_gc08a8widemipiraw_360VideoHDR_1080P.so
 vendor/lib64/libCamera_gc08a8widemipiraw_360VideoHDR_720P.so
