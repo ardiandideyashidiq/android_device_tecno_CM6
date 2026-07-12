@@ -26,7 +26,7 @@
     <integer name="config_num_physical_slots">2</integer>
     <integer-array name="config_udfps_sensor_props" translatable="false">
         <item>540</item>
-        <item>2200</item>
+        <item>2180</item>
         <item>120</item>
     </integer-array>
     <bool name="config_dozePickupGestureEnabled">false</bool>
@@ -60,7 +60,7 @@
     <string name="config_mainBuiltInDisplayCutout">M -24,0 L -24,36 L 24,36 L 24,0 Z @dp</string>
     <bool name="config_fillMainBuiltInDisplayCutout">false</bool>
     <integer name="config_defaultRefreshRate">60</integer>
-    <integer name="config_defaultPeakRefreshRate">60</integer>
+    <integer name="config_defaultPeakRefreshRate">120</integer>
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.lineageos.sensor.udfps</string>
     <bool name="config_screen_off_udfps_enabled">true</bool>
     <bool name="config_screen_off_udfps_default_on">true</bool>

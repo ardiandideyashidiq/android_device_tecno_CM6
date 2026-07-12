@@ -155,7 +155,7 @@ ro.hardware.gatekeeper=trustonic
 
 # Fingerprint
 persist.vendor.fingerprint.type=udfps_optical
-persist.vendor.fingerprint.sensor_location=540|2200|120
+persist.vendor.fingerprint.sensor_location=540|2180|120
 ro.vendor.transsion.hbm_mode_hal.support=1
 ro.vendor.tran.hbm.thermal-patch=/devices/platform/thermal-ntc1
 ro.vendor.tran.hbm.thermal.temp.trig=44000
