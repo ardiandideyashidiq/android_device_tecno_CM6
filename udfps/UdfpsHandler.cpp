@@ -42,8 +42,7 @@ class TranssionJiivoUdfpsHandler : public UdfpsHandler {
     }
 
     void onFingerUp() override {
-        // Don't toggle HBM off here — it causes visible flash on rapid re-touch.
-        // HBM is only turned off on enrollment completion or cancellation.
+        setHbm(false);
         if (mExtCmd) {
             mExtCmd(mDevice, EXT_CMD_TOUCH_UP, 0);
             mExtCmd(mDevice, EXT_CMD_TRAN_UI, 0);
