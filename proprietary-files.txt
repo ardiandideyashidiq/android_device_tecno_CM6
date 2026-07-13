@@ -1418,10 +1418,6 @@ vendor/lib64/hw/anc.hal.so;SYMLINK=vendor/lib64/anc.hal.so
 vendor/lib64/hw/jiiov.fingerprint.default.so;SYMLINK=vendor/lib64/hw/fingerprint.jiiov.so
 vendor/lib64/hw/libanc_extension_service.so;SYMLINK=vendor/lib64/libanc_extension_service.so
 
-# Face HAL (prebuilt service binary + vendor implementation)
-vendor/bin/hw/android.hardware.biometrics.face@1.0-service.example:vendor/bin/hw/android.hardware.biometrics.face@1.0-service.transsion
-vendor/etc/init/android.hardware.biometrics.face@1.0-service.rc:vendor/etc/init/android.hardware.biometrics.face@1.0-service.transsion.rc
-
 vendor/lib64/libCamera_gc08a8widemipiraw_360VideoHDR_1080P.so
 vendor/lib64/libCamera_gc08a8widemipiraw_360VideoHDR_720P.so
 vendor/lib64/libCamera_gc08a8widemipiraw_3rd_Capture_FD.so
