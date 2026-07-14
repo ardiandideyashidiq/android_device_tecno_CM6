@@ -1,12 +1,14 @@
 <resources>
     <dimen name="physical_power_button_center_screen_location_y">1100px</dimen>
-    <dimen name="physical_fingerprint_sensor_center_screen_location_y">2180px</dimen>
-    <dimen name="physical_fingerprint_sensor_center_screen_location_x">540px</dimen>
     <dimen name="system_icons_keyguard_padding_end">0dp</dimen>
     <dimen name="status_bar_left_clock_starting_padding">0.0px</dimen>
-    <dimen name="keyguard_carrier_text_margin">20dp</dimen>
+    <dimen name="keyguard_carrier_text_margin">10dp</dimen>
     <dimen name="navigation_side_padding">85.0dip</dimen>
     <dimen name="rounded_corner_content_padding">10dp</dimen>
     <dimen name="status_bar_padding_end">5dp</dimen>
     <dimen name="status_bar_padding_start">16dp</dimen>
+    <!-- MUST be set per device. Microns per pixel. Used to calculate UDFPS icon size. -->
+    <dimen name="pixel_pitch">64.0</dimen>
+    <!-- Lower the keyguard indication area (error text) to avoid overlapping with UDFPS sensor -->
+    <dimen name="keyguard_indication_margin_bottom">10dp</dimen>
 </resources>
