@@ -1,0 +1,6 @@
+# Power button
+key 116   POWER
+
+# Side button (AI/Assistant key) - stock reports as keycode 413, hardware generates 605
+# Map to ASSISTANT to launch Google Assistant or the configured assist app
+key 605   ASSISTANT
