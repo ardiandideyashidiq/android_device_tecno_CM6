@@ -3425,3 +3425,4 @@ vendor/etc/mdota/MTK_OPOTA_SBPID_7.mcfopota
 vendor/etc/mdota/MTK_OPOTA_SBPID_8.mcfopota
 vendor/etc/mdota/MTK_OPOTA_SBPID_9.mcfopota
 vendor/etc/mdota/MTK_OTA.mcfota
+vendor/lib64/libcamera2ndk_vendor.so
