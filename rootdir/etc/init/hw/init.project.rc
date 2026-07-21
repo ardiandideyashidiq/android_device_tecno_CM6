@@ -7,13 +7,6 @@ on init
     chown system system /proc/gesture_function
     chmod 0660 /proc/gesture_function
 
-on property:sys.boot_completed=1
-    # Enable IP forwarding for tethering/hotspot
-    write /proc/sys/net/ipv4/ip_forward 1
-    # Restart netd to pick up tether_dns settings and reinitialize tethering
-    stop netd
-    start netd
-
 on post-fs-data
 
 #Camera
