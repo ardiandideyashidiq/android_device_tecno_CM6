@@ -34,5 +34,5 @@ type sysfs_wide_torch_file, fs_type, sysfs_type;
 type aw87xxx_vmax, fs_type, sysfs_type;
 
 # CCCI (Mediatek modem debug)
-type sysfs_soc_ccb_gear, fs_type, sysfs_type;
+#type sysfs_soc_ccb_gear, fs_type, sysfs_type;
 
