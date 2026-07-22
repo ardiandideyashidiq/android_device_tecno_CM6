@@ -11,6 +11,6 @@ type jiiov_fp_device, dev_type;
 # Tranfs
 type tranfs_block_device, dev_type;
 
-# CCCI (Mediatek modem debug)
-#type ccci_mdl_device, dev_type;
+# CCCI (Mediatek modem debug) - needs to be disabled in userdebug/eng builds
+type ccci_mdl_device, dev_type;
 
