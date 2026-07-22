@@ -16,6 +16,7 @@
 #include <linux/netlink.h>
 #include <string.h>
 #include <poll.h>
+#include <atomic>
 
 namespace android {
 namespace hardware {
@@ -25,6 +26,8 @@ namespace V2_3 {
 namespace implementation {
 
 static const uint16_t kVersion = HARDWARE_MODULE_API_VERSION(2, 1);
+
+static std::atomic<bool> gSessionActive = false;
 
 using RequestStatus =
         android::hardware::biometrics::fingerprint::V2_1::RequestStatus;
@@ -239,6 +242,7 @@ Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69
         ALOGE("No valid device");
         return RequestStatus::SYS_UNKNOWN;
     }
+    gSessionActive = true;
     const hw_auth_token_t* authToken =
         reinterpret_cast<const hw_auth_token_t*>(hat.data());
     return ErrorFilter(mDevice->enroll(mDevice, authToken, gid, timeoutSec));
@@ -274,6 +278,7 @@ Return<void> BiometricsFingerprint::onFingerUp() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::postEnroll() {
+    gSessionActive = false;
     set_hbm(0);
     if (mDevice == nullptr) {
         ALOGE("No valid device");
@@ -291,6 +296,7 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel() {
+    gSessionActive = false;
     set_hbm(0);
     if (mDevice == nullptr) {
         ALOGE("No valid device");
@@ -339,6 +345,7 @@ Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId,
         ALOGE("No valid device");
         return RequestStatus::SYS_UNKNOWN;
     }
+    gSessionActive = true;
     return ErrorFilter(mDevice->authenticate(mDevice, operationId, gid));
 }
 
@@ -406,6 +413,7 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
     const uint64_t devId = reinterpret_cast<uint64_t>(thisPtr->mDevice);
     switch (msg->type) {
         case FINGERPRINT_ERROR: {
+                gSessionActive = false;
                 set_hbm(0);
                 int32_t vendorCode = 0;
                 FingerprintError result = VendorErrorFilter(msg->data.error, &vendorCode);
@@ -420,6 +428,9 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
                 FingerprintAcquiredInfo result =
                     VendorAcquiredFilter(msg->data.acquired.acquired_info, &vendorCode);
                 ALOGD("onAcquired(%d)", result);
+                if (gSessionActive) {
+                    set_hbm(1);
+                }
                 if (!thisPtr->mClientCallback->onAcquired(devId, result, vendorCode).isOk()) {
                     ALOGE("failed to invoke fingerprint onAcquired callback");
                 }
@@ -431,6 +442,7 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
                 msg->data.enroll.finger.gid,
                 msg->data.enroll.samples_remaining);
             if (msg->data.enroll.samples_remaining == 0) {
+                gSessionActive = false;
                 set_hbm(0);
             }
             if (!thisPtr->mClientCallback->onEnrollResult(devId,
@@ -453,6 +465,7 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
             }
             break;
         case FINGERPRINT_AUTHENTICATED:
+            gSessionActive = false;
             set_hbm(0);
             if (msg->data.authenticated.finger.fid != 0) {
                 ALOGD("onAuthenticated(fid=%d, gid=%d)",
