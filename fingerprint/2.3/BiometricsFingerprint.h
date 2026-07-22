@@ -10,6 +10,9 @@
 #include <android/hardware/biometrics/fingerprint/2.3/IBiometricsFingerprint.h>
 
 #include <mutex>
+#include <thread>
+#include <linux/netlink.h>
+#include <sys/socket.h>
 
 namespace android {
 namespace hardware {
@@ -58,9 +61,13 @@ private:
     static FingerprintAcquiredInfo VendorAcquiredFilter(int32_t error, int32_t* vendorCode);
     static BiometricsFingerprint* sInstance;
 
+    static int tran_fp_opendev();
+    static void netlinkThread();
+
     std::mutex mClientCallbackMutex;
     sp<IBiometricsFingerprintClientCallback> mClientCallback;
     fingerprint_device_t *mDevice;
+    std::thread mNetlinkThread;
 };
 
 }  // namespace implementation
