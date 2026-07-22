@@ -244,7 +244,37 @@ Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69
     return ErrorFilter(mDevice->enroll(mDevice, authToken, gid, timeoutSec));
 }
 
+static void set_hbm(int on) {
+    const char* path = "/sys/kernel/tran_display/lcm_hbm_state";
+    FILE* f = fopen(path, "w");
+    if (!f) {
+        ALOGE("set_hbm: failed to open %s", path);
+        return;
+    }
+    fwrite(on ? "1" : "0", 1, 1, f);
+    fclose(f);
+    ALOGD("set_hbm(%d)", on);
+}
+
+Return<bool> BiometricsFingerprint::isUdfps(uint32_t sensorId) {
+    ALOGD("isUdfps(sensorId=%d)", sensorId);
+    return true;
+}
+
+Return<void> BiometricsFingerprint::onFingerDown(uint32_t x, uint32_t y, float minor, float major) {
+    ALOGD("onFingerDown(x=%u, y=%u, minor=%f, major=%f)", x, y, minor, major);
+    set_hbm(1);
+    return Void();
+}
+
+Return<void> BiometricsFingerprint::onFingerUp() {
+    ALOGD("onFingerUp");
+    set_hbm(0);
+    return Void();
+}
+
 Return<RequestStatus> BiometricsFingerprint::postEnroll() {
+    set_hbm(0);
     if (mDevice == nullptr) {
         ALOGE("No valid device");
         return RequestStatus::SYS_UNKNOWN;
@@ -261,6 +291,7 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel() {
+    set_hbm(0);
     if (mDevice == nullptr) {
         ALOGE("No valid device");
         return RequestStatus::SYS_UNKNOWN;
@@ -309,34 +340,6 @@ Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId,
         return RequestStatus::SYS_UNKNOWN;
     }
     return ErrorFilter(mDevice->authenticate(mDevice, operationId, gid));
-}
-
-static void set_hbm(int on) {
-    const char* path = "/sys/kernel/tran_display/lcm_hbm_state";
-    FILE* f = fopen(path, "we");
-    if (!f) {
-        ALOGE("set_hbm: failed to open %s", path);
-        return;
-    }
-    fwrite(on ? "1" : "0", 1, 1, f);
-    fclose(f);
-}
-
-Return<bool> BiometricsFingerprint::isUdfps(uint32_t sensorId) {
-    ALOGD("isUdfps(sensorId=%d)", sensorId);
-    return true;
-}
-
-Return<void> BiometricsFingerprint::onFingerDown(uint32_t x, uint32_t y, float minor, float major) {
-    ALOGD("onFingerDown(x=%u, y=%u, minor=%f, major=%f)", x, y, minor, major);
-    set_hbm(1);
-    return Void();
-}
-
-Return<void> BiometricsFingerprint::onFingerUp() {
-    ALOGD("onFingerUp");
-    set_hbm(0);
-    return Void();
 }
 
 IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
