@@ -169,6 +169,9 @@ ro.vendor.tran.hbm.thermal.temp.clr=42000
 ro.vendor.tran.hbm.battery.temp.trig=430
 ro.vendor.tran.hbm.battery.temp.clr=400
 
+# Fingerprint for Custom AOSP Service
+ro.hardware.fingerprint=jiiov
+
 # GNSS
 ro.vendor.gps.chrdev=gps_drv_stp
 ro.vendor.mtk_agps_app=1

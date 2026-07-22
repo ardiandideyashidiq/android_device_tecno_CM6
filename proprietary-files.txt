@@ -1410,9 +1410,8 @@ vendor/bin/volte_stack
 vendor/bin/volte_ua
 
 # Fingerprint
-# vendor/lib64/hw/jiiov.fingerprint.default.so;SYMLINK=vendor/lib64/hw/fingerprint.jiiov.so
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-mediatek
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-mediatek.rc
+#vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-mediatek
+#vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-mediatek.rc
 vendor/etc/init/vendor.anc.rc
 vendor/lib64/com.anc.fingerprint.extension@1.0.so
 vendor/lib64/hw/anc.hal.so;SYMLINK=vendor/lib64/anc.hal.so
