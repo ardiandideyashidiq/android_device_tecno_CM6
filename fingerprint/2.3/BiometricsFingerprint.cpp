@@ -9,6 +9,13 @@
 
 #include <inttypes.h>
 #include <unistd.h>
+#include <fcntl.h>
+#include <dlfcn.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
+#include <linux/netlink.h>
+#include <string.h>
+#include <poll.h>
 
 namespace android {
 namespace hardware {
@@ -28,12 +35,98 @@ using FingerprintAcquiredInfo =
 
 BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 
+int BiometricsFingerprint::tran_fp_opendev() {
+    const char* devnode = nullptr;
+    int fd;
+    int ret = -1;
+
+    const char* devnodes[] = {
+        "/dev/jiiov_fp", "/dev/fortsense_fp", "/dev/focaltech_fp",
+        "/dev/elan_fp", "/dev/goodix_fp", "/dev/egis_fp",
+        "/dev/fingerprint", "/dev/silead_fp", "/dev/fpc_fp",
+        nullptr
+    };
+
+    for (int i = 0; devnodes[i]; i++) {
+        fd = open(devnodes[i], O_RDWR);
+        if (fd < 0) {
+            continue;
+        }
+        ALOGD("tran_fp_opendev opened %s", devnodes[i]);
+        int val = 0;
+        ret = ioctl(fd, 0x7404, &val);
+        if (ret < 0) {
+            ALOGE("tran_fp_opendev ioctl 0x7404 failed on %s, ret=%d", devnodes[i], ret);
+        } else {
+            ALOGD("tran_fp_opendev ioctl 0x7404 success on %s, val=%d", devnodes[i], val);
+            ret = val;
+        }
+        close(fd);
+        if (ret >= 0) break;
+    }
+    if (ret < 0) {
+        ALOGE("tran_fp_opendev: no device found or all ioctls failed");
+    }
+    return ret;
+}
+
+void BiometricsFingerprint::netlinkThread() {
+    struct sockaddr_nl sa;
+    int nl_fd;
+
+    nl_fd = socket(AF_NETLINK, SOCK_DGRAM | SOCK_CLOEXEC, NETLINK_USERSOCK);
+    if (nl_fd < 0) {
+        ALOGE("netlinkThread: socket create failed");
+        return;
+    }
+
+    memset(&sa, 0, sizeof(sa));
+    sa.nl_family = AF_NETLINK;
+    sa.nl_groups = 0;
+    sa.nl_pid = static_cast<__u32>(getpid());
+
+    if (bind(nl_fd, reinterpret_cast<struct sockaddr*>(&sa), sizeof(sa)) < 0) {
+        ALOGE("netlinkThread: bind failed");
+        close(nl_fd);
+        return;
+    }
+
+    ALOGD("netlinkThread: started, pid=%u", sa.nl_pid);
+
+    char buf[4096];
+    struct pollfd pfd = {nl_fd, POLLIN, 0};
+
+    while (true) {
+        int ret = poll(&pfd, 1, -1);
+        if (ret < 0) break;
+        if (!(pfd.revents & POLLIN)) continue;
+
+        struct sockaddr_nl nladdr;
+        socklen_t addrlen = sizeof(nladdr);
+        ssize_t len = recvfrom(nl_fd, buf, sizeof(buf) - 1, 0,
+                               reinterpret_cast<struct sockaddr*>(&nladdr), &addrlen);
+        if (len <= 0) continue;
+
+        buf[len] = '\0';
+        ALOGV("netlinkThread: received %zd bytes from pid=%u", len, nladdr.nl_pid);
+    }
+
+    close(nl_fd);
+    ALOGD("netlinkThread: exiting");
+}
+
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevice(nullptr) {
     sInstance = this;
+
+    tran_fp_opendev();
+
     mDevice = openHal();
     if (!mDevice) {
         ALOGE("Can't open HAL module");
     }
+
+    mNetlinkThread = std::thread(netlinkThread);
+    mNetlinkThread.detach();
 }
 
 BiometricsFingerprint::~BiometricsFingerprint() {
@@ -241,44 +334,45 @@ IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
 }
 
 fingerprint_device_t* BiometricsFingerprint::openHal() {
-    int err;
-    const hw_module_t *hw_mdl = nullptr;
     ALOGD("Opening fingerprint hal library...");
-    if (0 != (err = hw_get_module(FINGERPRINT_HARDWARE_MODULE_ID, &hw_mdl))) {
-        ALOGE("Can't open fingerprint HW Module, error: %d", err);
+    void* handle = dlopen("fingerprint.jiiov.so", RTLD_NOW);
+    if (!handle) {
+        ALOGE("dlopen fingerprint.jiiov.so failed: %s", dlerror());
         return nullptr;
     }
 
-    if (hw_mdl == nullptr) {
-        ALOGE("No valid fingerprint module");
+    hw_module_t* hmi = (hw_module_t*)dlsym(handle, "HMI");
+    if (!hmi || !hmi->methods || !hmi->methods->open) {
+        ALOGE("Invalid HMI module (hmi=%p, methods=%p)", hmi, hmi ? hmi->methods : nullptr);
+        dlclose(handle);
         return nullptr;
     }
 
-    fingerprint_module_t const *module =
-        reinterpret_cast<const fingerprint_module_t*>(hw_mdl);
-    if (module->common.methods->open == nullptr) {
-        ALOGE("No valid open method");
+    hw_device_t* device = nullptr;
+    int ret = hmi->methods->open(hmi, nullptr, &device);
+    if (ret != 0) {
+        ALOGE("HMI open failed: %d", ret);
+        dlclose(handle);
         return nullptr;
     }
-
-    hw_device_t *device = nullptr;
-
-    if (0 != (err = module->common.methods->open(hw_mdl, nullptr, &device))) {
-        ALOGE("Can't open fingerprint methods, error: %d", err);
-        return nullptr;
-    }
-
-    if (kVersion != device->version) {
-        ALOGE("Wrong fp version. Expected %d, got %d", kVersion, device->version);
+    if (!device) {
+        ALOGE("HMI open returned null device");
+        dlclose(handle);
         return nullptr;
     }
 
     fingerprint_device_t* fp_device =
         reinterpret_cast<fingerprint_device_t*>(device);
 
-    if (0 != (err =
-            fp_device->set_notify(fp_device, BiometricsFingerprint::notify))) {
-        ALOGE("Can't register fingerprint module callback, error: %d", err);
+    if (kVersion != fp_device->common.version) {
+        ALOGE("Wrong fp version. Expected %d, got %d", kVersion, fp_device->common.version);
+        dlclose(handle);
+        return nullptr;
+    }
+
+    if (0 != (fp_device->set_notify(fp_device, BiometricsFingerprint::notify))) {
+        ALOGE("Can't register fingerprint module callback");
+        dlclose(handle);
         return nullptr;
     }
 
