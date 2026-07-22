@@ -118,8 +118,6 @@ void BiometricsFingerprint::netlinkThread() {
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevice(nullptr) {
     sInstance = this;
 
-    tran_fp_opendev();
-
     mDevice = openHal();
     if (!mDevice) {
         ALOGE("Can't open HAL module");
@@ -127,6 +125,8 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
 
     mNetlinkThread = std::thread(netlinkThread);
     mNetlinkThread.detach();
+
+    tran_fp_opendev();
 }
 
 BiometricsFingerprint::~BiometricsFingerprint() {
@@ -311,6 +311,17 @@ Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId,
     return ErrorFilter(mDevice->authenticate(mDevice, operationId, gid));
 }
 
+static void set_hbm(int on) {
+    const char* path = "/sys/kernel/tran_display/lcm_hbm_state";
+    FILE* f = fopen(path, "we");
+    if (!f) {
+        ALOGE("set_hbm: failed to open %s", path);
+        return;
+    }
+    fwrite(on ? "1" : "0", 1, 1, f);
+    fclose(f);
+}
+
 Return<bool> BiometricsFingerprint::isUdfps(uint32_t sensorId) {
     ALOGD("isUdfps(sensorId=%d)", sensorId);
     return true;
@@ -318,11 +329,13 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t sensorId) {
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t x, uint32_t y, float minor, float major) {
     ALOGD("onFingerDown(x=%u, y=%u, minor=%f, major=%f)", x, y, minor, major);
+    set_hbm(1);
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
     ALOGD("onFingerUp");
+    set_hbm(0);
     return Void();
 }
 
