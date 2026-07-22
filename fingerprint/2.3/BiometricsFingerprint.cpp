@@ -406,6 +406,7 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
     const uint64_t devId = reinterpret_cast<uint64_t>(thisPtr->mDevice);
     switch (msg->type) {
         case FINGERPRINT_ERROR: {
+                set_hbm(0);
                 int32_t vendorCode = 0;
                 FingerprintError result = VendorErrorFilter(msg->data.error, &vendorCode);
                 ALOGD("onError(%d)", result);
@@ -452,6 +453,7 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
             }
             break;
         case FINGERPRINT_AUTHENTICATED:
+            set_hbm(0);
             if (msg->data.authenticated.finger.fid != 0) {
                 ALOGD("onAuthenticated(fid=%d, gid=%d)",
                     msg->data.authenticated.finger.fid,
