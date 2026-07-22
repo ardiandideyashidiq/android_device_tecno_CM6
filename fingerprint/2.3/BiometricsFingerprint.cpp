@@ -429,6 +429,9 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
                 msg->data.enroll.finger.fid,
                 msg->data.enroll.finger.gid,
                 msg->data.enroll.samples_remaining);
+            if (msg->data.enroll.samples_remaining == 0) {
+                set_hbm(0);
+            }
             if (!thisPtr->mClientCallback->onEnrollResult(devId,
                     msg->data.enroll.finger.fid,
                     msg->data.enroll.finger.gid,
