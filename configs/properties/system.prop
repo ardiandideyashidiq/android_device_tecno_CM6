@@ -23,6 +23,11 @@ ro.charger.enable_suspend=true
 # Cached app compaction
 persist.device_config.activity_manager.use_compaction=true
 
+# Device
+ro.product.marketname=Camon 40 Pro 4G
+ro.infinity.soc=MT6789
+ro.infinity.camera=50MP + 50MP + 8MP
+
 # Dex / Dalvik
 dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5
 dalvik.vm.boot-dex2oat-threads=6

@@ -12,10 +12,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/tecno/CM6/device.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 BOARD_VENDOR := TECNO
-PRODUCT_NAME := lineage_CM6
+PRODUCT_NAME := infinity_CM6
 PRODUCT_DEVICE := CM6
 PRODUCT_MANUFACTURER := TECNO
 PRODUCT_BRAND := TECNO
@@ -28,3 +28,13 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=TECNO/CM6-GL/TECNO-CM6:12/SP1A.210812.016/240531V2678:user/release-keys
 
 
+# Maintainer Name
+INFINITY_MAINTAINER := "qiratdahaf"
+
+# Whether the device supports Fingerprint On Display
+TARGET_HAS_UDFPS := true
+
+# Whether Including Google Apps
+WITH_GAPPS := true
+
+PERF_ANIM_OVERRIDE := true
