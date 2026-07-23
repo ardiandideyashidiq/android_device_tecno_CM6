@@ -25,8 +25,9 @@ PRODUCT_GMS_CLIENTID_BASE := android-transsion
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceName=CM6 \
-    BuildFingerprint=TECNO/CM6-GL/TECNO-CM6:12/SP1A.210812.016/240531V2678:user/release-keys
+    BuildFingerprint=TECNO/CM6-OP/TECNO-CM6:16/BP2A.250605.031.A3/201500012:user/release-keys
 
+PRODUCT_PRODUCT_PROPERTIES += ro.product.name=CM6-OP
 
 # Maintainer Name
 INFINITY_MAINTAINER := "qiratdahaf"
