@@ -8,6 +8,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+$(call inherit-product, hardware/lineage/compat/frameworks/compat.mk)
+
 # Inherit from device makefile.
 $(call inherit-product, device/tecno/CM6/device.mk)
 
