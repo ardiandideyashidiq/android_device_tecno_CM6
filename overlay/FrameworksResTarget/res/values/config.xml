@@ -62,7 +62,7 @@
     <integer name="config_autoBrightnessLightSensorRate">250</integer>
     <string name="config_mainBuiltInDisplayCutout">M -24,0 L -24,36 L 24,36 L 24,0 Z @dp</string>
     <bool name="config_fillMainBuiltInDisplayCutout">false</bool>
-    <integer name="config_defaultRefreshRate">60</integer>
+    <integer name="config_defaultRefreshRate">120</integer>
     <integer name="config_defaultPeakRefreshRate">120</integer>
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.lineageos.sensor.udfps</string>
     <bool name="config_screen_off_udfps_enabled">true</bool>
