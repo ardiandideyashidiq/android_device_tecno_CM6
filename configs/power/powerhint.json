@@ -165,7 +165,6 @@
         "650000",
         "500000"
       ],
-      "DefaultIndex": 23,
       "ResetOnInit": true
     },
     {
@@ -213,7 +212,6 @@
         "800000",
         "725000"
       ],
-      "DefaultIndex": 15,
       "ResetOnInit": true
     },
     {
@@ -224,7 +222,6 @@
         "1"
       ],
       "DefaultIndex": 0,
-      "AllowFailure": true,
       "ResetOnInit": true
     },
     {
@@ -269,10 +266,7 @@
         "50"
       ],
       "DefaultIndex": 0,
-      "ResetOnInit": true,
-      "Comments": [
-        "Write-only node. Values are consumed by GED DVFS driver; read-back shows computed internal state."
-      ]
+      "ResetOnInit": true
     },
     {
       "Name": "GpuDvfsLoadingStep",
@@ -396,25 +390,25 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUEfficiencyClusterMinFreq",
-      "Duration": 3000,
-      "Value": "1500000"
+      "Duration": 1500,
+      "Value": "1350000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUSuperClusterMinFreq",
-      "Duration": 3000,
-      "Value": "1700000"
+      "Duration": 1500,
+      "Value": "1400000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUEfficiencyClusterMaxFreq",
-      "Duration": 3000,
+      "Duration": 1500,
       "Value": "1600000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUSuperClusterMaxFreq",
-      "Duration": 3000,
+      "Duration": 1500,
       "Value": "2200000"
     },
     {
@@ -432,43 +426,43 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "GpuPwrLevel",
-      "Duration": 3000,
+      "Duration": 1500,
       "Value": "0"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CciFreq",
-      "Duration": 3000,
+      "Duration": 1500,
       "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUSuperClusterMaxFreq",
-      "Duration": 2500,
+      "Duration": 1500,
       "Value": "2200000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUSuperClusterMinFreq",
-      "Duration": 2500,
+      "Duration": 1500,
       "Value": "2200000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUEfficiencyClusterMaxFreq",
-      "Duration": 2500,
+      "Duration": 1500,
       "Value": "2000000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUEfficiencyClusterMinFreq",
-      "Duration": 2500,
+      "Duration": 1500,
       "Value": "2000000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "MemFreq",
-      "Duration": 2500,
+      "Duration": 1500,
       "Value": "4266000000"
     },
     {
@@ -480,19 +474,19 @@
     {
       "PowerHint": "LAUNCH",
       "Node": "GpuPwrLevel",
-      "Duration": 2500,
+      "Duration": 1500,
       "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GpuDvfsTimerMargin",
-      "Duration": 3000,
+      "Duration": 2000,
       "Value": "18743356"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GpuDvfsLoadingStep",
-      "Duration": 3000,
+      "Duration": 2000,
       "Value": "771"
     },
     {
