@@ -48,6 +48,7 @@ persist.vendor.tran.voiceNREnable       u:object_r:vendor_tran_voice_prop:s0 exa
 
 # Camera Mediatek
 persist.vendor.cam.param.          u:object_r:vendor_mtk_mediatek_prop:s0
+vendor.debug.sensor.otp.pdaftype     u:object_r:vendor_mtk_mediatek_prop:s0
 
 # NFC Transsion
 persist.vendor.tran_nfc_chip_manufacturer   u:object_r:vendor_tran_nfc_chip_prop:s0
