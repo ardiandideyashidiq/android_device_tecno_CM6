@@ -23,5 +23,7 @@ get_prop(mtk_hal_camera, vendor_camera_prop)
 get_prop(mtk_hal_camera, exported_default_prop)
 set_prop(mtk_hal_camera, vendor_mtk_camera_prop)
 set_prop(mtk_hal_camera, vendor_mtk_mediatek_prop)
+typeattribute mtk_hal_camera mlstrustedsubject;
+dontaudit mtk_hal_camera shell_data_file:dir search;
 allow mtk_hal_camera system_data_file:dir { search };
 
