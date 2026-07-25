@@ -8,5 +8,6 @@ set_prop(vendor_init, vendor_mtk_audio_prop)
 set_prop(vendor_init, vendor_mtk_camera_prop)
 set_prop(vendor_init, vendor_fingerprint_prop)
 get_prop(vendor_init, vts_status_prop)
+dontaudit vendor_init vendor_userdir_file:dir write;
 
 rw_dir_file(vendor_init, sysfs_ged)

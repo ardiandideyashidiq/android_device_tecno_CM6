@@ -10,4 +10,5 @@ dontaudit {
   audioserver
   surfaceflinger
   rild
+  mediaserver
 } vendor_default_prop:file r_file_perms;
