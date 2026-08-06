@@ -1,1 +1,3 @@
 cm6*
+group_proprietary*.py
+__pycache__/
