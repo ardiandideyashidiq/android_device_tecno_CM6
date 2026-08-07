@@ -2500,6 +2500,9 @@ vendor/data/camera/watermark/watermark_640x480.nv21
 vendor/data/camera/watermark/watermark_640x480.yuyv
 vendor/data/camera/watermark/watermark_config
 
+# Camera Transsion
+system_ext/app/TranssionCamera/TranssionCamera.apk
+
 # Connectivity
 vendor/bin/hw/tetheroffloadservice
 vendor/bin/netdagent
