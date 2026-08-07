@@ -5,3 +5,8 @@ allow platform_app { sysfs_sub_torch_file sysfs_torch_file sysfs_wide_torch_file
 dontaudit platform_app usb_uvc_enabled_prop:file r_file_perms;
 
 allow platform_app sysfs_therm:dir search;
+allow platform_app sysfs_therm:file r_file_perms;
+
+dontaudit platform_app unlabeled:filesystem getattr;
+
+get_prop(platform_app, vendor_camera_prop)

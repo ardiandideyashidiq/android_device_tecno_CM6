@@ -8,6 +8,8 @@ allow mtk_hal_camera sysfs_sub_torch_file:file rw_file_perms;
 allow mtk_hal_camera sysfs_torch_file:file rw_file_perms;
 allow mtk_hal_camera sysfs_wide_torch_file:file rw_file_perms;
 allow mtk_hal_camera sysfs_tran_cam_file:file rw_file_perms;
+allow mtk_hal_camera sysfs_sensor:dir r_dir_perms;
+allow mtk_hal_camera sysfs_sensor:file r_file_perms;
 allow mtk_hal_camera transsion_camera_data_file:dir { write search add_name };
 allow mtk_hal_camera transsion_camera_data_file:file {read write create open };
 allow mtk_hal_camera vendor_arcsoft_data_file:dir { read write open add_name search };
@@ -20,10 +22,13 @@ allow mtk_hal_camera property_socket:sock_file write;
 allow mtk_hal_camera hal_trancamserver_hwservice:hwservice_manager find;
 
 get_prop(mtk_hal_camera, vendor_camera_prop)
+get_prop(mtk_hal_camera, graphics_config_prop)
+get_prop(mtk_hal_camera, graphics_config_writable_prop)
 get_prop(mtk_hal_camera, exported_default_prop)
 set_prop(mtk_hal_camera, vendor_mtk_camera_prop)
 set_prop(mtk_hal_camera, vendor_mtk_mediatek_prop)
 typeattribute mtk_hal_camera mlstrustedsubject;
 dontaudit mtk_hal_camera shell_data_file:dir search;
 allow mtk_hal_camera system_data_file:dir { search };
+dontaudit mtk_hal_camera unlabeled:filesystem getattr;
 
