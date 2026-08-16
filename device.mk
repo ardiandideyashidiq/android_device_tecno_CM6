@@ -17,11 +17,6 @@ TARGET_SCREEN_HEIGHT := 2436
 TARGET_SCREEN_WIDTH := 1080
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1.vendor:64
-
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-jiiov-service
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -55,6 +50,10 @@ AB_OTA_PARTITIONS := \
     vendor \
     vendor_boot \
     vendor_dlkm
+
+AB_OTA_PARTITIONS := \
+    odm \
+    system_dlkm
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \

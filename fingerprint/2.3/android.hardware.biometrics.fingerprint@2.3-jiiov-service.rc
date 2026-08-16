@@ -1,6 +1,0 @@
-service vendor.udfps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.3-jiiov-service
-    class hal
-    user system
-    group system input uhid
-    interface android.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint default
-    interface android.hardware.biometrics.fingerprint@2.3::IBiometricsFingerprint default
