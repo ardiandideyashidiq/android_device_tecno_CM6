@@ -20,10 +20,15 @@
 /dev/block/by-name/nvram     0660    root    system
 /dev/block/by-name/para      0660    root    system
 /dev/block/by-name/logo      0660    root    system
+/dev/block/by-name/logo_a    0660    root    system
+/dev/block/by-name/logo_b    0660    root    system
 /dev/block/by-name/frp       0660    root    system
 /dev/block/by-name/md1img    0640    root    system
 /dev/block/by-name/md1img_a  0640    root    system
 /dev/block/by-name/md1img_b  0640    root    system
+/dev/block/by-name/modem_b   0640    root    system
+/dev/block/by-name/modem_a   0640    root    system
+/dev/block/by-name/modem     0640    root    system
 /dev/block/by-name/md1dsp    0660    root    system
 /dev/block/by-name/boot_para 0640    root    system
 
@@ -59,8 +64,7 @@
 /dev/fw_log_wifi          0660   wifi     wifi
 
 # FMRadio
-# NFBD:modify  for dev/fm 0660->0666 by yuguo.zhang 20220406
-/dev/fm                   0666   media     media
+/dev/fm                   0660   media     media
 
 # NFC
 /dev/st21nfc              0660   nfc        radio
@@ -96,6 +100,12 @@
 /dev/vdec-fmt   0660 media system
 /dev/fmt_sync   0660 system system
 
+#MDP
+/dev/mt-mdp               0660   system     media
+/dev/mtk_mdp              0660   system     system
+/dev/mml_pq               0660   system     system
+/dev/mdp_sync             0660   system     system
+
 #v4l2 camera
 /dev/mtk_hcp     0660 camera system
 
@@ -104,6 +114,9 @@
 
 # MDDP node
 /dev/mddp                 0660   system     system
+
+#sensor
+/dev/hf_manager        0660    system    system
 
 # add the read write right of ttyUSB*
 /dev/bus/usb/*     	  0660   root       usb
@@ -153,6 +166,9 @@
 # Camera
 /dev/camera_eeprom*       0660   system     camera
 
+# gzvm for AVF
+/dev/gzvm                 0666   root       root
+
 #FOR VIA MODEM
 /dev/ttySDIO*             0660   radio      sdcard_rw
 /dev/ttyRB*               0660   radio      radio
@@ -195,8 +211,10 @@
 #MTK In-House TEE
 /dev/ttyACM0              0660   radio      radio
 
-#BSP:modify ultrasound support ADYLHBSLA-4 by xinyu.zhao 20220629 start
+#widevine driver node
+/dev/drm_wv    0660    media    system
+
+
 #elliptic sensor
 /dev/elliptic0            0644   system     system
 /dev/elliptic1            0644   system     system
-#BSP:modify ultrasound support ADYLHBSLA-4 by xinyu.zhao 20220629 end

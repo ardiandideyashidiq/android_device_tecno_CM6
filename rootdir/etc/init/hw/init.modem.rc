@@ -29,8 +29,14 @@ on early-init
     write /proc/sys/net/core/netdev_max_backlog 50000
     write /proc/sys/net/ipv4/ipfrag_high_thresh 20971520
 
+#TDD:add for antutu control by yuqi.zhu5 20251128 start
+on property:ro.tr_net.upload.mark.support=""
+    setprop ro.vendor.net.upload.mark.default blocking
+#TDD:add for antutu control by yuqi.zhu5 20251128 end
 
 on post-fs-data
+
+    write /proc/bootprof "post-fs-data: on modem start"
 
 # Encrypt phone function
     setprop vold.post_fs_data_done 1

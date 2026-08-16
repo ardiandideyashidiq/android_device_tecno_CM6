@@ -2,6 +2,26 @@
 <!--
 -->
 <MediaCodecs>
+    <Resources>
+        <!-- decoder id starting from 0x1000 and encoder id starting from 0x1010  > -->
+        <!-- amount is the total capcity of resource -->
+        <Video name="max.decoder.instances.count"
+               amount="32" />
+        <Video name="max.decoder.secure.instances.count"
+               amount="1" />
+        <Video name="max.encoder.instances.count"
+               amount="10" />
+        <Video name="max.encoder.secure.instances.count"
+               amount="1" />
+        <Video name="max.encoder.heif.instances.count"
+               amount="2" />
+        <!-- 2048 * 1088 * 60 -->
+        <Video name="max.decoder.throughput"
+               amount="133693440" />
+        <!-- 2560 * 1440 * 30 -->
+        <Video name="max.encoder.throughput"
+               amount="110592000" />
+    </Resources>
     <Decoders>
         <Video name="color.converter"
                alwaysColorConvertChecker="true" />
@@ -20,20 +40,24 @@
                type="video/3gpp"
                driverIntf="v4l2"
                maxConcurrentInstances="32" />
+               <!-- modify X6895OS162-231 by xinghong.he 20260109 start -->
         <Video name="c2.mtk.avc.decoder"
                type="video/avc"
                driverIntf="v4l2"
                maxConcurrentInstances="32"
                metaBufferSize="4096" />
+               <!-- modify X6895OS162-231 by xinghong.he 20260109 end -->
         <Video name="c2.mtk.avc.decoder.secure"
                type="video/avc"
                driverIntf="v4l2"
                maxConcurrentInstances="1" />
+               <!-- modify X6895OS162-231 by xinghong.he 20260109 start -->
         <Video name="c2.mtk.hevc.decoder"
                type="video/hevc"
                driverIntf="v4l2"
                maxConcurrentInstances="32"
                metaBufferSize="4096" />
+               <!-- modify X6895OS162-231 by xinghong.he 20260109 end -->
         <Video name="c2.mtk.hevc.decoder.secure"
                type="video/hevc"
                driverIntf="v4l2"
@@ -47,10 +71,12 @@
                type="video/x-vnd.on2.vp8"
                driverIntf="v4l2"
                maxConcurrentInstances="32" />
+               <!-- modify X6895OS162-231 by xinghong.he 20260109 start -->
         <Video name="c2.mtk.vp9.decoder"
                type="video/x-vnd.on2.vp9"
                driverIntf="v4l2"
                maxConcurrentInstances="32" />
+               <!-- modify X6895OS162-231 by xinghong.he 20260109 end -->
         <Video name="c2.mtk.vp9.decoder.secure"
                type="video/x-vnd.on2.vp9"
                driverIntf="v4l2"
@@ -61,25 +87,33 @@
                maxConcurrentInstances="32" />
     </Decoders>
     <Encoders>
+              <!-- modify X6895OS162-231 by xinghong.he 20260109 start -->
         <Video name="c2.mtk.avc.encoder"
                type="video/avc"
                driverIntf="v4l2"
                maxConcurrentInstances="10"
-               canSwapWidthHeight="true" />
+               canSwapWidthHeight="true"
+               reencodeSupported="false" />
+               <!-- modify X6895OS162-231 by xinghong.he 20260109 end -->
         <Video name="c2.mtk.avc.encoder.secure"
                type="video/avc"
                driverIntf="v4l2"
                maxConcurrentInstances="10"
-               canSwapWidthHeight="true" />
+               canSwapWidthHeight="true"
+               reencodeSupported="false" />
+               <!-- modify X6895OS162-231 by xinghong.he 20260109 start -->
         <Video name="c2.mtk.hevc.encoder"
                type="video/hevc"
                driverIntf="v4l2"
                maxConcurrentInstances="10"
-               canSwapWidthHeight="true" />
+               canSwapWidthHeight="true"
+               reencodeSupported="false" />
+               <!-- modify X6895OS162-231 by xinghong.he 20260109 end -->
         <Video name="c2.mtk.heif.encoder"
                type="image/vnd.android.heic"
                driverIntf="v4l2"
                maxConcurrentInstances="2"
-               canSwapWidthHeight="true" />
+               canSwapWidthHeight="true"
+               reencodeSupported="false" />
     </Encoders>
 </MediaCodecs>

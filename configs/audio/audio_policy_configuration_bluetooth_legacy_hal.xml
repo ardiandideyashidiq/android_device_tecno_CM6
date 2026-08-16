@@ -50,6 +50,7 @@
                 <item>Earpiece</item>
                 <item>Built-In Mic</item>
                 <item>Built-In Back Mic</item>
+                <item>FM Tuner Out</item>
                 <item>FM Tuner In</item>
                 <item>Voice Call In</item>
             </attachedDevices>

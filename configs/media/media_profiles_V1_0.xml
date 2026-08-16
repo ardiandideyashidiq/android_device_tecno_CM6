@@ -334,7 +334,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add 2k video for front camera by jian.hu 20220606 start-->
         <EncoderProfile quality="high" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="50000000"
@@ -346,7 +345,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add 2k video for front camera by jian.hu 20220606 end-->
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="192000"
@@ -413,7 +411,7 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add 2k video for front camera by jian.hu 20220502 start-->
+
         <EncoderProfile quality="qhd" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="50000000"
@@ -425,7 +423,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add 2k video for front camera by jian.hu 20220502 end-->
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
             <Video codec="h263"
                    bitRate="1000000"
@@ -437,7 +434,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add 2k video for front camera by jian.hu 20220502 start-->
         <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="50000000"
@@ -449,7 +445,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add 2k video for front camera by jian.hu 20220502 end-->
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
             <Video codec="h263"
                    bitRate="1000000"
@@ -505,7 +500,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add 2k video for front camera by jian.hu 20220502 start-->
         <EncoderProfile quality="timelapse1080p" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="20000000"
@@ -528,7 +522,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add 2k video for front camera by jian.hu 20220502 end-->
         <ImageEncoding quality="95" />
         <ImageEncoding quality="80" />
         <ImageEncoding quality="70" />
@@ -546,7 +539,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add slow motion config for front camera by jian.hu 20220606 start-->
         <EncoderProfile quality="high" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="50000000"
@@ -558,7 +550,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add slow motion config for front camera by jian.hu 20220606 end-->
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="192000"
@@ -625,7 +616,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add slow motion config for front camera by jian.hu 20220606 start-->
         <EncoderProfile quality="qhd" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="50000000"
@@ -637,7 +627,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add slow motion config for front camera by jian.hu 20220606 end-->
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
             <Video codec="h263"
                    bitRate="1000000"
@@ -781,7 +770,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!-- #[ITD]add slow motion config for front camera by jian.hu 20220606 end-->
         <ImageEncoding quality="95" />
         <ImageEncoding quality="80" />
         <ImageEncoding quality="70" />
