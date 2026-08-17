@@ -191,11 +191,6 @@ PRODUCT_PACKAGES += \
 # Bypass Lock State for Fenrir
 $(call soong_config_set_bool,fastbootd,bypass_lock_state,true)
 
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl:64 \
-    android.hardware.gatekeeper@1.0-service
-
 # GNSS
 PRODUCT_PACKAGES += \
     android.hardware.gnss.measurement_corrections@1.1.vendor:64 \

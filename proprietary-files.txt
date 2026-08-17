@@ -1686,9 +1686,12 @@ vendor/firmware/WIFI_RAM_CODE_soc2_2_1e_1.bin
 vendor/firmware/WMT_SOC.cfg
 
 # Gatekeeper
+vendor/bin/hw/android.hardware.gatekeeper-service.trustonic
 vendor/bin/hw/vendor.trustonic.tee-service
+vendor/etc/init/android.hardware.gatekeeper-service.trustonic.rc
 vendor/etc/init/tee.rc
 vendor/etc/init/vendor.trustonic.tee-service.rc
+vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.trustonic.xml
 vendor/lib64/libMcClient.so
 vendor/lib64/libTEECommon.so
 vendor/lib64/vendor.trustonic.tee-V1-ndk.so
