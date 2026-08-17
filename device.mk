@@ -51,7 +51,7 @@ AB_OTA_PARTITIONS := \
     vendor_boot \
     vendor_dlkm
 
-AB_OTA_PARTITIONS := \
+AB_OTA_PARTITIONS += \
     odm \
     system_dlkm
 
