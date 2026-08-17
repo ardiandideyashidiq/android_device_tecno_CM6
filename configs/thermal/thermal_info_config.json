@@ -41,12 +41,16 @@
   ],
   "CoolingDevices": [
     {
-      "Name": "thermal-devfreq-0",
-      "Type": "CPU"
-    },
-    {
       "Name": "mutt-pa1",
       "Type": "MODEM"
+    },
+    {
+      "Name": "lcd-backlight",
+      "Type": "BATTERY"
+    },
+    {
+      "Name": "flashlight_cooler",
+      "Type": "BATTERY"
     }
   ]
 }
