@@ -1517,11 +1517,13 @@ vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 
 # Display
 odm/lib64/libStarburstEngine_gl.so
-vendor/bin/hw/mt6789/android.hardware.graphics.allocator-V2-service-mediatek.mt6789;SYMLINK=vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek.mt6789
+vendor/bin/hw/mt6789/android.hardware.graphics.allocator-V2-service-mediatek.mt6789;SYMLINK=vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
 vendor/bin/hw/vendor.mediatek.hardware.pq_aidl-service
 vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc
 vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc
 vendor/etc/vintf/manifest/manifest_hwcomposer.xml
+vendor/etc/vintf/manifest/manifest_allocator.xml
+vendor/etc/vintf/manifest/mapper.mediatek.xml
 vendor/lib/egl/egl.cfg
 vendor/lib64/egl/mt6789/libGLES_mali.so:vendor/lib64/egl/mt6789/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/hw/hwcomposer.mtk_common.so;SYMLINK=vendor/lib64/hwcomposer.mtk_common.so
@@ -1564,7 +1566,12 @@ vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 vendor/lib64/vendor.mediatek.hardware.graphics-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mmlpq-V3-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mmlpq-V4-ndk.so
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V8-ndk.so
+vendor/lib64/libappgamepq.so
+vendor/lib64/libpqcustutils.so
+vendor/lib64/mt6789/libmmlpqImpl.so;SYMLINK=vendor/lib64/libmmlpqImpl.so
+vendor/lib64/mt6789/libpqconfig.so;SYMLINK=vendor/lib64/libpqconfig.so
 vendor/lib64/vendor.transsion.hardware.aegis-V1-ndk.so
 vendor/lib64/vendor.transsion.hardware.screeninfo-V1-ndk.so
 

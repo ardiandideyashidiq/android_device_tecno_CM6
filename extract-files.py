@@ -105,6 +105,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hw/hwcomposer.mtk_common.so': blob_fixup()
         .patchelf_version('0_17_2')
         .add_needed('libprocessgroup_shim.so')
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so')
         .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     ('vendor/lib64/mt6789/lib3a.flash.so', 'vendor/lib64/mt6789/lib3a.ae.stat.so', 'vendor/lib64/mt6789/lib3a.sensors.flicker.so', 'vendor/lib64/mt6789/lib3a.sensors.color.so', 'vendor/lib64/lib3a.ae.pipe.so'): blob_fixup()
         .add_needed('liblog.so'),
@@ -140,6 +141,9 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libutils-v32.so'),
     'vendor/lib64/librt_extamp_intf.so': blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    ('vendor/lib64/libpqxmlparser.so', 'vendor/lib64/libpqxmlflagparser.so', 'vendor/lib64/libsilkybrightnesscore.so'): blob_fixup()
+        .patchelf_version('0_17_2')
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
 
     'vendor/lib64/mt6789/libmtkcam_hal_aidl_common.so': blob_fixup()
         .replace_needed('android.hardware.camera.common-V2-ndk.so', 'android.hardware.camera.common-V1-ndk.so'),
@@ -152,6 +156,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hw/mt6789/mapper.mediatek.so': blob_fixup()
         .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     'vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq_aidl-impl.so': blob_fixup()
+        .patchelf_version('0_17_2')
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so')
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
     'vendor/bin/hw/mt6789/android.hardware.graphics.allocator-V2-service-mediatek.mt6789': blob_fixup()
         .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
