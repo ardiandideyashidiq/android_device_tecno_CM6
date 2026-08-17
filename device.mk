@@ -21,8 +21,8 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
-# Shipping API level (use 31 to include hwservicemanager for legacy HIDL blobs)
-PRODUCT_SHIPPING_API_LEVEL := 31
+# Shipping API level (use 31 to include hwservicemanager for legacy HIDL blobs, in a15 firmware base)
+PRODUCT_SHIPPING_API_LEVEL := 35
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -284,7 +284,6 @@ PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
 # Media
 $(call soong_config_set_bool,android_hardware_mediatek_codec2,link_v33_libstagefright_foundation,true)
 PRODUCT_PACKAGES += \
-    android.hardware.media.c2-mtk-service \
     libcodec2_vndk.vendor:64 \
     libeffects:64 \
     libeffectsconfig.vendor:64 \
@@ -295,9 +294,6 @@ PRODUCT_PACKAGES += \
     libflatbuffers-cpp.vendor:64 \
     libminijail:64 \
     libminijail.vendor:64
-
-PRODUCT_PACKAGES += \
-    android.hardware.cas@1.2-service-lazy
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
