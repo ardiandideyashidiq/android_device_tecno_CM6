@@ -160,7 +160,6 @@ PRODUCT_COPY_FILES += \
 # Display
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor:64 \
-    android.hardware.graphics.composer@2.3-service \
     android.hardware.memtrack-service.mediatek
 
 PRODUCT_PACKAGES += \
