@@ -78,6 +78,9 @@ blob_fixups: blob_fixups_user_type = {
         .binary_regex_replace(b'BTAudiosuspend', b'A2dpSuspended\x00'),
     'vendor/lib/libalsautils-v32.so': blob_fixup()
         .fix_soname(),
+    'vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so': blob_fixup()
+        .patchelf_version('0_17_2')
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'vendor/lib64/libalsautils-v32.so': blob_fixup()
         .fix_soname(),
     (
@@ -216,7 +219,8 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
 
-
+    'vendor/lib64/android.hardware.audio.core-impl-mediatek.so': blob_fixup()
+        .add_needed('libaudioutils_shim.so'),
 
 }  # fmt: skip
 
