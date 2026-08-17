@@ -1747,6 +1747,11 @@ vendor/app/mcRegistry/ce4550edbcb1662566b006ebcb303050.tabin
 vendor/app/mcRegistry/df1edda8627911e980ae507b9d9a7e7d.tabin
 
 # Media (Soft Codecs)
+vendor/bin/hw/android.hardware.media.c2-mediatek-64b
+vendor/etc/init/android.hardware.media.c2-mediatek-64b.rc
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
+vendor/etc/media_codecs_c2.xml:vendor/etc/media_codecs_c2-mediatek-64b.xml
 #vendor/lib64/libcodec2_soft_common.so
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
