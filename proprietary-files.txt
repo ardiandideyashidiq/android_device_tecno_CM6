@@ -1774,7 +1774,6 @@ vendor/lib64/libcodec2_vpp_rs_plugin.so
 
 # NFC
 vendor/bin/hw/android.hardware.nfc2-service.nxp_w
-vendor/etc/init/nfc2-service-nxp.rc
 vendor/lib64/nfc_nci_nxp_snxxx_v2_w.so;DISABLE_CHECKELF
 
 # Nvram
@@ -1841,12 +1840,10 @@ vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/bin/hw/vtservice_aidl
 vendor/bin/kmsetkey_ca.trustonic
 vendor/bin/mcDriverDaemon
-vendor/etc/init/android.hardware.drm-service.clearkey.rc
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 vendor/etc/init/init.vtservice_aidl.rc
 vendor/etc/init/trustonic_kmsetkey_ca.rc
 vendor/etc/init/trustonic.rc
-vendor/etc/vintf/manifest/android.hardware.drm-service.clearkey.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.trustonic.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.trustonic.xml
 vendor/lib64/libdecrypt.so
