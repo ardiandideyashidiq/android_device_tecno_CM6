@@ -1058,6 +1058,7 @@ odm/lib64/libpixsmart_mf_base.so
 odm/lib64/libpixsmart_mf_base2.so
 odm/lib64/libpixsmart_ns.so
 odm/lib64/libPortraitEnhance_64.so
+odm/lib64/libremosaic_wrapper.so;SYMLINK=vendor/lib64/libremosaic_wrapper.so;DISABLE_CHECKELF
 odm/lib64/libremosaiclib.so
 odm/lib64/librmsclib1.so
 odm/lib64/libsegmention.so;DISABLE_CHECKELF
@@ -1180,7 +1181,6 @@ vendor/lib64/libmtkcam_pipelinepolicy-aov.so
 vendor/lib64/libmtkcam_vndObserver.so
 vendor/lib64/libmtkisp_metadata_v3_12.so
 vendor/lib64/libmtkisp_metadata_V3.so
-vendor/lib64/libremosaic_wrapper.so
 vendor/lib64/libSensorIdJSONConvertor.so
 vendor/lib64/libtran_camkit_utils.so
 vendor/lib64/libTranAIMoon.so
