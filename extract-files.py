@@ -166,6 +166,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so': blob_fixup()
         .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
 
+    'odm/lib64/libTranssionTone.so': blob_fixup()
+        .add_needed('libTranColorEffectEngine.so'),
 
 }  # fmt: skip
 
