@@ -1133,7 +1133,6 @@ vendor/etc/init/camerahalserver.rc
 vendor/etc/init/trancamserver.rc
 vendor/etc/init/vendor.mediatek.hardware.mmagent-service.rc
 vendor/etc/vintf/manifest/manifest_cameraprovider.xml
-vendor/etc/vintf/manifest/vendor.transsion.hardware.trancam.trancamserver.xml
 vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.ccap@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.ccap@1.0-impl.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so
