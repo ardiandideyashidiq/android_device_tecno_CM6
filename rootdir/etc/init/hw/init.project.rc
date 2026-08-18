@@ -5,6 +5,9 @@ import /vendor/etc/init/hw/init.mtkgki.rc
 on init
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
     mkdir /storage/usbotg 0700 root root
+    symlink /dev/jiiov_fp /dev/tran_fp
+    chmod 0660 /dev/jiiov_fp
+    chown system root /dev/jiiov_fp
 
 on post-fs-data
 

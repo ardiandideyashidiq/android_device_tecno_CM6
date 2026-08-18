@@ -16,11 +16,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 TARGET_SCREEN_HEIGHT := 2436
 TARGET_SCREEN_WIDTH := 1080
 
-# Fingerprint
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
-
 # Shipping API level (use 31 to include hwservicemanager for legacy HIDL blobs, in a15 firmware base)
 PRODUCT_SHIPPING_API_LEVEL := 35
 

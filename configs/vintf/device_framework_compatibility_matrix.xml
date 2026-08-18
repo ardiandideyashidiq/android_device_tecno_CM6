@@ -1312,6 +1312,13 @@
         </interface>
     </hal>
     <hal format="aidl">
+        <name>vendor.anc.fingerprint.extension</name>
+        <interface>
+            <name>IFingerprintExtension</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
         <name>vendor.transsion.hardware.camera.tzservice</name>
         <interface>
             <name>ITZService</name>
