@@ -222,6 +222,9 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/android.hardware.audio.core-impl-mediatek.so': blob_fixup()
         .add_needed('libaudioutils_shim.so'),
 
+    'vendor/lib64/mt6789/libmtkcam_hwnode.so': blob_fixup()
+        .add_needed('libultrahdr_CM6.so'),
+
 }  # fmt: skip
 
 module = ExtractUtilsModule(
