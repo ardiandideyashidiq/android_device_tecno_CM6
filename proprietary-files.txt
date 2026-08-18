@@ -75,7 +75,6 @@ vendor/lib64/hw/audio.primary.mediatek.so;SYMLINK=vendor/lib64/hw/audio.primary.
 vendor/lib64/hw/sound_trigger.primary.default.so:vendor/lib64/hw/sound_trigger.primary.mt6789.so
 vendor/lib64/lib_iir.so
 vendor/lib64/libaedv.so
-vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v32.so
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
 vendor/lib64/libaudiocompensationfilterc.so
@@ -1692,6 +1691,26 @@ vendor/firmware/soc2_2_ram_wifi_1e_1_hdr.bin
 vendor/firmware/WIFI_RAM_CODE_soc2_2_1d_1.bin
 vendor/firmware/WIFI_RAM_CODE_soc2_2_1e_1.bin
 vendor/firmware/WMT_SOC.cfg
+
+# ODM Firmware
+odm/firmware/BT_FW.cfg
+odm/firmware/Conf_MultipleTest_00.ini
+odm/firmware/Conf_MultipleTest_01.ini
+odm/firmware/aw87xxx_acf.bin
+odm/firmware/awinic_params.bin
+odm/firmware/chipsemi_ts_fw.bin
+odm/firmware/ffu_bin/FEUDNN128G_C2G072+Jbl+C2G072+0x3030313300000000+0x3030313800000000.bin
+odm/firmware/ffu_bin/FEUDNN128G_C2G072+Jbl+C2G072+0x3030313400000000+0x3030313800000000.bin
+odm/firmware/ffu_bin/FEUDNN128G_C2G072+Jbl+C2G072+0x3030313600000000+0x3030313800000000.bin
+odm/firmware/ffu_bin/FEUDNN128G_C2G072+Jbl+C2G072+0x3030313700000000+0x3030313800000000.bin
+odm/firmware/ffu_bin/FEUDNN256G_C2G074+Jbl+C2G074+0x3030313300000000+0x3030313800000000.bin
+odm/firmware/ffu_bin/FEUDNN256G_C2G074+Jbl+C2G074+0x3030313400000000+0x3030313800000000.bin
+odm/firmware/ffu_bin/FEUDNN256G_C2G074+Jbl+C2G074+0x3030313600000000+0x3030313800000000.bin
+odm/firmware/ffu_bin/FEUDNN256G_C2G074+Jbl+C2G074+0x3030313700000000+0x3030313800000000.bin
+odm/firmware/focaltech_ts_fw_00.bin
+odm/firmware/focaltech_ts_fw_01.bin
+odm/firmware/fs1599.fsm
+odm/firmware/wifi.cfg
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper-service.trustonic

@@ -44,17 +44,14 @@ lib_fixups: lib_fixups_user_type = {
 
 blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so': blob_fixup()
-        .replace_needed('libutils.so', 'libutils-v32.so')
+        .replace_needed('libutils.so', 'libutils-v33.so')
         .add_needed('libcamera_metadata_shim.so'),
     'vendor/lib64/mt6789/libmtkcam_stdutils.so': blob_fixup()
-        .replace_needed('libutils.so', 'libutils-v32.so'),
-    ('vendor/lib64/libwvhidl.so'): blob_fixup()
-        .replace_needed('libprotobuf-cpp-lite-3.9.1.so', 'libprotobuf-cpp-full-3.9.1.so'),
+        .replace_needed('libutils.so', 'libutils-v33.so'),
     ('vendor/bin/mnld', 'vendor/lib64/mt6789/libcam.utils.sensorprovider.so'): blob_fixup()
         .replace_needed('libsensorndkbridge.so', 'android.hardware.sensors@1.0-convert-shared.so')
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
     'vendor/lib64/hw/audio.primary.mediatek.so': blob_fixup()
-        .replace_needed('libalsautils.so', 'libalsautils-v32.so')
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so')
         .replace_needed('android.hardware.audio.effect-V2-ndk.so', 'android.hardware.audio.effect-V3-ndk.so')
         .replace_needed('android.hardware.bluetooth.audio-V4-ndk.so', 'android.hardware.bluetooth.audio-V5-ndk.so')
@@ -63,8 +60,6 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so': blob_fixup()
         .patchelf_version('0_17_2')
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
-    'vendor/lib64/libalsautils-v32.so': blob_fixup()
-        .fix_soname(),
     (
         'vendor/lib64/hw/sensors.mediatek.V2.0.so',
         'vendor/lib64/libcodec2_mtk_c2store.so',
@@ -81,11 +76,11 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
     'vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc': blob_fixup()
         .regex_replace('start', 'enable'),
-    ('vendor/lib64/libspeech_enh_lib.so', 'vendor/lib/libspeech_enh_lib.so', 'vendor/lib64/libalsautils-v32.so', 'vendor/lib64/libwifi-hal-mtk.so', 'vendor/lib64/hw/sound_trigger.primary.mt6789.so', 'vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so', 'vendor/lib/libtrancrypto.so'): blob_fixup()
+    ('vendor/lib64/libspeech_enh_lib.so', 'vendor/lib64/libwifi-hal-mtk.so', 'vendor/lib64/hw/sound_trigger.primary.mt6789.so', 'vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so'): blob_fixup()
         .fix_soname(),
     'vendor/etc/init/init.thermal_core.rc': blob_fixup()
         .regex_replace('ro.vendor.mtk_thermal_2_0', 'vendor.thermal.link_ready'),
-    ('vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so', 'vendor/lib64/libstfactory-vendor.so', 'vendor/lib/libnvram.so', 'vendor/lib64/libnvram.so', 'vendor/lib/libsysenv.so', 'vendor/lib64/libsysenv.so', 'vendor/lib64/libtflite_mtk.so', 'vendor/lib64/nfc_nci_nxp_snxxx.so'): blob_fixup()
+    ('vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so', 'vendor/lib64/libstfactory-vendor.so', 'vendor/lib64/libnvram.so', 'vendor/lib64/libsysenv.so', 'vendor/lib64/libtflite_mtk.so', 'vendor/lib64/nfc_nci_nxp_snxxx.so'): blob_fixup()
         .add_needed('libbase_shim.so'),
     'vendor/lib64/hw/hwcomposer.mtk_common.so': blob_fixup()
         .patchelf_version('0_17_2')
@@ -96,7 +91,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('liblog.so'),
     'vendor/lib64/mt6789/libmnl.so': blob_fixup()
         .add_needed('libcutils.so'),
-    ('vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so', 'vendor/lib64/mt6789/libeffect_hal.so', 'vendor/lib64/libMegviiHum.so', 'vendor/lib64/libanc_single_rt_bokeh.so', 'vendor/lib64/libvideofilmeffect.so'): blob_fixup()
+    ('vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so', 'vendor/lib64/mt6789/libeffect_hal.so', 'vendor/lib64/libanc_single_rt_bokeh.so'): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_createFromHandle')
         .clear_symbol_version('AHardwareBuffer_describe')
@@ -115,11 +110,11 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
     'vendor/lib64/mt6789/libmorpho_video_stabilizer.so': blob_fixup()
-        .add_needed('libutils.so'),
+        .add_needed('libutils-v33.so'),
     'vendor/bin/hw/mt6789/camerahalserver': blob_fixup()
-        .replace_needed('libutils.so', 'libutils-v32.so'),
+        .replace_needed('libutils.so', 'libutils-v33.so'),
     'vendor/bin/hw/mtkfusionrild': blob_fixup()
-        .add_needed('libutils-v32.so'),
+        .add_needed('libutils-v33.so'),
     'vendor/lib64/librt_extamp_intf.so': blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     ('vendor/lib64/libpqxmlparser.so', 'vendor/lib64/libpqxmlflagparser.so', 'vendor/lib64/libsilkybrightnesscore.so'): blob_fixup()
