@@ -185,6 +185,7 @@ BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mt66xx
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mt66xx
+BOARD_WLAN_DEVICE := MediaTek
 WIFI_DRIVER_FW_PATH_PARAM := "/dev/wmtWifi"
 WIFI_DRIVER_FW_PATH_STA := "STA"
 WIFI_DRIVER_FW_PATH_AP := "AP"
@@ -220,8 +221,38 @@ RECOVERY_MODULES := $(addprefix $(KERNEL_PATH)/ramdisk/, $(BOARD_VENDOR_RAMDISK_
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES) $(RECOVERY_MODULES))
 
 # vendor_dlkm
+# modules.load lists modules auto-loaded by the kernel. Stock additionally ships
+# these modules on disk; they are insmod'ed by init rc scripts:
+#   init.bt_drv.rc: bt_drv_connac1x.ko
+#   init.wlan_drv.rc: wlan_drv_gen4m_6789.ko
+#   init.gps_drv.rc: gps_drv_stp.ko, gps_pwr.ko
+#   init.connfem.rc: connfem.ko
+#   init.wmt_drv.rc: wmt_chrdev_wifi.ko
+# plus touchscreen (gt9886/gt9896s, ts_scp_common), MET (mtk perf) and tui-common.
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor_dlkm/modules.load))
 BOARD_VENDOR_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/vendor_dlkm/, $(BOARD_VENDOR_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(KERNEL_PATH)/vendor_dlkm/bt_drv_connac1x.ko \
+    $(KERNEL_PATH)/vendor_dlkm/connfem.ko \
+    $(KERNEL_PATH)/vendor_dlkm/gps_drv_stp.ko \
+    $(KERNEL_PATH)/vendor_dlkm/gps_pwr.ko \
+    $(KERNEL_PATH)/vendor_dlkm/gt9886.ko \
+    $(KERNEL_PATH)/vendor_dlkm/gt9896s.ko \
+    $(KERNEL_PATH)/vendor_dlkm/iommu_test.ko \
+    $(KERNEL_PATH)/vendor_dlkm/met.ko \
+    $(KERNEL_PATH)/vendor_dlkm/met_backlight_api.ko \
+    $(KERNEL_PATH)/vendor_dlkm/met_emi_api.ko \
+    $(KERNEL_PATH)/vendor_dlkm/met_gpu_adv_api.ko \
+    $(KERNEL_PATH)/vendor_dlkm/met_gpu_api.ko \
+    $(KERNEL_PATH)/vendor_dlkm/met_ipi_api.ko \
+    $(KERNEL_PATH)/vendor_dlkm/met_mcupm_api.ko \
+    $(KERNEL_PATH)/vendor_dlkm/met_scmi_api.ko \
+    $(KERNEL_PATH)/vendor_dlkm/met_sspm_api.ko \
+    $(KERNEL_PATH)/vendor_dlkm/met_vcore_api.ko \
+    $(KERNEL_PATH)/vendor_dlkm/ts_scp_common.ko \
+    $(KERNEL_PATH)/vendor_dlkm/tui-common.ko \
+    $(KERNEL_PATH)/vendor_dlkm/wlan_drv_gen4m_6789.ko \
+    $(KERNEL_PATH)/vendor_dlkm/wmt_chrdev_wifi.ko
 
 # system_dlkm
 BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/system_dlkm/modules.load))

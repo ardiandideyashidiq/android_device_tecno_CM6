@@ -350,7 +350,6 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr
 
 PRODUCT_PACKAGES += \
-    vendor.mediatek.hardware.mtkpower@1.2-service.stub:64 \
     vendor.mediatek.hardware.mtkpower@1.0.vendor:64 \
     vendor.mediatek.hardware.mtkpower@1.1.vendor:64
 
@@ -494,7 +493,7 @@ PRODUCT_PACKAGES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-    libwifi-hal-wrapper:64 \
+    hardware/mediatek/wlan/wifi_hal \
     android.hardware.wifi-service \
     wpa_supplicant \
     lib_driver_cmd_mt66xx \

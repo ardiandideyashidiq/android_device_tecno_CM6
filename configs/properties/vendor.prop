@@ -28,6 +28,7 @@ vendor.streamin.pcm.dump=0
 ro.vendor.bluetooth.a2dp_aac_vbr.is_disabled=true
 ro.vendor.bluetooth.bt_multidevice_perform=600
 ro.vendor.bt.platform=connac1x
+ro.vendor.bt.connac3=no
 ro.vendor.mtk.bt_sap_enable=true
 vendor.bluetooth.ldac.abr=true
 

@@ -1529,7 +1529,6 @@ vendor/lib64/libmnetlink_v104.so
 vendor/lib64/libmtknetcap.so
 vendor/lib64/libmtknetutils.so
 vendor/lib64/libmtksysutils.so
-vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 
@@ -1842,7 +1841,9 @@ vendor/lib64/libcodec2_vpp_rs_plugin.so
 
 # NFC
 vendor/bin/hw/android.hardware.nfc2-service.nxp_w
+#vendor/etc/init/nfc2-service-nxp.rc
 vendor/lib64/nfc_nci_nxp_snxxx_v2_w.so;DISABLE_CHECKELF
+odm/etc/vintf/manifest/nfc2-service-nxp.xml
 
 # Nvram
 odm/lib64/libcustom_nvram.so
