@@ -154,9 +154,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@4.0.vendor:64 \
     android.hardware.graphics.mapper@4.0.vendor:64 \
-    libdrm.vendor:64 \
-    libhwc2on1adapter:64 \
-    libhwc2onfbadapter:64
+    libdrm.vendor:64
 
 PRODUCT_PACKAGES += \
     ANGLE
@@ -500,11 +498,6 @@ PRODUCT_PACKAGES += \
     hostapd \
     libkeystore-wifi-hidl:64 \
     libkeystore-engine-wifi-hidl:64
-
-PRODUCT_PACKAGES += \
-    android.hardware.tetheroffload.config@1.0.vendor:64 \
-    android.hardware.tetheroffload.control@1.0.vendor:64 \
-    android.hardware.tetheroffload.control@1.1.vendor:64
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
