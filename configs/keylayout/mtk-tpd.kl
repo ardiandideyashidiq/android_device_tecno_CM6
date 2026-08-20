@@ -1,1 +1,4 @@
-key 183 WAKEUP
+# FocalTech FTS gesture keycodes (reported by focaltech_ft3683g / adaptive-ts)
+# Double-tap-to-wake emits scan code 0xC6 (198). Map to KEYCODE_WAKEUP so the
+# gesture wakes the device from doze. F25/F28 not present in AOSP (last is F24).
+key 198 WAKEUP
