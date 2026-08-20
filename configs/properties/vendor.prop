@@ -34,6 +34,16 @@ vendor.bluetooth.ldac.abr=true
 
 # Camera
 ro.vendor.cam_transerver_support=true
+ro.vendor.cam_aidl_transerver_support=true
+ro.vendor.cam_aidl_vipscheduler_support=true
+ro.vendor.cam_atms_profiles_support=true
+ro.vendor.cam_camkit2_utils_support=false
+ro.vendor.cam_camkit_utils_support=false
+ro.vendor.cam_dlopen_support=true
+ro.vendor.cam_filelockmgr_support=true
+ro.vendor.cam_thirdpart_support=true
+ro.vendor.cam_tranelapsedtime_support=true
+ro.vendor.cam_vipscheduler_support=true
 camera.disable_zsl_mode=1
 ro.custom.camera.front.setting=50M
 ro.custom.camera.rear.setting=50M OIS+8M
