@@ -1510,7 +1510,7 @@ vendor/data/camera/morpho/morpho_zoomeis_params_nosat.xml
 vendor/data/camera/morpho/morpho_zoomeis_params.xml
 vendor/data/camera/morpho/morphoEISCalibration.bin
 vendor/data/camera/morpho/morphoEISCalibrationV2.bin
-
+system_ext/app/TranssionCamera/TranssionCamera.apk
 
 # Connectivity
 vendor/bin/hw/tetheroffloadservice
@@ -1558,6 +1558,7 @@ vendor/lib64/egl/mt6789/libGLES_mali.so:vendor/lib64/egl/mt6789/libGLES_mali.so;
 vendor/lib64/hw/hwcomposer.mtk_common.so;SYMLINK=vendor/lib64/hwcomposer.mtk_common.so
 vendor/lib64/hw/mt6789/android.hardware.graphics.allocator-V2-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
 vendor/lib64/hw/mt6789/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so
+vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/mt6789/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so
 vendor/lib64/libaal_sec.so
 vendor/lib64/libaegis_clientv.so
