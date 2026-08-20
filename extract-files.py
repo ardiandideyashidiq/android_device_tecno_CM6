@@ -191,10 +191,23 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_unlock'),
 
     'vendor/lib64/android.hardware.audio.core-impl-mediatek.so': blob_fixup()
-        .add_needed('libaudioutils_shim.so'),
+        .add_needed('libaudioutils_shim.so')
+        .replace_needed('android.hardware.audio.core-V3-ndk.so', 'android.hardware.audio.core-V4-ndk.so'),
 
     'vendor/lib64/mt6789/libmtkcam_hwnode.so': blob_fixup()
         .add_needed('libultrahdr_CM6.so'),
+
+    'vendor/bin/hw/android.hardware.audio.service-aidl.mediatek': blob_fixup()
+        .replace_needed('android.hardware.audio.core-V3-ndk.so', 'android.hardware.audio.core-V4-ndk.so'),
+
+    'vendor/lib64/libaudioprimarydevicehalifclient.so': blob_fixup()
+        .replace_needed('android.hardware.audio.core-V3-ndk.so', 'android.hardware.audio.core-V4-ndk.so'),
+
+    'system_ext/bin/hw/android.hardware.audio.parameter_parser.service': blob_fixup()
+        .replace_needed('android.hardware.audio.core-V3-ndk.so', 'android.hardware.audio.core-V4-ndk.so'),
+
+    'system/lib64/av-audio-types-aidl-ndk.so': blob_fixup()
+        .replace_needed('android.hardware.audio.core-V3-ndk.so', 'android.hardware.audio.core-V4-ndk.so'),
 
 }  # fmt: skip
 
