@@ -42,7 +42,8 @@
 # Sensor stuff
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.sensors-service(\.multihal)?  u:object_r:hal_sensors_default_exec:s0
 
-# Trancam
+# Trancam (A16 firmware renamed blob: vendor.transsion.hardware.trancam.trancamserver@1.0-service -> trancamserver)
+/(system\/vendor|vendor)/bin/hw/trancamserver                                                       u:object_r:trancamserver_exec:s0
 /(system\/vendor|vendor)/bin/hw/vendor\.transsion\.hardware\.trancam\.trancamserver@1\.0-service     u:object_r:trancamserver_exec:s0
 /sys/devices/platform/(odm/odm:tran_battery|tran_battery)/tran_cam                              u:object_r:sysfs_tran_cam_file:s0
 
@@ -66,4 +67,22 @@
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service-mediatek-lazy       u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.vibrator-service\.example                 u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.vibrator-service\.mediatek                u:object_r:hal_vibrator_default_exec:s0
-/sys/devices/platform/soc/1101a000.i2c/i2c-6/6-005a/leds/vibrator_single(/.*)?           u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/soc:regulator-vibrator/leds/vibrator(/.*)?    u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/soc:mtk-leds/leds/lcd-backlight(/.*)?         u:object_r:sysfs_leds:s0
+
+# Trustonic + NXP daemons stuck in init domain without exec labels
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.gatekeeper-service\.trustonic              u:object_r:hal_gatekeeper_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.security\.keymint@3\.0-service\.trustonic  u:object_r:hal_keymint_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.nfc2-service\.nxp_w                        u:object_r:hal_nfc_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/vendor\.trustonic\.tee-service                              u:object_r:trustonic_tee_exec:s0
+
+# SP-HAL vendor libs loaded into system processes
+/vendor/lib64/mt6789/libpq_sec\.so                             u:object_r:same_process_hal_file:s0
+/vendor/lib64/vendor\.mediatek\.hardware\.mms-V[0-9]+-ndk\.so  u:object_r:same_process_hal_file:s0
+
+# Gralloc5 stable-c mapper and its vendor deps loaded into system processes
+/vendor/lib(64)?/hw/mapper\.mediatek\.so             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.mediatek\.hardware\.graphics-V[0-9]+-ndk\.so u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/mt[0-9]+[a-z]*/libmtk_mali_user\.so  u:object_r:same_process_hal_file:s0
+/vendor/lib64/libmml\.so                                        u:object_r:same_process_hal_file:s0
+/vendor/lib64/libsdrparser\.so                                   u:object_r:same_process_hal_file:s0

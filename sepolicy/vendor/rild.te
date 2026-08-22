@@ -1,0 +1,3 @@
+
+# MTK radioex NTN AIDL service registration
+allow rild hal_radio_service:service_manager add;

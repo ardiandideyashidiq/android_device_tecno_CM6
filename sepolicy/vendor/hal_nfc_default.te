@@ -15,3 +15,6 @@ allow hal_nfc_default vendor_nfc_prop:property_service set;
 
 allow hal_nfc_default nfc_vendor_data_file:dir { getattr add_name read write search remove_name };
 allow hal_nfc_default nfc_vendor_data_file:file { getattr open create read write unlink setattr append };
+
+# pn553 device access needs full rw incl ioctl
+allow hal_nfc_default nfc_device:chr_file { open ioctl getattr };

@@ -1,0 +1,3 @@
+# Trustonic TEE AIDL services - type defined by stock CM6 vendor policy,
+# absent from generic MTK base
+type hal_tee_service, service_manager_type;

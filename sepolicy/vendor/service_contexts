@@ -1,0 +1,8 @@
+# Aligned with stock CM6 /vendor/etc/selinux/vendor_service_contexts
+vendor.mediatek.hardware.mtkradioex.ntn.IMtkRadioExNtn/slot1    u:object_r:hal_radio_service:s0
+vendor.mediatek.hardware.mtkradioex.ntn.IMtkRadioExNtn/slot2    u:object_r:hal_radio_service:s0
+vendor.mediatek.hardware.mtkradioex.ntn.IMtkRadioExNtn/slot3    u:object_r:hal_radio_service:s0
+vendor.mediatek.hardware.mtkradioex.ntn.IMtkRadioExNtn/slot4    u:object_r:hal_radio_service:s0
+vendor.trustonic.tee.ITee/default                               u:object_r:hal_tee_service:s0
+vendor.trustonic.tui.ITui/default                               u:object_r:hal_tee_service:s0
+vendor.transsion.hardware.biometrics.fingerprint.ITranssionFingerprintDaemon/default u:object_r:hal_fingerprint_service:s0

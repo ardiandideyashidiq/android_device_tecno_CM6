@@ -1,0 +1,3 @@
+# MTK PQ HAL: client of composer-ext HAL + devicetree chosen node probe
+hal_client_domain(mtk_hal_pq, hal_mtk_composer_ext)
+allow mtk_hal_pq sysfs:file r_file_perms;

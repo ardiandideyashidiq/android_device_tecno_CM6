@@ -10,6 +10,8 @@ allow mtk_hal_camera sysfs_wide_torch_file:file rw_file_perms;
 allow mtk_hal_camera sysfs_tran_cam_file:file rw_file_perms;
 allow mtk_hal_camera sysfs_sensor:dir r_dir_perms;
 allow mtk_hal_camera sysfs_sensor:file r_file_perms;
+allow mtk_hal_camera sysfs_therm:dir search;
+allow mtk_hal_camera sysfs_therm:file r_file_perms;
 allow mtk_hal_camera transsion_camera_data_file:dir { write search add_name };
 allow mtk_hal_camera transsion_camera_data_file:file {read write create open };
 allow mtk_hal_camera vendor_arcsoft_data_file:dir { read write open add_name search };
@@ -20,6 +22,9 @@ allow mtk_hal_camera vendor_watermark_data_file:dir { read write open add_name s
 allow mtk_hal_camera vendor_watermark_data_file:file { read write create getattr open };
 allow mtk_hal_camera property_socket:sock_file write;
 allow mtk_hal_camera hal_trancamserver_hwservice:hwservice_manager find;
+allow mtk_hal_camera fwk_sensor_service:service_manager find;
+# optional Transsion perf-hint service (blob not shipped) - silence lookup noise
+dontaudit mtk_hal_camera default_android_service:service_manager find;
 
 get_prop(mtk_hal_camera, vendor_camera_prop)
 get_prop(mtk_hal_camera, graphics_config_prop)
@@ -32,3 +37,13 @@ dontaudit mtk_hal_camera shell_data_file:dir search;
 allow mtk_hal_camera system_data_file:dir { search };
 dontaudit mtk_hal_camera unlabeled:filesystem getattr;
 
+
+# IPostDevice/default intentionally unmapped (service unused); silence lookup noise
+dontaudit mtk_hal_camera default_android_service:service_manager add;
+
+# EIS thread probes /data/system/user/<id>; AOSP neverallows vendor HAL
+# access to core data dirs - silence only (stock behaves the same)
+dontaudit mtk_hal_camera system_userdir_file:dir search;
+
+# MTK streaming algo maps executable memory (TRN STREAM threads)
+allow mtk_hal_camera self:process execmem;

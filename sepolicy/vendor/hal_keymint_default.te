@@ -1,2 +1,6 @@
 # Allow Keymint to set MTK TEEI Props
 set_prop(hal_keymint_default, vendor_mtk_soter_teei_prop)
+
+# Trustonic keymint reads keybox from TEE protected storage
+allow hal_keymint_default tkcore_protect_data_file:dir search;
+allow hal_keymint_default tkcore_protect_data_file:file r_file_perms;

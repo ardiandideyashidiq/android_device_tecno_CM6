@@ -3,5 +3,17 @@ type trancamserver_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(trancamserver)
 
+# AIDL service registered via vndbinder/servicemanager
+allow trancamserver self:binder { call transfer };
+allow trancamserver servicemanager:binder { call transfer };
+allow servicemanager trancamserver:binder transfer;
+allow trancamserver vndbinder_device:chr_file rw_file_perms;
+
 allow trancamserver hal_trancamserver_hwservice:hwservice_manager { find add };
 allow trancamserver hidl_base_hwservice:hwservice_manager add;
+
+# TransSched is intentionally not brought up on this ROM; daemon binary never extracted.
+dontaudit trancamserver default_android_service:service_manager find;
+
+# ITrancamserver/default intentionally unmapped; silence registration denial
+dontaudit trancamserver default_android_service:service_manager add;

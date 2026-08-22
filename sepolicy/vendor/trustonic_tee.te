@@ -1,0 +1,14 @@
+# Trustonic AIDL TEE service (ITeeService / ITee / ITui) - A16 firmware blob
+type trustonic_tee, domain, halserverdomain;
+type trustonic_tee_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(trustonic_tee)
+
+allow trustonic_tee self:binder { call transfer };
+allow trustonic_tee servicemanager:binder { call transfer };
+allow servicemanager trustonic_tee:binder transfer;
+allow trustonic_tee vndbinder_device:chr_file rw_file_perms;
+allow trustonic_tee mobicore_user_device:chr_file rw_file_perms;
+
+# registers all three interfaces under MTK-base's tee_service label
+allow trustonic_tee hal_tee_service:service_manager { add find };

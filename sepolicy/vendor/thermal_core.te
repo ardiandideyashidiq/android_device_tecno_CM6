@@ -1,1 +1,13 @@
 allow thermal_core sysfs_thermal:dir search;
+allow thermal_core self:netlink_generic_socket { getattr read write getopt setopt bind };
+
+# dvfsrc helper polls /sys/kernel/debug/.../dvfsrc-helper via generic netlink + sysfs
+allow thermal_core sysfs_dvfsrc_dbg:dir search;
+allow thermal_core sysfs_dvfsrc_dbg:file r_file_perms;
+
+# thermal mitigation reads lcd-backlight brightness
+allow thermal_core sysfs_leds:dir search;
+allow thermal_core sysfs_leds:file r_file_perms;
+
+# MTK thermal generic netlink channel
+allow thermal_core self:netlink_generic_socket { create bind read write getattr lock append map };

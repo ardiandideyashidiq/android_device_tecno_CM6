@@ -1,1 +1,13 @@
-get_prop(untrusted_app_all, vendor_camera_prop)
+# Transsion camera app probes that are denied on stock too - silence only
+
+# dmabuf pseudo-fs statfs from GL threads (stock grants this to surfaceflinger
+# only; apps stay denied there as well)
+dontaudit untrusted_app unlabeled:filesystem getattr;
+
+# camera app tries to set vendor props / find unmapped services
+dontaudit untrusted_app property_socket:sock_file write;
+dontaudit untrusted_app default_android_service:service_manager find;
+
+# repacked Transsion camera reads MTK camera3 bufnum tunables; grant real
+# values instead of stock's silent-deny + defaults
+get_prop(untrusted_app, vendor_camera_prop);
