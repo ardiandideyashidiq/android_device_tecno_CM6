@@ -1,0 +1,9 @@
+# Device-specific framework patches for Project Infinity-X (TECNO CM6)
+#
+# Format: <repo-path-relative-to-tree-root> <patch-file-relative-to-this-dir>
+#
+# Apply:   bash patches/apply-patches.sh
+# Revert:  bash patches/apply-patches.sh --revert
+#
+# Currently empty: fingerprint HAL is now a first-party in-tree AIDL service
+# (device/tecno/CM6/fingerprint); stock frameworks/base requires NO patches.
