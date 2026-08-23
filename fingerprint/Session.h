@@ -15,6 +15,9 @@ namespace biometrics {
 namespace fingerprint {
 namespace jiiov {
 
+class Session;
+void setActiveSession(const std::shared_ptr<Session>& s);
+
 using common::ICancellationSignal;
 using common::OperationContext;
 using ::aidl::android::hardware::keymaster::HardwareAuthToken;
@@ -26,8 +29,7 @@ class CancellationSignal : public common::BnCancellationSignal {
 
 class Session : public BnSession {
   public:
-    explicit Session(int sensorId, int userId)
-        : mSensorId(sensorId), mUserId(userId) {}
+    Session(int sensorId, int userId);
 
     ndk::ScopedAStatus generateChallenge() override;
     ndk::ScopedAStatus revokeChallenge(int64_t challenge) override;
@@ -64,9 +66,11 @@ class Session : public BnSession {
     ndk::ScopedAStatus onPointerCancelWithContext(const PointerContext& context) override;
     ndk::ScopedAStatus setIgnoreDisplayTouches(bool shouldIgnore) override;
 
-    void setCallback(const std::shared_ptr<ISessionCallback>& cb) { mCb = cb; }
+    void setCallback(const std::shared_ptr<ISessionCallback>& cb);
 
   private:
+    void onEngineEvent(uint32_t type, uint64_t a1, uint64_t a2, uint64_t a3, uint64_t a4);
+    friend void engineNotifyThunk(uint32_t, uint64_t, uint64_t, uint64_t, uint64_t);
     int mSensorId;
     int mUserId;
     std::shared_ptr<ISessionCallback> mCb;

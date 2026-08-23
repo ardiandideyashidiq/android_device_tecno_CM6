@@ -52,16 +52,32 @@ inline bool writeNode(const char* path, const std::string& val) {
     return ok;
 }
 
+inline void setFingerprintStatus(int v) {
+    writeNode(kFingerprintStatus, std::to_string(v));
+}
+
 inline void armFod() {
     writeNode(kSpecialArea, kSpecialAreaArm);
+    setFingerprintStatus(2);
+}
+
+inline void armFod(int32_t x, int32_t y) {
+    (void)x;
+    (void)y;
+    armFod();
 }
 
 inline void disarmFod() {
     writeNode(kSpecialArea, "0");
+    setFingerprintStatus(0);
 }
 
-inline void setFingerprintStatus(int v) {
-    writeNode(kFingerprintStatus, std::to_string(v));
+inline void initOnce() {
+    static bool done = [] {
+        armFod();
+        return true;
+    }();
+    (void)done;
 }
 
 // Physically illuminates the panel. Does NOT satisfy the engine by itself.

@@ -9,6 +9,8 @@ namespace biometrics {
 namespace fingerprint {
 namespace jiiov {
 
+void engineNotifyThunk(uint32_t type, uint64_t a1, uint64_t a2, uint64_t a3, uint64_t a4);
+
 // CM6: JV0307 optical sensor under AMOLED, circle at (540, 2204) r=91
 // (matches overlay FrameworksResTarget config_udfps_sensor_props).
 static constexpr int32_t kSensorId = 0;
@@ -46,8 +48,17 @@ ndk::ScopedAStatus Fingerprint::createSession(
         const std::shared_ptr<ISessionCallback>& cb,
         std::shared_ptr<ISession>* out) {
     ALOGI("createSession sensor=%d user=%d", sensorId, userId);
+    Engine& engine = Engine::get();
+    if (!engine.ready() && !engine.init()) {
+        ALOGE("engine init failed");
+    } else if (engine.ready()) {
+        engine.setNotify(&engineNotifyThunk);
+        engine.setActiveGroup(userId, "/data/vendor_de/");
+        initOnce();
+    }
     auto session = SharedRefBase::make<Session>(sensorId, userId);
     session->setCallback(cb);
+    setActiveSession(session);
     armFod();
     *out = session;
     return ndk::ScopedAStatus::ok();
