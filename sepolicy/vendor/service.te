@@ -1,3 +1,9 @@
 # Trustonic TEE AIDL services - type defined by stock CM6 vendor policy,
 # absent from generic MTK base
 type hal_tee_service, service_manager_type;
+
+# Project Infinity-X (tecno CM6): custom servicemanager label for our AIDL
+# fingerprint HAL registration. The platform pins fingerprint_service adds to
+# hal_fingerprint_server membership, which this domain deliberately avoids -
+# see hal_fingerprint_default.te.
+type jiiov_fp_service, service_manager_type;

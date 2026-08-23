@@ -33,6 +33,8 @@ vendor.fp.QRCode                            u:object_r:vendor_fingerprint_prop:s
 vendor.tran.fp.status                       u:object_r:vendor_tran_fp_status_prop:s0
 vendor.anc.fingerprint.                     u:object_r:vendor_fingerprint_prop:s0
 vendor.fp.transsion.lcmname                 u:object_r:vendor_fingerprint_prop:s0
+vendor.fp.hbm_inject                        u:object_r:vendor_fingerprint_prop:s0
+vendor.fp.fpctl                             u:object_r:vendor_fingerprint_prop:s0
 # jiiov HAL sets the panel chip id at startup; matches stock vendor_property_contexts
 vendor.fp.transsion.display.chipic.name     u:object_r:vendor_fingerprint_prop:s0 exact
 vendor.fp.currentUid                        u:object_r:vendor_fingerprint_prop:s0

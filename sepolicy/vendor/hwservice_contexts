@@ -2,12 +2,9 @@
 vendor.transsion.hardware.trancam.trancamserver::ITrancamserver                     u:object_r:hal_trancamserver_hwservice:s0
 
 # Fingerprint
-vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon             u:object_r:hal_fingerprint_hwservice:s0
-vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemonExt          u:object_r:hal_fingerprint_hwservice:s0
-vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemonHbd          u:object_r:hal_fingerprint_hwservice:s0
-vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemonFido         u:object_r:hal_fingerprint_hwservice:s0
-vendor.mediatek.hardware.biometrics.fingerprint::ITranBiometricsFingerprint         u:object_r:hal_fingerprint_hwservice:s0
-vendor.fptool.fingerprint::IFptoolFingerprint                                   u:object_r:hal_fingerprint_hwservice:s0
+# Project Infinity-X (tecno CM6): Goodix/MTK-ITran/fptool HIDL entries removed
+# with the AIDL migration; only the ANC extension + fpsensor hwservices used
+# by the stock engine blobs remain.
 vendor.fpsensor.hardware.fpsensorhidlsvc::IFpsensorHidlSvc                     u:object_r:fp_ext_svc2_hwservice:s0
 com.anc.fingerprint.extension::IFingerprintExtension                           u:object_r:anc_extension_hwservice:s0
 

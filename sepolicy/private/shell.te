@@ -1,0 +1,3 @@
+# Debug/ctl properties of the jiiov fingerprint HAL (vendor.fp.hbm_inject,
+# vendor.fp.fpctl) are driven by hand from an adb shell.
+set_prop(shell, vendor_fingerprint_prop)

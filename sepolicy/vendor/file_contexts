@@ -17,9 +17,11 @@
 /sys/devices/platform/extcon_usb/extcon/extcon0/cable.1/state                           u:object_r:sysfs_OTG_STATE_file:s0
 
 # Fingerprint
+# Project Infinity-X (tecno CM6): explicit label for our AIDL service binary
+# (the generic regex below is kept for compatibility but matches it too).
+/(system\/vendor|vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.jiiov   u:object_r:hal_fingerprint_default_exec:s0
 /dev/fortsense_fp                                                                               u:object_r:fingerprint_device:s0
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint(@[0-9]+\.[0-9]+)?(-[a-zA-Z0-9._-]+)?(\..+)?   u:object_r:hal_fingerprint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.fptool\.fingerprint@2\.0-service      u:object_r:hal_fingerprint_default_exec:s0
 /sys/kernel/tran_fp(/.*)?                                                                       u:object_r:sysfs_fp_name_path:s0
 /data/vendor/goodix/gf_data(/.*)?                                                               u:object_r:vendor_gf_data_file:s0
 /dev/jiiov_fp                                                                                    u:object_r:jiiov_fp_device:s0

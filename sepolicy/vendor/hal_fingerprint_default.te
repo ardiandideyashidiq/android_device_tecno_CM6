@@ -1,11 +1,38 @@
-hal_server_domain(hal_fingerprint_default, hal_fingerprint)
+# Deliberately NOT a halserverdomain member: system/sepolicy's
+# hal_neverallow forbids net_admin for HAL servers, but this HAL delivers its
+# HBM capture signal via addressed kobject-uevent sendto, which the kernel
+# gates on CAP_NET_ADMIN (NL_NONROOT_SEND is unset for that family).
+#
+# hal_server_domain() equivalents, replicated manually (the platform's
+# public/attributes guard neverallow blocks holding hal_fingerprint_server
+# without halserverdomain membership, so the attributes themselves are
+# dropped and their grants are written out against concrete types):
+allow hal_fingerprint_client hal_fingerprint_default:binder { call transfer };
+allow hal_fingerprint_default hal_fingerprint_client:binder { call transfer };
+binder_use(hal_fingerprint_default);
+allow hal_fingerprint_default jiiov_fp_service:service_manager { add find };
+allow hal_fingerprint_client jiiov_fp_service:service_manager find;
+allow hal_fingerprint_default ion_device:chr_file r_file_perms;
+allow hal_fingerprint_default fingerprint_vendor_data_file:dir rw_dir_perms;
+allow hal_fingerprint_default fingerprint_vendor_data_file:file create_file_perms;
+r_dir_file(hal_fingerprint_default, cgroup)
+r_dir_file(hal_fingerprint_default, cgroup_v2)
+r_dir_file(hal_fingerprint_default, sysfs)
+
+allow hal_fingerprint_default self:capability net_admin;
 
 allow hal_fingerprint_default input_device:chr_file rw_file_perms;
 allow hal_fingerprint_default input_device:dir r_dir_perms;
 allow hal_fingerprint_default mnt_vendor_file:dir search;
 allow hal_fingerprint_default persist_data_file:dir create_dir_perms;
 allow hal_fingerprint_default persist_data_file:file create_file_perms;
-allow hal_fingerprint_default self:netlink_kobject_uevent_socket { read write create bind setopt };
+# The HBM capture signal is delivered as an addressed kobject-uevent sendto,
+# which the kernel gates on CAP_NET_ADMIN (NL_NONROOT_SEND is not set for
+# this netlink family); the engine also multicasts uevents itself.
+# halserverdomain equivalents (we opted out above)
+allow hal_fingerprint_default system_file:dir r_dir_perms;
+get_prop(hal_fingerprint_default, hwservicemanager_prop)
+allow hal_fingerprint_default self:netlink_kobject_uevent_socket { read write create bind setopt sendto };
 allow hal_fingerprint_default sysfs_fp_name_path:dir r_dir_perms;
 allow hal_fingerprint_default sysfs_fp_name_path:file rw_file_perms;
 allow hal_fingerprint_default sysfs_tran_display:file rw_file_perms;
@@ -33,10 +60,12 @@ hal_client_domain(hal_fingerprint_default, hal_health)
 
 get_prop(hal_fingerprint_default, boot_status_prop)
 get_prop(hal_fingerprint_default, vendor_fingerprint_prop)
+# engine probes ro.serialno from a binder thread; platform neverallows HAL
+# access and it proceeds fine on denial - just silence the noise
+dontaudit hal_fingerprint_default serialno_prop:file r_file_perms;
 set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
 set_prop(hal_fingerprint_default, vendor_mtk_default_prop)
 
-# Transsion fingerprint daemon AIDL service registration
-allow hal_fingerprint_default hal_fingerprint_service:service_manager { add find };
+# AIDL service registration under vendor label (see service_contexts)
 set_prop(hal_fingerprint_default, vendor_transsion_fingerprint_prop)
 set_prop(hal_fingerprint_default, vendor_tran_fp_status_prop)
