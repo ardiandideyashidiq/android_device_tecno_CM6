@@ -45,6 +45,10 @@ static std::atomic<bool> gIlluminating{false};
 // Set when `setprop vendor.fp.fpctl 3` requests a purge of orphaned
 // TEE-side templates: next enumerated-list event removes every id.
 static std::atomic<bool> gRemoveAllPending{false};
+// True while the current op was started by detectInteraction(); needed
+// because both detect and authenticate drive the same engine op and the
+// engine signals both outcomes through one event (see onEngineEvent 5).
+static std::atomic<bool> gDetectActive{false};
 
 // Legacy vendor codes (see emitAcquired): 1002 = finger down, 1003 = up.
 // The optical sensor can only capture under full-panel illumination, and the
@@ -235,6 +239,8 @@ static void emitError(int32_t legacyError) {
             break;
     }
     ALOGW_ENG("error legacy=%d aidl=%d", legacyError, static_cast<int32_t>(e));
+    gOpActive = false;
+    gDetectActive = false;
     stopCaptureLight();
     cb->onError(e, 0);
 }
@@ -242,6 +248,7 @@ static void emitError(int32_t legacyError) {
 ndk::ScopedAStatus CancellationSignal::cancel() {
     ALOGI_ENG("cancellation requested");
     gOpActive = false;
+    gDetectActive = false;
     Engine::get().cancel();
     stopCaptureLight();
     emitError(5);
@@ -277,13 +284,36 @@ void Session::onEngineEvent(uint32_t type, uint64_t a1, uint64_t a2, uint64_t a3
             emitAcquired(a1);
             break;
         case 5: {
-            const uint8_t* hatRaw = (a4 == 69 && a3 != 0) ? reinterpret_cast<const uint8_t*>(a3)
-                                                          : nullptr;
-            HardwareAuthToken hat = parseHat(hatRaw);
-            ALOGI_ENG("authenticated fid=%u", (uint32_t)a1);
-            gOpActive = false;
-            stopCaptureLight();
-            if (mCb) mCb->onAuthenticationSucceeded(static_cast<int32_t>(a1), hat);
+            // The engine emits this event for every completed capture:
+            // fid != 0 means a genuine match (with the 69-byte HAT in
+            // a3/a4), fid == 0 means either detect-interaction completion
+            // or a non-match. The framework trusts onAuthenticationSucceeded
+            // unconditionally (AidlResponseHandler passes authenticated=true
+            // regardless of the id), so a blind forward here unlocks the
+            // device for any finger. Non-matches must go through
+            // onAuthenticationFailed() instead.
+            const uint32_t fid = static_cast<uint32_t>(a1);
+            ALOGI_ENG("auth result fid=%u", fid);
+            if (!mCb) break;
+            if (fid != 0) {
+                gOpActive = false;
+                stopCaptureLight();
+                const uint8_t* hatRaw =
+                        (a4 == 69 && a3 != 0) ? reinterpret_cast<const uint8_t*>(a3)
+                                              : nullptr;
+                mCb->onAuthenticationSucceeded(static_cast<int32_t>(fid),
+                                               parseHat(hatRaw));
+            } else if (gDetectActive.exchange(false)) {
+                gOpActive = false;
+                stopCaptureLight();
+                mCb->onAuthenticationSucceeded(0, HardwareAuthToken{});
+            } else if (gOpActive.load()) {
+                // Non-match inside a live authenticate(): the framework
+                // retries further touches within the SAME operation, so
+                // gOpActive/illumination must stay armed or every capture
+                // after the first failure goes dark.
+                mCb->onAuthenticationFailed();
+            }
             break;
         }
         case 4:
@@ -350,6 +380,7 @@ ndk::ScopedAStatus Session::enroll(const HardwareAuthToken& hat,
     }
     uint8_t raw[69];
     serializeHat(hat, raw);
+    gDetectActive = false;
     gOpActive = true;
     Engine::get().enroll(raw);
     *out = ndk::SharedRefBase::make<CancellationSignal>();
@@ -364,6 +395,7 @@ ndk::ScopedAStatus Session::authenticate(int64_t operationId,
         return ndk::ScopedAStatus::ok();
     }
     armFod();
+    gDetectActive = false;
     gOpActive = true;
     Engine::get().authenticate(static_cast<uint64_t>(operationId));
     *out = ndk::SharedRefBase::make<CancellationSignal>();
@@ -377,6 +409,7 @@ ndk::ScopedAStatus Session::detectInteraction(std::shared_ptr<ICancellationSigna
         return ndk::ScopedAStatus::ok();
     }
     armFod();
+    gDetectActive = true;
     gOpActive = true;
     Engine::get().authenticate(0);
     *out = ndk::SharedRefBase::make<CancellationSignal>();
