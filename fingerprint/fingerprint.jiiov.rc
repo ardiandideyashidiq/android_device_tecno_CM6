@@ -1,0 +1,10 @@
+service fingerprint.jiiov /vendor/bin/hw/android.hardware.biometrics.fingerprint-service.jiiov
+    class hal
+    user system
+    group system input
+    capabilities NET_ADMIN
+    interface aidl android.hardware.biometrics.fingerprint.IFingerprint/default
+
+on post-fs-data
+    mkdir /data/vendor/fingerprint/ 0771 system system
+    mkdir /mnt/vendor/persist/fingerprint 0771 system system

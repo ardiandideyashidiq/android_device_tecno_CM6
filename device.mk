@@ -244,6 +244,10 @@ PRODUCT_PACKAGES += \
     android.hardware.security.rkp-V3-ndk.vendor:64 \
     libcppbor_external.vendor:64
 
+# Fingerprint (in-tree AIDL HAL hosting the prebuilt jiiov/ANC engine)
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint-service.jiiov
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
