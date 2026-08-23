@@ -8,3 +8,8 @@ service fingerprint.jiiov /vendor/bin/hw/android.hardware.biometrics.fingerprint
 on post-fs-data
     mkdir /data/vendor/fingerprint/ 0771 system system
     mkdir /mnt/vendor/persist/fingerprint 0771 system system
+
+on boot
+    # focaltech FOD rect node ships root:root 0644; the HAL (uid system)
+    # arms the FOD area through it on every authenticate().
+    chmod 0666 /sys/devices/platform/soc/11019000.spi5/spi_master/spi5/spi5.0/special_area

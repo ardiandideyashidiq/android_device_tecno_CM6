@@ -1,10 +1,10 @@
 // Device glue: FOD touch arming, panel HBM, and the synthetic HBM uevent.
 //
 // Evidence chain (see session notes):
-//  - The real FOD node is /sys/devices/platform/soc/11019000.spi5/spi_master/
-//    spi5/spi5.0/special_area (focaltech_ft3683g); the /sys/devices/platform/
-//    hot-area symlink path rejects writes with EACCES. Writing "1 ..." arms
-//    it ("enable"); KEY(195) events then arrive on the touch input device.
+//  - The focaltech FOD node special_area is root:root 0664, so every write
+//    from uid=system fails with EACCES; enrollment was nevertheless verified
+//    end-to-end with all such writes failing, so arming relies solely on
+//    /proc/fingerprint_status below (the stock HAL's per-session arm).
 //  - /proc/fingerprint_status (write-only, value "2") is the stock HAL's
 //    per-session arm of the same path.
 //  - The engine's HbmEventDetect worker binds NETLINK_KOBJECT_UEVENT and
@@ -31,9 +31,28 @@ namespace biometrics {
 namespace fingerprint {
 namespace jiiov {
 
-static constexpr const char* kSpecialArea =
-        "/sys/devices/platform/soc/11019000.spi5/spi_master/spi5/spi5.0/"
-        "special_area";
+// The focaltech FOD node appears at different sysfs paths depending on when
+// the spi slave device probes relative to the master (observed both as
+// .../11019000.spi5/special_area and nested under
+// .../11019000.spi5/spi_master/spi5/spi5.0/). Resolve once per process.
+inline const char* specialAreaPath() {
+    static const char* candidates[] = {
+            "/sys/devices/platform/soc/11019000.spi5/special_area",
+            "/sys/devices/platform/soc/11019000.spi5/spi_master/spi5/spi5.0/"
+            "special_area",
+    };
+    static const char* resolved = nullptr;
+    if (!resolved) {
+        for (const char* p : candidates) {
+            if (access(p, W_OK) == 0) {
+                resolved = p;
+                break;
+            }
+        }
+        resolved = resolved ? resolved : candidates[0];
+    }
+    return resolved;
+}
 static constexpr const char* kSpecialAreaArm =
         "1 0 0 0 7920 34544 9360 35984 1";
 static constexpr const char* kFingerprintStatus = "/proc/fingerprint_status";
@@ -58,7 +77,7 @@ inline void setFingerprintStatus(int v) {
 }
 
 inline void armFod() {
-    writeNode(kSpecialArea, kSpecialAreaArm);
+    writeNode(specialAreaPath(), kSpecialAreaArm);
     setFingerprintStatus(2);
 }
 
@@ -69,7 +88,7 @@ inline void armFod(int32_t x, int32_t y) {
 }
 
 inline void disarmFod() {
-    writeNode(kSpecialArea, "0");
+    writeNode(specialAreaPath(), "0");
     setFingerprintStatus(0);
 }
 
@@ -81,9 +100,11 @@ inline void hbmOff() {
     writeNode(kLcmHbmState, "0");
 }
 
-// Broadcasts a kernel-style uevent on NETLINK_KOBJECT_UEVENT multicast
-// group 1. Requires CAP_NET_ADMIN (we run as root). The engine's
-// HbmEventDetect thread receives it like any kernel-originated event.
+// Delivers a kernel-style uevent to the engine's HbmEventDetect socket.
+// That worker binds NETLINK_KOBJECT_UEVENT with nl_pid = getpid() and
+// nl_groups = 0xFFFFFFFF, so addressing it by port id (unicast) works
+// without CAP_NET_ADMIN - multicast sendto would require it, which the
+// platform neverallow for HAL domains forbids granting.
 inline bool injectUevent(const std::string& devpath,
                          const std::string& subsystem,
                          const std::string& key, const std::string& value) {
@@ -94,8 +115,8 @@ inline bool injectUevent(const std::string& devpath,
     }
     sockaddr_nl sa{};
     sa.nl_family = AF_NETLINK;
-    sa.nl_pid = 0;
-    sa.nl_groups = 1;
+    sa.nl_pid = getpid();
+    sa.nl_groups = 0;
 
     std::string payload = "change@" + devpath;
     payload.push_back('\0');
