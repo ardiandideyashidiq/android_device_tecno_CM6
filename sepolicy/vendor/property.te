@@ -24,3 +24,6 @@ vendor_internal_prop(vendor_trustonic_ready_prop);
 
 # Fingerprint HAL publishes its display module name
 vendor_internal_prop(vendor_transsion_fingerprint_prop);
+
+# Fingerprint HAL finger-present status broadcast
+vendor_internal_prop(vendor_tran_fp_status_prop);

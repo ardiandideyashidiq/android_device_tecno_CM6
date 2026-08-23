@@ -30,6 +30,7 @@ vendor.fp.goodix.Y.offset                   u:object_r:vendor_fingerprint_prop:s
 vendor.fp.center.X.offset                   u:object_r:vendor_fingerprint_prop:s0
 vendor.fp.center.Y.offset                   u:object_r:vendor_fingerprint_prop:s0
 vendor.fp.QRCode                            u:object_r:vendor_fingerprint_prop:s0
+vendor.tran.fp.status                       u:object_r:vendor_tran_fp_status_prop:s0
 vendor.anc.fingerprint.                     u:object_r:vendor_fingerprint_prop:s0
 vendor.fp.transsion.lcmname                 u:object_r:vendor_fingerprint_prop:s0
 # jiiov HAL sets the panel chip id at startup; matches stock vendor_property_contexts

@@ -13,6 +13,9 @@ allow hal_fingerprint_default sysfs_tran_display:dir r_dir_perms;
 allow hal_fingerprint_default vndbinder_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_fingerprint_default vendor_gf_data_file:dir create_dir_perms;
 allow hal_fingerprint_default vendor_gf_data_file:file create_file_perms;
+allow hal_fingerprint_default fpdump_vendor_data_file:dir create_dir_perms;
+allow hal_fingerprint_default fpdump_vendor_data_file:file create_file_perms;
+allow hal_fingerprint_default self:unix_stream_socket { create bind read write getattr setattr lock append connect getopt setopt };
 allow hal_fingerprint_default property_socket:sock_file write;
 allow hal_fingerprint_default fs_service:service_manager { add find };
 allow hal_fingerprint_default sw_service:service_manager { add find };
@@ -35,3 +38,4 @@ set_prop(hal_fingerprint_default, vendor_mtk_default_prop)
 # Transsion fingerprint daemon AIDL service registration
 allow hal_fingerprint_default hal_fingerprint_service:service_manager { add find };
 set_prop(hal_fingerprint_default, vendor_transsion_fingerprint_prop)
+set_prop(hal_fingerprint_default, vendor_tran_fp_status_prop)

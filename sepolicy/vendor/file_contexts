@@ -24,6 +24,7 @@
 /data/vendor/goodix/gf_data(/.*)?                                                               u:object_r:vendor_gf_data_file:s0
 /dev/jiiov_fp                                                                                    u:object_r:jiiov_fp_device:s0
 /data/vendor/jiiov(/.*)?                                                                         u:object_r:jiiov_vendor_data_file:s0
+/data/vendor/fpdump(/.*)?                                                                       u:object_r:fpdump_vendor_data_file:s0
 
 # Health
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.health@2\.1-service         u:object_r:hal_health_default_exec:s0
