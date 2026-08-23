@@ -1,1 +1,6 @@
-# 
+#Fingerprint optical local HBM support
+    ro.tr_fingerprint.local.hbm.support=1
+    ro.tr_fingerprint.local.hbm.without.dim.support=true
+    ro.tr_fingerprint.optical.feature.support=true
+    ro.tr_light.hbm.v2.lcd.level=5119
+    ro.tr_light.hbm.v2.oled.level=5119
