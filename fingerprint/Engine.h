@@ -103,7 +103,8 @@ class Engine {
                 reinterpret_cast<int (*)(void*, uint64_t)>(dlsym(mLib, "AncAuthenticate"));
         mCancel = reinterpret_cast<int (*)(void*)>(dlsym(mLib, "AncCancel"));
         mEnumerate = reinterpret_cast<int (*)(void*)>(dlsym(mLib, "AncEnumerate"));
-        mRemove = reinterpret_cast<int (*)(void*, int32_t)>(dlsym(mLib, "AncRemove"));
+        mRemove = reinterpret_cast<int (*)(void*, const uint32_t*, uint32_t)>(
+                dlsym(mLib, "AncRemove"));
         mSetActiveGroup = reinterpret_cast<int (*)(void*, int32_t, const char*)>(
                 dlsym(mLib, "AncSetActiveGroup"));
         mPointerDown = reinterpret_cast<int (*)(void*, uintptr_t, uintptr_t, uintptr_t, uintptr_t,
@@ -149,7 +150,16 @@ class Engine {
     }
     void cancel() { invoke([this](void* h) { return mCancel(h); }); }
     void enumerate() { invoke([this](void* h) { return mEnumerate(h); }); }
-    void remove(int32_t fid) { invoke([&](void* h) { return mRemove(h, fid); }); }
+    // FpmRemove(manager, const uint32_t* ids, uint32_t count) — verified in
+    // disassembly: iterates ids[] calling DeleteFingerprint() per entry; a
+    // bare id in x1 is misread as an array pointer (silent no-op).
+    void remove(int32_t fid) {
+        invoke([&](void* h) {
+            if (fid == 0) return 0;
+            const uint32_t ids[1] = {static_cast<uint32_t>(fid)};
+            return mRemove(h, ids, 1);
+        });
+    }
     void setActiveGroup(int32_t gid, const char* path) {
         invoke([&](void* h) { return mSetActiveGroup(h, gid, path); });
     }
@@ -221,7 +231,7 @@ class Engine {
     int (*mAuthenticate)(void*, uint64_t) = nullptr;
     int (*mCancel)(void*) = nullptr;
     int (*mEnumerate)(void*) = nullptr;
-    int (*mRemove)(void*, int32_t) = nullptr;
+    int (*mRemove)(void*, const uint32_t*, uint32_t) = nullptr;
     int (*mSetActiveGroup)(void*, int32_t, const char*) = nullptr;
     int (*mPointerDown)(void*, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t) = nullptr;
     int (*mPointerUp)(void*, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t) = nullptr;

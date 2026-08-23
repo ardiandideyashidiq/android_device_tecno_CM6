@@ -1,19 +1,19 @@
 // Device glue: FOD touch arming, panel HBM, and the synthetic HBM uevent.
 //
 // Evidence chain (see session notes):
-//  - /sys/devices/platform/hot-area/special_area  arms the focaltech FOD zone;
-//    after arming, KEY(195) events arrive on /dev/input/event4 (mtk-tpd).
+//  - The real FOD node is /sys/devices/platform/soc/11019000.spi5/spi_master/
+//    spi5/spi5.0/special_area (focaltech_ft3683g); the /sys/devices/platform/
+//    hot-area symlink path rejects writes with EACCES. Writing "1 ..." arms
+//    it ("enable"); KEY(195) events then arrive on the touch input device.
 //  - /proc/fingerprint_status (write-only, value "2") is the stock HAL's
 //    per-session arm of the same path.
 //  - The engine's HbmEventDetect worker binds NETLINK_KOBJECT_UEVENT and
-//    parses TRAN_FULL_HBM_EVENT=<value> (anc.hal.so @0x3c098 socket(AF_NETLINK,
-//    SOCK_RAW, 15); strings "get hbm event, TRAN_FULL_HBM_EVENT=%s").
-//  - Stock kernel never emits that uevent on this build (no disp_dbg nodes,
-//    no DRM prop; sysfs lcm_hbm_state bypasses mtk_disp_notifier), so we set
-//    HBM via sysfs and inject the uevent ourselves (verified working as root:
-//    sendto group 1 delivered to a bound receiver).
+//    parses TRAN_FULL_HBM_EVENT=%s; without that event PressEnroll fails
+//    with "wait hbm ready time out, ret value: 37" (~630 ms after touch).
 #pragma once
 
+#include <cutils/properties.h>
+#include <thread>
 #include <utils/Log.h>
 
 #include <linux/netlink.h>
@@ -32,7 +32,8 @@ namespace fingerprint {
 namespace jiiov {
 
 static constexpr const char* kSpecialArea =
-        "/sys/devices/platform/hot-area/special_area";
+        "/sys/devices/platform/soc/11019000.spi5/spi_master/spi5/spi5.0/"
+        "special_area";
 static constexpr const char* kSpecialAreaArm =
         "1 0 0 0 7920 34544 9360 35984 1";
 static constexpr const char* kFingerprintStatus = "/proc/fingerprint_status";
@@ -72,15 +73,6 @@ inline void disarmFod() {
     setFingerprintStatus(0);
 }
 
-inline void initOnce() {
-    static bool done = [] {
-        armFod();
-        return true;
-    }();
-    (void)done;
-}
-
-// Physically illuminates the panel. Does NOT satisfy the engine by itself.
 inline void hbmOn() {
     writeNode(kLcmHbmState, "1");
 }
@@ -128,20 +120,58 @@ inline bool injectUevent(const std::string& devpath,
     return true;
 }
 
-// Full illumination sequence used before each capture window.
 inline void illuminateForCapture() {
     hbmOn();
-    // Give the panel a beat to reach full brightness before telling the
-    // engine capture may begin (stock logs ~88ms between acquired and HBM).
     usleep(90000);
-    injectUevent("/devices/virtual/fod", "fod",
-                 "TRAN_FULL_HBM_EVENT", "FULL_HBM_SET");
+    injectUevent("/devices/virtual/fod", "fod", "TRAN_FULL_HBM_EVENT",
+                 "FULL_HBM_SET");
 }
 
 inline void endIllumination() {
-    injectUevent("/devices/virtual/fod", "fod",
-                 "TRAN_FULL_HBM_EVENT", "FULL_HBM_CLEAR");
+    injectUevent("/devices/virtual/fod", "fod", "TRAN_FULL_HBM_EVENT",
+                 "FULL_HBM_CLEAR");
     hbmOff();
+}
+
+// Debug hook: `setprop vendor.fp.hbm_inject 1` fires the full-illumination
+// sequence by hand so the HBM-wait hypothesis can be validated on device
+// without a rebuild of the capture path.
+inline void initOnce() {
+    static bool done = [] {
+        armFod();
+        static std::thread t([] {
+            char buf[PROP_VALUE_MAX] = {0};
+            while (true) {
+                const prop_info* pi =
+                        __system_property_find("vendor.fp.hbm_inject");
+                if (pi != nullptr) {
+                    __system_property_read_callback(
+                            pi,
+                            [](void* cookie, const char*, const char* value,
+                               uint32_t) {
+                                strncpy(static_cast<char*>(cookie), value,
+                                        PROP_VALUE_MAX - 1);
+                            },
+                            buf);
+                    if (buf[0] == '1') {
+                        ALOGI("manual hbm inject (set)");
+                        illuminateForCapture();
+                        property_set("vendor.fp.hbm_inject", "0");
+                        buf[0] = 0;
+                    } else if (buf[0] == '2') {
+                        ALOGI("manual hbm inject (clear)");
+                        endIllumination();
+                        property_set("vendor.fp.hbm_inject", "0");
+                        buf[0] = 0;
+                    }
+                }
+                usleep(80000);
+            }
+        });
+        t.detach();
+        return true;
+    }();
+    (void)done;
 }
 
 }  // namespace jiiov

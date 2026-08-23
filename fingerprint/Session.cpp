@@ -15,10 +15,15 @@
  */
 #include "Session.h"
 
+#include <atomic>
 #include <chrono>
 #include <condition_variable>
 #include <cstring>
 #include <memory>
+#include <thread>
+
+#include <cutils/properties.h>
+#include <endian.h>
 
 namespace aidl {
 namespace android {
@@ -33,10 +38,83 @@ using ::aidl::android::hardware::keymaster::HardwareAuthToken;
 static std::mutex gCbMutex;
 static std::weak_ptr<ISessionCallback> gSessionCb;
 static std::weak_ptr<Session> gActiveSession;
+// True while an enroll/authenticate/detectInteraction op is in flight.
+// Gates panel illumination so idle touches never light up the display.
+static std::atomic<bool> gOpActive{false};
+static std::atomic<bool> gIlluminating{false};
+// Set when `setprop vendor.fp.fpctl 3` requests a purge of orphaned
+// TEE-side templates: next enumerated-list event removes every id.
+static std::atomic<bool> gRemoveAllPending{false};
+
+// Legacy vendor codes (see emitAcquired): 1002 = finger down, 1003 = up.
+// The optical sensor can only capture under full-panel illumination, and the
+// engine's PressEnroll/PressAuth stages block until the TRAN_FULL_HBM_EVENT
+// uevent arrives (decompiled gate: strncmp "TRAN_FULL_HBM_EVENT=" +
+// strcmp "FULL_HBM_SET" in InitHbmEventDetectWorker @0x3c430).
+static void startCaptureLight() {
+    if (gIlluminating.exchange(true)) return;
+    ALOGI_ENG("finger down -> illuminating for capture");
+    illuminateForCapture();
+}
+
+static void stopCaptureLight() {
+    if (!gIlluminating.exchange(false)) return;
+    ALOGI_ENG("finger up/op end -> ending illumination");
+    endIllumination();
+}
+
+// Defer template deletion off the caller: Fpm* ops hold the manager mutex
+// across their whole run (and across notify callbacks), so calling
+// FpmRemove synchronously from an engine-event context self-deadlocks.
+static void scheduleRemove(std::vector<int32_t> ids) {
+    std::thread([ids = std::move(ids)] {
+        for (int32_t id : ids) {
+            ALOGI_ENG("deferred remove id=%d", id);
+            Engine::get().remove(id);
+            usleep(50000);
+        }
+    }).detach();
+}
 
 void setActiveSession(const std::shared_ptr<Session>& s) {
     std::lock_guard<std::mutex> l(gCbMutex);
     gActiveSession = s;
+}
+
+// Debug/control hook: `setprop vendor.fp.fpctl 3` purges orphaned TEE
+// templates (enumerate -> remove all). Started once with the first session.
+static void startCtlWatcher() {
+    static bool started = [] {
+        static std::thread t([] {
+            char buf[PROP_VALUE_MAX] = {0};
+            while (true) {
+                const prop_info* pi = __system_property_find("vendor.fp.fpctl");
+                if (pi != nullptr) {
+                    __system_property_read_callback(
+                            pi,
+                            [](void* cookie, const char*, const char* value,
+                               uint32_t) {
+                                strncpy(static_cast<char*>(cookie), value,
+                                        PROP_VALUE_MAX - 1);
+                            },
+                            buf);
+                    if (buf[0] == '3') {
+                        ALOGI_ENG("fpctl: purge requested");
+                        if (gOpActive.exchange(false)) Engine::get().cancel();
+                        stopCaptureLight();
+                        gRemoveAllPending = true;
+                        Engine::get().enumerate();
+                        property_set("vendor.fp.fpctl", "0");
+                        buf[0] = 0;
+                    }
+                }
+                usleep(120000);
+            }
+        });
+        t.detach();
+        return true;
+    }();
+    (void)started;
 }
 
 void engineNotifyThunk(uint32_t type, uint64_t a1, uint64_t a2, uint64_t a3,
@@ -57,46 +135,50 @@ static std::shared_ptr<ISessionCallback> activeCallback() {
 static HardwareAuthToken parseHat(const uint8_t* raw) {
     HardwareAuthToken hat{};
     if (raw == nullptr) return hat;
-    uint32_t version = 0, type = 0, timestamp = 0;
-    memcpy(&version, raw, 4);
-    memcpy(&hat.challenge, raw + 4, 8);
-    memcpy(&hat.userId, raw + 12, 8);
-    memcpy(&hat.authenticatorId, raw + 20, 8);
-    memcpy(&type, raw + 28, 4);
-    memcpy(&timestamp, raw + 32, 4);
-    hat.authenticatorType = static_cast<HardwareAuthenticatorType>(type);
-    hat.timestamp.milliSeconds = timestamp;
+    uint64_t type = 0, millis = 0;
+    memcpy(&hat.challenge, raw + 1, 8);
+    memcpy(&hat.userId, raw + 9, 8);
+    memcpy(&hat.authenticatorId, raw + 17, 8);
+    memcpy(&type, raw + 25, 4);
+    memcpy(&millis, raw + 29, 8);
+    hat.authenticatorType = static_cast<HardwareAuthenticatorType>(be32toh(type));
+    hat.timestamp.milliSeconds = static_cast<int64_t>(be64toh(millis));
     hat.mac.resize(32);
-    memcpy(hat.mac.data(), raw + 36, 32);
-    ALOGD_ENG("hat ver=%u chal=%lld uid=%lld aid=%llu type=%u ts=%u", version,
+    memcpy(hat.mac.data(), raw + 37, 32);
+    ALOGD_ENG("hat chal=%lld uid=%lld aid=%llu type=%u ts=%lld",
               (long long)static_cast<int64_t>(hat.challenge),
               (long long)static_cast<int64_t>(hat.userId),
-              (unsigned long long)static_cast<uint64_t>(hat.authenticatorId), type,
-              timestamp);
+              (unsigned long long)static_cast<uint64_t>(hat.authenticatorId),
+              be32toh(type), (long long)static_cast<int64_t>(be64toh(millis)));
     return hat;
 }
 
+// Legacy 69-byte token layout as marshaled by the stock wrapper
+// (@0x91a0): u8 version=0 | challenge | userId | authenticatorId |
+// authenticatorType (BE32) | timestamp (BE64) | hmac[32].
 static void serializeHat(const HardwareAuthToken& hat, uint8_t out[69]) {
     memset(out, 0, 69);
-    uint32_t version = 0;
     uint64_t challenge = static_cast<uint64_t>(hat.challenge);
     uint64_t user_id = static_cast<uint64_t>(hat.userId);
     uint64_t authenticator_id = static_cast<uint64_t>(hat.authenticatorId);
-    uint32_t type = static_cast<uint32_t>(hat.authenticatorType);
-    uint32_t timestamp =
-            static_cast<uint32_t>(hat.timestamp.milliSeconds & 0xffffffffu);
+    uint32_t type =
+            htobe32(static_cast<uint32_t>(hat.authenticatorType));
+    uint64_t timestamp =
+            htobe64(static_cast<uint64_t>(hat.timestamp.milliSeconds));
     uint8_t hmac[32];
     memset(hmac, 0, sizeof(hmac));
     size_t n = hat.mac.size() < 32 ? hat.mac.size() : 32;
     if (n > 0) memcpy(hmac, hat.mac.data(), n);
 
-    memcpy(out + 0, &version, 4);
-    memcpy(out + 4, &challenge, 8);
-    memcpy(out + 12, &user_id, 8);
-    memcpy(out + 20, &authenticator_id, 8);
-    memcpy(out + 28, &type, 4);
-    memcpy(out + 32, &timestamp, 4);
-    memcpy(out + 36, hmac, 32);
+    out[0] = 0;
+    memcpy(out + 1, &challenge, 8);
+    memcpy(out + 9, &user_id, 8);
+    memcpy(out + 17, &authenticator_id, 8);
+    memcpy(out + 25, &type, 4);
+    memcpy(out + 29, &timestamp, 8);
+    memcpy(out + 37, hmac, 32);
+    ALOGD_ENG("enroll hat: mac_len=%zu chal=%lld", hat.mac.size(),
+              (long long)static_cast<int64_t>(hat.challenge));
 }
 
 // Legacy fingerprint_acquired_info_t -> AIDL AcquiredInfo. Mapping recovered
@@ -108,6 +190,11 @@ static void emitAcquired(uint64_t legacy) {
     if (!cb) return;
     int32_t info = static_cast<int32_t>(legacy);
     ALOGD_ENG("acquired legacy=%d", info);
+    if (info == 1002) {
+        if (gOpActive.load()) startCaptureLight();
+    } else if (info == 1003) {
+        stopCaptureLight();
+    }
     if (info >= 1000) {
         cb->onAcquired(AcquiredInfo::VENDOR, info - 1000);
         return;
@@ -148,12 +235,15 @@ static void emitError(int32_t legacyError) {
             break;
     }
     ALOGW_ENG("error legacy=%d aidl=%d", legacyError, static_cast<int32_t>(e));
+    stopCaptureLight();
     cb->onError(e, 0);
 }
 
 ndk::ScopedAStatus CancellationSignal::cancel() {
     ALOGI_ENG("cancellation requested");
+    gOpActive = false;
     Engine::get().cancel();
+    stopCaptureLight();
     emitError(5);
     return ndk::ScopedAStatus::ok();
 }
@@ -165,6 +255,7 @@ void Session::setCallback(const std::shared_ptr<ISessionCallback>& cb) {
     mCb = cb;
     std::lock_guard<std::mutex> l(gCbMutex);
     gSessionCb = cb;
+    startCtlWatcher();
 }
 
 void Session::onEngineEvent(uint32_t type, uint64_t a1, uint64_t a2, uint64_t a3,
@@ -176,6 +267,10 @@ void Session::onEngineEvent(uint32_t type, uint64_t a1, uint64_t a2, uint64_t a3
             break;
         case 3:
             ALOGI_ENG("enroll fid=%u remaining=%u", (uint32_t)a1, (uint32_t)a3);
+            if (a3 == 0) {
+                gOpActive = false;
+                stopCaptureLight();
+            }
             if (mCb) mCb->onEnrollmentProgress(static_cast<int32_t>(a1), static_cast<int32_t>(a3));
             break;
         case 1:
@@ -186,6 +281,8 @@ void Session::onEngineEvent(uint32_t type, uint64_t a1, uint64_t a2, uint64_t a3
                                                           : nullptr;
             HardwareAuthToken hat = parseHat(hatRaw);
             ALOGI_ENG("authenticated fid=%u", (uint32_t)a1);
+            gOpActive = false;
+            stopCaptureLight();
             if (mCb) mCb->onAuthenticationSucceeded(static_cast<int32_t>(a1), hat);
             break;
         }
@@ -196,6 +293,19 @@ void Session::onEngineEvent(uint32_t type, uint64_t a1, uint64_t a2, uint64_t a3
             std::vector<int32_t> list;
             if (ids != nullptr && count > 0 && count < 1024) {
                 list.assign(ids, ids + count);
+            }
+            if (type == 6 && gRemoveAllPending.exchange(false)) {
+                std::vector<int32_t> doomed;
+                for (int32_t id : list) {
+                    if (id != 0) doomed.push_back(id);
+                }
+                if (doomed.empty()) {
+                    ALOGI_ENG("fpctl purge: nothing to remove");
+                } else {
+                    ALOGI_ENG("fpctl purge: scheduling removal of %zu ids",
+                              doomed.size());
+                    scheduleRemove(doomed);
+                }
             }
             if (type == 4) {
                 ALOGI_ENG("removed %zu ids", list.size());
@@ -240,6 +350,7 @@ ndk::ScopedAStatus Session::enroll(const HardwareAuthToken& hat,
     }
     uint8_t raw[69];
     serializeHat(hat, raw);
+    gOpActive = true;
     Engine::get().enroll(raw);
     *out = ndk::SharedRefBase::make<CancellationSignal>();
     return ndk::ScopedAStatus::ok();
@@ -253,6 +364,7 @@ ndk::ScopedAStatus Session::authenticate(int64_t operationId,
         return ndk::ScopedAStatus::ok();
     }
     armFod();
+    gOpActive = true;
     Engine::get().authenticate(static_cast<uint64_t>(operationId));
     *out = ndk::SharedRefBase::make<CancellationSignal>();
     return ndk::ScopedAStatus::ok();
@@ -265,6 +377,7 @@ ndk::ScopedAStatus Session::detectInteraction(std::shared_ptr<ICancellationSigna
         return ndk::ScopedAStatus::ok();
     }
     armFod();
+    gOpActive = true;
     Engine::get().authenticate(0);
     *out = ndk::SharedRefBase::make<CancellationSignal>();
     return ndk::ScopedAStatus::ok();
@@ -279,7 +392,7 @@ ndk::ScopedAStatus Session::enumerateEnrollments() {
 ndk::ScopedAStatus Session::removeEnrollments(const std::vector<int32_t>& enrollmentIds) {
     for (int32_t id : enrollmentIds) {
         ALOGI_ENG("removeEnrollment %d", id);
-        Engine::get().remove(id);
+        scheduleRemove({id});
     }
     return ndk::ScopedAStatus::ok();
 }
