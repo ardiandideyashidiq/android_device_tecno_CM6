@@ -1,0 +1,31 @@
+From b51b0bd1c694171063a12601bbd68e9dbbe6eaef Mon Sep 17 00:00:00 2001
+From: ashallowperson <245951141+ashallowperson@users.noreply.github.com>
+Date: Mon, 24 Aug 2026 06:52:21 +0500
+Subject: [PATCH] hal_neverallows: exempt hal_fingerprint_server from net_admin
+ neverallow
+
+The CM6 in-tree fingerprint AIDL HAL (jiiov) delivers its HBM capture
+signal to the ANC engine via addressed kobject-uevent sendto, which the
+kernel gates on CAP_NET_ADMIN (NL_NONROOT_SEND is unset for the
+kobject-uevent family). As a proper halserverdomain member it now trips
+the capability neverallow; exempt the public attribute following the
+same pattern used for wifi/bluetooth/telephony HALs.
+---
+ private/hal_neverallows.te | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/private/hal_neverallows.te b/private/hal_neverallows.te
+index c052d51d3..ede964b8c 100644
+--- a/private/hal_neverallows.te
++++ b/private/hal_neverallows.te
+@@ -14,6 +14,7 @@ neverallow {
+   -hal_uwb_vendor_server
+   -hal_nlinterceptor_server
+   -hal_tv_tuner_server
++  -hal_fingerprint_server
+ } self:global_capability_class_set { net_admin net_raw };
+ 
+ # Unless a HAL's job is to communicate over the network, or control network
+-- 
+2.53.0
+
