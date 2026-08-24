@@ -1510,7 +1510,7 @@ vendor/data/camera/morpho/morpho_zoomeis_params_nosat.xml
 vendor/data/camera/morpho/morpho_zoomeis_params.xml
 vendor/data/camera/morpho/morphoEISCalibration.bin
 vendor/data/camera/morpho/morphoEISCalibrationV2.bin
-#system_ext/app/TranssionCamera/TranssionCamera.apk
+system_ext/app/TranssionCamera/TranssionCamera.apk
 
 # Connectivity
 vendor/bin/hw/tetheroffloadservice
