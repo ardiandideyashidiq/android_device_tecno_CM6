@@ -15,11 +15,18 @@ trap 'rm -rf "$PATCH_DIR"' EXIT
 RET=0
 
 apply_patch() {
-  local url="$1" name="$2"
+  local src="$1" name="$2"
   local patch="$PATCH_DIR/$name.patch"
 
-  log "  Downloading $name …"
-  curl -sSfL "$url" -o "$patch" || { error "Download failed for $name"; return 1; }
+  case "$src" in
+    http*://*)
+      log "  Downloading $name …"
+      curl -sSfL "$src" -o "$patch" || { error "Download failed for $name"; return 1; }
+      ;;
+    *)
+      cp "$src" "$patch" || { error "Copy failed for $name"; return 1; }
+      ;;
+  esac
 
   # pre-check: reverse apply succeeds → already present
   if git -C "$repo" apply --check --reverse "$patch" &>/dev/null; then
@@ -70,6 +77,14 @@ do
   name=$(basename "$url" .patch)
   name="${name:0:50}"
   apply_patch "$url" "$name" || RET=1
+done
+
+repo="$PWD/system/sepolicy"
+for patch_file in "$PWD/device/tecno/CM6/patches/system/sepolicy/"*.patch; do
+  [ -e "$patch_file" ] || continue
+  name=$(basename "$patch_file" .patch)
+  name="${name:0:50}"
+  apply_patch "$patch_file" "$name" || RET=1
 done
 
 echo ""
