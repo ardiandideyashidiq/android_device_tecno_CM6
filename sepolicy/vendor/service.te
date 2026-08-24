@@ -7,3 +7,7 @@ type hal_tee_service, service_manager_type;
 # hal_fingerprint_server membership, which this domain deliberately avoids -
 # see hal_fingerprint_default.te.
 type jiiov_fp_service, service_manager_type;
+
+# AIDL Trancam camera extension service (stock CM6 labels
+# vendor.transsion.hardware.trancam.trancamserver.ITrancamserver/default)
+type hal_trancamserver_service, service_manager_type;

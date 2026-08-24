@@ -22,6 +22,7 @@ allow mtk_hal_camera vendor_watermark_data_file:dir { read write open add_name s
 allow mtk_hal_camera vendor_watermark_data_file:file { read write create getattr open };
 allow mtk_hal_camera property_socket:sock_file write;
 allow mtk_hal_camera hal_trancamserver_hwservice:hwservice_manager find;
+allow mtk_hal_camera hal_trancamserver_service:service_manager find;
 allow mtk_hal_camera fwk_sensor_service:service_manager find;
 # optional Transsion perf-hint service (blob not shipped) - silence lookup noise
 dontaudit mtk_hal_camera default_android_service:service_manager find;

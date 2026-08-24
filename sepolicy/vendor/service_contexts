@@ -6,3 +6,4 @@ vendor.mediatek.hardware.mtkradioex.ntn.IMtkRadioExNtn/slot4    u:object_r:hal_r
 vendor.trustonic.tee.ITee/default                               u:object_r:hal_tee_service:s0
 vendor.trustonic.tui.ITui/default                               u:object_r:hal_tee_service:s0
 vendor.transsion.hardware.biometrics.fingerprint.ITranssionFingerprintDaemon/default u:object_r:hal_fingerprint_service:s0
+vendor.transsion.hardware.trancam.trancamserver.ITrancamserver/default    u:object_r:hal_trancamserver_service:s0

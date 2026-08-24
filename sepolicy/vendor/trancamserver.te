@@ -12,8 +12,10 @@ allow trancamserver vndbinder_device:chr_file rw_file_perms;
 allow trancamserver hal_trancamserver_hwservice:hwservice_manager { find add };
 allow trancamserver hidl_base_hwservice:hwservice_manager add;
 
-# TransSched is intentionally not brought up on this ROM; daemon binary never extracted.
+# TransSched is intentionally not brought up on this ROM - silence lookup noise
 dontaudit trancamserver default_android_service:service_manager find;
 
-# ITrancamserver/default intentionally unmapped; silence registration denial
-dontaudit trancamserver default_android_service:service_manager add;
+# AIDL ITrancamserver/default registered with servicemanager (stock CM6 maps
+# this exact string to hal_trancamserver_service in vendor_service_contexts)
+allow trancamserver binder_device:chr_file rw_file_perms;
+allow trancamserver hal_trancamserver_service:service_manager { add find };
