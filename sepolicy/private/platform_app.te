@@ -1,0 +1,6 @@
+# CPUInfoService (SystemUI) reads per-cpufreq nodes for the cpuinfo QS tile
+# overlay. Stock init.mt6789.rc chowns scaling_governor to system:system 0660;
+# DAC read passes for uid system, but genfscon labels the whole subtree
+# sysfs_devices_system_cpu and no allow existed for platform_app.
+allow platform_app sysfs_devices_system_cpu:dir r_dir_perms;
+allow platform_app sysfs_devices_system_cpu:file r_file_perms;
