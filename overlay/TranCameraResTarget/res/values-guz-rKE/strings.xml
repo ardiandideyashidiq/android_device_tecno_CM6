@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Tema gochakia obokoreri bwa ebicha ya endagera</string>
+    <string name="celebrity_sunset_hint">Tema gochakia obokoreri bwa omogaso Kogochia korima</string>
+    <string name="documents_hint">Tema Chidokiumenti</string>
+    <string name="magic_sky_hint">Tema Erioba Eduka</string>
+    <string name="portrait_hint">Tema Epotureiti</string>
+    <string name="super_night_hint">Tema Super Botuko</string>
+</resources>

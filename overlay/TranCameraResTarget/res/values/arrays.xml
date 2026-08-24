@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="ai_frame_floating_window_drawables" />
+    <array name="ai_frame_overlay_guide_drawables" />
+    <string-array name="aigc_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.FlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="asd_config_support_back">
+        <item>0/1</item>
+        <item>6/1</item>
+        <item>5/1</item>
+        <item>8/1</item>
+    </string-array>
+    <string-array name="asd_config_support_front">
+        <item>0/1</item>
+        <item>6/1</item>
+        <item>5/1</item>
+        <item>8/1</item>
+    </string-array>
+    <string-array name="asd_config_support_wide">
+        <item>0/1</item>
+        <item>6/1</item>
+        <item>5/1</item>
+        <item>8/1</item>
+    </string-array>
+    <string-array name="asd_instant_zoom">
+        <item>6000</item>
+        <item>10000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>50000</item>
+        <item>100000</item>
+    </string-array>
+    <array name="asd_mode_guide_layouts" />
+    <string-array name="asd_mode_left_top_bar_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.googlelens.GoogleLensSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.FlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="asd_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.pictureratio.PictureRatioSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.hdr.HdrSettingUIEntry</item>
+        <item>com.transsion.camera.feature.colorstyle.setting.ui.ColorStyleSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.livephoto.LivePhotoSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.superdefinition.SuperDefinitionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.helpguide.HelpGuideSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.FlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="asd_mode_preference_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.moodlight.MoodLightSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersound.ShutterSoundSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.hdr.HdrSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.secondaryscreen.SecondaryScreenSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autowatermark.AutoWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.mirror.MirrorSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.aigroupphoto.AIGroupPhotoSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.horizonswitchwide.HorizonSwitchWideSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.picturesize.PictureSizeSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.remotecapture.RemoteCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autofocusswitch.AutoFocusSwitchSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.floatingshutter.FloatingShutterSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.automacroswitch.AutoMacroSwitchSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.location.LocationSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.level.LevelSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.oneclickefficiency.OneClickEfficiencySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.volumekey.VolumeKeySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersoundoptional.ShutterSoundOptionalSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.lenscorrection.LensCorrectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.taintdetection.TaintDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.micropantiltcalibration.MicroPanTiltCalibrationUIEntry</item>
+        <item>com.transsion.camera.ui.setting.storage.StorageSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.ordereditor.OrderEditorUIEntry</item>
+        <item>com.transsion.camera.ui.setting.portraitmodeenhance.PortraitModeEnhanceSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.BarcodeSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.qrcode.QRcodeSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.screenflash.ScreenFlashSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flarecapture.FlareCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.groupcapture.GroupCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.restore.RestoreSettingsUIEntry</item>
+    </string-array>
+    <string-array name="asd_mode_right_top_bar_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.livephoto.LivePhotoSettingUIEntry</item>
+        <item>com.transsion.camera.feature.colorstyle.setting.ui.ColorStyleSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.pictureratio.PictureRatioSettingUIEntry</item>
+    </string-array>
+    <string-array name="build_in_features_back_mode_order">
+        <item>com.transsion.camera.feature.mode.video.SlowMotionModeEntry</item>
+        <item>com.transsion.camera.feature.mode.video.VideoModeEntry</item>
+        <item>com.transsion.camera.feature.mode.autoscenedetection.ASDModeEntry</item>
+        <item>com.transsion.camera.feature.mode.motioncapture.MotionCaptureModeEntry</item>
+        <item>com.transsion.camera.feature.mode.pmaster.PMasterModeEntry</item>
+        <item>com.transsion.camera.feature.supernightfilter.mode.SuperNightFilterModeEntry</item>
+        <item>com.transsion.camera.feature.mode.magicsky.MagicSkyModeEntry</item>
+        <item>com.transsion.camera.feature.mode.professional.ProfessionalModeEntry</item>
+        <item>com.transsion.camera.feature.burstpmk.BurstPMKModeEntry</item>
+        <item>com.transsion.camera.feature.mode.doc.DocumentEntry</item>
+        <item>com.transsion.camera.feature.mode.video.TimeLapseVideoModeEntry</item>
+        <item>com.transsion.camera.feature.mode.dualvideo.DualVideoModeEntry</item>
+        <item>com.transsion.camera.feature.mode.vlog.VlogModeEntry</item>
+        <item>com.transsion.camera.feature.mode.aigc.AIGCModeEntry</item>
+        <item>com.transsion.camera.feature.mode.macro.MacroModeEntry</item>
+    </string-array>
+    <string-array name="build_in_features_front_mode_order">
+        <item>com.transsion.camera.feature.mode.video.SlowMotionModeEntry</item>
+        <item>com.transsion.camera.feature.mode.video.VideoModeEntry</item>
+        <item>com.transsion.camera.feature.mode.autoscenedetection.ASDModeEntry</item>
+        <item>com.transsion.camera.feature.mode.pmaster.PMasterModeEntry</item>
+        <item>com.transsion.camera.feature.mode.supernight.SuperNightModeEntry</item>
+        <item>com.transsion.camera.feature.wideselfie.WideSelfieModeEntry</item>
+        <item>com.transsion.camera.feature.mode.video.TimeLapseVideoModeEntry</item>
+        <item>com.transsion.camera.feature.mode.dualvideo.DualVideoModeEntry</item>
+        <item>com.transsion.camera.feature.mode.vlog.VlogModeEntry</item>
+        <item>com.transsion.camera.feature.mode.aigc.AIGCModeEntry</item>
+    </string-array>
+    <string-array name="click_zoom_supported_entry_values">
+        <item>10000</item>
+        <item>13000</item>
+    </string-array>
+    <string-array name="doc_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.FlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="doc_mode_preference_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.moodlight.MoodLightSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersound.ShutterSoundSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.floatingshutter.FloatingShutterSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.mirror.MirrorSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.fingerprintcapture.FingerprintCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.location.LocationSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.level.LevelSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.volumekey.VolumeKeySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersoundoptional.ShutterSoundOptionalSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.taintdetection.TaintDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.storage.StorageSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.smartmodeorder.SmartModeOrderSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.ordereditor.OrderEditorUIEntry</item>
+        <item>com.transsion.camera.ui.setting.screenflash.ScreenFlashSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.restore.RestoreSettingsUIEntry</item>
+        <item>com.transsion.camera.ui.setting.remotecapture.RemoteCaptureSettingUIEntry</item>
+    </string-array>
+    <string-array name="dualvideo_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videoquality.VideoQualitySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.VideoFlashSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.muterecoder.MuteRecoderSettingUIEntry</item>
+    </string-array>
+    <string-array name="dualvideo_mode_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.flash.VideoFlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="macro_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.pictureratio.PictureRatioSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.FlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="macro_mode_preference_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.moodlight.MoodLightSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersound.ShutterSoundSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.floatingshutter.FloatingShutterSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autowatermark.AutoWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.screenflash.ScreenFlashSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.mirror.MirrorSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.picturesize.PictureSizeSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.fingerprintcapture.FingerprintCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.location.LocationSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.level.LevelSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.volumekey.VolumeKeySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersoundoptional.ShutterSoundOptionalSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.storage.StorageSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.ordereditor.OrderEditorUIEntry</item>
+        <item>com.transsion.camera.ui.setting.restore.RestoreSettingsUIEntry</item>
+        <item>com.transsion.camera.ui.setting.remotecapture.RemoteCaptureSettingUIEntry</item>
+    </string-array>
+    <string-array name="macro_mode_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.macrotorch.MacroTorchSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.level.LevelSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.voicedetection.VoiceDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.touchcapture.TouchCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.FlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="macro_mode_setting_wide_tele_zoom_ui_entries">
+        <item>com.transsion.camera.ui.setting.macrozoom.MacroZoomSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.macrozoom.MacroSecondZoomSettingUIEntry</item>
+    </string-array>
+    <string-array name="macro_zoom_lens">
+        <item>1_1_1.5</item>
+        <item>2_1_2.5</item>
+    </string-array>
+    <string-array name="magicsky_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.pictureratio.PictureRatioSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.helpguide.HelpGuideSettingUIEntry</item>
+    </string-array>
+    <string-array name="magicsky_mode_preference_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.moodlight.MoodLightSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersound.ShutterSoundSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.secondaryscreen.SecondaryScreenSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.floatingshutter.FloatingShutterSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autowatermark.AutoWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.screenflash.ScreenFlashSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.mirror.MirrorSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.picturesize.PictureSizeSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.fingerprintcapture.FingerprintCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.location.LocationSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.level.LevelSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.storage.StorageSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.ordereditor.OrderEditorUIEntry</item>
+        <item>com.transsion.camera.ui.setting.restore.RestoreSettingsUIEntry</item>
+        <item>com.transsion.camera.ui.setting.volumekey.VolumeKeySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersoundoptional.ShutterSoundOptionalSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.taintdetection.TaintDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.remotecapture.RemoteCaptureSettingUIEntry</item>
+    </string-array>
+    <string-array name="magicsky_mode_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.macrotorch.MacroTorchSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.level.LevelSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.voicedetection.VoiceDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.touchcapture.TouchCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.magicsky.MagicSkySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.taintdetection.TaintDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.activityorientation.ActivityOrientationUIEntry</item>
+    </string-array>
+    <array name="main_and_tele_reapte_range" />
+    <string-array name="metering_mode_setting_entry_values">
+        <item>center</item>
+        <item>spot</item>
+        <item>average</item>
+    </string-array>
+    <string-array name="motion_capture_mode_pop_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.pictureratio.PictureRatioSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.helpguide.HelpGuideSettingUIEntry</item>
+    </string-array>
+    <string-array name="pmaster_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.pictureratio.PictureRatioSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.hdr.HdrSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.portraitflare.PortraitFlareSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.superdefinition.SuperDefinitionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.helpguide.HelpGuideSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.FlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="pmaster_mode_preference_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.moodlight.MoodLightSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersound.ShutterSoundSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.floatingshutter.FloatingShutterSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.hdr.HdrSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autowatermark.AutoWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.mirror.MirrorSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.picturesize.PictureSizeSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.remotecapture.RemoteCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.location.LocationSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.level.LevelSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.volumekey.VolumeKeySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersoundoptional.ShutterSoundOptionalSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.lenscorrection.LensCorrectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.taintdetection.TaintDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.storage.StorageSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.portraitmodeenhance.PortraitModeEnhanceSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.smartmodeorder.SmartModeOrderSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.ordereditor.OrderEditorUIEntry</item>
+        <item>com.transsion.camera.ui.setting.screenflash.ScreenFlashSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.groupcapture.GroupCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.portraitarchitecture.PortraitArchitectureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.restore.RestoreSettingsUIEntry</item>
+    </string-array>
+    <string-array name="pmaster_mode_right_top_bar_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.portraitflare.PortraitFlareSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.pictureratio.PictureRatioSettingUIEntry</item>
+    </string-array>
+    <string-array name="portrait_support_video_quality">
+        <item>5</item>
+    </string-array>
+    <string-array name="pro_instant_zoom">
+        <item>6000</item>
+        <item>10000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>50000</item>
+        <item>100000</item>
+    </string-array>
+    <string-array name="pro_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.pictureratio.PictureRatioSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.FlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="pro_mode_preference_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.moodlight.MoodLightSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersound.ShutterSoundSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.floatingshutter.FloatingShutterSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autowatermark.AutoWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.mirror.MirrorSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.picturesize.PictureSizeSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.fingerprintcapture.FingerprintCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.secondaryscreen.SecondaryScreenSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.location.LocationSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.level.LevelSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.volumekey.VolumeKeySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersoundoptional.ShutterSoundOptionalSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.lenscorrection.LensCorrectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.taintdetection.TaintDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.storage.StorageSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.ordereditor.OrderEditorUIEntry</item>
+        <item>com.transsion.camera.ui.setting.screenflash.ScreenFlashSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.restore.RestoreSettingsUIEntry</item>
+        <item>com.transsion.camera.ui.setting.voicedetection.VoiceDetectionSettingUIEntry</item>
+    </string-array>
+    <string-array name="pro_mode_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.FlashSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.level.LevelSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.voicedetection.VoiceDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.taintdetection.TaintDetectionSettingUIEntry</item>
+    </string-array>
+    <string-array name="prowm_styles">
+        <item>prowm_white</item>
+        <item>prowm_black</item>
+    </string-array>
+    <string-array name="sat_wide_camera_zoom_list">
+        <item>6000</item>
+        <item>6500</item>
+        <item>7000</item>
+        <item>7500</item>
+        <item>8000</item>
+        <item>8500</item>
+        <item>9000</item>
+        <item>9500</item>
+    </string-array>
+    <string-array name="slowmotion_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videofps.VideoFPSSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.VideoFlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="slowmotion_mode_preference_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.shuttersound.ShutterSoundSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.location.LocationSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.storage.StorageSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.mirror.MirrorSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.secondaryscreen.SecondaryScreenSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.smartmodeorder.SmartModeOrderSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.ordereditor.OrderEditorUIEntry</item>
+        <item>com.transsion.camera.ui.setting.fingerprintcapture.FingerprintCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.hevcencorder.HEVCEncorderSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.restore.RestoreSettingsUIEntry</item>
+    </string-array>
+    <string-array name="slowmotion_mode_right_top_bar_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.videofps.VideoFPSSettingUIEntry</item>
+    </string-array>
+    <string-array name="supernight_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.pictureratio.PictureRatioSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.helpguide.HelpGuideSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.FlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="supernight_mode_preference_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.moodlight.MoodLightSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersound.ShutterSoundSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.floatingshutter.FloatingShutterSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.remotecapture.RemoteCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autowatermark.AutoWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.mirror.MirrorSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.picturesize.PictureSizeSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.location.LocationSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.level.LevelSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.volumekey.VolumeKeySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersoundoptional.ShutterSoundOptionalSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.lenscorrection.LensCorrectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.taintdetection.TaintDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.storage.StorageSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.portraitmodeenhance.PortraitModeEnhanceSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.screenflash.ScreenFlashSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.fingerprintcapture.FingerprintCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.restore.RestoreSettingsUIEntry</item>
+    </string-array>
+    <string-array name="supernightfilter_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.pictureratio.PictureRatioSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.supernightstable.SuperNightStableSettingUIEntry</item>
+        <item>com.transsion.camera.feature.supernightfilter.ui.SuperNightFilterUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.goldwatermark.GoldWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.prowatermark.ProWatermarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.helpguide.HelpGuideSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.FlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="support_60fps_ai_focus_video_quality">
+        <item>11</item>
+        <item>8</item>
+        <item>6</item>
+        <item>5</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="time_lapse_mode_preference_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.shuttersound.ShutterSoundSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.location.LocationSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videoquality.VideoQualitySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.volumekey.VolumeKeySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.taintdetection.TaintDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autowatermark.VideoWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.timelapserate.TimeLapseRateSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.timelapseduration.TimeLapseDurationSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.storage.StorageSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.mirror.MirrorSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.smartmodeorder.SmartModeOrderSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.ordereditor.OrderEditorUIEntry</item>
+        <item>com.transsion.camera.ui.setting.fingerprintcapture.FingerprintCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.hevcencorder.HEVCEncorderSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.restore.RestoreSettingsUIEntry</item>
+    </string-array>
+    <string-array name="time_lapse_video_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videoquality.VideoQualitySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autowatermark.VideoWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.helpguide.HelpGuideSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.VideoFlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="time_lapse_video_mode_right_top_bar_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.videoquality.VideoQualitySettingUIEntry</item>
+    </string-array>
+    <string-array name="video_mode_category">
+        <item>com.transsion.camera.feature.mode.video.VideoModeEntry</item>
+        <item>com.transsion.camera.feature.mode.dualvideo.DualVideoModeEntry</item>
+    </string-array>
+    <string-array name="video_mode_interactive_setting_ui_back_entries">
+        <item>com.transsion.camera.ui.setting.videosightshock.VideoSightShockSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videoportraitlevel.VideoPortraitLevelSettingUIEntry</item>
+        <item>com.transsion.camera.feature.mode.makeup.ui.VideoFaceBeautySettingUIEntry</item>
+    </string-array>
+    <string-array name="video_mode_interactive_setting_ui_front_entries">
+        <item>com.transsion.camera.ui.setting.videosightshock.VideoSightShockSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videoportraitlevel.VideoPortraitLevelSettingUIEntry</item>
+        <item>com.transsion.camera.feature.mode.makeup.ui.VideoFaceBeautySettingUIEntry</item>
+    </string-array>
+    <string-array name="video_mode_left_top_bar_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.flash.VideoFlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="video_mode_option_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.videosightshock.VideoSightShockOptionUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videoportrait.VideoPortraitSettingOptionUIEntry</item>
+        <item>com.transsion.camera.feature.mode.makeup.ui.VideoFaceBeautyOptionUIEntry</item>
+    </string-array>
+    <string-array name="video_mode_pop_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.comvideohdr.ComVideoHDRSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autowatermark.VideoWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autovideofps.AutoVideoFPSSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.muterecoder.MuteRecoderSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autofocusswitch.AutoFocusSwitchSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.helpguide.HelpGuideSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+    </string-array>
+    <string-array name="video_mode_pop_setting_ui_entries_40">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videoquality.VideoQualitySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.comvideohdr.ComVideoHDRSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.antivideo.AntiVideoSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autovideofps.AutoVideoFPSSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.muterecoder.MuteRecoderSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autofocusswitch.AutoFocusSwitchSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autowatermark.VideoWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.helpguide.HelpGuideSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.VideoFlashSettingUIEntry</item>
+    </string-array>
+    <string-array name="video_mode_preference_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.moodlight.MoodLightSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.shuttersound.ShutterSoundSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.location.LocationSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videoquality.VideoQualitySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.volumekey.VolumeKeySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.taintdetection.TaintDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.micropantiltcalibration.MicroPanTiltCalibrationUIEntry</item>
+        <item>com.transsion.camera.ui.setting.storage.StorageSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autowatermark.VideoWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.mirror.MirrorSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.smartmodeorder.SmartModeOrderSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.ordereditor.OrderEditorUIEntry</item>
+        <item>com.transsion.camera.ui.setting.fingerprintcapture.FingerprintCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.autovideofps.AutoVideoFPSSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.recordingeffect.RecordingEffectSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.hevcencorder.HEVCEncorderSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.muterecoder.MuteRecoderSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.portraitarchitecture.PortraitArchitectureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.restore.RestoreSettingsUIEntry</item>
+    </string-array>
+    <string-array name="video_mode_top_bar_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.settingsentry.SettingsEntrySettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.comvideohdr.ComVideoHDRSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.flash.VideoFlashSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videoenhanceyuv.VideoEnhanceYUVSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videoenhance.VideoEnhanceSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.macrotorch.MacroTorchSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.antivideo.AntiVideoSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.videoquality.VideoQualitySettingUIEntry</item>
+    </string-array>
+    <string-array name="video_quality_setting_entries_fps">
+        <item>4K/60fps</item>
+        <item>4K/30fps</item>
+        <item>2K/30fps</item>
+        <item>1080P/H-fps</item>
+        <item>1080P/30fps</item>
+        <item>720P/30fps</item>
+        <item>480P/30fps</item>
+    </string-array>
+    <string-array name="video_quality_support_anti_video">
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>6_60</item>
+        <item>11</item>
+    </string-array>
+    <string-array name="vlog_contain_compose_top_bar_setting_ui_entries">
+        <item>com.transsion.camera.feature.mode.vlog.settingui.BackSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.antivideo.AntiVideoSettingUIEntry</item>
+        <item>com.transsion.camera.feature.mode.vlog.settingui.ComposeSettingUIEntry</item>
+    </string-array>
+    <string-array name="vlog_top_bar_setting_ui_entries">
+        <item>com.transsion.camera.feature.mode.vlog.settingui.BackSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.antivideo.AntiVideoSettingUIEntry</item>
+    </string-array>
+    <string-array name="vsdof_mode_setting_ui_entries">
+        <item>com.transsion.camera.ui.setting.stereo.StereoSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.guideline.GuideLineSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.touchcapture.TouchCaptureSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.selftimer.SelfTimerSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.level.LevelSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.smiledetection.SmileDetectionSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.editwatermark.EditWaterMarkSettingUIEntry</item>
+        <item>com.transsion.camera.ui.setting.activityorientation.ActivityOrientationUIEntry</item>
+    </string-array>
+    <integer-array name="wide_and_main_reapte_range">
+        <item>10000</item>
+        <item>11000</item>
+        <item>12000</item>
+        <item>13000</item>
+        <item>14000</item>
+        <item>15000</item>
+        <item>16000</item>
+        <item>17000</item>
+        <item>18000</item>
+        <item>19000</item>
+        <item>20000</item>
+    </integer-array>
+    <string-array name="wide_camera_zoom_list">
+        <item>10000</item>
+        <item>10500</item>
+        <item>11000</item>
+        <item>12000</item>
+        <item>13000</item>
+        <item>14000</item>
+        <item>15000</item>
+        <item>16000</item>
+        <item>17000</item>
+        <item>18000</item>
+        <item>19000</item>
+        <item>20000</item>
+        <item>21000</item>
+        <item>22000</item>
+        <item>23000</item>
+        <item>24000</item>
+        <item>25000</item>
+        <item>26000</item>
+        <item>27000</item>
+        <item>28000</item>
+        <item>29000</item>
+        <item>30000</item>
+        <item>31000</item>
+        <item>32000</item>
+        <item>33000</item>
+        <item>34000</item>
+        <item>35000</item>
+        <item>36000</item>
+        <item>37000</item>
+        <item>38000</item>
+    </string-array>
+    <string-array name="wide_camera_zoom_list_india">
+        <item>10000</item>
+        <item>10500</item>
+        <item>11000</item>
+        <item>12000</item>
+        <item>13000</item>
+        <item>14000</item>
+        <item>15000</item>
+        <item>16000</item>
+    </string-array>
+    <string-array name="wide_camera_zoom_normal_list">
+        <item>10000</item>
+        <item>10500</item>
+        <item>11000</item>
+        <item>12000</item>
+        <item>13000</item>
+        <item>14000</item>
+        <item>15000</item>
+        <item>16000</item>
+    </string-array>
+    <integer-array name="wide_range_converter_progress_list">
+        <item>6000</item>
+        <item>7000</item>
+        <item>8000</item>
+        <item>9000</item>
+        <item>10000</item>
+        <item>11000</item>
+        <item>12000</item>
+        <item>13000</item>
+        <item>14000</item>
+        <item>15000</item>
+        <item>16000</item>
+        <item>17000</item>
+        <item>18000</item>
+        <item>19000</item>
+        <item>20000</item>
+    </integer-array>
+    <integer-array name="wide_range_converter_progress_list_india">
+        <item>6000</item>
+        <item>7000</item>
+        <item>8000</item>
+        <item>9000</item>
+    </integer-array>
+    <integer-array name="wide_range_converter_value_list">
+        <item>10000</item>
+        <item>12000</item>
+        <item>14000</item>
+        <item>16000</item>
+        <item>18000</item>
+        <item>20000</item>
+        <item>22000</item>
+        <item>24000</item>
+        <item>26000</item>
+        <item>28000</item>
+        <item>30000</item>
+        <item>32000</item>
+        <item>34000</item>
+        <item>36000</item>
+        <item>38000</item>
+    </integer-array>
+    <integer-array name="wide_range_converter_value_list_india">
+        <item>10000</item>
+        <item>12000</item>
+        <item>14000</item>
+        <item>16000</item>
+    </integer-array>
+    <integer-array name="wide_range_converter_value_normal_list">
+        <item>10000</item>
+        <item>12000</item>
+        <item>14000</item>
+        <item>16000</item>
+    </integer-array>
+    <integer-array name="zoom_range">
+        <item>20000</item>
+        <item>40000</item>
+        <item>100000</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Dhiibbaa suura nyaataa fooyyessuuf yaali</string>
+    <string name="celebrity_sunset_hint">Dhiibbaa aduun lixuu fooyyessuuf yaali</string>
+    <string name="documents_hint">Sanadootni Yaali</string>
+    <string name="magic_sky_hint">Dukkaana Samii Yaali</string>
+    <string name="portrait_hint">Dhaabbii Yaali</string>
+    <string name="super_night_hint">Halkaan Addaa Yaali</string>
+</resources>

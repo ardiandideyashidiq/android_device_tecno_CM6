@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Provo të përmirësosh efektin e imazhit të ushqimit</string>
+    <string name="celebrity_sunset_hint">Provo të përmirësosh efektin e perëndimit të diellit</string>
+    <string name="documents_hint">Provoni Dokumente</string>
+    <string name="magic_sky_hint">Provo Qiell i hapur</string>
+    <string name="portrait_hint">Provo Portret</string>
+    <string name="super_night_hint">Provo Super natë</string>
+</resources>

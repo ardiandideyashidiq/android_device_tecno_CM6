@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">سعی کنید جلوه تصویر غذا را تقویت کنید</string>
+    <string name="celebrity_sunset_hint">سعی کنید جلوه غروب آفتاب را افزایش دهید</string>
+    <string name="documents_hint">اسناد را امتحان کنید</string>
+    <string name="magic_sky_hint">ویرایش آسمان را امتحان کنید</string>
+    <string name="portrait_hint">پرتره را امتحان کنید</string>
+    <string name="super_night_hint">سوپر نایت را امتحان کنید</string>
+</resources>

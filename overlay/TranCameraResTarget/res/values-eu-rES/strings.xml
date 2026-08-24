@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">397739~Try enhancing the food image effect</string>
+    <string name="celebrity_sunset_hint">397683~Try enhancing the sunset effect</string>
+    <string name="documents_hint">344025~Try Doc</string>
+    <string name="magic_sky_hint">344031~Try Sky Shop</string>
+    <string name="portrait_hint">344029~Try Portrait</string>
+    <string name="super_night_hint">344027~Try Super Night</string>
+</resources>

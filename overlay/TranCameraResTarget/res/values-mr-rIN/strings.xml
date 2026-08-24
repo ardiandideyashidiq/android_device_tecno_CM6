@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">खाद्य प्रतिमा प्रभाव वाढवण्याचा प्रयत्न करा</string>
+    <string name="celebrity_sunset_hint">सूर्यास्ताचा प्रभाव वाढवण्याचा प्रयत्न करा</string>
+    <string name="documents_hint">डॉक्युमेंट्स वापरून पहा</string>
+    <string name="magic_sky_hint">स्काय शॉप वापरून पहा</string>
+    <string name="portrait_hint">पोर्ट्रेट वापरून पहा</string>
+    <string name="super_night_hint">सुपर नाईट वापरून पहा</string>
+</resources>

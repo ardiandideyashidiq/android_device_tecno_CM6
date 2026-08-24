@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Gbiyanju imudara aworan oúnjẹ</string>
+    <string name="celebrity_sunset_hint">Gbiyanju imudara ipa iwọoorun</string>
+    <string name="documents_hint">Gbiyanju Àwọn Ìwé Àṣẹ</string>
+    <string name="magic_sky_hint">Gbiyanju Sọọbu Skai</string>
+    <string name="portrait_hint">Gbiyanju Dídúró</string>
+    <string name="super_night_hint">Gbiyanju Alẹ tó Lágbára</string>
+</resources>

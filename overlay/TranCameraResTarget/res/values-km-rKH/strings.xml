@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">សូមសាកល្បងកែលម្អបែបផែនរូបភាពអាហារ</string>
+    <string name="celebrity_sunset_hint">សាកល្បងកែលម្អបែបផែនថ្ងៃលិច</string>
+    <string name="documents_hint">សាកល្បង​ប្រើឯកសារ</string>
+    <string name="magic_sky_hint">សាកល្បងប្រើហាងលើមេឃ</string>
+    <string name="portrait_hint">សាកល្បងប្រើម៉ូដបញ្ឈរ</string>
+    <string name="super_night_hint">សាកល្បងប្រើយប់ពិសេស</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aigc_gold_watermak_value">camon_40_pro</string>
+    <string name="base_focal_value">23.33</string>
+    <string name="bgservice_type">aidl</string>
+    <string name="brand_res">CAMON 40 Pro</string>
+    <string name="brand_ui_overlay_str">tecno ui overlay</string>
+    <string name="celebrity_food_hint">Try to improve the taste</string>
+    <string name="celebrity_sunset_hint">Try enhancing the sunset effect</string>
+    <string name="documents_hint">Try Documents</string>
+    <string name="front_cam_mode_default">com.transsion.camera.feature.mode.pmaster.PMasterModeEntry</string>
+    <string name="magic_sky_hint">Try Sky Shop</string>
+    <string name="portrait_hint">Try Portrait</string>
+    <string name="product_config_overlay_str">product overlay str</string>
+    <string name="super_night_hint">Try Super Night</string>
+    <string name="video_portrait_support">5</string>
+</resources>

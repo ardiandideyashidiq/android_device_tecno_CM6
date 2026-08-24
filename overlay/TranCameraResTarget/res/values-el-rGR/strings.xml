@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Δοκιμάστε να βελτιώσετε το εφέ της εικόνας φαγητού</string>
+    <string name="celebrity_sunset_hint">Δοκιμάστε να ενισχύσετε το εφέ ηλιοβασιλέματος</string>
+    <string name="documents_hint">Δοκιμάστε τα Έγγραφα</string>
+    <string name="magic_sky_hint">Δοκιμάστε το Sky Κατάστημα</string>
+    <string name="portrait_hint">Δοκιμάστε Προφίλ Εικόνας</string>
+    <string name="super_night_hint">Δοκιμάστε την Υπερ-νύχτα</string>
+</resources>

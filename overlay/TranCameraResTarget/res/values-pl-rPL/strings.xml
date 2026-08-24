@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Spróbuj ulepszyć efekt zdjęć jedzenia</string>
+    <string name="celebrity_sunset_hint">Spróbuj wzmocnić efekt zachodu słońca</string>
+    <string name="documents_hint">Wypróbuj dokumenty</string>
+    <string name="magic_sky_hint">Wypróbuj tryb nieba SI</string>
+    <string name="portrait_hint">Wypróbuj tryb portretowy</string>
+    <string name="super_night_hint">Wypróbuj tryb nocny</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Gbalịa imezilite mmetụta onyonyo nri</string>
+    <string name="celebrity_sunset_hint">Gbalịa imeziwanye mmetụta ọdịda anyanwụ</string>
+    <string name="documents_hint">Nwagasịa Dọkụmenti</string>
+    <string name="magic_sky_hint">Ụlọahịa Ígwē</string>
+    <string name="portrait_hint">Nwaa Eserese Ihu</string>
+    <string name="super_night_hint">Nwaa Abalị Dị Elu</string>
+</resources>

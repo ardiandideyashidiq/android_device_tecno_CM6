@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Qida şəkli effektini təkmilləşdirməyə çalışın</string>
+    <string name="celebrity_sunset_hint">Gün batımı effektini təkmilləşdirməyə çalışın</string>
+    <string name="documents_hint">Sənədlər tətbiqini sınayın</string>
+    <string name="magic_sky_hint">Səmanı Dəyişdirin rejimini sınayın</string>
+    <string name="portrait_hint">Portret rejimini sınayın</string>
+    <string name="super_night_hint">Super Gecə rejimini sınayın</string>
+</resources>

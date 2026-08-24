@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">உணவுப் பட விளைவை மேம்படுத்த முயற்சிக்கவும்</string>
+    <string name="celebrity_sunset_hint">சூரிய அஸ்தமன விளைவை மேம்படுத்த முயற்சிக்கவும்</string>
+    <string name="documents_hint">ஆவணங்களை முயற்சிக்கவும்</string>
+    <string name="magic_sky_hint">ஸ்கை ஷாப் முயற்சிக்கவும்</string>
+    <string name="portrait_hint">போர்ட்ரைட் முயற்சிக்கவும்</string>
+    <string name="super_night_hint">சூப்பர் நைட்டை முயற்சிக்கவும்</string>
+</resources>

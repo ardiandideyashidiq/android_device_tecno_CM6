@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">ລອງປັບປຸງເອັບເຟັກຮູບພາບອາຫານ</string>
+    <string name="celebrity_sunset_hint">ລອງເພີ່ມເອັບເຟັກຕາເວັນຕົກດິນ</string>
+    <string name="documents_hint">ລອງໃຊ້ງານເອກະສານ</string>
+    <string name="magic_sky_hint">ລອງ Sky Shop</string>
+    <string name="portrait_hint">ລອງໃຊ້ຮູບລວງຕັ້ງ</string>
+    <string name="super_night_hint">ລອງຊຸດເປີໄນ</string>
+</resources>

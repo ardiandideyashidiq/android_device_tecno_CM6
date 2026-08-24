@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Тамақ суретінің әсерін жақсартуға тырысыңыз</string>
+    <string name="celebrity_sunset_hint">Күнбатыс әсерін жақсартуға тырысыңыз</string>
+    <string name="documents_hint">Құжаттарды қолданып көріңіз</string>
+    <string name="magic_sky_hint">Аспан дүкенін қолданып көріңіз</string>
+    <string name="portrait_hint">Портреттік режимді қолданып көріңіз</string>
+    <string name="super_night_hint">Супер түнді қолданып көріңіз</string>
+</resources>

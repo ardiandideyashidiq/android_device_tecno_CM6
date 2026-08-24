@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">هەوڵبدە ئێفێکتی وێنەی خۆراک بەهێز بکەیت</string>
+    <string name="celebrity_sunset_hint">هەوڵبدە ئێفێکتی خۆرئاوابوون زیاد بکەیت</string>
+    <string name="documents_hint">بەڵگەنامەکان تاقی بکەوە</string>
+    <string name="magic_sky_hint">فرۆشگای ئاسمان تاقی بکەوە</string>
+    <string name="portrait_hint">پۆرترێتی تاقی بکەوە</string>
+    <string name="super_night_hint">نیوە شەو تاقی بکەوە</string>
+</resources>

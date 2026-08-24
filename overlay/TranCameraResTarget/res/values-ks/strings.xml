@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">کھٮ۪ن چہِ تصویرُک اثر بڑاونٕچ کوٗشِش کٔرِو</string>
+    <string name="celebrity_sunset_hint">غروبِ آفتاب اثر بہتر بناونٕچ کوشش کرِو</string>
+    <string name="documents_hint">ڈاکومنٹس آزمٲیو</string>
+    <string name="magic_sky_hint">سِکائی شاپ کٔرِو کوشش</string>
+    <string name="portrait_hint">پورٹریٹ کٔرِو کوشش</string>
+    <string name="super_night_hint">سوپر نائٹ کٔرِو کوشش</string>
+</resources>

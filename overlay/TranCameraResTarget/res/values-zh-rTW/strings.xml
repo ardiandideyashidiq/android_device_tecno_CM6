@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">試著增強美食圖片效果</string>
+    <string name="celebrity_sunset_hint">嘗試增強黃昏效果</string>
+    <string name="documents_hint">試用文件</string>
+    <string name="magic_sky_hint">試用一鍵換天</string>
+    <string name="portrait_hint">試用頭像</string>
+    <string name="super_night_hint">試用超級夜拍</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">"Essayer d'améliorer l'effet visuel de la nourriture"</string>
+    <string name="celebrity_sunset_hint">"Essayer d'améliorer l'effet de coucher de soleil"</string>
+    <string name="documents_hint">Essayez Documents</string>
+    <string name="magic_sky_hint">Essayer Sky Shop</string>
+    <string name="portrait_hint">Essayez Portrait</string>
+    <string name="super_night_hint">Essayer le mode Super nuit</string>
+</resources>

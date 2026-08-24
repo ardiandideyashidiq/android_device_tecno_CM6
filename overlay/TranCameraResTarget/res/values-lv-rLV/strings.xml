@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Mēģiniet uzlabot ēdiena attēla efektu</string>
+    <string name="celebrity_sunset_hint">Mēģiniet uzlabot saulrieta efektu</string>
+    <string name="documents_hint">Izmēģināt režīmu Dokumenti</string>
+    <string name="magic_sky_hint">Mēģināt debesu ciparnīcu</string>
+    <string name="portrait_hint">Mēģināt portretu</string>
+    <string name="super_night_hint">Mēģināt īpašo nakts režīmu</string>
+</resources>

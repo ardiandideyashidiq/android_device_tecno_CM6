@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Ovqat rasmi effektini yaxshilashga urining</string>
+    <string name="celebrity_sunset_hint">Quyosh botishi effektini kuchaytiring</string>
+    <string name="documents_hint">Hujjatlarni sinang</string>
+    <string name="magic_sky_hint">Samoviy doʻkonni sinash</string>
+    <string name="portrait_hint">Portretni sinash</string>
+    <string name="super_night_hint">Super tunni sinash</string>
+</resources>

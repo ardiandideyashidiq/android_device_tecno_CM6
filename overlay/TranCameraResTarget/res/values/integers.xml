@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="aperture_shelter_style">2</integer>
+    <integer name="auto_focus_default_type">0</integer>
+    <integer name="customized_tele_value">50000</integer>
+    <integer name="doc_support_mfnr_iso">800</integer>
+    <integer name="facebeauty_root_gravity_flags">0x50</integer>
+    <integer name="flash_facade_auto_back_limit_brightness_value">-40</integer>
+    <integer name="flash_facade_auto_front_limit_brightness_value">-20</integer>
+    <integer name="flash_facade_limit_brightness_value">-20</integer>
+    <integer name="initial_modes_number_in_tab">7</integer>
+    <integer name="isphidl_remosaic_iso">100</integer>
+    <integer name="live_photo_algorithm_type">1</integer>
+    <integer name="make_up_reduce_preview_size_height">720</integer>
+    <integer name="makeup_rv_layout_gravity_flags">0x50</integer>
+    <integer name="max_continuous_shot_number">20</integer>
+    <integer name="mild_beauty_type">0</integer>
+    <integer name="mode_picker_style">2</integer>
+    <integer name="portrait_enhance_support">2</integer>
+    <integer name="ring_screen_light_opentime">2000</integer>
+    <integer name="self_timer_sound_effect_type">1</integer>
+    <integer name="shot2shot_policy_platform">20</integer>
+    <integer name="super_resolution_hdr_limit_zoom">499</integer>
+    <integer name="thr_level_luminance_adjust_support_type">0</integer>
+    <integer name="video_enhance_type">0</integer>
+    <integer name="video_super_night_type">2</integer>
+</resources>

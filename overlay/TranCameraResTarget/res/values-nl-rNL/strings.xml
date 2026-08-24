@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Probeer het effect voor de foto van het eten te verbeteren</string>
+    <string name="celebrity_sunset_hint">Probeer het zonsondergangseffect te verbeteren</string>
+    <string name="documents_hint">Probeer documenten</string>
+    <string name="magic_sky_hint">Probeer Sky Shop</string>
+    <string name="portrait_hint">Probeer Portret</string>
+    <string name="super_night_hint">Probeer Supernacht</string>
+</resources>

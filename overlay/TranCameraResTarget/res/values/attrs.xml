@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="normalCircleColor" format="color" />
+    <attr name="selectCircleColor" format="color" />
+    <attr name="strokeWidth" format="dimension" />
+</resources>

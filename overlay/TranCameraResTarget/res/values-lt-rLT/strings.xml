@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Pabandykite patobulinti maisto vaizdo efektą</string>
+    <string name="celebrity_sunset_hint">Pabandykite patobulinti saulėlydžio efektą</string>
+    <string name="documents_hint">Išbandykite programą Dokumentai</string>
+    <string name="magic_sky_hint">Išbandyti Dangaus parduotuvė</string>
+    <string name="portrait_hint">Išbandyti Stačias</string>
+    <string name="super_night_hint">Išbandyti Supernaktinis</string>
+</resources>

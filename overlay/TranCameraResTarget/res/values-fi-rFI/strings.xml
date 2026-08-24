@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Kokeile tehostaa ruokakuvan tehostetta</string>
+    <string name="celebrity_sunset_hint">Kokeile parantaa auringonlaskun tehostetta</string>
+    <string name="documents_hint">Kokeile Asiakirjat-tilaa</string>
+    <string name="magic_sky_hint">Kokeile Sky-kauppa-tilaa</string>
+    <string name="portrait_hint">Kokeile Muotokuva-tilaa</string>
+    <string name="super_night_hint">Kokeile Superyönäkymä-tilaa</string>
+</resources>

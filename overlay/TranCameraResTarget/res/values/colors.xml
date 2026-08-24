@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ai_art_museum_selected_color">#ffd800</color>
+    <color name="ai_art_museum_unselected_color">#ffffff</color>
+    <color name="black_dark_background_no_alpha_ui5">#1c1c1c</color>
+    <color name="black_dark_background_ui_5">#ff1c1c1c</color>
+    <color name="black_light_background_no_alpha_ui5">#000000</color>
+    <color name="black_light_background_ui_5">#33000000</color>
+    <color name="cw_seekbar_indicator_primary_color">#ffffffff</color>
+    <color name="dual_device_switcher_background_color">@color/black_light_background_ui_5</color>
+    <color name="dual_record_time_background_color">#000000</color>
+    <color name="filter_selected_border_color">#ffffd800</color>
+    <color name="hint_text_color_highlight">@color/primary_highlight_color</color>
+    <color name="hint_text_layout_highlight_background_color">@color/slide_hint_background_color</color>
+    <color name="ic_makeup_ai_color">#ffd800</color>
+    <color name="ic_multi_fb_ai_color">#ffd800</color>
+    <color name="makeup_item_cover_color">#ffd800</color>
+    <color name="makeup_item_cover_ringscreen_color">#ffd800</color>
+    <color name="mu_item_unselected_color_black">#cc4f4f4f</color>
+    <color name="mu_no_effect_selected">#ffd800</color>
+    <color name="pop_setting_item_normal_color">#e6ffffff</color>
+    <color name="primary_highlight_color">#fcd000</color>
+    <color name="record_time_background_color">#000000</color>
+    <color name="sky_item_selected_border_color">#ffd800</color>
+    <color name="slide_hint_background_color">#33000000</color>
+    <color name="twinkle_guide_text_color">#ffffff</color>
+    <color name="vlog_hint_text_color_highlight">#fcd000</color>
+    <color name="vlog_hint_text_layout_background">@color/black_light_background_ui_5</color>
+    <color name="vlog_hint_text_layout_highlight_background">@color/black_light_background_ui_5</color>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Санҷидани тақвияти эффекти тасвири хӯрок</string>
+    <string name="celebrity_sunset_hint">Санҷидани тақвияти эффекти ғуруби офтоб</string>
+    <string name="documents_hint">Ҳуҷҷатҳоро санҷед</string>
+    <string name="magic_sky_hint">Мағозаи Sky-ро санҷед</string>
+    <string name="portrait_hint">Портретро санҷед</string>
+    <string name="super_night_hint">Супер Шабро санҷед</string>
+</resources>

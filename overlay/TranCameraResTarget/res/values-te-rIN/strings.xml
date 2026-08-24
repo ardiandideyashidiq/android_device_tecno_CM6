@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">ఆహారం చిత్ర ప్రభావాన్ని మెరుగుపరచడానికి ప్రయత్నించండి</string>
+    <string name="celebrity_sunset_hint">సూర్యాస్తమయ ప్రభావాన్ని మెరుగుపరచడానికి ప్రయత్నించండి</string>
+    <string name="documents_hint">పత్రాలను ప్రయత్నించండి</string>
+    <string name="magic_sky_hint">స్కై షాప్‌ను ప్రయత్నించు</string>
+    <string name="portrait_hint">పోర్ట్రైట్‌ను ప్రయత్నించు</string>
+    <string name="super_night_hint">సూపర్‌‌నైట్‌ను ప్రయత్నించు</string>
+</resources>

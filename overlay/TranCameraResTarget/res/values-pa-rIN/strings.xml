@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">ਭੋਜਨ ਚਿੱਤਰ ਪ੍ਰਭਾਵ ਨੂੰ ਬਿਹਤਰ ਬਣਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="celebrity_sunset_hint">ਸ਼ਾਮ ਦੇ ਪ੍ਰਭਾਵ ਨੂੰ ਬਿਹਤਰ ਬਣਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="documents_hint">ਦਸਤਾਵੇਜ਼ ਨੂੰ ਅਜ਼ਮਾਓ</string>
+    <string name="magic_sky_hint">ਸਕਾਈ ਸ਼ੌਪ ਅਜ਼ਮਾਓ</string>
+    <string name="portrait_hint">ਪੋਰਟ੍ਰੇਟ ਅਜ਼ਮਾਓ</string>
+    <string name="super_night_hint">ਸੁਪਰ ਨਾਈਟ ਅਜ਼ਮਾਓ</string>
+</resources>

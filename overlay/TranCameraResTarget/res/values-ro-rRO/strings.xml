@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Încercați să îmbunătățiți efectul imaginii cu mâncare</string>
+    <string name="celebrity_sunset_hint">Încercați să îmbunătățiți efectul de apus</string>
+    <string name="documents_hint">Încercați Documente</string>
+    <string name="magic_sky_hint">Încercați Magazin modele cer</string>
+    <string name="portrait_hint">Încercați Portret</string>
+    <string name="super_night_hint">Încercați Super nocturn</string>
+</resources>

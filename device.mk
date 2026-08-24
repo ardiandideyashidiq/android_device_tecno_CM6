@@ -285,7 +285,8 @@ PRODUCT_PACKAGES += \
     FrameworksResTarget \
     SettingsProviderResTarget \
     SettingsResTarget \
-    SystemUIResTarget
+    SystemUIResTarget \
+    TranCameraResTarget
 
 # Lineage-Specific Overlays
 PRODUCT_PACKAGES += \

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Próbálja meg fokozni az ételkép hatását</string>
+    <string name="celebrity_sunset_hint">Próbálja meg fokozni a naplemente hatását</string>
+    <string name="documents_hint">Próbálja ki a Dokumentumokat</string>
+    <string name="magic_sky_hint">Próbálja ki a Sky Shop-ot</string>
+    <string name="portrait_hint">Próbálja ki a Portrét</string>
+    <string name="super_night_hint">Próbálja ki a Szuper éjszakai módot</string>
+</resources>

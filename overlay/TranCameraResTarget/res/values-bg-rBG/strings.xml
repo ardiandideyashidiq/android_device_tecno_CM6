@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Опитайте да засилите ефекта на снимката на храна</string>
+    <string name="celebrity_sunset_hint">Опитайте да усилите ефекта на залеза</string>
+    <string name="documents_hint">Опитайте Документи</string>
+    <string name="magic_sky_hint">Опитайте Sky Shop</string>
+    <string name="portrait_hint">Опитайте „Вертикално“</string>
+    <string name="super_night_hint">Опитайте „Супер нощ“</string>
+</resources>

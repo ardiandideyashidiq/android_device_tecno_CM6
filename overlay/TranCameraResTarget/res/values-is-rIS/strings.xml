@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Reyndu að efla myndáhrif matarins</string>
+    <string name="celebrity_sunset_hint">Reyndu að auka sólsetursáhrifin</string>
+    <string name="documents_hint">Prófa Skjöl</string>
+    <string name="magic_sky_hint">Prófaðu Himnasmíði</string>
+    <string name="portrait_hint">Prófaðu Skammsnið</string>
+    <string name="super_night_hint">Prófaðu Hágæða næturstillingu</string>
+</resources>

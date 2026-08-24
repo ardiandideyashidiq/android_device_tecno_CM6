@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.transsion.camera.overlay.cm6">
+
+    <overlay
+        android:isStatic="true"
+        android:priority="30"
+        android:targetPackage="com.transsion.camera" />
+</manifest>

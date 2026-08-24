@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">အစားအစာပုံ အထူးျပဳလုပ္ခ်က္ကို မြမ္းမံၾကည့္ပါ</string>
+    <string name="celebrity_sunset_hint">ဆည္းဆာအထူးျပဳလုပ္ခ်က္ကို ပိုေကာင္းေအာင္လုပ္ၾကည့္ပါ</string>
+    <string name="documents_hint">စာရြက္စာတမ္းမ်ားကို စမ္းသုံးၾကည့္ပါ</string>
+    <string name="magic_sky_hint">ေကာင္းကင္ပုံ ျပင္ျခင္းကို သုံးၾကည့္ပါ</string>
+    <string name="portrait_hint">႐ုပ္ပုံလႊာ သုံးၾကည့္ပါ</string>
+    <string name="super_night_hint">စူပါ ည သုံးၾကည့္ပါ</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Iýmitiň suraty efektini güýçlendirmegi synap görüň</string>
+    <string name="celebrity_sunset_hint">Günüň ýaşmagy efektini güýçlendirmegi synap görüň</string>
+    <string name="documents_hint">Resminamalary synap gör</string>
+    <string name="magic_sky_hint">Asman dükanyny syna</string>
+    <string name="portrait_hint">Portreti syna</string>
+    <string name="super_night_hint">Ajap gijäni syna</string>
+</resources>

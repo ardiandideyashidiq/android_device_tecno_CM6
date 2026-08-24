@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Pruebe mejorar el efecto de la imagen de comida</string>
+    <string name="celebrity_sunset_hint">Pruebe mejorar el efecto de puesta del sol</string>
+    <string name="documents_hint">Pruebe con documentos</string>
+    <string name="magic_sky_hint">Pruebe Sky Shop</string>
+    <string name="portrait_hint">Pruebe retrato</string>
+    <string name="super_night_hint">Pruebe súper noche</string>
+</resources>

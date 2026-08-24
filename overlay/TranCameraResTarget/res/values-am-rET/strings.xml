@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">የምግብ ምስል ተጽዕኖን ለማሻሻል ይሞክሩ</string>
+    <string name="celebrity_sunset_hint">የፀሐይ መጥለቅን ተጽዕኖን ለማሻሻል ይሞክሩ</string>
+    <string name="documents_hint">ሰነዶችን ይሞክሩ</string>
+    <string name="magic_sky_hint">የሰማይ መቀያየሪያን ይሞክሩ</string>
+    <string name="portrait_hint">የቁም ሥዕል ይሞክሩ</string>
+    <string name="super_night_hint">የላቀ ምሽትን ይሞክሩ</string>
+</resources>

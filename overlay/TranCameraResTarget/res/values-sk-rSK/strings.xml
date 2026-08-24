@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Skúste vylepšiť efekt fotografie jedla</string>
+    <string name="celebrity_sunset_hint">Skúste vylepšiť efekt západu slnka</string>
+    <string name="documents_hint">Vyskúšajte Dokumenty</string>
+    <string name="magic_sky_hint">Vyskúšajte režim Zmena oblohy jedným kliknutím</string>
+    <string name="portrait_hint">Vyskúšajte režim Na výšku</string>
+    <string name="super_night_hint">Vyskúšajte Super nočný režim</string>
+</resources>

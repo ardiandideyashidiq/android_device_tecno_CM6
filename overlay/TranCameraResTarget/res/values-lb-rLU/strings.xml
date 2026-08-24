@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Probéier, den Iessensbildeffekt ze verbesseren</string>
+    <string name="celebrity_sunset_hint">Probéier, de Sonnenënnergang ze verbesseren</string>
+    <string name="documents_hint">Probéier Dokumenter</string>
+    <string name="magic_sky_hint">Himmelsoptioune probéieren</string>
+    <string name="portrait_hint">Portrait probéieren</string>
+    <string name="super_night_hint">Super-Nuecht probéieren</string>
+</resources>

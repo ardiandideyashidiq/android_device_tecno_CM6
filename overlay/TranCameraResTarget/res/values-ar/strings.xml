@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">جرب تحسين تأثير صورة الطعام</string>
+    <string name="celebrity_sunset_hint">جرب تحسين تأثير الغروب</string>
+    <string name="documents_hint">جرب المستندات</string>
+    <string name="magic_sky_hint">جرب مفتاح واحد لتغيير السماء</string>
+    <string name="portrait_hint">جرب بورتريه</string>
+    <string name="super_night_hint">جرب الوضع الليلي الفائق</string>
+</resources>

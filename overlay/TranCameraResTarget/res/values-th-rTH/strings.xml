@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">ลองปรับปรุงเอฟเฟกต์ภาพอาหารให้ดูดีขึ้น</string>
+    <string name="celebrity_sunset_hint">ลองปรับปรุงเอฟเฟกต์ดวงอาทิตย์ตก</string>
+    <string name="documents_hint">ลองเอกสาร</string>
+    <string name="magic_sky_hint">ลองใช้ Sky Shop</string>
+    <string name="portrait_hint">ลองใช้รูปบุคคล</string>
+    <string name="super_night_hint">ลองใช้โหมดประสิทธิภาพในที่มืด</string>
+</resources>

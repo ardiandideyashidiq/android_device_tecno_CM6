@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Geria kûbuithia efekti ya mbica ya bia kuria</string>
+    <string name="celebrity_sunset_hint">Geria kûbuithia efekti ya ûgoro</string>
+    <string name="documents_hint">Geria Dokiumenti</string>
+    <string name="magic_sky_hint">Geria Nduka Ya Matuu</string>
+    <string name="portrait_hint">Geria Mbica ya mûrûngamo</string>
+    <string name="super_night_hint">Geria Ûtukû bwina Nkanya</string>
+</resources>

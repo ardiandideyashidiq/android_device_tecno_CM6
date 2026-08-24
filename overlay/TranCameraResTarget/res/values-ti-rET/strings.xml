@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">እቲ ናይ ምግቢ ስእሊ ኢፌክት ክተማዕብልዎ ፈትኑ</string>
+    <string name="celebrity_sunset_hint">እቲ ናይ ጸሓይ ዕራርቦ ኢፌክት ክተማዕብልዎ ፈትኑ</string>
+    <string name="documents_hint">ሰነዳት ፈትኑ</string>
+    <string name="magic_sky_hint">ሰማይ ምቕያር ፈትኑ</string>
+    <string name="portrait_hint">ናይ ቑመት ስእሊ ፈትኑ</string>
+    <string name="super_night_hint">ልዑል ምሸት ፈትኑ</string>
+</resources>

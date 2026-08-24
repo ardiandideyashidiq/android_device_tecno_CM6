@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">খাদ্যৰ ছবিৰ প্ৰভাৱ বঢ়াই চাওক</string>
+    <string name="celebrity_sunset_hint">সূর্যাস্তৰ প্ৰভাৱ বঢ়াই তুলিবলৈ চেষ্টা কৰক</string>
+    <string name="documents_hint">দস্তাবেজসমূহ চেষ্টা কৰক</string>
+    <string name="magic_sky_hint">"স্কাই শ্ব'প চেষ্টা কৰক"</string>
+    <string name="portrait_hint">"প'ট্ৰেইট চেষ্টা কৰক"</string>
+    <string name="super_night_hint">ছুপাৰ নাইট চেষ্টা কৰক</string>
+</resources>

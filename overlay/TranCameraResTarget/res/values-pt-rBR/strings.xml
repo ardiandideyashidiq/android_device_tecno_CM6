@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Experimente aprimorar o efeito da imagem de comida</string>
+    <string name="celebrity_sunset_hint">Experimente realçar o efeito do pôr do sol</string>
+    <string name="documents_hint">Experimente Documentos</string>
+    <string name="magic_sky_hint">Experimentar Efeito Céu</string>
+    <string name="portrait_hint">Experimentar Retrato</string>
+    <string name="super_night_hint">Experimentar Supernoite</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Coba tingkatkan efek gambar makanan</string>
+    <string name="celebrity_sunset_hint">Coba tingkatkan efek matahari terbenam</string>
+    <string name="documents_hint">Coba Dokumen</string>
+    <string name="magic_sky_hint">Coba Sky Shop</string>
+    <string name="portrait_hint">Coba Potret</string>
+    <string name="super_night_hint">Coba Super Malam</string>
+</resources>

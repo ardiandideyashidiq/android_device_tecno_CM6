@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">נסה לשפר את אפקט תמונת המזון</string>
+    <string name="celebrity_sunset_hint">נסה לשפר את אפקט השקיעה</string>
+    <string name="documents_hint">נסה מסמכים</string>
+    <string name="magic_sky_hint">נסה את מחסן שמיים</string>
+    <string name="portrait_hint">נסה דיוקן</string>
+    <string name="super_night_hint">נסה סופר לילה</string>
+</resources>

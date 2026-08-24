@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Yiyecek görüntüsü efektini artırarak deneyin</string>
+    <string name="celebrity_sunset_hint">Gün batımı efektini artırarak deneyin</string>
+    <string name="documents_hint">Belgeleri Deneyin</string>
+    <string name="magic_sky_hint">"Gökyüzü Mağazası'nı Dene"</string>
+    <string name="portrait_hint">"Portre'yi Dene"</string>
+    <string name="super_night_hint">"Süper Gece'yi Dene"</string>
+</resources>

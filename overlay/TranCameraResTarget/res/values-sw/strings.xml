@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Jaribu kuboresha athari ya picha ya chakula</string>
+    <string name="celebrity_sunset_hint">Jaribu kuimarisha athari ya machweo</string>
+    <string name="documents_hint">Jaribu Hati</string>
+    <string name="magic_sky_hint">Jaribu Sky Shop</string>
+    <string name="portrait_hint">Jaribu Picha ya Uso</string>
+    <string name="super_night_hint">Jaribu Usiku Mzuri</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Geria kwagĩrithia maumĩrĩra ma mbica ya irio</string>
+    <string name="celebrity_sunset_hint">Geria kwagĩrithia maumĩrĩra ma gũthua kwa riũa</string>
+    <string name="documents_hint">Geria Nyaraka</string>
+    <string name="magic_sky_hint">Geria Gũcenjiacenjia Igũrũ</string>
+    <string name="portrait_hint">Geria Mbica Nũngĩrĩru</string>
+    <string name="super_night_hint">Geria Ũtukũ Mũno</string>
+</resources>

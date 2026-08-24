@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Prøv at forbedre madbilled-effekten</string>
+    <string name="celebrity_sunset_hint">Prøv at forbedre solnedgangs-effekten</string>
+    <string name="documents_hint">Prøv Dokumenter</string>
+    <string name="magic_sky_hint">Prøv Himmel-filtre</string>
+    <string name="portrait_hint">Prøv Stående</string>
+    <string name="super_night_hint">Prøv Supernat</string>
+</resources>

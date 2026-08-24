@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Isku day inaad kor u qaaddo saamaynta sawirka cuntada</string>
+    <string name="celebrity_sunset_hint">Isku day inaad korodhsato saameynta qorrax dhaca</string>
+    <string name="documents_hint">Isku day Dukumentiyada</string>
+    <string name="magic_sky_hint">Isku day Kubeddesho Cirka</string>
+    <string name="portrait_hint">Isku day Sawirka</string>
+    <string name="super_night_hint">Isku day Habeenka Sare</string>
+</resources>

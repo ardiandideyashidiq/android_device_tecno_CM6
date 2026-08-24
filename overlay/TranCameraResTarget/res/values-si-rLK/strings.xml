@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">ආහාර අනුරූප ප්‍රයෝගය වර්ධනය කිරීමට උත්සාහ කරන්න</string>
+    <string name="celebrity_sunset_hint">හිරු බැසීම ප්‍රයෝගය වර්ධනය කිරීමට උත්සාහ කරන්න</string>
+    <string name="documents_hint">ලේඛන උත්සාහ කරන්න</string>
+    <string name="magic_sky_hint">ගුවන් සාප්පුව උත්සාහ කරන්න</string>
+    <string name="portrait_hint">සිරස් දසුන උත්සාහ කරන්න</string>
+    <string name="super_night_hint">සුපර් නයිට් උත්සාහ කරන්න</string>
+</resources>

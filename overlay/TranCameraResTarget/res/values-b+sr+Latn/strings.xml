@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Pokušajte da unapredite efekat slike hrane</string>
+    <string name="celebrity_sunset_hint">Pokušajte da unapredite efekat zalaska sunca</string>
+    <string name="documents_hint">Isprobaj dokumente</string>
+    <string name="magic_sky_hint">Isprobaj Nebesku prodavnicu</string>
+    <string name="portrait_hint">Isprobaj Portret</string>
+    <string name="super_night_hint">Isprobaj Super noć</string>
+</resources>

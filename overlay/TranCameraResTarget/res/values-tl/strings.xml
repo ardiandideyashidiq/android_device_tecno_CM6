@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Subukang pagandahin ang effect ng larawan ng pagkain</string>
+    <string name="celebrity_sunset_hint">Subukang pagandahin ang effect ng paglubog ng araw</string>
+    <string name="documents_hint">Subukan ang Mga Dokumento</string>
+    <string name="magic_sky_hint">Subukan ang Sky Shop</string>
+    <string name="portrait_hint">Subukan ang Portrait</string>
+    <string name="super_night_hint">Subukan ang Super Night</string>
+</resources>

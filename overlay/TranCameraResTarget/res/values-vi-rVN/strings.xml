@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Thử tăng cường hiệu ứng hình ảnh ẩm thực</string>
+    <string name="celebrity_sunset_hint">Thử tăng cường hiệu ứng hoàng hôn</string>
+    <string name="documents_hint">Thử tài liệu</string>
+    <string name="magic_sky_hint">Thử Cửa hàng Sky</string>
+    <string name="portrait_hint">Thử chế độ Chân dung</string>
+    <string name="super_night_hint">Thử chế độ Siêu ban đêm</string>
+</resources>

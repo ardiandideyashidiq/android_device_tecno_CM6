@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Proovi täiustada toidupildi efekti</string>
+    <string name="celebrity_sunset_hint">Proovi päikeseloojangu efekti täiustada</string>
+    <string name="documents_hint">Proovi režiimi Dokumendid</string>
+    <string name="magic_sky_hint">Proovige Taevapoodi</string>
+    <string name="portrait_hint">Proovige Portreed</string>
+    <string name="super_night_hint">Proovige Superööd</string>
+</resources>

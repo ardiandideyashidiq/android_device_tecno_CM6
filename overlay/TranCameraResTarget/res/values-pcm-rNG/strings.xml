@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Try dey improve di food foto effect</string>
+    <string name="celebrity_sunset_hint">Try dey improve di sunset effect</string>
+    <string name="documents_hint">Try Documents</string>
+    <string name="magic_sky_hint">Try Sky Shop</string>
+    <string name="portrait_hint">Try Up To Down Style</string>
+    <string name="super_night_hint">Try Super Night</string>
+</resources>

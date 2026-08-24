@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">ഭക്ഷണ ചിത്ര ഇഫക്റ്റ് മെച്ചപ്പെടുത്താൻ ശ്രമിക്കുക</string>
+    <string name="celebrity_sunset_hint">സൂര്യാസ്തമയ ഇഫക്റ്റ് മെച്ചപ്പെടുത്താൻ ശ്രമിക്കുക</string>
+    <string name="documents_hint">ഡോക്യുമെന്റുകൾ പരീക്ഷിക്കുക</string>
+    <string name="magic_sky_hint">സ്കൈ ഷോപ്പ് പരീക്ഷിക്കുക</string>
+    <string name="portrait_hint">പോർട്രെയ്റ്റ് പരീക്ഷിക്കുക</string>
+    <string name="super_night_hint">സൂപ്പർ നൈറ്റ് പരീക്ഷിക്കുക</string>
+</resources>

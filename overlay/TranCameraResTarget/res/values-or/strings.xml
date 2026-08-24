@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">ଖାଦ୍ୟ ଫଟୋ ପ୍ରଭାବ ବଢାଇବାକୁ ଚେଷ୍ଟା କରନ୍ତୁ</string>
+    <string name="celebrity_sunset_hint">ସୂର୍ଯ୍ୟାସ୍ତ ପ୍ରଭାବ ବଢାଇବାକୁ ଚେଷ୍ଟା କରନ୍ତୁ</string>
+    <string name="documents_hint">ଡକ୍ୟୁମେଣ୍ଟସମୂହ ଚେଷ୍ଟା କରନ୍ତୁ</string>
+    <string name="magic_sky_hint">ସ୍କାଏ ସପ୍ ପରଖି ନିଅନ୍ତୁ</string>
+    <string name="portrait_hint">ପୋର୍ଟ୍ରେଟ୍ ପରଖି ନିଅନ୍ତୁ</string>
+    <string name="super_night_hint">ସୁପର ନାଇଟ୍ ପରଖି ନିଅନ୍ତୁ</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Tata kwaĩlya mũthemba wa ũvĩndũku wa visa ya lĩu</string>
+    <string name="celebrity_sunset_hint">Tata kwaĩlya mũthemba wa ũvĩndũku wa sua yĩithũa</string>
+    <string name="documents_hint">Tata Maandĩko</string>
+    <string name="magic_sky_hint">Tata Sky Shop</string>
+    <string name="portrait_hint">Tata Visa Yĩũngye</string>
+    <string name="super_night_hint">Tata Ũtũkũ Mũnene</string>
+</resources>

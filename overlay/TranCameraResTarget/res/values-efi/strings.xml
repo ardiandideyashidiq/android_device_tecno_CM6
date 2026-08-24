@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Domo ndi demere ndutim ndise udia</string>
+    <string name="celebrity_sunset_hint">Domo ndi demere ndutim usoputịn</string>
+    <string name="documents_hint">Domo Mme Nwed Akpan Nkpo</string>
+    <string name="magic_sky_hint">Domo Itieurua Enyoñ</string>
+    <string name="portrait_hint">Domo Enyan Ndise</string>
+    <string name="super_night_hint">Domo Ata eti Mbubreyo</string>
+</resources>

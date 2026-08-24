@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Спробуйте покращити ефект зображення їжі</string>
+    <string name="celebrity_sunset_hint">Спробуйте покращити ефект заходу сонця</string>
+    <string name="documents_hint">Спробуйте «Документи»</string>
+    <string name="magic_sky_hint">Спробуйте Майстерню неба</string>
+    <string name="portrait_hint">Спробуйте портретний режим</string>
+    <string name="super_night_hint">Спробуйте Супер-ніч</string>
+</resources>

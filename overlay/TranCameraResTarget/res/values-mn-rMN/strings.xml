@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celebrity_food_hint">Хоолны зургийн эффектийг сайжруулж үзэх</string>
+    <string name="celebrity_sunset_hint">Нар жаргах эффектийг сайжруулж үзэх</string>
+    <string name="documents_hint">Баримт бичиг турших</string>
+    <string name="magic_sky_hint">Sky Shop турших</string>
+    <string name="portrait_hint">Хөрөг турших</string>
+    <string name="super_night_hint">Супер шөнө турших</string>
+</resources>

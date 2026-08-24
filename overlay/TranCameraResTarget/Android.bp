@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "TranCameraResTarget",
+    product_specific: true,
+}
