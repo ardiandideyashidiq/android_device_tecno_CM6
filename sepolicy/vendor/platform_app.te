@@ -10,3 +10,6 @@ allow platform_app sysfs_therm:file r_file_perms;
 dontaudit platform_app unlabeled:filesystem getattr;
 
 get_prop(platform_app, vendor_camera_prop)
+
+# Stock: hal_mtk_bgs_client attribute (platform_app_202504) finds IBGService
+allow platform_app mtk_hal_bgs_service:service_manager find;

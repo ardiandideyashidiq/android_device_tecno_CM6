@@ -1,0 +1,2 @@
+# mediatek.campostalgo -> camerapostalgo_service already in sepolicy_vndr base
+transsion.campostalgo    u:object_r:taps_isphidl_service:s0

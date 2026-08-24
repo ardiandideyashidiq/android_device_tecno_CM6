@@ -61,6 +61,12 @@ persist.vendor.tran_nfc_chip_manufacturer   u:object_r:vendor_tran_nfc_chip_prop
 # VPNR Audio
 vendor.ril.recovery.reduce_noise      u:object_r:vendor_tran_vpnr_audio_prop:s0
 persist.vendor.tran.vpnrEnable        u:object_r:vendor_tran_vpnr_audio_prop:s0 exact bool
+# probed by audio.primary.mediatek.so (denoise/VPNR); stock labels identical
+persist.vendor.tr_audio.denoise.dump            u:object_r:vendor_tran_vpnr_audio_prop:s0
+persist.vendor.tr_audio.denoise.mode            u:object_r:vendor_tran_vpnr_audio_prop:s0
+persist.vendor.tr_audio.denoise.vp_encryption_key u:object_r:vendor_tran_vpnr_audio_prop:s0
+persist.vendor.vpnr.SelectEnrollmentFile        u:object_r:vendor_tran_vpnr_audio_prop:s0
+persist.vendor.vpnr.vpnrEnrollStatus            u:object_r:vendor_tran_vpnr_audio_prop:s0
 
 # TEE property
 vendor.tee.googlekey.status                          u:object_r:vendor_mtk_trustonic_tee_prop:s0

@@ -11,3 +11,7 @@ type jiiov_fp_service, service_manager_type;
 # AIDL Trancam camera extension service (stock CM6 labels
 # vendor.transsion.hardware.trancam.trancamserver.ITrancamserver/default)
 type hal_trancamserver_service, service_manager_type;
+
+# MTK camera background service (IBGService), served from camerahalserver
+# (mtk_hal_camera) on stock; stock grants find to the platform camera app.
+type mtk_hal_bgs_service, service_manager_type, hal_service_type, protected_service;

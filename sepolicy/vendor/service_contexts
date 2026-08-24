@@ -7,3 +7,5 @@ vendor.trustonic.tee.ITee/default                               u:object_r:hal_t
 vendor.trustonic.tui.ITui/default                               u:object_r:hal_tee_service:s0
 vendor.transsion.hardware.biometrics.fingerprint.ITranssionFingerprintDaemon/default u:object_r:hal_fingerprint_service:s0
 vendor.transsion.hardware.trancam.trancamserver.ITrancamserver/default    u:object_r:hal_trancamserver_service:s0
+# MTK camera background service; stock vendor_service_contexts line 27
+vendor.mediatek.hardware.camera.bgservice.IBGService/default    u:object_r:mtk_hal_bgs_service:s0

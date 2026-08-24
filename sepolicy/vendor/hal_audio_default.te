@@ -18,3 +18,5 @@ set_prop(hal_audio_default, vendor_mtk_audiohal_prop)
 set_prop(hal_audio_default, vendor_tran_voice_prop)
 set_prop(hal_audio_default, vendor_mtk_radio_prop)
 set_prop(hal_audio_default, vendor_tran_vpnr_audio_prop)
+# audio.primary.mediatek.so reads back denoise/VPNR state it persists
+get_prop(hal_audio_default, vendor_tran_vpnr_audio_prop)

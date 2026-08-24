@@ -1,0 +1,11 @@
+# Stock CM6 system_ext policy labels transsion.campostalgo as
+# taps_isphidl_service (camerapostalgo_service for mediatek.campostalgo is
+# already declared by sepolicy_vndr base). The camerapostalgo/TAPS daemons
+# are deliberately not shipped in Project Infinity-X, but com.transsion.camera
+# looks the service up at startup; labeling mirrors stock and turns denials
+# into clean "not found" lookups.
+
+type taps_isphidl_service, service_manager_type;
+
+# stock: (allow platform_app taps_isphidl_service (service_manager (find)))
+allow platform_app { taps_isphidl_service camerapostalgo_service }:service_manager find;
