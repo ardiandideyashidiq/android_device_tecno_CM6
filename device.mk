@@ -288,9 +288,8 @@ PRODUCT_PACKAGES += \
     SystemUIResTarget \
     TranCameraResTarget
 
-# Lineage-Specific Overlays
-PRODUCT_PACKAGES += \
-    ApertureResTarget
+# Stock Transsion camera replaces AOSP/Lineage Aperture
+PRODUCT_NO_CAMERA := true
 
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay
