@@ -4,18 +4,19 @@
       "Name": "MemFreq",
       "Path": "/sys/devices/platform/soc/10012000.dvfsrc/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq",
       "Values": [
+        "0",
         "4266000000",
         "3200000000",
         "2400000000",
         "1866000000",
         "1600000000",
         "1200000000",
-        "800000000",
-        "0"
+        "800000000"
       ],
       "ResetOnInit": true,
       "Comments": [
-        "It is userspace gov, powerhal will have exclusive and direct control of the freq"
+        "It is userspace gov, powerhal will have exclusive and direct control of the freq",
+        "First value is the reset/default: 0 releases the userspace governor"
       ]
     },
     {
@@ -64,6 +65,7 @@
       "ResetOnInit": true,
       "DefaultIndex": 0,
       "Comments": [
+        "GPU floor boost index. [37]=390MHz ... [00]=1003MHz (highest)",
         "[37] freq: 390000, volt: 57500, vsram: 75000, posdiv: 2, vaging: 625, power: 153",
         "[36] freq: 415000, volt: 58125, vsram: 75000, posdiv: 2, vaging: 625, power: 167",
         "[35] freq: 441000, volt: 58750, vsram: 75000, posdiv: 2, vaging: 625, power: 186",
@@ -140,6 +142,7 @@
       "Name": "CPUEfficiencyClusterMinFreq",
       "Path": "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq",
       "Values": [
+        "500000",
         "2000000",
         "1900000",
         "1800000",
@@ -162,10 +165,13 @@
         "800000",
         "750000",
         "700000",
-        "650000",
-        "500000"
+        "650000"
       ],
-      "ResetOnInit": true
+      "DefaultIndex": 0,
+      "ResetOnInit": true,
+      "Comments": [
+        "DefaultIndex 0 (500000) = unconstrained; never reset this node to a high value"
+      ]
     },
     {
       "Name": "CPUSuperClusterMaxFreq",
@@ -195,6 +201,7 @@
       "Name": "CPUSuperClusterMinFreq",
       "Path": "/sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq",
       "Values": [
+        "725000",
         "2200000",
         "2100000",
         "2000000",
@@ -209,20 +216,13 @@
         "1100000",
         "1000000",
         "900000",
-        "800000",
-        "725000"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "CciFreq",
-      "Path": "/sys/kernel/cm_mgr/dbg_cm_mgr",
-      "Values": [
-        "0",
-        "1"
+        "800000"
       ],
       "DefaultIndex": 0,
-      "ResetOnInit": true
+      "ResetOnInit": true,
+      "Comments": [
+        "DefaultIndex 0 (725000) = unconstrained; never reset this node to a high value"
+      ]
     },
     {
       "Name": "FGUclampMin",
@@ -241,6 +241,7 @@
       "Values": [
         "0",
         "30",
+        "40",
         "100"
       ],
       "DefaultIndex": 0,
@@ -250,12 +251,16 @@
       "Name": "CAMUClampBoost",
       "Path": "/dev/cpuctl/camera-daemon/cpu.uclamp.min",
       "Values": [
+        "0",
         "60",
         "80",
         "100"
       ],
       "DefaultIndex": 0,
-      "ResetOnInit": true
+      "ResetOnInit": true,
+      "Comments": [
+        "DefaultIndex 0 (0) = unconstrained outside CAMERA_LAUNCH"
+      ]
     },
     {
       "Name": "GpuDvfsTimerMargin",
@@ -346,6 +351,12 @@
       "Value": "1800000"
     },
     {
+      "PowerHint": "SUSTAINED_PERFORMANCE",
+      "Node": "MemFreq",
+      "Duration": 0,
+      "Value": "3200000000"
+    },
+    {
       "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPUSuperClusterMaxFreq",
       "Duration": 0,
@@ -391,25 +402,13 @@
       "PowerHint": "INTERACTION",
       "Node": "CPUEfficiencyClusterMinFreq",
       "Duration": 1500,
-      "Value": "1350000"
+      "Value": "1150000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUSuperClusterMinFreq",
       "Duration": 1500,
       "Value": "1400000"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "CPUEfficiencyClusterMaxFreq",
-      "Duration": 1500,
-      "Value": "1600000"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "CPUSuperClusterMaxFreq",
-      "Duration": 1500,
-      "Value": "2200000"
     },
     {
       "PowerHint": "INTERACTION",
@@ -427,48 +426,42 @@
       "PowerHint": "INTERACTION",
       "Node": "GpuPwrLevel",
       "Duration": 1500,
-      "Value": "0"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "CciFreq",
-      "Duration": 1500,
-      "Value": "1"
+      "Value": "12"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUSuperClusterMaxFreq",
-      "Duration": 1500,
+      "Duration": 2500,
       "Value": "2200000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUSuperClusterMinFreq",
-      "Duration": 1500,
+      "Duration": 2500,
       "Value": "2200000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUEfficiencyClusterMaxFreq",
-      "Duration": 1500,
+      "Duration": 2500,
       "Value": "2000000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUEfficiencyClusterMinFreq",
-      "Duration": 1500,
+      "Duration": 2500,
       "Value": "2000000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "MemFreq",
-      "Duration": 1500,
+      "Duration": 2500,
       "Value": "4266000000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "TAUclampMin",
-      "Duration": 3000,
+      "Duration": 2500,
       "Value": "100"
     },
     {
@@ -488,6 +481,18 @@
       "Node": "GpuDvfsLoadingStep",
       "Duration": 2000,
       "Value": "771"
+    },
+    {
+      "PowerHint": "DISPLAY_UPDATE_IMMINENT",
+      "Node": "TAUclampMin",
+      "Duration": 300,
+      "Value": "40"
+    },
+    {
+      "PowerHint": "DISPLAY_UPDATE_IMMINENT",
+      "Node": "CPUSuperClusterMinFreq",
+      "Duration": 300,
+      "Value": "1200000"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -517,7 +522,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GpuPwrLevel",
       "Duration": 0,
-      "Value": "0"
+      "Value": "6"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
@@ -554,11 +559,6 @@
       "Node": "DoubleTapToWake",
       "Duration": 0,
       "Value": "cc1"
-    },
-    {
-      "PowerHint": "EXPENSIVE_RENDERING",
-      "Type": "EndHint",
-      "Value": "INTERACTION"
     }
   ]
 }
