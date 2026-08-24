@@ -6,7 +6,3 @@ vendor.mediatek.hardware.mtkradioex.ntn.IMtkRadioExNtn/slot4    u:object_r:hal_r
 vendor.trustonic.tee.ITee/default                               u:object_r:hal_tee_service:s0
 vendor.trustonic.tui.ITui/default                               u:object_r:hal_tee_service:s0
 vendor.transsion.hardware.biometrics.fingerprint.ITranssionFingerprintDaemon/default u:object_r:hal_fingerprint_service:s0
-
-# Project Infinity-X (tecno CM6): our AIDL HAL registers under the standard
-# biometrics interface name; remap it to the vendor label this domain may add.
-android.hardware.biometrics.fingerprint.IService/default    u:object_r:jiiov_fp_service:s0
