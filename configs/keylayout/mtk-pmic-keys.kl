@@ -1,0 +1,6 @@
+# Tecno CM6 mtk-pmic-keys: power key + extra shortcut button (scancode 0x25d).
+# Stock mapped 605 to Transsion's custom SMART_BUTTON keycode; we map it to
+# ASSIST so it launches the default assistant. A device-specific .kl replaces
+# Generic.kl for this input device only; volume keys live on mtk-kpd.
+key 116   POWER              # KEY_POWER
+key 605   ASSIST             # extra shortcut button
