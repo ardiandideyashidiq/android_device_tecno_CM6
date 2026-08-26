@@ -22,7 +22,14 @@
     {
       "Name": "GpuPwrLevel",
       "Path": "/sys/kernel/ged/hal/custom_boost_gpu_freq",
-      "Values": [
+            "Values": [
+        "44",
+        "43",
+        "42",
+        "41",
+        "40",
+        "39",
+        "38",
         "37",
         "36",
         "35",
@@ -65,45 +72,54 @@
       "ResetOnInit": true,
       "DefaultIndex": 0,
       "Comments": [
-        "GPU floor boost index. [37]=390MHz ... [00]=1003MHz (highest)",
-        "[37] freq: 390000, volt: 57500, vsram: 75000, posdiv: 2, vaging: 625, power: 153",
-        "[36] freq: 415000, volt: 58125, vsram: 75000, posdiv: 2, vaging: 625, power: 167",
-        "[35] freq: 441000, volt: 58750, vsram: 75000, posdiv: 2, vaging: 625, power: 186",
-        "[34] freq: 467000, volt: 59375, vsram: 75000, posdiv: 2, vaging: 625, power: 195",
-        "[33] freq: 493000, volt: 60000, vsram: 75000, posdiv: 2, vaging: 625, power: 210",
-        "[32] freq: 519000, volt: 60625, vsram: 75000, posdiv: 2, vaging: 625, power: 231",
-        "[31] freq: 545000, volt: 60625, vsram: 75000, posdiv: 2, vaging: 625, power: 241",
-        "[30] freq: 570000, volt: 61250, vsram: 75000, posdiv: 2, vaging: 625, power: 258",
-        "[29] freq: 596000, volt: 61875, vsram: 75000, posdiv: 2, vaging: 625, power: 273",
-        "[28] freq: 622000, volt: 62500, vsram: 75000, posdiv: 2, vaging: 1250, power: 291",
-        "[27] freq: 648000, volt: 63125, vsram: 75000, posdiv: 2, vaging: 1250, power: 310",
-        "[26] freq: 674000, volt: 63750, vsram: 75000, posdiv: 2, vaging: 1250, power: 335",
-        "[25] freq: 700000, volt: 63750, vsram: 75000, posdiv: 2, vaging: 1250, power: 346",
-        "[24] freq: 711000, volt: 64375, vsram: 75000, posdiv: 2, vaging: 1250, power: 351",
-        "[23] freq: 722000, volt: 65000, vsram: 75000, posdiv: 2, vaging: 1250, power: 366",
-        "[22] freq: 733000, volt: 65000, vsram: 75000, posdiv: 2, vaging: 1250, power: 372",
-        "[21] freq: 745000, volt: 65625, vsram: 75000, posdiv: 2, vaging: 1250, power: 388",
-        "[20] freq: 756000, volt: 66250, vsram: 75000, posdiv: 2, vaging: 1250, power: 393",
-        "[19] freq: 767000, volt: 66875, vsram: 75000, posdiv: 2, vaging: 1250, power: 410",
-        "[18] freq: 778000, volt: 66875, vsram: 75000, posdiv: 2, vaging: 1250, power: 416",
-        "[17] freq: 790000, volt: 67500, vsram: 75000, posdiv: 2, vaging: 1250, power: 432",
-        "[16] freq: 801000, volt: 68125, vsram: 75000, posdiv: 2, vaging: 1250, power: 450",
-        "[15] freq: 812000, volt: 68125, vsram: 75000, posdiv: 2, vaging: 1250, power: 456",
-        "[14] freq: 823000, volt: 68750, vsram: 75000, posdiv: 2, vaging: 1250, power: 462",
-        "[13] freq: 835000, volt: 69375, vsram: 75000, posdiv: 2, vaging: 1250, power: 480",
-        "[12] freq: 846000, volt: 69375, vsram: 75000, posdiv: 2, vaging: 1875, power: 487",
-        "[11] freq: 857000, volt: 70000, vsram: 75000, posdiv: 2, vaging: 1875, power: 505",
-        "[10] freq: 868000, volt: 70625, vsram: 75000, posdiv: 2, vaging: 1875, power: 524",
-        "[09] freq: 880000, volt: 70625, vsram: 75000, posdiv: 2, vaging: 1875, power: 538",
-        "[08] freq: 893000, volt: 71250, vsram: 75000, posdiv: 2, vaging: 1875, power: 545",
-        "[07] freq: 907000, volt: 71875, vsram: 75000, posdiv: 2, vaging: 1875, power: 565",
-        "[06] freq: 921000, volt: 72500, vsram: 75000, posdiv: 2, vaging: 1875, power: 585",
-        "[05] freq: 935000, volt: 73125, vsram: 75000, posdiv: 2, vaging: 1875, power: 614",
-        "[04] freq: 948000, volt: 73125, vsram: 75000, posdiv: 2, vaging: 1875, power: 621",
-        "[03] freq: 962000, volt: 73750, vsram: 75000, posdiv: 1, vaging: 1875, power: 628",
-        "[02] freq: 976000, volt: 74375, vsram: 75000, posdiv: 1, vaging: 1875, power: 650",
-        "[01] freq: 990000, volt: 75000, vsram: 75000, posdiv: 1, vaging: 1875, power: 680",
-        "[00] freq: 1003000, volt: 75625, vsram: 75625, posdiv: 1, vaging: 1875, power: 688"
+        "GPU floor boost OPP index written literally (old libperfmgr format).",
+        "Reset default [44]=390MHz (unconstrained idle). Boosts write lower indices.",
+        "MT6789 A16 kernel exposes 45 OPPs ([00]=1100MHz ... [44]=390MHz):",
+        "[00] freq: 1100000, volt: 80000, vsram: 80000, posdiv: 1, vaging: 1875, power: 863",
+        "[01] freq: 1086000, volt: 80000, vsram: 80000, posdiv: 1, vaging: 1875, power: 846",
+        "[02] freq: 1072000, volt: 79375, vsram: 79375, posdiv: 1, vaging: 1875, power: 819",
+        "[03] freq: 1058000, volt: 78750, vsram: 78750, posdiv: 1, vaging: 1875, power: 793",
+        "[04] freq: 1045000, volt: 78125, vsram: 78125, posdiv: 1, vaging: 1875, power: 768",
+        "[05] freq: 1031000, volt: 77500, vsram: 77500, posdiv: 1, vaging: 1875, power: 752",
+        "[06] freq: 1017000, volt: 76875, vsram: 76875, posdiv: 1, vaging: 1875, power: 728",
+        "[07] freq: 1003000, volt: 76250, vsram: 76250, posdiv: 1, vaging: 1875, power: 704",
+        "[08] freq: 990000, volt: 75625, vsram: 75625, posdiv: 1, vaging: 1875, power: 680",
+        "[09] freq: 976000, volt: 75000, vsram: 75000, posdiv: 1, vaging: 1875, power: 665",
+        "[10] freq: 962000, volt: 74375, vsram: 75000, posdiv: 1, vaging: 1875, power: 643",
+        "[11] freq: 948000, volt: 73750, vsram: 75000, posdiv: 2, vaging: 1875, power: 621",
+        "[12] freq: 935000, volt: 73125, vsram: 75000, posdiv: 2, vaging: 1875, power: 614",
+        "[13] freq: 921000, volt: 72500, vsram: 75000, posdiv: 2, vaging: 1875, power: 585",
+        "[14] freq: 907000, volt: 71875, vsram: 75000, posdiv: 2, vaging: 1875, power: 565",
+        "[15] freq: 893000, volt: 71250, vsram: 75000, posdiv: 2, vaging: 1875, power: 545",
+        "[16] freq: 880000, volt: 70625, vsram: 75000, posdiv: 2, vaging: 1875, power: 538",
+        "[17] freq: 868000, volt: 70000, vsram: 75000, posdiv: 2, vaging: 1875, power: 512",
+        "[18] freq: 857000, volt: 69375, vsram: 75000, posdiv: 2, vaging: 1875, power: 493",
+        "[19] freq: 846000, volt: 69375, vsram: 75000, posdiv: 2, vaging: 1875, power: 487",
+        "[20] freq: 835000, volt: 68750, vsram: 75000, posdiv: 2, vaging: 1250, power: 468",
+        "[21] freq: 823000, volt: 68125, vsram: 75000, posdiv: 2, vaging: 1250, power: 462",
+        "[22] freq: 812000, volt: 67500, vsram: 75000, posdiv: 2, vaging: 1250, power: 445",
+        "[23] freq: 801000, volt: 67500, vsram: 75000, posdiv: 2, vaging: 1250, power: 439",
+        "[24] freq: 790000, volt: 66875, vsram: 75000, posdiv: 2, vaging: 1250, power: 422",
+        "[25] freq: 778000, volt: 66250, vsram: 75000, posdiv: 2, vaging: 1250, power: 405",
+        "[26] freq: 767000, volt: 65625, vsram: 75000, posdiv: 2, vaging: 1250, power: 399",
+        "[27] freq: 756000, volt: 65000, vsram: 75000, posdiv: 2, vaging: 1250, power: 383",
+        "[28] freq: 745000, volt: 65000, vsram: 75000, posdiv: 2, vaging: 1250, power: 378",
+        "[29] freq: 733000, volt: 64375, vsram: 75000, posdiv: 2, vaging: 1250, power: 362",
+        "[30] freq: 722000, volt: 63750, vsram: 75000, posdiv: 2, vaging: 1250, power: 357",
+        "[31] freq: 711000, volt: 63125, vsram: 75000, posdiv: 2, vaging: 1250, power: 342",
+        "[32] freq: 700000, volt: 62500, vsram: 75000, posdiv: 2, vaging: 1250, power: 328",
+        "[33] freq: 674000, volt: 62500, vsram: 75000, posdiv: 2, vaging: 1250, power: 317",
+        "[34] freq: 648000, volt: 61875, vsram: 75000, posdiv: 2, vaging: 1250, power: 293",
+        "[35] freq: 622000, volt: 61250, vsram: 75000, posdiv: 2, vaging: 1250, power: 283",
+        "[36] freq: 596000, volt: 61250, vsram: 75000, posdiv: 2, vaging: 625, power: 273",
+        "[37] freq: 570000, volt: 60625, vsram: 75000, posdiv: 2, vaging: 625, power: 251",
+        "[38] freq: 545000, volt: 60000, vsram: 75000, posdiv: 2, vaging: 625, power: 234",
+        "[39] freq: 519000, volt: 60000, vsram: 75000, posdiv: 2, vaging: 625, power: 225",
+        "[40] freq: 493000, volt: 59375, vsram: 75000, posdiv: 2, vaging: 625, power: 204",
+        "[41] freq: 467000, volt: 58750, vsram: 75000, posdiv: 2, vaging: 625, power: 195",
+        "[42] freq: 441000, volt: 58750, vsram: 75000, posdiv: 2, vaging: 625, power: 186",
+        "[43] freq: 415000, volt: 58125, vsram: 75000, posdiv: 2, vaging: 625, power: 167",
+        "[44] freq: 390000, volt: 57500, vsram: 75000, posdiv: 2, vaging: 625, power: 153"
       ]
     },
     {
@@ -266,23 +282,27 @@
       "Name": "GpuDvfsTimerMargin",
       "Path": "/sys/kernel/ged/hal/timer_base_dvfs_margin",
       "Values": [
-        "798",
-        "18743356",
+        "30",
         "50"
       ],
       "DefaultIndex": 0,
-      "ResetOnInit": true
+      "ResetOnInit": true,
+      "Comments": [
+        "Kernel-normal idle value is 30. EXPENSIVE_RENDERING loosens to 50."
+      ]
     },
     {
       "Name": "GpuDvfsLoadingStep",
       "Path": "/sys/kernel/ged/hal/loading_base_dvfs_step",
       "Values": [
         "4",
-        "771",
         "15"
       ],
       "DefaultIndex": 0,
-      "ResetOnInit": true
+      "ResetOnInit": true,
+      "Comments": [
+        "Kernel-normal idle value is 4. EXPENSIVE_RENDERING ramps faster with 15."
+      ]
     },
     {
       "Name": "PowerHALMainState",
@@ -469,18 +489,6 @@
       "Node": "GpuPwrLevel",
       "Duration": 1500,
       "Value": "0"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "GpuDvfsTimerMargin",
-      "Duration": 2000,
-      "Value": "18743356"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "GpuDvfsLoadingStep",
-      "Duration": 2000,
-      "Value": "771"
     },
     {
       "PowerHint": "DISPLAY_UPDATE_IMMINENT",
