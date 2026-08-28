@@ -265,4 +265,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.log.tag.netd=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.HWUI=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.lights_service_millennium_rust=$(VENDOR_LOG_LEVEL) \
-    persist.log.tag.BLASTBufferQueue=$(VENDOR_LOG_LEVEL)
+    persist.log.tag.BLASTBufferQueue=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.thermal_core=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.thermal_intf=$(VENDOR_LOG_LEVEL)
