@@ -91,7 +91,8 @@ BOARD_EROFS_PCLUSTER_SIZE := 262144
 BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_ODM_DLKIMAGE := true
 
-ifneq ($(WITH_GMS),true)
+ifneq ($(filter userdebug eng,$(TARGET_BUILD_VARIANT)),)
+# userdebug/eng builds: use ext4 for all partitions
 $(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
     $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4) \
     $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
@@ -100,6 +101,7 @@ $(foreach p, $(call to-upper, $(TREBLE_PARTITIONS)), \
     $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4) \
     $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 else
+# user builds: erofs for SSI, ext4 for Treble
 $(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
     $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs) \
     $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
