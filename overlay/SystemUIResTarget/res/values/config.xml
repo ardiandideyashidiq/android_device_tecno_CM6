@@ -1,5 +1,5 @@
 <resources>
-    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+    <bool name="config_dozeAlwaysOnDisplayAvailable">false</bool>
     <bool name="doze_proximity_check_before_pulse">false</bool>
     <bool name="doze_display_state_supported">true</bool>
     <bool name="config_enableShellMainThread">true</bool>
