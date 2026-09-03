@@ -141,9 +141,32 @@ inline bool injectUevent(const std::string& devpath,
     return true;
 }
 
+// On-device evidence (dmesg + logcat, see session notes):
+//   Finger down -> framework forces DOZE; panel reaches lit-DOZE ~44ms later
+//   ("Unblocked screen on after 44 ms"). If lcm_hbm_state=1 is written while
+//   the panel is still slept/idle the kernel SKIPS it:
+//     tran_lcm_hbm_set:0,0,0, display state is slept or idle, skip set hbm node.
+//   and the sensor captures a dark frame -> ALGORITHM_COMPARE ret_val=502
+//   match fail. Writing it again once the panel is in non-slept DOZE applies it:
+//     panel_hbm_set_cmdq_switch FPS=60Hz en=1, mapped_level=15
+//   and capture succeeds (ret_val=500). So we must re-apply HBM after the DOZE
+//   window, then fire the synthetic HBM_SET gate - never capture while slept.
 inline void illuminateForCapture() {
     hbmOn();
+    char val[PROP_VALUE_MAX] = {0};
+    property_get("vendor.fp.inject_synth", val, "1");
+    bool noSynth = (val[0] == '0');
+    // Wait for the framework's forced DOZE to actually light the panel
+    // (measured ~44ms on device; 90ms gives margin), then re-write HBM so the
+    // kernel applies it on the now non-slept panel. The first hbmOn() above
+    // was almost certainly skipped because the panel was still slept.
     usleep(90000);
+    hbmOn();
+    usleep(40000);
+    if (noSynth) {
+        ALOGI("illuminateForCapture: synthetic DISABLED after HBM re-apply");
+        return;
+    }
     injectUevent("/devices/virtual/fod", "fod", "TRAN_FULL_HBM_EVENT",
                  "FULL_HBM_SET");
 }

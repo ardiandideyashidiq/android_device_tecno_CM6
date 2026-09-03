@@ -1,0 +1,127 @@
+From 9f3f0d22cd30c6e65a4ba6b8fa20e0fe6d7314d6 Mon Sep 17 00:00:00 2001
+From: ashallowperson <245951141+ashallowperson@users.noreply.github.com>
+Date: Thu, 3 Sep 2026 22:43:01 +0500
+Subject: [PATCH] FingerprintAuthenticationClient: light panel in DOZE on
+ finger-down for optical FOD
+
+The custom JIIOV optical under-display fingerprint HAL (device/tecno/CM6)
+signals finger-down/up via AcquiredInfo::VENDOR codes (legacy 1002/1003 ->
+vendor 2/3) and now notifies the framework of finger-down before beginning
+capture. A fully-off AMOLED panel (Display.STATE_OFF) emits no light, so the
+sensor images only black and the engine reports a non-match.
+
+Move the OS display into DOZE (state=3, physically illuminating the panel,
+mirroring stock Transsion's AodStateAggregator) on finger-down so the sensor
+can image, then revert to fully-off on finger-up / op end. Lighting is held
+only for the capture so the panel is not left permanently on while idle.
+---
+ .../aidl/FingerprintAuthenticationClient.java | 66 +++++++++++++++++++
+ 1 file changed, 66 insertions(+)
+
+diff --git a/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintAuthenticationClient.java b/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintAuthenticationClient.java
+index 51fc0b3e0..05274c58d 100644
+--- a/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintAuthenticationClient.java
++++ b/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintAuthenticationClient.java
+@@ -44,10 +44,15 @@ import android.hardware.fingerprint.FingerprintAuthenticateOptions;
+ import android.hardware.fingerprint.FingerprintManager;
+ import android.hardware.fingerprint.FingerprintSensorPropertiesInternal;
+ import android.hardware.fingerprint.IUdfpsOverlayController;
++import android.hardware.display.DisplayManager;
+ import android.os.IBinder;
++import android.os.PowerManager;
++import android.os.PowerManagerInternal;
+ import android.os.RemoteException;
+ import android.util.Slog;
++import android.view.Display;
+ 
++import com.android.server.LocalServices;
+ import com.android.server.biometrics.log.BiometricContext;
+ import com.android.server.biometrics.log.BiometricLogger;
+ import com.android.server.biometrics.log.CallbackWithProbe;
+@@ -90,6 +95,18 @@ public class FingerprintAuthenticationClient
+     @Nullable
+     private ICancellationSignal mCancellationSignal;
+     private boolean mIsPointerDown;
++    // Off-screen optical under-display fingerprint capture: the custom JIIOV HAL signals
++    // finger-down/up through AcquiredInfo::VENDOR codes (legacy 1002/1003 -> vendor 2/3) and now
++    // notifies the framework of finger-down BEFORE it begins the capture, so system_server can
++    // move the OS display into DOZE (state=3, physically illuminating the AMOLED panel, mirroring
++    // stock Transsion's AodStateAggregator). A fully-off panel (Display.STATE_OFF) emits no light,
++    // so the sensor images only black and the engine's algorithm reports a non-match. Lighting is
++    // temporary: held only for the capture and reverted on finger-up / op end, so the panel stays
++    // off while idle. See Glue.h/Session.cpp in the fingerprint service.
++    private static final int FOD_VENDOR_CODE_FINGER_DOWN = 2;
++    private static final int FOD_VENDOR_CODE_FINGER_UP = 3;
++    private static final float FOD_DOZE_BRIGHTNESS = 0.11f;
++    private boolean mFodDozeActive = false;
+ 
+     public FingerprintAuthenticationClient(
+             @NonNull Context context,
+@@ -231,6 +248,13 @@ public class FingerprintAuthenticationClient
+ 
+     @Override
+     public void onAcquired(@FingerprintAcquired int acquiredInfo, int vendorCode) {
++        if (acquiredInfo == BiometricFingerprintConstants.FINGERPRINT_ACQUIRED_VENDOR) {
++            if (vendorCode == FOD_VENDOR_CODE_FINGER_DOWN) {
++                forceDozeForCapture();
++            } else if (vendorCode == FOD_VENDOR_CODE_FINGER_UP) {
++                revertFodDoze();
++            }
++        }
+         mAuthenticationStateListeners.onAuthenticationAcquired(
+                 new AuthenticationAcquiredInfo.Builder(BiometricSourceType.FINGERPRINT,
+                         getRequestReason(), acquiredInfo).build()
+@@ -254,8 +278,50 @@ public class FingerprintAuthenticationClient
+         pt.incrementAcquireForUser(getTargetUserId(), isCryptoOperation());
+     }
+ 
++    /**
++     * Off-screen optical capture: move the OS display from fully-off into Display.STATE_DOZE so
++     * the AMOLED panel physically lights and the under-display sensor can image the fingerprint.
++     * A bare doze override is applied (matching stock Transsion's AodStateAggregator result of
++     * state=3, brightness 0.11). Called from onAcquired(VENDOR, 2) finger-down; reverted on
++     * finger-up / op end so the panel is lit only for the capture, not left permanently on. Only
++     * acts when the display is genuinely off to avoid interfering with a normal on-screen unlock.
++     */
++    private void forceDozeForCapture() {
++        if (mFodDozeActive) return;
++        DisplayManager dm = getContext().getSystemService(DisplayManager.class);
++        if (dm == null) return;
++        Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
++        if (display == null || display.getState() != Display.STATE_OFF) return;
++
++        PowerManagerInternal pmi = LocalServices.getService(PowerManagerInternal.class);
++        if (pmi == null) return;
++
++        mFodDozeActive = true;
++        Slog.d(TAG, "screen-off capture: forcing Display.STATE_DOZE for illumination");
++        pmi.setDozeOverrideFromDreamManager(
++                Display.STATE_DOZE,
++                Display.STATE_REASON_DREAM_MANAGER,
++                FOD_DOZE_BRIGHTNESS,
++                false /* useNormalBrightnessForDoze */);
++    }
++
++    private void revertFodDoze() {
++        if (!mFodDozeActive) return;
++        PowerManagerInternal pmi = LocalServices.getService(PowerManagerInternal.class);
++        if (pmi != null) {
++            Slog.d(TAG, "screen-off capture: reverting display to fully off");
++            pmi.setDozeOverrideFromDreamManager(
++                    Display.STATE_UNKNOWN,
++                    Display.STATE_REASON_DREAM_MANAGER,
++                    PowerManager.BRIGHTNESS_INVALID_FLOAT,
++                    false /* useNormalBrightnessForDoze */);
++        }
++        mFodDozeActive = false;
++    }
++
+     @Override
+     public void onError(int errorCode, int vendorCode) {
++        revertFodDoze();
+         mAuthenticationStateListeners.onAuthenticationError(
+                 new AuthenticationErrorInfo.Builder(BiometricSourceType.FINGERPRINT,
+                         getRequestReason(), getErrorString(getContext(), errorCode, vendorCode),
+-- 
+2.53.0
+
