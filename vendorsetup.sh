@@ -9,24 +9,10 @@ fi
 log()   { echo "[$(date '+%H:%M:%S')] $*"; }
 error() { echo "[$(date '+%H:%M:%S')] ERROR: $*" >&2; }
 
-PATCH_DIR=$(mktemp -d /tmp/fenrir_patches.XXXXXX)
-trap 'rm -rf "$PATCH_DIR"' EXIT
-
 RET=0
 
 apply_patch() {
-  local src="$1" name="$2"
-  local patch="$PATCH_DIR/$name.patch"
-
-  case "$src" in
-    http*://*)
-      log "  Downloading $name …"
-      curl -sSfL "$src" -o "$patch" || { error "Download failed for $name"; return 1; }
-      ;;
-    *)
-      cp "$src" "$patch" || { error "Copy failed for $name"; return 1; }
-      ;;
-  esac
+  local patch="$1" name="$2"
 
   # pre-check: reverse apply succeeds → already present
   if git -C "$repo" apply --check --reverse "$patch" &>/dev/null; then
@@ -53,6 +39,35 @@ apply_patch() {
     return 0
   fi
 
+  # Self-heal: git am failed. Restore the repo to its original head (the HEAD that was current
+  # before we touched anything -- this preserves any earlier patches in the series while
+  # discarding the dirty working-tree / index state that made git am fail, e.g.
+  # "file does not match index"), then retry the patch once so a transient failure never
+  # leaves the tree in a stuck/conflicted state.
+  local base
+  base=$(git -C "$repo" rev-parse HEAD 2>/dev/null || true)
+  log "  $name: git am failed; resetting $repo to $base and retrying …"
+  git -C "$repo" am --abort &>/dev/null || true
+  if [ -n "$base" ]; then
+    git -C "$repo" reset --hard "$base" &>/dev/null || true
+  fi
+  # A failed git am can leave a stale .git/rebase-apply, which makes every subsequent
+  # git am fail with "previous rebase directory still exists". Remove it so the retry
+  # below runs from a genuinely clean state.
+  rm -rf "$repo/.git/rebase-apply"
+
+  # Reset rc so a successful retry (which does not set rc) is detected as success,
+  # instead of carrying over the previous failure's rc=128.
+  unset rc || true
+  output=$(git -C "$repo" am "$patch" 2>&1) || rc=$?
+  if [ -z "${rc:-}" ] || [ "$rc" -eq 0 ]; then
+    local sha
+    sha=$(git -C "$repo" log --oneline -1 2>/dev/null || true)
+    log "  $name: OK after reset+retry ($sha)"
+    return 0
+  fi
+  git -C "$repo" am --abort &>/dev/null || true
+
   # real failure
   if echo "$output" | grep -qi "conflict"; then
     error "$name: merge conflict -- needs manual rebase"
@@ -69,21 +84,16 @@ apply_patch() {
 log "Applying fenrir compatibility patches"
 
 repo="$PWD/system/core"
-
-for url in \
-  "https://raw.githubusercontent.com/MillenniumOSS/patches/refs/heads/sixteen/system/core/0001-libfs_avb-Allow-LKs-patched-with-fenrir-to-boot-on-A.patch" \
-  "https://raw.githubusercontent.com/MillenniumOSS/patches/refs/heads/sixteen/system/core/0002-fastbootd-Always-return-false-for-GetDeviceLockStatu.patch"
-do
-  name=$(basename "$url" .patch)
-  name="${name:0:50}"
-  apply_patch "$url" "$name" || RET=1
+for patch_file in "$PWD/device/tecno/CM6/patches/system/core/"*.patch; do
+  [ -e "$patch_file" ] || continue
+  name=$(basename "$patch_file" .patch)
+  apply_patch "$patch_file" "$name" || RET=1
 done
 
 repo="$PWD/system/sepolicy"
 for patch_file in "$PWD/device/tecno/CM6/patches/system/sepolicy/"*.patch; do
   [ -e "$patch_file" ] || continue
   name=$(basename "$patch_file" .patch)
-  name="${name:0:50}"
   apply_patch "$patch_file" "$name" || RET=1
 done
 
@@ -91,7 +101,6 @@ repo="$PWD/frameworks/base"
 for patch_file in "$PWD/device/tecno/CM6/patches/frameworks/base/"*.patch; do
   [ -e "$patch_file" ] || continue
   name=$(basename "$patch_file" .patch)
-  name="${name:0:50}"
   apply_patch "$patch_file" "$name" || RET=1
 done
 
