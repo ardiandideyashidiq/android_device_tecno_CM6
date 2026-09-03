@@ -1,0 +1,63 @@
+From ae62e3ae076925f8b0f29495fe63c9c768e5c194 Mon Sep 17 00:00:00 2001
+From: ashallowperson <245951141+ashallowperson@users.noreply.github.com>
+Date: Thu, 3 Sep 2026 20:30:28 +0500
+Subject: [PATCH] DozeSensors: fall back to string lookup for pickup sensor
+
+AOSP resolves the doze pickup trigger via
+getDefaultSensor(Sensor.TYPE_PICK_UP_GESTURE) (integer type 25). Some
+devices (e.g. Transsion/TECNO MT6789) expose their pickup sensor only as
+a vendor type (string "android.sensor.pickup", integer 65635), so the
+default lookup returns null and lift-to-wake silently never arms.
+
+As a backward-compatible fallback, if no type-25 sensor exists we look
+the sensor up by its string type (standard pick_up_gesture, then the
+Transsion android.sensor.pickup). Devices that expose a standard type-25
+sensor are unaffected because the fallback is never reached.
+---
+ .../android/systemui/doze/DozeSensors.java    | 23 ++++++++++++++++++-
+ 1 file changed, 22 insertions(+), 1 deletion(-)
+
+diff --git a/packages/SystemUI/src/com/android/systemui/doze/DozeSensors.java b/packages/SystemUI/src/com/android/systemui/doze/DozeSensors.java
+index 3b9c40537..8fe0148cc 100644
+--- a/packages/SystemUI/src/com/android/systemui/doze/DozeSensors.java
++++ b/packages/SystemUI/src/com/android/systemui/doze/DozeSensors.java
+@@ -195,7 +195,7 @@ public class DozeSensors {
+                         false /* touchscreen */
+                 ),
+                 new TriggerSensor(
+-                        mSensorManager.getDefaultSensor(Sensor.TYPE_PICK_UP_GESTURE),
++                        dozePickupSensor(),
+                         Settings.Secure.DOZE_PICK_UP_GESTURE,
+                         resources.getBoolean(
+                                 R.bool.config_dozePickupGestureEnabled) /* settingDef */,
+@@ -346,6 +346,27 @@ public class DozeSensors {
+         return findSensor(mSensorManager, type, null);
+     }
+ 
++    /**
++     * Resolves the pickup sensor for the doze pickup trigger.
++     *
++     * <p>AOSP looks up {@link Sensor#TYPE_PICK_UP_GESTURE} (integer type 25) directly. Some devices
++     * (e.g. Transsion/TECNO MT6789) expose their pickup sensor only as a vendor sensor type
++     * (string "android.sensor.pickup", integer 65635) instead, so the default lookup returns null
++     * and lift-to-wake silently never arms. As a fallback, if no type-25 sensor exists we look the
++     * sensor up by its string type so those devices also get lift-to-wake. Devices that expose a
++     * standard type-25 sensor are unaffected (the fallback is never reached).
++     */
++    private Sensor dozePickupSensor() {
++        Sensor pickup = mSensorManager.getDefaultSensor(Sensor.TYPE_PICK_UP_GESTURE);
++        if (pickup == null) {
++            pickup = findSensor(Sensor.STRING_TYPE_PICK_UP_GESTURE);
++        }
++        if (pickup == null) {
++            pickup = findSensor("android.sensor.pickup");
++        }
++        return pickup;
++    }
++
+     @NonNull
+     private Sensor[] findSensors(@NonNull String[] types) {
+         Sensor[] sensorMap = new Sensor[DevicePostureController.SUPPORTED_POSTURES_SIZE];
+-- 
+2.53.0
+

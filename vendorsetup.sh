@@ -87,6 +87,14 @@ for patch_file in "$PWD/device/tecno/CM6/patches/system/sepolicy/"*.patch; do
   apply_patch "$patch_file" "$name" || RET=1
 done
 
+repo="$PWD/frameworks/base"
+for patch_file in "$PWD/device/tecno/CM6/patches/frameworks/base/"*.patch; do
+  [ -e "$patch_file" ] || continue
+  name=$(basename "$patch_file" .patch)
+  name="${name:0:50}"
+  apply_patch "$patch_file" "$name" || RET=1
+done
+
 echo ""
 
 if [ "$RET" -ne 0 ]; then

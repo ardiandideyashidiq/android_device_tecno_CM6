@@ -29,7 +29,8 @@
         <item>2204</item>
         <item>91</item>
     </integer-array>
-    <bool name="config_dozePickupGestureEnabled">false</bool>
+    <bool name="config_dozePickupGestureEnabled">true</bool>
+    <bool name="config_dozePulsePickup">true</bool>
     <bool name="config_enableHapticTextHandle">true</bool>
     <integer name="config_pinnerHomePinBytes">6291456</integer>
     <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.7</item>
@@ -61,7 +62,6 @@
     <bool name="config_fillMainBuiltInDisplayCutout">false</bool>
     <integer name="config_defaultRefreshRate">60</integer>
     <integer name="config_defaultPeakRefreshRate">120</integer>
-    <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.lineageos.sensor.udfps</string>
     <bool name="config_screen_off_udfps_enabled">true</bool>
     <bool name="config_screen_off_udfps_default_on">true</bool>
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
