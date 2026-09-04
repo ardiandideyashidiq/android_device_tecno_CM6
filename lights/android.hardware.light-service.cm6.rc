@@ -1,0 +1,21 @@
+# Tecno CM6 (Transsion TranLED red notification LED) AIDL light HAL
+
+on early-boot
+    # Backlight: lcd-backlight is a LED-class device (/sys/class/leds/lcd-backlight)
+    chown system system /sys/class/leds/lcd-backlight/brightness
+    chown system system /sys/class/leds/lcd-backlight/max_brightness
+
+on property:sys.boot_completed=1
+    # TranLED notification LED. By default the sysfs node is root:root 0664
+    # (DAC blocks the HAL running as "system"); the tran-led-core driver may
+    # not be loaded yet at early-boot, so re-assert ownership once booted.
+    chown system system /sys/devices/platform/odm/odm:tran_led_core/tran_led_cmd
+    chmod 0664 /sys/devices/platform/odm/odm:tran_led_core/tran_led_cmd
+    chown system system /sys/class/leds/aw2023_led/brightness
+    chown system system /sys/class/leds/aw2023_led/max_brightness
+
+service vendor.light-cm6 /vendor/bin/hw/android.hardware.light-service.cm6
+    class hal
+    user system
+    group system
+    shutdown critical

@@ -251,7 +251,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.lineage
+    android.hardware.light-service.cm6
 
 # Linker
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \

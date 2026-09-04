@@ -1,0 +1,19 @@
+cc_binary {
+    name: "android.hardware.light-service.cm6",
+    defaults: ["hidl_defaults"],
+    vendor: true,
+    relative_install_path: "hw",
+    init_rc: ["android.hardware.light-service.cm6.rc"],
+    vintf_fragments: ["android.hardware.light-service.cm6.xml"],
+    srcs: [
+        "Devices.cpp",
+        "Lights.cpp",
+        "service.cpp",
+    ],
+    local_include_dirs: ["."],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.light-V2-ndk",
+    ],
+}

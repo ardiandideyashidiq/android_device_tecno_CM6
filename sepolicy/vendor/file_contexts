@@ -33,6 +33,9 @@
 
 # Lights
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.millennium             u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.cm6                    u:object_r:hal_light_default_exec:s0
+/sys/devices/platform/odm/odm:tran_led_core(/.*)?                                       u:object_r:sysfs_leds:s0
+/sys/class/leds/aw2023_led(/.*)?                                                        u:object_r:sysfs_leds:s0
 
 # NFC
 /(vendor|system\/vendor)/bin/hw/android\.hardware\.nfc_snxxx@1\.2-service   u:object_r:hal_nfc_default_exec:s0
