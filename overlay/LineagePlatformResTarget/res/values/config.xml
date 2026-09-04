@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- LIGHTS_PULSATING_LED (8) | LIGHTS_BATTERY_LED (64) -->
+    <integer name="config_deviceLightCapabilities">72</integer>
+</resources>

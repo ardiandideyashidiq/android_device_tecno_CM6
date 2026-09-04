@@ -101,10 +101,21 @@ binder_status_t Lights::dump(int fd, const char** /*args*/, uint32_t /*numArgs*/
 void Lights::updateLedBlend() {
     std::lock_guard<std::mutex> lock(mLedMutex);
 
-    const LedState state = mLastNotificationsState.isLit() ? mLastNotificationsState
-                           : mLastAttentionState.isLit()   ? mLastAttentionState
-                           : mLastBatteryState.isLit()     ? mLastBatteryState
-                                                           : LedState();
+    LedState state;
+    if (mLastNotificationsState.isLit()) {
+        state = mLastNotificationsState;
+    } else if (mLastAttentionState.isLit()) {
+        state = mLastAttentionState;
+    } else if (mLastBatteryState.isLit()) {
+        state = mLastBatteryState;
+        // Charging indicator: breathing LED (mode 3). The framework only
+        // sends a solid (FIXED) light while charging and turns the light off
+        // once the battery reaches 100%. Low-battery pulse (TIMED) keeps
+        // blinking below.
+        if (state.effect == EffectType::FIXED) {
+            state.effect = EffectType::HARDWARE;
+        }
+    }
 
     mDevices.setTranLedState(state);
 
