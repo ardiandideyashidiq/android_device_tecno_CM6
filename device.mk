@@ -503,5 +503,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
+# Override AOSP pakages wit Gapps
+PRODUCT_PACKAGES += \
+    com.google.android.dialer.support \
+    GoogleContacts \
+    GoogleDialer \
+    Messages \
+    CalendarGoogle \
+    Gmail2 \
+    Photos \
+    Drive \
+    Maps
+
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/tecno/CM6/CM6-vendor.mk)
