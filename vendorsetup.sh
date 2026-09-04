@@ -81,7 +81,11 @@ apply_patch() {
 
 # ── main ──
 
-log "Applying fenrir compatibility patches"
+log "Applying CM6 compatibility patches"
+
+# Fenrir compatibility patches
+# patches/system/core/0001-libfs_avb-Allow-LKs-patched-with-fenrir-to-boot-on-A.patch
+# patches/system/core/0002-fastbootd-Always-return-false-for-GetDeviceLockStatu.patch
 
 repo="$PWD/system/core"
 for patch_file in "$PWD/device/tecno/CM6/patches/system/core/"*.patch; do
