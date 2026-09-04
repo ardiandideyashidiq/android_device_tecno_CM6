@@ -195,17 +195,7 @@ static void emitAcquired(uint64_t legacy) {
     int32_t info = static_cast<int32_t>(legacy);
     ALOGD_ENG("acquired legacy=%d", info);
     if (info == 1002) {
-        // Finger down: notify the framework FIRST so it can move the OS
-        // display into DOZE (physically illuminating the AMOLED panel) before
-        // capture begins. The engine PressAuth stage then still blocks on the
-        // HBM_SET uevent fired by startCaptureLight() below, giving the panel
-        // time to light. This keeps the panel OFF while idle and lights it
-        // only for the capture.
-        if (gOpActive.load()) {
-            cb->onAcquired(AcquiredInfo::VENDOR, info - 1000);
-            startCaptureLight();
-        }
-        return;
+        if (gOpActive.load()) startCaptureLight();
     } else if (info == 1003) {
         stopCaptureLight();
     }
