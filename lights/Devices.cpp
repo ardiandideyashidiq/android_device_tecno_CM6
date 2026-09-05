@@ -103,16 +103,19 @@ LedState fromAidl(const HwLightState& value) {
 // stock. It controls the red notification LED physically driven by the AWINIC
 // AW2023 I2C LED driver. Command format:
 //
-//   <led_mode> <led_color> <brightness> <rise_time_ms> <hold_time_ms> <fall_time_ms>
+//   <led_mode> <led_color> <brightness> <rise_time_ms> <fall_time_ms> <off_time_ms>
 //
 // Modes verified on the live device:
 //   0 : off
-//   1 : static on (rise/hold/fall times unused)
+//   1 : static on (rise/fall times unused)
 //   2 : hard full-power blink; on-time = rise + hold, off-time = fall.
-//       Verified: "2 1 255 0 1000 1000" blinks evenly ~1s on / ~1s off, and
-//       "2 1 255 400 400 4000" shows a long dark gap (slower blink).
-//   3 : smooth breathe/breath; rise/hold/fall all drive the fade.
-//       Verified: "3 1 255 250 1500 250" breathes properly.
+//       Verified: "2 1 255 0 1000 1000" blinks evenly ~1s on / ~1s off.
+//   3 : smooth breathe/breath; field 4 = rise ms, field 5 = fall ms.
+//       Verified: "3 1 255 250 1500 250" parses rise=250, fall=1500, and
+//       "3 1 180 3000 1500 0" rose over 3s and fell over 1.5s on the device.
+//       The hardware loops this pattern continuously until a new command or a
+//       turn-off is issued, so identical re-writes MUST be deduplicated (each
+//       write starts the pattern over again from black).
 //   4/5/6 : other Transsion effect modes accepted by the driver.
 //
 // led_color=1 is the red channel.
@@ -152,38 +155,60 @@ bool TranLedDevice::isOk() const {
 }
 
 bool TranLedDevice::setState(const LedState& state) {
-    if (!state.isLit()) {
-        return writeToFile(mCommandPath, "0 0 0 0 0 0");
-    }
-
-    uint32_t brightness = state.color.toBrightness();
-    if (brightness == 0) {
-        brightness = 1;
-    }
-
     std::string command;
-    switch (state.effect) {
-        case EffectType::FIXED:
-            command = std::to_string(kTranLedModeStatic) + " " + std::to_string(kTranLedColorRed) +
-                      " " + std::to_string(brightness) + " 0 0 0";
-            break;
-        case EffectType::TIMED: {
-            // Hard blink: rise=0, on-time = hold (frame onMs... verified above),
-            // off-time = fall. Guard against 0/0 which the driver treats poorly.
-            uint32_t onMs = state.onMs > 0 ? state.onMs : 1;
-            uint32_t offMs = state.offMs > 0 ? state.offMs : 1;
-            command = std::to_string(kTranLedModeTimed) + " " + std::to_string(kTranLedColorRed) +
-                      " " + std::to_string(brightness) + " 0 " + std::to_string(onMs) + " " +
-                      std::to_string(offMs);
-            break;
+
+    if (!state.isLit()) {
+        command = "0 0 0 0 0 0";
+    } else {
+        uint32_t brightness = state.color.toBrightness();
+        if (brightness == 0) {
+            brightness = 1;
         }
-        case EffectType::HARDWARE:
-            command = std::to_string(kTranLedModeBreathe) + " " + std::to_string(kTranLedColorRed) +
-                      " " + std::to_string(brightness) + " 250 1500 250";
-            break;
+
+        switch (state.effect) {
+            case EffectType::FIXED:
+                command = std::to_string(kTranLedModeStatic) + " " +
+                          std::to_string(kTranLedColorRed) + " " + std::to_string(brightness) +
+                          " 0 0 0";
+                break;
+            case EffectType::TIMED: {
+                // Hard blink: rise=0, on-time = hold (frame onMs... verified above),
+                // off-time = fall. Guard against 0/0 which the driver treats poorly.
+                uint32_t onMs = state.onMs > 0 ? state.onMs : 1;
+                uint32_t offMs = state.offMs > 0 ? state.offMs : 1;
+                command = std::to_string(kTranLedModeTimed) + " " +
+                          std::to_string(kTranLedColorRed) + " " + std::to_string(brightness) +
+                          " 0 " + std::to_string(onMs) + " " + std::to_string(offMs);
+                break;
+            }
+            case EffectType::HARDWARE:
+                // Slow continuous breathe verified on the device ("3 1 180 3000 1500 0").
+                // The AW2023 hardware loops this pattern on its own until a new command
+                // (or turn-off) is written, so identical re-sends MUST be deduplicated
+                // below or every periodic framework re-arm restarts the pattern from black.
+                command = std::to_string(kTranLedModeBreathe) + " " +
+                          std::to_string(kTranLedColorRed) + " " + std::to_string(brightness) +
+                          " 3000 1500 0";
+                break;
+        }
     }
 
-    return writeToFile(mCommandPath, command);
+    // Deduplicate: the framework force re-sends the identical battery light state every
+    // ~60s (LightsService setModes() sets mModesUpdate=true). Each write to the TranLED
+    // node makes the kernel restart the effect, which breaks continuous breathing.
+    // Skip a write when the exact same command was already applied. This is safe for
+    // notifications: they always resolve to a different command string (e.g. blink vs
+    // breathe), so a notification still takes over the LED.
+    if (command == mLastCommand) {
+        return true;
+    }
+
+    if (writeToFile(mCommandPath, command)) {
+        mLastCommand = command;
+        return true;
+    }
+
+    return false;
 }
 
 void TranLedDevice::dump(int fd) const {

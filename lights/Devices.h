@@ -105,6 +105,7 @@ class TranLedDevice {
 
   private:
     std::string mCommandPath;
+    std::string mLastCommand;
 };
 
 /**
