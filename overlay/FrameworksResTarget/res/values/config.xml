@@ -32,7 +32,7 @@
     <bool name="config_dozePickupGestureEnabled">true</bool>
     <bool name="config_dozePulsePickup">true</bool>
     <bool name="config_enableHapticTextHandle">true</bool>
-    <integer name="config_pinnerHomePinBytes">6291456</integer>
+    <integer name="config_pinnerHomePinBytes">62914560</integer>
     <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.7</item>
     <string name="config_screenRecorderAVCProfileLevel" translatable="false">3.1</string>
     <bool name="config_unplugTurnsOnScreen">true</bool>
