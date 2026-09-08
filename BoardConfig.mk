@@ -115,6 +115,7 @@ BOARD_EROFS_COMPRESS_HINTS := $(CONFIGS_PATH)/erofs_compress_hints.txt
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6789
+TARGET_USES_VULKAN := true
 
 # Properties
 TARGET_PRODUCT_PROP += $(CONFIGS_PATH)/properties/product.prop
