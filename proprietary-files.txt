@@ -1605,6 +1605,17 @@ vendor/lib64/mt6789/libpqconfig.so;SYMLINK=vendor/lib64/libpqconfig.so
 vendor/lib64/vendor.transsion.hardware.aegis-V1-ndk.so
 vendor/lib64/vendor.transsion.hardware.screeninfo-V1-ndk.so
 
+# Graphics (meow support)
+vendor/lib64/egl/libGLES_meow.so
+vendor/lib64/egl/libMEOW_data.so
+vendor/lib64/egl/libMEOW_gift.so
+vendor/lib64/egl/libMEOW_mfrc_ext.so
+vendor/lib64/egl/libMEOW_qt.so
+vendor/lib64/egl/libMEOW_trace.so
+vendor/lib64/libDefaultFpsActor.so
+vendor/lib64/libFrameRecord.so
+vendor/lib64/libNoFpsActor.so
+
 # Fingerprint
 # NOTE: prebuilt AIDL service wrapper replaced by in-tree service:
 #   device/tecno/CM6/fingerprint (android.hardware.biometrics.fingerprint-service.jiiov)
