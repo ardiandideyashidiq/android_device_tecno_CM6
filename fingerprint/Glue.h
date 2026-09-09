@@ -159,7 +159,6 @@ inline void endIllumination() {
 // without a rebuild of the capture path.
 inline void initOnce() {
     static bool done = [] {
-        armFod();
         static std::thread t([] {
             char buf[PROP_VALUE_MAX] = {0};
             while (true) {

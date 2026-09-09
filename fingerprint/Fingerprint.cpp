@@ -59,7 +59,6 @@ ndk::ScopedAStatus Fingerprint::createSession(
     auto session = SharedRefBase::make<Session>(sensorId, userId);
     session->setCallback(cb);
     setActiveSession(session);
-    armFod();
     *out = session;
     return ndk::ScopedAStatus::ok();
 }

@@ -106,6 +106,7 @@ static void startCtlWatcher() {
                         ALOGI_ENG("fpctl: purge requested");
                         if (gOpActive.exchange(false)) Engine::get().cancel();
                         stopCaptureLight();
+                        disarmFod();
                         gRemoveAllPending = true;
                         Engine::get().enumerate();
                         property_set("vendor.fp.fpctl", "0");
@@ -242,6 +243,7 @@ static void emitError(int32_t legacyError) {
     gOpActive = false;
     gDetectActive = false;
     stopCaptureLight();
+    disarmFod();
     cb->onError(e, 0);
 }
 
@@ -251,6 +253,7 @@ ndk::ScopedAStatus CancellationSignal::cancel() {
     gDetectActive = false;
     Engine::get().cancel();
     stopCaptureLight();
+    disarmFod();
     emitError(5);
     return ndk::ScopedAStatus::ok();
 }
@@ -277,6 +280,7 @@ void Session::onEngineEvent(uint32_t type, uint64_t a1, uint64_t a2, uint64_t a3
             if (a3 == 0) {
                 gOpActive = false;
                 stopCaptureLight();
+                disarmFod();
             }
             if (mCb) mCb->onEnrollmentProgress(static_cast<int32_t>(a1), static_cast<int32_t>(a3));
             break;
@@ -298,6 +302,7 @@ void Session::onEngineEvent(uint32_t type, uint64_t a1, uint64_t a2, uint64_t a3
             if (fid != 0) {
                 gOpActive = false;
                 stopCaptureLight();
+                disarmFod();
                 const uint8_t* hatRaw =
                         (a4 == 69 && a3 != 0) ? reinterpret_cast<const uint8_t*>(a3)
                                               : nullptr;
@@ -306,6 +311,7 @@ void Session::onEngineEvent(uint32_t type, uint64_t a1, uint64_t a2, uint64_t a3
             } else if (gDetectActive.exchange(false)) {
                 gOpActive = false;
                 stopCaptureLight();
+                disarmFod();
                 mCb->onAuthenticationSucceeded(0, HardwareAuthToken{});
             } else if (gOpActive.load()) {
                 // Non-match inside a live authenticate(): the framework
@@ -382,6 +388,7 @@ ndk::ScopedAStatus Session::enroll(const HardwareAuthToken& hat,
     serializeHat(hat, raw);
     gDetectActive = false;
     gOpActive = true;
+    armFod();
     Engine::get().enroll(raw);
     *out = ndk::SharedRefBase::make<CancellationSignal>();
     return ndk::ScopedAStatus::ok();
@@ -453,6 +460,7 @@ ndk::ScopedAStatus Session::resetLockout(const HardwareAuthToken& hat) {
 
 ndk::ScopedAStatus Session::close() {
     ALOGD_ENG("session closed");
+    disarmFod();
     return mCb ? mCb->onSessionClosed() : ndk::ScopedAStatus::ok();
 }
 
