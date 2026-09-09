@@ -1,3 +1,5 @@
-# MTK PQ HAL: client of composer-ext HAL + devicetree chosen node probe
-hal_client_domain(mtk_hal_pq, hal_mtk_composer_ext)
-allow mtk_hal_pq sysfs:file r_file_perms;
+typeattribute mtk_hal_pq hal_mtk_composer_ext_client;
+allow mtk_hal_pq mnt_vendor_file:dir search;
+allow mtk_hal_pq persist_data_file:dir { read write create open add_name remove_name search };
+allow mtk_hal_pq persist_data_file:file { read write create getattr append unlink rename open };
+allow mtk_hal_pq mtk_hal_composer_ext_service:service_manager find;
