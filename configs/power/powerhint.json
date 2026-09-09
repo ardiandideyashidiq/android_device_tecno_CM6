@@ -517,20 +517,20 @@
     {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "CPUSuperClusterMinFreq",
-      "Duration": 1000,
-      "Value": "2000000"
+      "Duration": 3000,
+      "Value": "2100000"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "CPUEfficiencyClusterMinFreq",
-      "Duration": 1000,
-      "Value": "1900000"
+      "Duration": 3000,
+      "Value": "2000000"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GpuPwrLevel",
       "Duration": 0,
-      "Value": "6"
+      "Value": "4"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
