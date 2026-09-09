@@ -1,20 +1,9 @@
 # Audio
-ro.vendor.audio.number_of_mic=2
-ro.vendor.audio.number_of_speaker=2
-ro.vendor.tr_audio.typec.support=yes
-persist.vendor.audio.usb.offload=false
-ro.vendor.audio.us.proximity=true
-ro.vendor.tran.midtest.ultrasound_proximity=1
-ro.tr_audio.ultrasound.support=1
-ro.odm.tr_audio.midtest_ultrasound.support=1
 persist.vendor.audio.tuning.def_path=odm/etc/vconfig/audio/audio_param/.
-ro.vendor.tran_audio_wireless_microphone.support=1
+persist.vendor.audio.usb.offload=false
+ro.odm.tr_audio.midtest_ultrasound.support=1
 
-# Bluetooth
-ro.bluetooth.a2dp_offload.supported=false
-persist.bluetooth.a2dp_offload.disabled=true
-
-# Camera (from stock odm/etc/build.prop)
+# Camera
 ro.vendor.cam_algo_aimoon_support=0
 ro.vendor.cam_algo_antivideo_enlarge_notsupport=0
 ro.vendor.cam_algo_antivideo_videoeis_support=1
@@ -45,8 +34,8 @@ ro.vendor.cam_algo_pixsmart_hdr_detect_support=0
 ro.vendor.cam_algo_pixsmart_hdr_support=0
 ro.vendor.cam_algo_pixsmart_llhdr_support=0
 ro.vendor.cam_algo_portraitenhance_support=1
-ro.vendor.cam_algo_rawhdrlite_support=1
 ro.vendor.cam_algo_rawhdr_support=1
+ro.vendor.cam_algo_rawhdrlite_support=1
 ro.vendor.cam_algo_rawsr_support=1
 ro.vendor.cam_algo_sat_support=1
 ro.vendor.cam_algo_selfdeflare_support=0
@@ -63,6 +52,12 @@ ro.vendor.cam_algo_videoyuvsupernight_support=1
 ro.vendor.cam_algo_watermark_support=1
 ro.vendor.cam_algo_yuvsr_support=1
 ro.vendor.cam_blur_increase_cpufreq=0
+ro.vendor.cam_flashsnap_support=2
+ro.vendor.cam_max_iso=1
+ro.vendor.cam_perf_switch_guasblue_support=1
+ro.vendor.cam_pre_priority_opt_support=1
+ro.vendor.cam_satmode_support=1
+ro.vendor.cam_tunning_custom_flashscreen=true
 ro.vendor.camera.airaw=1
 ro.vendor.camera.arcore=1
 ro.vendor.camera.insensorzoom.support=0
@@ -73,18 +68,41 @@ ro.vendor.camera.rawHdr_bypassLCE=1
 ro.vendor.camera.smooth_zoom=1
 ro.vendor.camera.sois_support=1
 ro.vendor.camera.xdr.support=1
-ro.vendor.cam_flashsnap_support=2
-ro.vendor.cam_max_iso=1
-ro.vendor.cam_perf_switch_guasblue_support=1
-ro.vendor.cam_pre_priority_opt_support=1
-ro.vendor.cam_satmode_support=1
-ro.vendor.cam_tunning_custom_flashscreen=true
+ro.vendor.custom_kernel_alsflicker_sensor=1
 ro.vendor.debug.camera.meg_raw_supernight_cap_convert=1
 ro.vendor.debug.camera.meg_raw_supernight_custom_pline=1
 ro.vendor.debug.camera.nighthawk_brightnessValue_threshold=-20
+ro.vendor.debug.morpho.videoeis.portrait=0
+ro.vendor.main.camera.ois.id=0x9828
 vendor.camera.sat.support=1
 vendor.camera.skin.compatible.support=1
 vendor.debug.tran_cam_dynamic_fps=1
 vendor.debug.trancam.jpegnum=18
 vendor.debug.trancam.lowmem.jpegnum=12
 vendor.debug.trancam.max.jpeg=11
+
+# Display
+ro.vendor.mtk_aod_support=1
+ro.vendor.pq.tran_disp_ccm_cali_support=1
+ro.vendor.pq.tran_disp_lcm_code_check_mask=36
+ro.vendor.pq.tran_disp_lcm_code_check_mask2=192
+ro.vendor.pq.tran_disp_lcm_code_check_mask3=32
+ro.vendor.pq.tran_disp_lcm_code_fdt_support=1
+ro.vendor.pq.tran_disp_lcm_code_length=30
+ro.vendor.pq.tran_disp_lcm_code_support=1
+ro.vendor.pq.tran_disp_lcm_number=3
+ro.vendor.pq.tran_lcd_hbm_support=0
+
+# Misc
+persist.odm.tr_memfusion.swapfile.support=fasle
+persist.vendor.factory.GB2312=no
+ro.tr_build.bom=CM6_H8918_ABCDT
+
+# Radio
+ro.vendor.mtk_external_sim_support=1
+ro.vendor.mtk_non_dsda_rsim_support=1
+
+# Transsion (turned off intentionally - enabled in stock firmware)
+ro.vendor.tran.nfc.tne.support=0
+ro.vendor.tran.ta.crashdebug.support=0
+ro.vendor.tran.ta.trancare.support=0

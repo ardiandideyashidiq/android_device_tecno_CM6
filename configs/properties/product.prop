@@ -1,26 +1,39 @@
-# Fingerprint
-ro.fingerprint_support=1
-ro.optical_fingerprint_support=1
-ro.tranos_fingerprint_support=1
-ro.fingerprint_wakeup_performance_opt=1
-ro.os_fingerprint_take_photo_support=1
 
-# Bluetooth
-bluetooth.device_id.vendor_id=0x0046
-bluetooth.device.class_of_device=90,2,12
-bluetooth.hci.erroneous_data_reporting.enabled=false
-bluetooth.profile.a2dp.source.enabled?=true
-bluetooth.profile.asha.central.enabled?=true
-bluetooth.profile.avrcp.target.enabled?=true
-bluetooth.profile.bas.client.enabled?=true
-bluetooth.profile.gatt.enabled?=true
-bluetooth.profile.hfp.ag.enabled?=true
-bluetooth.profile.hid.device.enabled?=true
-bluetooth.profile.hid.host.enabled?=true
-bluetooth.profile.map.server.enabled?=true
-bluetooth.profile.opp.enabled?=true
-bluetooth.profile.pan.nap.enabled?=true
-bluetooth.profile.pan.panu.enabled?=true
-bluetooth.profile.pbap.server.enabled?=true
-bluetooth.profile.sap.server.enabled?=true
+# Radio 
+persist.vendor.mtk_dynamic_ims_switch=0
+persist.vendor.radio.tsd.multisimmode=2
 
+# Defined by Build (defined in *_CM6.mk)
+#ro.com.google.clientidbase=android-transsion
+#ro.product.brand=TECNO
+#ro.product.device=TECNO-CM6
+#ro.product.manufacturer=TECNO
+#ro.product.model=TECNO CM6
+#ro.product.name=CM6-OP
+#ro.build.characteristics=phone
+
+# Transsion (turned off intentionally - enabled in stock firmware)
+ro.childmode.support=0
+ro.tr_aiservice.aicorellm.feature.support=0
+ro.tr_aiservice.kolun.feature.support=0
+ro.tr_aiservice.uxdetector_rest.feature.support=0
+ro.tr_childmode.feature.support=0
+ro.tr_cloudserver.feature.support=0
+ro.tr_palm_find.feature.support=0
+ro.tr_privacy.dual_sys.feature.support=0
+ro.tr_privacy.privacy_hub.feature.support=0
+ro.tr_privacy.repair_mode.feature.support=0
+ro.tr_screenrecord.sr_sa_0019_009.support=0
+ro.tr_screenshot.support=0
+ro.tr_sharevia.openwith.feature.support=0
+ro.tr_smartpanel.os_smartpanel.support=0
+ro.tr_spacesaver.feature.support=0
+ro.tr_splitscreen.customized.feature.support=0
+ro.tr_splitscreen.snapmode.feature.support=0
+ro.tr_telephony.pt.remote.lock.support=0
+ro.tr_telephony.vsim.support=0
+ro.tr_telephony.vsim_geniex_entrance.support=0
+ro.tr_telephony.vsim_gotii_entrance.support=0
+ro.tran.dual_sys_support=0
+ro.tran_palm_find_1.2.0_support=0
+ro.transsion_spacesaver.support=0
