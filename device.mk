@@ -288,7 +288,8 @@ PRODUCT_PACKAGES += \
     SettingsProviderResTarget \
     SettingsResTarget \
     SystemUIResTarget \
-    TranCameraResTarget
+    TranCameraResTarget \
+    WifiResTarget
 
 # Stock Transsion camera replaces AOSP/Lineage Aperture
 PRODUCT_NO_CAMERA := true

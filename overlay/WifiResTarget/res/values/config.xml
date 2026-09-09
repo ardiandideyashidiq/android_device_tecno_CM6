@@ -1,0 +1,18 @@
+<resources>
+    <bool name="config_showConfirmationDialogForThirdPartyAppsEnablingWifi">true</bool>
+    <bool name="config_wifiAllowInsecureEnterpriseConfigurationsForSettingsAndSUW">true</bool>
+    <bool name="config_wifiAllowMultipleNetworksOnSameAwareNdi">true</bool>
+    <bool name="config_wifiNetworkCentricQosPolicyFeatureEnabled">true</bool>
+    <bool name="config_wifiP2pGoIpAddressAllocationInEapolFrames">true</bool>
+    <bool name="config_wifiSoftapOweSupported">true</bool>
+    <bool name="config_wifiSoftapOweTransitionSupported">true</bool>
+    <bool name="config_wifiSoftapResetMaxClientSettingConfig">false</bool>
+    <bool name="config_wifiUpdateCountryCodeFromScanResultGeneric">true</bool>
+    <integer name="config_wifiVerboseLoggingAlwaysOnLevel">1</integer>
+    <integer-array name="config_wifiRssiLevelThresholds">
+        <item>-90</item>
+        <item>-85</item>
+        <item>-75</item>
+        <item>-64</item>
+    </integer-array>
+</resources>
