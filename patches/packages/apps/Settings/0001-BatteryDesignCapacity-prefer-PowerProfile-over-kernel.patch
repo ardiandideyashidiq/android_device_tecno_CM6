@@ -1,0 +1,45 @@
+From b8aa5d8e8c1080b26cad4c9d208a5e4e579c5a65 Mon Sep 17 00:00:00 2001
+From: ashallowperson <245951141+ashallowperson@users.noreply.github.com>
+Date: Thu, 10 Sep 2026 19:35:00 +0530
+Subject: [PATCH] BatteryDesignCapacity: prefer PowerProfile over kernel extra
+
+The MTK kernel gauge reports charge_full_design in 0.01 mAh units
+instead of uAh, so EXTRA_DESIGN_CAPACITY carries 520000 (520 mAh)
+instead of the correct 5200000 (5200 mAh).  Stock TranSettings avoids
+this by reading the power_profile battery.capacity value via
+PowerProfile.getBatteryCapacity() (see tran_battery_capacity_util).
+
+Match stock behavior: prefer the PowerProfile value (5200 mAh from the
+device tree overlay) and fall back to the kernel EXTRA only when the
+profile is unavailable.  This way the 'Battery design capacity' row in
+Settings shows the correct 5200 mAh even before the BatteryService
+scaling patch is applied.
+---
+ .../BatteryDesignCapacityPreferenceController.java     | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/src/com/android/settings/deviceinfo/batteryinfo/BatteryDesignCapacityPreferenceController.java b/src/com/android/settings/deviceinfo/batteryinfo/BatteryDesignCapacityPreferenceController.java
+index e759b0c0..c13889f9 100644
+--- a/src/com/android/settings/deviceinfo/batteryinfo/BatteryDesignCapacityPreferenceController.java
++++ b/src/com/android/settings/deviceinfo/batteryinfo/BatteryDesignCapacityPreferenceController.java
+@@ -43,12 +43,12 @@ public class BatteryDesignCapacityPreferenceController extends BasePreferenceCon
+ 
+     @Override
+     public CharSequence getSummary() {
+-        Intent batteryIntent = BatteryUtils.getBatteryIntent(mContext);
+-        int designCapacityUah =
+-                batteryIntent.getIntExtra(BatteryManager.EXTRA_DESIGN_CAPACITY, -1);
++        final PowerProfile profile = new PowerProfile(mContext);
++        int designCapacityUah = (int) profile.getBatteryCapacity() * 1000;
+         if (designCapacityUah <= 0) {
+-            final PowerProfile profile = new PowerProfile(mContext);
+-            designCapacityUah = (int) profile.getBatteryCapacity() * 1000;
++            Intent batteryIntent = BatteryUtils.getBatteryIntent(mContext);
++            designCapacityUah =
++                    batteryIntent.getIntExtra(BatteryManager.EXTRA_DESIGN_CAPACITY, -1);
+         }
+ 
+         if (designCapacityUah > 0) {
+-- 
+2.53.0
+

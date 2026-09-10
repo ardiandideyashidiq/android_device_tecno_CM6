@@ -108,6 +108,13 @@ for patch_file in "$PWD/device/tecno/CM6/patches/frameworks/base/"*.patch; do
   apply_patch "$patch_file" "$name" || RET=1
 done
 
+repo="$PWD/packages/apps/Settings"
+for patch_file in "$PWD/device/tecno/CM6/patches/packages/apps/Settings/"*.patch; do
+  [ -e "$patch_file" ] || continue
+  name=$(basename "$patch_file" .patch)
+  apply_patch "$patch_file" "$name" || RET=1
+done
+
 echo ""
 
 if [ "$RET" -ne 0 ]; then
