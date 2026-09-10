@@ -95,6 +95,10 @@ vendor/lib64/libdeccfg.so
 vendor/lib64/libkaraoke.so
 vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libMtkSpeechEnh.so
+vendor/lib64/libmtkspparser.so
+vendor/lib64/libmtkspparser_swb.so
+vendor/lib64/libMtkSpeechEnh_swb.so
+
 vendor/lib64/libnxp_extamp_intf.so
 vendor/lib64/libocs_mtk_arsi.so
 vendor/lib64/librt_extamp_intf.so
