@@ -12,5 +12,5 @@ allow system_suspend sysfs_extcon:dir r_dir_perms;
 allow system_suspend sysfs_rtc:dir r_dir_perms;
 allow system_suspend sysfs_rtc:file rw_file_perms;
 
-# GKI kernel wakeup paths have I2C addresses that don't match genfs patterns
-dontaudit system_suspend sysfs:file { read open };
+# GKI kernel wakeup paths that don't match AOSP genfs patterns are labeled
+# sysfs_wakeup via device/genfs_contexts rules in vendor/genfs_contexts.

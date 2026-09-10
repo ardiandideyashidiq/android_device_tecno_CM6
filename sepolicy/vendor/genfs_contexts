@@ -130,6 +130,22 @@ genfscon sysfs /devices/platform/soc/1101a000.i2c/i2c-6/6-004e/wakeup/wakeup21  
 genfscon sysfs /devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt635x-auxadc/wakeup/wakeup6         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/10026000.pwrap/10026000.pwrap:mt6366/mt6358-rtc/wakeup/wakeup11           u:object_r:sysfs_wakeup:s0
 
+# CM6 (MT6789 GKI kernel) wakeup sources registered under platform/odm paths
+# that AOSP, the MTK sepolicy_vndr rules, and the analog-tree rules above all
+# fail to label.
+genfscon sysfs /devices/platform/soc/11015000.i2c/i2c-3/3-0060/tcpc/type_c_port0                  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11015000.i2c/i2c-3/3-0060/wakeup                             u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11017000.i2c/i2c-5/5-005f/wakeup                             u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:tran_otg/wakeup                                          u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:pid_chg/wakeup                                          u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:tc_chgtype/power_supply/charger/wakeup                   u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:tc_chgtype/power_supply/wired/wakeup                     u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:tc_chgtype/power_supply/wireless/wakeup                  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10026000.pwrap/10026000.pwrap:battery-manager/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:tc_auto_test/power_supply/tran-auto-test/wakeup           u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:tc_gauge/power_supply/tc_gauge/wakeup                     u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:phy_det/wakeup                                           u:object_r:sysfs_wakeup:s0
+
 # Memory
 genfscon proc /sys/vm/lowmem_reserve_ratio    u:object_r:proc_watermark_boost_factor:s0
 genfscon proc /sys/vm/min_free_kbytes         u:object_r:proc_watermark_boost_factor:s0
