@@ -1,0 +1,51 @@
+From 26d0b7850a7dcedf9b7154b2b59393a5a6547d55 Mon Sep 17 00:00:00 2001
+From: ashallowperson <245951141+ashallowperson@users.noreply.github.com>
+Date: Thu, 10 Sep 2026 19:30:00 +0530
+Subject: [PATCH] BatteryService: scale mis-scaled charge capacity by 10x
+
+The MTK kernel gauge (tc_gauge/tran-auto-test) on the Tecno CM6 reports
+charge_full and charge_full_design in 0.01 mAh units (e.g. 520000 for a
+5200 mAh cell) instead of the uAh units expected by AOSP.  As a result,
+BatteryService exposes EXTRA_DESIGN_CAPACITY = 520000 and
+EXTRA_MAXIMUM_CAPACITY = 520000, which every consumer interprets as
+520 mAh -- a 10x underestimate.
+
+Detect the mis-scaled values (positive but < 1000000 uAh, i.e. < 1000
+mAh -- no real phone battery is that small) and scale them 10x so the
+broadcast, dumpsys battery, GMS, and third-party apps all see the correct
+5200000 uAh (5200 mAh).
+
+The kernel gauge driver is a prebuilt module that cannot be rebuilt, so
+this framework-level compensation is the safest fix.  The health HAL
+(MTK proprietary android.hardware.health-service.mediatek) is untouched,
+preserving fast charging and the offline charger screen.
+---
+ .../core/java/com/android/server/BatteryService.java | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/services/core/java/com/android/server/BatteryService.java b/services/core/java/com/android/server/BatteryService.java
+index 4eeec8b99..77155d2d4 100644
+--- a/services/core/java/com/android/server/BatteryService.java
++++ b/services/core/java/com/android/server/BatteryService.java
+@@ -754,6 +754,18 @@ public final class BatteryService extends SystemService {
+ 
+         synchronized (mLock) {
+             if (!mUpdatesStopped) {
++                // MTK kernel gauge quirk: charge_full / charge_full_design
++                // reported in 0.01 mAh units instead of µAh.  Scale ×10
++                // so that EXTRA_DESIGN_CAPACITY and EXTRA_MAXIMUM_CAPACITY
++                // carry the correct µAh value.
++                if (info.batteryFullChargeUah > 0
++                        && info.batteryFullChargeUah < 1000000) {
++                    info.batteryFullChargeUah *= 10;
++                }
++                if (info.batteryFullChargeDesignCapacityUah > 0
++                        && info.batteryFullChargeDesignCapacityUah < 1000000) {
++                    info.batteryFullChargeDesignCapacityUah *= 10;
++                }
+                 mHealthInfo = info;
+                 // Process the new values.
+                 processValuesLocked(false);
+-- 
+2.53.0
+
